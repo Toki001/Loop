@@ -2,9 +2,9 @@
 
 **Mode:** continuous autonomous M01–M15 execution, authorized by the owner. No new prompt is needed after a verified milestone commit. Read AGENTS, AGENT, CODEX and the current milestone contract; preserve approval boundaries and quality gates.
 
-**Completed:** M00 PASS `fa316ff`; continuous-policy commit `af667df`; M01 PASS `9b90ca94372e7e8f7926a63d3de3243ab5da1195` on `milestone/01-product-contract`. The milestone commit succeeded and its working tree was clean before this checkpoint. Historical M00 verification is unchanged. No application exists yet; empirical research remains explicitly pending.
+**Completed:** M00 PASS `fa316ff`; policy `af667df`; M01 PASS `9b90ca94372e7e8f7926a63d3de3243ab5da1195`; M01 checkpoint `702a305`; M02 PASS `7ede417c8358d14bfc4f97686c7b6be53d225125` on `milestone/02-design-system`. M02 commit succeeded and the worktree was clean before this checkpoint. Historical M00 verification is unchanged. Native design components are verified; no product app yet; empirical research remains pending.
 
-**Current branch:** `milestone/02-design-system`. **M02 design gate: PASS**, awaiting milestone commit and verified-SHA checkpoint. Root SDK-only package/native primitives and `design_preview` are complete; no product main/native project/storage/routing yet. Next action is M02 local commit, then immediately begin M03.
+**Current branch:** `milestone/02-design-system`. **M02 design gate: PASS and committed.** Root SDK-only package/native primitives and `design_preview` are complete; no product main/native project/storage/routing yet. Commit this verified-SHA checkpoint, verify clean worktree, then immediately create/switch `milestone/03-native-foundation` and execute M03.
 
 **Test status:** M01/checkpoint verified (`9b90ca9` / `702a305`). M02 root + preview strict analysis: no issues; formatter: five files unchanged; final frozen-golden run: 233 logical tests pass, 0 failed/skipped, 225 PNG comparisons, 22 AA pairs. Fifteen image samples visually inspected across all ten scenes/four states/keyboard. Unmanifested synthetic PNG negative probe rejected correctly; owned probe removed. Initial import/contrast/Material-ink/semantics/keyboard failures are fixed and recorded in M02, not hidden. No product/device/real-media/participant test or production build has occurred. M00 historical files remain unchanged.
 
