@@ -1,0 +1,23 @@
+name: Loop verification
+
+# No external CI has been connected or run by the development agent. Enable a
+# provisioned owner-controlled runner only after approving that connection.
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  native:
+    # No untrusted pull-request event on a persistent self-hosted machine.
+    runs-on: [self-hosted, macOS, ARM64, loop-toolchain-3.47.5]
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Core, frozen goldens and native debug builds
+        run: python3 tool/ci.py --android --ios

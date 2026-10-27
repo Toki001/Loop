@@ -472,9 +472,13 @@ class LoopBottomNav extends StatelessWidget {
     super.key,
     required this.index,
     required this.onChanged,
+    this.labels = loopDestinations,
+    this.navigateLabel = 'Navigate',
   });
   final int index;
   final ValueChanged<int> onChanged;
+  final List<String> labels;
+  final String navigateLabel;
 
   @override
   Widget build(BuildContext context) {
@@ -492,7 +496,7 @@ class LoopBottomNav extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
                     LoopButton(
-                      label: 'Navigate',
+                      label: navigateLabel,
                       kind: LoopButtonKind.text,
                       onPressed: () => showModalBottomSheet<void>(
                         context: context,
@@ -515,13 +519,9 @@ class LoopBottomNav extends StatelessWidget {
                               mainAxisSize: MainAxisSize.min,
                               children: [
                                 const Text('Go to'),
-                                for (
-                                  var i = 0;
-                                  i < loopDestinations.length;
-                                  i++
-                                )
+                                for (var i = 0; i < labels.length; i++)
                                   LoopButton(
-                                    label: loopDestinations[i],
+                                    label: labels[i],
                                     kind: LoopButtonKind.text,
                                     onPressed: () {
                                       Navigator.pop(sheetContext);
@@ -535,15 +535,12 @@ class LoopBottomNav extends StatelessWidget {
                       ),
                     ),
                     const SizedBox(height: 8),
-                    LoopButton(
-                      label: 'Practice',
-                      onPressed: () => onChanged(2),
-                    ),
+                    LoopButton(label: labels[2], onPressed: () => onChanged(2)),
                   ],
                 )
               : Row(
                   children: [
-                    for (var i = 0; i < loopDestinations.length; i++)
+                    for (var i = 0; i < labels.length; i++)
                       Expanded(
                         child: Semantics(
                           selected: index == i,
@@ -568,7 +565,7 @@ class LoopBottomNav extends StatelessWidget {
                                 Icon(_destinationIcons[i]),
                                 const SizedBox(height: 4),
                                 Text(
-                                  loopDestinations[i],
+                                  labels[i],
                                   style: const TextStyle(fontSize: 12),
                                 ),
                               ],

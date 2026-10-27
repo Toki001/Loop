@@ -1,0 +1,36 @@
+{
+  "simulator": "F39EEA3D-9939-4689-8958-6CDDBB36EF01",
+  "type": "iPhone 17",
+  "runtime": "iOS 27.0",
+  "integrationTests": {
+    "passed": 1,
+    "failed": 0,
+    "skipped": 0,
+    "actualUiActions": "all five tabs, Settings, Dark, native file read, fresh bootstrap",
+    "retentionRerun": {
+      "exit": 0,
+      "command": "flutter --suppress-analytics test integration_test/foundation_test.dart -d F39EEA3D-9939-4689-8958-6CDDBB36EF01 --no-pub --no-uninstall --reporter expanded"
+    }
+  },
+  "productInstallExit": 0,
+  "productProcessRelaunchExit": 0,
+  "preferencesAfterProcessReplacement": {
+    "schema": 1,
+    "appearance": "dark",
+    "onboardingSeen": true
+  },
+  "preferencesSha256": "56db3e56e0eb70f7d10a2b4d27819eb2d2767b350e8ded449f8bc939d7ca7844",
+  "networkEvidence": "App startup has no network/API dependency; no radio-off/device-network isolation was performed. Debug VM tooling may use local sockets.",
+  "android": "adb exit 0: no devices; no configured AVD/system image",
+  "physicalDevicesTested": 0,
+  "verificationCorrection": "Initial ordinary integration CLI uninstalled test app/data by default. A no-uninstall rerun retained real UI writes before this product process check; no preferences were manufactured.",
+  "productProcessPids": [
+    32948,
+    33095
+  ],
+  "visualReview": [
+    "welcome-first-launch.png",
+    "today-dark-after-process-relaunch.png"
+  ],
+  "freshProductLaunchExit": 0
+}

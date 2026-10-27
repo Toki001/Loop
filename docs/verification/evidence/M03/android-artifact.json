@@ -1,0 +1,28 @@
+{
+  "artifact": "build/app/outputs/flutter-apk/app-debug.apk",
+  "kind": "debug, not production release",
+  "sha256": "ccc655569464c879ae4cdd2f32fbaac9026d8395c304557a711ebd2fd0325f1c",
+  "bytes": 195370083,
+  "aaptExit": 0,
+  "aaptBadging": [
+    "package: name='com.jameskierdoliguez.loop' versionCode='1' versionName='0.1.0' platformBuildVersionName='16' platformBuildVersionCode='36' compileSdkVersion='36' compileSdkVersionCodename='16'",
+    "sdkVersion:'24'",
+    "targetSdkVersion:'36'",
+    "uses-permission: name='android.permission.INTERNET'",
+    "uses-permission: name='com.jameskierdoliguez.loop.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION'",
+    "application: label='Loop' icon='res/mipmap-mdpi-v4/ic_launcher.png'",
+    "application-debuggable",
+    "native-code: 'arm64-v8a' 'armeabi-v7a' 'x86_64'"
+  ],
+  "review": {
+    "generatedPackageNoticesPresent": [
+      "flutter_riverpod",
+      "go_router",
+      "path_provider"
+    ],
+    "iconLicenseSupplementBundled": true,
+    "iconLicenseSupplementSha256": "be698262aecd042c0de6f886cc0af622f8def446462026992cc530275d8a9e74",
+    "previewAssetsAbsent": true
+  },
+  "limits": "No Android runtime target. No production signing or store availability claim."
+}

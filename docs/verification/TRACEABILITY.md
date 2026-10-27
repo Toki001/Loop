@@ -1,6 +1,6 @@
-# Requirement traceability — M01 reviewed contract
+# Requirement traceability — M03 foundation
 
-This maps the existing contract to planned verification. **Functional app-story acceptance remains NOT IMPLEMENTED / NOT RUN; M02 design/component tests are verified separately.** M00 established coverage; M01 reviewed [workflows](../WORKFLOWS.md), [metric/templates](../SKILL_TEMPLATES.md) and [pending research](../RESEARCH.md). M02 supplies the [23-screen/state contract](../SCREEN_DESIGN.md), native primitives, contrast/accessibility design regressions and [225 hashed references](design/ARTIFACTS.json); this does not close US-16/A14's physical-runtime gate. [PRODUCT.md](../PRODUCT.md), [ACCEPTANCE_SCENARIOS.md](../ACCEPTANCE_SCENARIOS.md), [DATA_AND_METRICS.md](../DATA_AND_METRICS.md), [QUALITY.md](../QUALITY.md) and [SECURITY_PRIVACY.md](../SECURITY_PRIVACY.md) remain authoritative.
+This maps the contract to planned verification. **Complete skill/session stories remain NOT IMPLEMENTED / NOT RUN; foundation and design tests are verified separately.** M03 supplies real native onboarding, persisted appearance/recovery and retained navigation: 42 application tests and one iOS simulator integration pass; it does not close the complete A01 practice loop or any launch-wide story. M00 established coverage; M01 reviewed [workflows](../WORKFLOWS.md), [metric/templates](../SKILL_TEMPLATES.md) and [pending research](../RESEARCH.md). M02 supplies the [23-screen/state contract](../SCREEN_DESIGN.md), native primitives, contrast/accessibility design regressions and [225 hashed references](design/ARTIFACTS.json); its 233 frozen design tests still pass. Physical US-16/A14 remains open. [PRODUCT.md](../PRODUCT.md), [ACCEPTANCE_SCENARIOS.md](../ACCEPTANCE_SCENARIOS.md), [DATA_AND_METRICS.md](../DATA_AND_METRICS.md), [QUALITY.md](../QUALITY.md) and [SECURITY_PRIVACY.md](../SECURITY_PRIVACY.md) remain authoritative.
 
 Screen numbers refer to PRODUCT §6. U = unit, R = real SQLite repository/integrity, W = widget/semantics, G = golden, E = native integration, H = physical/manual. All v1 rows are launch gates, including tests deferred to M13/M14. No story is satisfied by screenshot evidence alone.
 
@@ -68,8 +68,8 @@ Decision inventory from [DECISIONS.md](../DECISIONS.md); M00 does not invent own
 | Decision | Current state / safe handling | Owner / next gate |
 |---|---|---|
 | D-01 | Research pending; general hobbyists/English/international remain assumptions | Product owner, M01 |
-| D-02 | Engineering baseline: Android API 24+, iOS 15+; operational validation pending, see [environment](ENVIRONMENT.md) | Engineering at M03; confirm audience/device coverage in M01, recheck packages and policy at M14 |
-| D-03 | Owner resolved: Android/iOS `com.jameskierdoliguez.loop`, display name Loop; immutable without approval; store availability not yet verified | Implement in M03; availability/identity review M14 before production publication |
+| D-02 | Native Android debug compiles with API 24 minimum/36 target; iOS deployment 15 compiles/runs on iOS 27 simulator; older-OS/physical coverage remains pending | M03 evidence; confirm real device coverage/current package/store policy at M14 |
+| D-03 | Owner resolved and native builds verified: Android/iOS `com.jameskierdoliguez.loop`, display name Loop; immutable without approval; store availability unverified | M03 implemented; availability/identity review M14 before production publication |
 | D-04 | Loop is a working name; no trademark/asset conflict clearance claimed | Owner, M01/M14 |
 | D-05 | OS-private storage baseline; app encryption spike and threat tolerance unresolved | Owner + engineering, M04/M13 |
 | D-06 | Archive encryption unresolved; plain warning is a proposal pending owner privacy sign-off | Owner before M12 enablement |
@@ -79,3 +79,5 @@ Decision inventory from [DECISIONS.md](../DECISIONS.md); M00 does not invent own
 | D-10 | Android beta then iOS beta proposed; public both only after validation | Owner, M14/M15 |
 
 M01 [ADR-011](../adr/ADR-011-product-interpretations.md) preserves the strict ≤30s Start target, separately reports the ≤60s first-use threshold and ≤60s Finish-to-saved, and excludes practice duration from time-to-start. PRODUCT's archive wording now matches ARCHITECTURE: encryption must be accurate/vetted; plaintext needs explicit owner privacy sign-off before enablement. Actual timing/research and M12 export security/privacy acceptance remain pending. No launch gate is dropped.
+
+M03 partial evidence for US-01/X-01/X-04/X-05/X-08/X-12 is in [M03](M03.md), [local CI exits](evidence/M03/ci.json), [resolved dependency/license graph](evidence/M03/dependencies.json), native artifact metadata and the application tests. Onboarding/no-login, theme durability/recovery, guarded missing routes, tab restoration/back, 200% compact layouts and preview isolation are exercised. No skill creation, active timer, media or export is claimed. Remote CI and physical checks remain distinct; Graphify was unavailable/unindexed, so the actual package graph and reviewed source imports provide the current impact boundary.

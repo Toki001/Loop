@@ -1,0 +1,62 @@
+{
+  "artifact": "build/ios/iphonesimulator/Runner.app",
+  "kind": "product main, simulator debug, not signed production release",
+  "metadata": {
+    "CFBundleIdentifier": "com.jameskierdoliguez.loop",
+    "CFBundleDisplayName": "Loop",
+    "CFBundleName": "Loop",
+    "CFBundleShortVersionString": "0.1.0",
+    "CFBundleVersion": "1",
+    "MinimumOSVersion": "15.0",
+    "CFBundleSupportedPlatforms": [
+      "iPhoneSimulator"
+    ]
+  },
+  "files": {
+    "Runner": {
+      "sha256": "3721cc3f7a85342a2a6cc28ea030e68f44a098a6a960aabe8a103315e111793a",
+      "bytes": 72984
+    },
+    "Info.plist": {
+      "sha256": "42aa71c6facf6ff1ddeba5ee3eb59d8071799624c34ff88de8cf5de430a91720",
+      "bytes": 1985
+    },
+    "Frameworks/App.framework/flutter_assets/assets/licenses/MaterialIcons_LICENSE.txt": {
+      "sha256": "be698262aecd042c0de6f886cc0af622f8def446462026992cc530275d8a9e74",
+      "bytes": 18531
+    },
+    "Frameworks/Flutter.framework/PrivacyInfo.xcprivacy": {
+      "sha256": "9f95d7e7862a4b56b66ed926bd6d622d2a6545a827d19847278b438d571d4212",
+      "bytes": 845
+    },
+    "Frameworks/App.framework/App": {
+      "sha256": "1c7fe95eee31dd6cf9fba177a05fbd065207bb0be91f23548b334b2eca3036eb",
+      "bytes": 83952
+    },
+    "Frameworks/App.framework/flutter_assets/kernel_blob.bin": {
+      "sha256": "0e857d76701e21ddd768f264b14268376ac43c8e98402fecb9b0d2a9360d39e7",
+      "bytes": 88097456
+    }
+  },
+  "enginePrivacyManifest": {
+    "NSPrivacyTracking": false,
+    "NSPrivacyTrackingDomains": [],
+    "NSPrivacyCollectedDataTypes": [],
+    "NSPrivacyAccessedAPITypes": [
+      {
+        "NSPrivacyAccessedAPIType": "NSPrivacyAccessedAPICategoryFileTimestamp",
+        "NSPrivacyAccessedAPITypeReasons": [
+          "0A2A.1",
+          "C617.1"
+        ]
+      },
+      {
+        "NSPrivacyAccessedAPIType": "NSPrivacyAccessedAPICategorySystemBootTime",
+        "NSPrivacyAccessedAPITypeReasons": [
+          "35F9.1"
+        ]
+      }
+    ]
+  },
+  "limits": "Simulator build; no physical iPhone, release signing, store availability or publication."
+}

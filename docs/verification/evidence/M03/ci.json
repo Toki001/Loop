@@ -1,0 +1,182 @@
+{
+  "results": [
+    {
+      "command": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "tool/check_foundation.py"
+      ],
+      "cwd": ".",
+      "exit": 0,
+      "seconds": 0.226
+    },
+    {
+      "command": [
+        "flutter",
+        "--suppress-analytics",
+        "pub",
+        "get",
+        "--enforce-lockfile"
+      ],
+      "cwd": ".",
+      "exit": 0,
+      "seconds": 0.739
+    },
+    {
+      "command": [
+        "flutter",
+        "--suppress-analytics",
+        "pub",
+        "get",
+        "--enforce-lockfile"
+      ],
+      "cwd": "design_preview",
+      "exit": 0,
+      "seconds": 0.257
+    },
+    {
+      "command": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "tool/dependency_inventory.py"
+      ],
+      "cwd": ".",
+      "exit": 0,
+      "seconds": 0.305
+    },
+    {
+      "command": [
+        "dart",
+        "--suppress-analytics",
+        "format",
+        "--output=none",
+        "--set-exit-if-changed",
+        "lib",
+        "test",
+        "integration_test",
+        "tool",
+        "design_preview/lib",
+        "design_preview/test"
+      ],
+      "cwd": ".",
+      "exit": 0,
+      "seconds": 0.138
+    },
+    {
+      "command": [
+        "flutter",
+        "--suppress-analytics",
+        "analyze"
+      ],
+      "cwd": ".",
+      "exit": 0,
+      "seconds": 6.394
+    },
+    {
+      "command": [
+        "flutter",
+        "--suppress-analytics",
+        "analyze"
+      ],
+      "cwd": "design_preview",
+      "exit": 0,
+      "seconds": 1.885
+    },
+    {
+      "command": [
+        "flutter",
+        "--suppress-analytics",
+        "test",
+        "--reporter",
+        "expanded"
+      ],
+      "cwd": ".",
+      "exit": 0,
+      "seconds": 6.279
+    },
+    {
+      "command": [
+        "flutter",
+        "--suppress-analytics",
+        "test",
+        "--reporter",
+        "expanded"
+      ],
+      "cwd": "design_preview",
+      "exit": 0,
+      "seconds": 10.502
+    },
+    {
+      "command": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "tool/check_baseline.py"
+      ],
+      "cwd": ".",
+      "exit": 0,
+      "seconds": 0.149
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "cwd": ".",
+      "exit": 0,
+      "seconds": 0.133
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--cached",
+        "--check"
+      ],
+      "cwd": ".",
+      "exit": 0,
+      "seconds": 0.007
+    },
+    {
+      "command": [
+        "flutter",
+        "--suppress-analytics",
+        "build",
+        "apk",
+        "--debug",
+        "--no-pub"
+      ],
+      "cwd": ".",
+      "exit": 0,
+      "seconds": 9.662
+    },
+    {
+      "command": [
+        "flutter",
+        "--suppress-analytics",
+        "build",
+        "ios",
+        "--simulator",
+        "--debug",
+        "--no-codesign",
+        "--no-pub"
+      ],
+      "cwd": ".",
+      "exit": 0,
+      "seconds": 30.293
+    },
+    {
+      "command": [
+        "flutter",
+        "--suppress-analytics",
+        "test",
+        "integration_test/foundation_test.dart",
+        "-d",
+        "F39EEA3D-9939-4689-8958-6CDDBB36EF01",
+        "--no-pub",
+        "--reporter",
+        "expanded"
+      ],
+      "cwd": ".",
+      "exit": 0,
+      "seconds": 36.804
+    }
+  ]
+}

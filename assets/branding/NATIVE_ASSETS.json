@@ -1,0 +1,123 @@
+{
+  "provenance": "original-loop-vector-raster",
+  "source": "assets/branding/loop-mark.svg",
+  "renderer": "tool/render_icons_test.dart",
+  "status": "engineering artwork; brand/legal review pending M14",
+  "artifacts": {
+    "android/app/src/main/res/mipmap-hdpi/ic_launcher.png": {
+      "sha256": "cc1ca137d0126337a604e7cd87cc2c0b078874309179f218e4edc78665ea3ea6",
+      "bytes": 1604,
+      "provenance": "original-loop-vector-raster"
+    },
+    "android/app/src/main/res/mipmap-mdpi/ic_launcher.png": {
+      "sha256": "d82dc1d5aa691b319468f4dc86625cd2b403e6fa98e182c7fe9bdafd977ff6a0",
+      "bytes": 1122,
+      "provenance": "original-loop-vector-raster"
+    },
+    "android/app/src/main/res/mipmap-xhdpi/ic_launcher.png": {
+      "sha256": "a8713b3f87397f889e59bbe6b0332522d8d0d1d8b74788d1c7eab6108ed3aafe",
+      "bytes": 2176,
+      "provenance": "original-loop-vector-raster"
+    },
+    "android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png": {
+      "sha256": "32892f737f812f2777b17b6fc4760245f04c6dbd668685bffb51481195890998",
+      "bytes": 3245,
+      "provenance": "original-loop-vector-raster"
+    },
+    "android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png": {
+      "sha256": "85b5efb6857727ffed458bb3595676bb8b3d2f7860424f7b48cdef911b791fd7",
+      "bytes": 4344,
+      "provenance": "original-loop-vector-raster"
+    },
+    "ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-1024x1024@1x.png": {
+      "sha256": "aa3dee2c490959db7427af727d9238b0fdc236f3f97ce5923e9538e858293041",
+      "bytes": 27808,
+      "provenance": "original-loop-vector-raster"
+    },
+    "ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@1x.png": {
+      "sha256": "34ae1ad15ff7b995fb085b2a283bc23e6b5ebc657ad9b19d92d1f59f2697f473",
+      "bytes": 500,
+      "provenance": "original-loop-vector-raster"
+    },
+    "ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@2x.png": {
+      "sha256": "b3ee011d5cea11398febe8d6713ce7c9e21d5364732e02de24c9815a78ebe8cb",
+      "bytes": 939,
+      "provenance": "original-loop-vector-raster"
+    },
+    "ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@3x.png": {
+      "sha256": "0a69e44fb9c0cf5ea6866ed2e3d833e145e17b3836f1f48615d08f6bb9acee08",
+      "bytes": 1316,
+      "provenance": "original-loop-vector-raster"
+    },
+    "ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@1x.png": {
+      "sha256": "a43775dc410b49b6b7b5f7498f626ab54a4e21bd7521eaeba8ca70bfdac95f87",
+      "bytes": 718,
+      "provenance": "original-loop-vector-raster"
+    },
+    "ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@2x.png": {
+      "sha256": "b22b6eccf325f31d8993f78ed2b163ce4ffbaa573d2b53bbd238202f20066f19",
+      "bytes": 1314,
+      "provenance": "original-loop-vector-raster"
+    },
+    "ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@3x.png": {
+      "sha256": "bf6210e2653c35436d9be6b906bad5abbc1222c20c91fd226a44d5da7a2f7580",
+      "bytes": 1970,
+      "provenance": "original-loop-vector-raster"
+    },
+    "ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@1x.png": {
+      "sha256": "b3ee011d5cea11398febe8d6713ce7c9e21d5364732e02de24c9815a78ebe8cb",
+      "bytes": 939,
+      "provenance": "original-loop-vector-raster"
+    },
+    "ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@2x.png": {
+      "sha256": "f6fe18cb13019d98e39576596354bfb9946dad550b0f57c7e580c6082b7da9c5",
+      "bytes": 1805,
+      "provenance": "original-loop-vector-raster"
+    },
+    "ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@3x.png": {
+      "sha256": "93e2bf9dc399f8f640e8ad71e110465a26e500e9443e2c9627d070566d6cef3f",
+      "bytes": 2664,
+      "provenance": "original-loop-vector-raster"
+    },
+    "ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-60x60@2x.png": {
+      "sha256": "93e2bf9dc399f8f640e8ad71e110465a26e500e9443e2c9627d070566d6cef3f",
+      "bytes": 2664,
+      "provenance": "original-loop-vector-raster"
+    },
+    "ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-60x60@3x.png": {
+      "sha256": "4403c483eed328a7d4fe0ea2ea10b001828c3c2643b625d5387ffa455b17fff1",
+      "bytes": 4101,
+      "provenance": "original-loop-vector-raster"
+    },
+    "ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-76x76@1x.png": {
+      "sha256": "1e1a89a487802e1175a991a77094a52d80f6ae273bd9e3d40945180fca6403d1",
+      "bytes": 1687,
+      "provenance": "original-loop-vector-raster"
+    },
+    "ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-76x76@2x.png": {
+      "sha256": "7cd2321fb2340525f0038eb69d0dc4b5b224dc5c813e3fc75838a2cb97f812e9",
+      "bytes": 3479,
+      "provenance": "original-loop-vector-raster"
+    },
+    "ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-83.5x83.5@2x.png": {
+      "sha256": "fec85a2487d2dac08e5f725e1fa3dcb564657ebed3a8e434c6f912dc3db01059",
+      "bytes": 3766,
+      "provenance": "original-loop-vector-raster"
+    },
+    "ios/Runner/Assets.xcassets/LaunchImage.imageset/LaunchImage.png": {
+      "sha256": "a8713b3f87397f889e59bbe6b0332522d8d0d1d8b74788d1c7eab6108ed3aafe",
+      "bytes": 2176,
+      "provenance": "original-loop-vector-raster"
+    },
+    "ios/Runner/Assets.xcassets/LaunchImage.imageset/LaunchImage@2x.png": {
+      "sha256": "85b5efb6857727ffed458bb3595676bb8b3d2f7860424f7b48cdef911b791fd7",
+      "bytes": 4344,
+      "provenance": "original-loop-vector-raster"
+    },
+    "ios/Runner/Assets.xcassets/LaunchImage.imageset/LaunchImage@3x.png": {
+      "sha256": "2e568d67aa684f3711572425d450813ee1d300c98522a290d0bfdc12fef4e5f4",
+      "bytes": 6687,
+      "provenance": "original-loop-vector-raster"
+    }
+  }
+}

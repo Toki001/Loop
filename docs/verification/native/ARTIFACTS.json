@@ -1,0 +1,19 @@
+{
+  "reviewContext": "Actual product main on isolated LoopM03Verification iPhone 17/iOS 27.0 simulator. Empty foundation, no personal/practice data. Visually inspected; not device/real-practice or production-release evidence.",
+  "artifacts": {
+    "docs/verification/native/M03/welcome-first-launch.png": {
+      "sha256": "6f228e5929e22616cebbd25edaf6e58c5710d881a21a03470093def654b57fe4",
+      "bytes": 209704,
+      "provenance": "native-simulator-empty-shell",
+      "reviewedNoPersonalData": true,
+      "scene": "fresh product install, no preferences, welcome actions reachable"
+    },
+    "docs/verification/native/M03/today-dark-after-process-relaunch.png": {
+      "sha256": "65d449f839a9c5e3355606df10d8245f60b16207886953bdd87a265d8f55f7f8",
+      "bytes": 247892,
+      "provenance": "native-simulator-empty-shell",
+      "reviewedNoPersonalData": true,
+      "scene": "product main in a new process, actual UI-saved Dark/onboarding retained, honest empty Today and debug capability notice"
+    }
+  }
+}

@@ -4,6 +4,8 @@
 
 `dev` debug for engineers with deterministic fixtures; `beta` release-mode with no fake data on fresh installs and authorized tester distribution; `production` signed retail build. Flavor/config selection must not introduce a hidden demo mode into retail. Version via semantic product release (`1.0.0`) plus monotonically increasing platform build numbers, managed in CI/release script. No server infrastructure in v1; no need to deploy cloud functions or create user accounts.
 
+Established owner-approved identity: **Loop**, Android application ID and iOS Bundle Identifier **`com.jameskierdoliguez.loop`** in every app configuration. Initial engineering version is `0.1.0+1`; do not treat that debug shell as a release candidate. Never change the identifiers without approval. Verify their availability/ownership in both stores before production publication; no availability check, signing account or store connection has occurred. See [native foundation](NATIVE_FOUNDATION.md) for checked metadata/runtime pins and [M03](verification/M03.md) for actual debug/simulator builds. Deterministic design fixtures live in the separate preview/test harness; product debug startup also begins empty.
+
 ## 2. Pre-production readiness checklist
 
 - Brand uniqueness/trademark/availability review for **Loop** (name is generic; do not assert exclusivity) including Apple/Play listing conflicts, domain and icon similarity.

@@ -21,7 +21,7 @@ Each MXX requires (1) preconditions from earlier gates, (2) scoped plan and impl
 | M00 | Discovery and repository baseline | tool matrix, git baseline, traceability | [PASS](verification/M00.md) |
 | M01 | Product validation and scope lock | validated workflows, product decisions | [PASS](verification/M01.md) |
 | M02 | Brand, UX and design system | token set, reviewable native mock screens, goldens | [PASS](verification/M02.md) |
-| M03 | Flutter app foundation | working shell, routing, localization, CI | PENDING |
+| M03 | Flutter app foundation | working shell, routing, localization, CI | [PASS — local foundation](verification/M03.md) |
 | M04 | Durable storage and security | drift schema, migrations, media/file boundary | PENDING |
 | M05 | Skill, goal and exercise management | complete CRUD flows | PENDING |
 | M06 | Session state machine and timer | reliable lifecycle and resume logic | PENDING |

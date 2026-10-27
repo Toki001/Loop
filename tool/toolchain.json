@@ -1,0 +1,15 @@
+{
+  "flutter": "3.47.5",
+  "channel": "stable",
+  "frameworkRevision": "6a19cca56475dbfba1478ee68d7bd0c2ef891da1",
+  "dart": "3.13.4",
+  "androidCompileSdk": 36,
+  "androidTargetSdk": 36,
+  "androidMinSdk": 24,
+  "iosDeploymentTarget": "15.0",
+  "gradle": "9.3.1",
+  "androidGradlePlugin": "9.1.0",
+  "kotlinPlugin": "2.4.0",
+  "javaBytecodeTarget": 17,
+  "jdkRunCompatibility": "Gradle 9.3.1 supports JDK 21 and 25; local Flutter selects Android Studio JDK 25.0.3. Record actual build toolchain per artifact."
+}

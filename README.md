@@ -1,8 +1,8 @@
-# Loop — Production Development Kit
+# Loop
 
-**Loop** is a local-first mobile practice companion for deliberate improvement across hobbies and skills. This repository contains the product/engineering contract and a verified native design system/preview harness. It is **not a completed Flutter app**; M03–M15 product implementation and release gates remain.
+**Loop** is a local-first mobile practice companion for deliberate improvement across hobbies and skills. This repository contains the product contract, native design system and bootable Android/iOS foundation with saved appearance, onboarding and navigation. It is **not a completed practice journal**; M04–M15 functional and release gates remain.
 
-Current evidence: [verification ledger](docs/verification/INDEX.md), [native design preview](design_preview/README.md), [screen/state design contract](docs/SCREEN_DESIGN.md), and [continuous execution checkpoint](docs/verification/CONTINUATION.md). Design fixtures never become production data.
+Current evidence: [verification ledger](docs/verification/INDEX.md), [native boot/identity/verification](docs/NATIVE_FOUNDATION.md), [native design preview](design_preview/README.md), [screen/state design contract](docs/SCREEN_DESIGN.md), and [continuous execution checkpoint](docs/verification/CONTINUATION.md). Design fixtures never become production data.
 
 **North-star statement:** *Practice with intention. See your progress.*
 
@@ -10,9 +10,11 @@ Current evidence: [verification ledger](docs/verification/INDEX.md), [native des
 
 1. Read `AGENTS.md` (auto-discovered by many coding agents), `AGENT.md`, and `CODEX.md`.
 2. Read `docs/PRODUCT.md`, `docs/DESIGN.md`, `docs/ARCHITECTURE.md`, and `docs/MILESTONES.md` before making changes.
-3. Start Codex at an empty `loop/` repository using `prompts/START_CODEX.md` (copy/paste). Codex must inspect local tools, discover skills, and create the initial files for Milestone 00, **not pretend it has built the whole app**.
+3. Inspect Git state and `docs/verification/CONTINUATION.md` to resume the first incomplete milestone. `prompts/START_CODEX.md` is the original empty-repository discovery prompt; do not restart completed M00 work or overwrite this application.
 4. Continuous execution is authorized for M01–M15: complete each milestone's quality gate, create and verify its local Git commit, then immediately proceed to the next incomplete milestone without another prompt. Read the durable checkpoint in `docs/verification/CONTINUATION.md` when resuming.
 5. Keep decision, evidence and blocker logs in `docs/verification/` in the application repository.
+
+With the pinned preinstalled toolchain, use `flutter pub get --enforce-lockfile`, then `flutter run -d DEDICATED_DEVICE_ID` for the foundation. Run `python3 tool/ci.py --android --ios` on the provisioned Mac for core/design/native checks; the explicit dedicated-device option is documented in the native foundation guide. Remote CI, physical testing, release signing and publication are separate gates.
 
 ## Files and authorities
 

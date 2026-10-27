@@ -30,6 +30,8 @@ def main():
     links = 0
     scanned = 0
     golden_count = 0
+    native_count = 0
+    simulator_count = 0
     manifest_path = ROOT / "docs/verification/design/ARTIFACTS.json"
     try:
         golden_manifest = (
@@ -48,6 +50,38 @@ def main():
                 or not (ROOT / name).resolve().is_relative_to(golden_root)
                 or not (ROOT / name).is_file()):
             failures.append("invalid/missing path in design artifact manifest")
+    native_path = ROOT / "assets/branding/NATIVE_ASSETS.json"
+    try:
+        native_manifest = json.loads(native_path.read_text()).get("artifacts", {}) if native_path.exists() else {}
+    except (OSError, ValueError, AttributeError):
+        print("FAIL: invalid original native asset manifest")
+        return 1
+    if not isinstance(native_manifest, dict):
+        print("FAIL: native asset manifest must map exact paths to provenance")
+        return 1
+    native_pattern = re.compile(
+        r"(?:android/app/src/main/res/mipmap-(?:mdpi|hdpi|xhdpi|xxhdpi|xxxhdpi)/ic_launcher\.png"
+        r"|ios/Runner/Assets\.xcassets/(?:AppIcon\.appiconset/Icon-App-[\d.x@]+\.png"
+        r"|LaunchImage\.imageset/LaunchImage(?:@[23]x)?\.png))"
+    )
+    for name in native_manifest:
+        resolved = (ROOT / name).resolve()
+        if not native_pattern.fullmatch(name) or not resolved.is_relative_to(ROOT) or not resolved.is_file():
+            failures.append("invalid/missing native artwork manifest path")
+    simulator_path = ROOT / "docs/verification/native/ARTIFACTS.json"
+    try:
+        simulator_manifest = json.loads(simulator_path.read_text()).get("artifacts", {}) if simulator_path.exists() else {}
+    except (OSError, ValueError, AttributeError):
+        print("FAIL: invalid native simulator screenshot manifest")
+        return 1
+    if not isinstance(simulator_manifest, dict):
+        print("FAIL: simulator screenshot manifest must map exact reviewed paths")
+        return 1
+    simulator_pattern = re.compile(r"docs/verification/native/M(?:0\d|1[0-5])/[a-z0-9-]+\.png")
+    for name in simulator_manifest:
+        resolved = (ROOT / name).resolve()
+        if not simulator_pattern.fullmatch(name) or not resolved.is_relative_to(ROOT) or not resolved.is_file():
+            failures.append("invalid/missing simulator screenshot manifest path")
     patterns = {
         "private key": re.compile(r"-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----"),
         "GitHub token": re.compile(r"\b(?:gh[pousr]_[A-Za-z0-9]{36,}|github_pat_[A-Za-z0-9_]{60,})\b"),
@@ -62,6 +96,27 @@ def main():
         if not path.is_file():
             continue
         raw = path.read_bytes()
+        if path.suffix == ".png" and simulator_pattern.fullmatch(name):
+            entry = simulator_manifest.get(name, {})
+            if (isinstance(entry, dict)
+                    and entry.get("provenance") == "native-simulator-empty-shell"
+                    and entry.get("reviewedNoPersonalData") is True
+                    and entry.get("sha256") == hashlib.sha256(raw).hexdigest()
+                    and raw.startswith(b"\x89PNG\r\n\x1a\n") and len(raw) <= 10 * 1024 * 1024):
+                simulator_count += 1
+            else:
+                failures.append(f"{name}: unreviewed/changed simulator screenshot")
+            continue
+        if path.suffix == ".png" and native_pattern.fullmatch(name):
+            entry = native_manifest.get(name, {})
+            if (isinstance(entry, dict)
+                    and entry.get("provenance") == "original-loop-vector-raster"
+                    and entry.get("sha256") == hashlib.sha256(raw).hexdigest()
+                    and raw.startswith(b"\x89PNG\r\n\x1a\n") and len(raw) <= 1024 * 1024):
+                native_count += 1
+            else:
+                failures.append(f"{name}: unreviewed/changed native artwork")
+            continue
         if path.suffix == ".png" and name.startswith("docs/verification/design/goldens/"):
             entry = golden_manifest.get(name, {})
             if not isinstance(entry, dict):
@@ -157,6 +212,10 @@ def main():
     print(f"PASS: limited secret/home-path scan of {scanned} UTF-8 files; no findings")
     if golden_count:
         print(f"PASS: {golden_count} synthetic native golden PNGs match reviewed provenance hashes")
+    if native_count:
+        print(f"PASS: {native_count} original native icon/launch PNGs match provenance hashes")
+    if simulator_count:
+        print(f"PASS: {simulator_count} reviewed empty-shell simulator PNGs match provenance hashes")
     print("Scope: local file links only (not anchors/remote URLs); no dependency or app tests")
     return 0
 

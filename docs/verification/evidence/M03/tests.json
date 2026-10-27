@@ -1,0 +1,33 @@
+{
+  "date": "2026-10-27",
+  "rootTests": {
+    "pass": 42,
+    "fail": 0,
+    "skip": 0
+  },
+  "designTests": {
+    "pass": 233,
+    "fail": 0,
+    "skip": 0,
+    "frozenGoldenComparisons": 225,
+    "contrastPairs": 22
+  },
+  "nativeIntegration": {
+    "pass": 1,
+    "fail": 0,
+    "skip": 0,
+    "additionalRetentionRerunPass": 1
+  },
+  "ciSelectedStages": 15,
+  "ciExit": 0,
+  "iconRenderer": {
+    "explicitTaskPass": 1,
+    "nativePngs": 23,
+    "ordinaryCiDoesNotRegenerateAssets": true
+  },
+  "nativeArtworkMutationNegativeProbe": "rejected; original restored",
+  "unmanifestedSimulatorPngNegativeProbe": "rejected; owned probe removed",
+  "m00History": "unchanged (verified separately before commit)",
+  "physicalDevices": 0,
+  "remoteCi": "not run; no approved remote/runner"
+}

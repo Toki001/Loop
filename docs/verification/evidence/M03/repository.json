@@ -1,0 +1,48 @@
+{
+  "results": [
+    {
+      "command": [
+        "python3",
+        "tool/check_baseline.py"
+      ],
+      "exit": 0,
+      "stdout": "PASS: 48 Markdown files; 158 local file links resolved\nPASS: 18 stories, 18 scenarios, 10 decisions, 12 cross-cutting rows\nPASS: 22 ignored + 8 trackable path probes\nPASS: limited secret/home-path scan of 149 UTF-8 files; no findings\nPASS: 225 synthetic native golden PNGs match reviewed provenance hashes\nPASS: 23 original native icon/launch PNGs match provenance hashes\nPASS: 2 reviewed empty-shell simulator PNGs match provenance hashes\nScope: local file links only (not anchors/remote URLs); no dependency or app tests\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--cached",
+        "--check"
+      ],
+      "exit": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--exit-code",
+        "fa316ff",
+        "--",
+        "docs/verification/M00.md",
+        "docs/verification/evidence/M00"
+      ],
+      "exit": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ]
+}
