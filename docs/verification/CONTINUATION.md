@@ -2,9 +2,9 @@
 
 **Mode:** continuous autonomous M01–M15 execution, authorized by the owner. No new prompt is needed after a verified milestone commit. Read AGENTS, AGENT, CODEX and the current milestone contract; preserve approval boundaries and quality gates.
 
-**Completed:** M00 PASS `fa316ff`; continuous-policy commit `af667df`; M01 workflow/scope review passes its static checks (milestone commit follows on current branch; its actual hash is recorded in PROGRESS after commit). Historical M00 verification is unchanged. No application exists yet; empirical research remains explicitly pending.
+**Completed:** M00 PASS `fa316ff`; continuous-policy commit `af667df`; M01 PASS `9b90ca94372e7e8f7926a63d3de3243ab5da1195` on `milestone/01-product-contract`. The milestone commit succeeded and its working tree was clean before this checkpoint. Historical M00 verification is unchanged. No application exists yet; empirical research remains explicitly pending.
 
-**Current branch:** `milestone/01-product-contract`. **Next action:** commit verified M01 as `milestone-01: product workflows and scope contract`, record its actual hash in a documentation checkpoint commit, confirm clean worktree, then immediately create `milestone/02-design-system` and execute M02.
+**Current branch:** `milestone/01-product-contract`. **Next action:** commit this verified-SHA checkpoint, confirm clean worktree, then immediately create `milestone/02-design-system` and execute M02.
 
 **Test status:** M01 documentation checker passes (37 Markdown files, 89 local links at capture), 18 stories/18 scenarios/10 decisions/12 cross-cutting rows, 30 ignore probes, limited text hygiene, static eight-flow/18-story/eight-skill coverage. Git diff checks pass; M00 historical files unchanged. No application tests, builds, snapshots or real interviews have occurred. Commands/results are in `docs/verification/evidence/M01/checks.json`.
 
