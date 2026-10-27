@@ -1,0 +1,49 @@
+# Loop — Production Development Kit
+
+**Loop** is a local-first mobile practice companion for deliberate improvement across hobbies and skills. This kit is the executable source of truth for Codex, designers, engineers, QA, and release owners. It is **planning/documentation**, not a completed Flutter app.
+
+**North-star statement:** *Practice with intention. See your progress.*
+
+## Read and run
+
+1. Read `AGENTS.md` (auto-discovered by many coding agents), `AGENT.md`, and `CODEX.md`.
+2. Read `docs/PRODUCT.md`, `docs/DESIGN.md`, `docs/ARCHITECTURE.md`, and `docs/MILESTONES.md` before making changes.
+3. Start Codex at an empty `loop/` repository using `prompts/START_CODEX.md` (copy/paste). Codex must inspect local tools, discover skills, and create the initial files for Milestone 00, **not pretend it has built the whole app**.
+4. After each milestone, run `prompts/NEXT_MILESTONE.md` with the applicable milestone ID; complete the quality gate and create a Git commit.
+5. Keep decision, evidence and blocker logs in `docs/verification/` in the application repository.
+
+## Files and authorities
+
+| File | Contract |
+|---|---|
+| `CODEX.md` | Master mission, workflow, phases, done definition |
+| `AGENT.md` | Universal agent execution, coding and collaboration rules |
+| `AGENTS.md` | Codex/agent discovery entrypoint |
+| `docs/PRODUCT.md` | PRD, user journeys, scope, acceptance |
+| `docs/DESIGN.md` | Design tokens, components, screen architecture, states, motion |
+| `docs/ARCHITECTURE.md` | Stack, layers, repo layout, persistence, platform behavior |
+| `docs/DATA_AND_METRICS.md` | Schema, calculations, comparisons, data integrity |
+| `docs/SECURITY_PRIVACY.md` | Threat model, device storage, media, policy |
+| `docs/QUALITY.md` | Testing matrix, performance, accessibility, release gates |
+| `docs/RELEASE.md` | CI/CD, signing, stores, operations, staged rollout |
+| `docs/MILESTONES.md` | Step-by-step milestone ledger, tasks and exit criteria |
+| `docs/TOOLS_AND_SKILLS.md` | Skill/plugin discovery and Flutter-vs-web applicability |
+| `docs/DECISIONS.md` | ADRs and unresolved product/business decisions |
+| `docs/ANALYTICS.md` | Privacy-friendly product learning and success measures |
+| `prompts/START_CODEX.md` | First Codex execution prompt |
+| `prompts/DESIGN_PHASE.md` | Focused visual direction prompt |
+| `prompts/NEXT_MILESTONE.md` | Repeatable controlled milestone prompt |
+
+## Scope policy
+
+* **Public v1:** Offline-first iOS/Android Flutter product, optional notifications, sessions, goals, evidence media, comparisons, progress and **portable export/restore**. No sign-in, cloud sync, social feeds or generative AI required.
+* **Candidate v1.1+:** guided programs, advanced insights, optional paid tier, verified cloud sync, rich instrument-specific tools. Require separate architecture / business approval.
+* A public release must have no placeholder buttons, simulated persistence, fake statistics, dangling navigation, insecure media or unfinished paywalls.
+
+## Origin and design inspiration
+
+Use the previously supplied **PesoFlow** design principles as inspiration only: quiet visual rhythm, spacious white cards, intentional blue accents, simple navigation, legible charts, careful states. Do not copy its financial information architecture or assets. If actual screenshots/source are not mounted, do **not** claim to have inspected them; treat this document as the authoritative Loop-specific design contract.
+
+## Core principle
+
+A timer is not progress. Progress exists when a practice session captures **what was attempted, what was observed and what changed**. Avoid shame, guilt and streak pressure. Prefer explicit evidence and user-entered measures to invented automated skill scoring.

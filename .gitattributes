@@ -1,0 +1,15 @@
+* text=auto
+# Markdown uses intentional two-space hard breaks, checked by check_baseline.py.
+*.md text eol=lf whitespace=-blank-at-eol
+*.py text eol=lf
+*.dart text eol=lf
+*.yaml text eol=lf
+*.yml text eol=lf
+*.json text eol=lf
+*.arb text eol=lf
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.webp binary
+*.wav binary
+*.m4a binary

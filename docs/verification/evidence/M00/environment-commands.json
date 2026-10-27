@@ -1,0 +1,180 @@
+[
+  {
+    "command": [
+      "git",
+      "status",
+      "--short",
+      "--branch"
+    ],
+    "started_at": "2026-10-27T15:46:43+08:00",
+    "exit_code": 0,
+    "stdout": "## No commits yet on milestone/00-baseline\n?? AGENT.md\n?? AGENTS.md\n?? CODEX.md\n?? README.md\n?? docs/\n?? prompts/\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "sw_vers"
+    ],
+    "started_at": "2026-10-27T15:46:43+08:00",
+    "exit_code": 0,
+    "stdout": "ProductName:\t\tmacOS\nProductVersion:\t\t26.6.2\nBuildVersion:\t\t25G83\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "uname",
+      "-m"
+    ],
+    "started_at": "2026-10-27T15:46:43+08:00",
+    "exit_code": 0,
+    "stdout": "arm64\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "flutter",
+      "--suppress-analytics",
+      "--version"
+    ],
+    "started_at": "2026-10-27T15:46:43+08:00",
+    "exit_code": 1,
+    "stdout": "",
+    "stderr": "$FLUTTER_SDK/bin/internal/update_engine_version.sh: line 71: $FLUTTER_SDK/bin/cache/engine.stamp.tmp.72567: Operation not permitted\n$FLUTTER_SDK/bin/internal/update_engine_version.sh: line 78: $FLUTTER_SDK/bin/cache/engine.realm: Operation not permitted\n"
+  },
+  {
+    "command": [
+      "flutter",
+      "--suppress-analytics",
+      "doctor",
+      "-v"
+    ],
+    "started_at": "2026-10-27T15:46:43+08:00",
+    "exit_code": 1,
+    "stdout": "",
+    "stderr": "$FLUTTER_SDK/bin/internal/update_engine_version.sh: line 71: $FLUTTER_SDK/bin/cache/engine.stamp.tmp.72602: Operation not permitted\n$FLUTTER_SDK/bin/internal/update_engine_version.sh: line 78: $FLUTTER_SDK/bin/cache/engine.realm: Operation not permitted\n"
+  },
+  {
+    "command": [
+      "$FLUTTER_SDK/bin/cache/dart-sdk/bin/dart",
+      "--version"
+    ],
+    "started_at": "2026-10-27T15:46:43+08:00",
+    "exit_code": 0,
+    "stdout": "Dart SDK version: 3.13.4 (stable) (Tue Sep 15 01:01:15 2026 -0700) on \"macos_arm64\"\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "xcodebuild",
+      "-version"
+    ],
+    "started_at": "2026-10-27T15:46:43+08:00",
+    "exit_code": 0,
+    "stdout": "Xcode 27.0\nBuild version 27A266a\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "pod",
+      "--version"
+    ],
+    "started_at": "2026-10-27T15:46:43+08:00",
+    "exit_code": 0,
+    "stdout": "1.17.0\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "java",
+      "-version"
+    ],
+    "started_at": "2026-10-27T15:46:43+08:00",
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": "java version \"26.0.1\" 2026-04-21\nJava(TM) SE Runtime Environment (build 26.0.1+8-34)\nJava HotSpot(TM) 64-Bit Server VM (build 26.0.1+8-34, mixed mode, sharing)\n"
+  },
+  {
+    "command": [
+      "/Applications/Android Studio.app/Contents/jbr/Contents/Home/bin/java",
+      "-version"
+    ],
+    "started_at": "2026-10-27T15:46:43+08:00",
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": "openjdk version \"25.0.3\" 2026-04-21\nOpenJDK Runtime Environment (build 25.0.3+-15898627-b508.16)\nOpenJDK 64-Bit Server VM (build 25.0.3+-15898627-b508.16, mixed mode)\n"
+  },
+  {
+    "command": [
+      "node",
+      "--version"
+    ],
+    "started_at": "2026-10-27T15:46:43+08:00",
+    "exit_code": 0,
+    "stdout": "v22.23.4\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "npm",
+      "--version"
+    ],
+    "started_at": "2026-10-27T15:46:43+08:00",
+    "exit_code": 0,
+    "stdout": "10.9.9\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "git",
+      "--version"
+    ],
+    "started_at": "2026-10-27T15:46:43+08:00",
+    "exit_code": 0,
+    "stdout": "git version 2.55.0\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "python3",
+      "--version"
+    ],
+    "started_at": "2026-10-27T15:46:43+08:00",
+    "exit_code": 0,
+    "stdout": "Python 3.14.7\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "$ANDROID_SDK_ROOT/emulator/emulator",
+      "-list-avds"
+    ],
+    "started_at": "2026-10-27T15:46:43+08:00",
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "xcrun",
+      "simctl",
+      "list",
+      "devices",
+      "available"
+    ],
+    "started_at": "2026-10-27T15:46:43+08:00",
+    "exit_code": 1,
+    "stdout": "",
+    "stderr": "2026-10-27 15:46:44.531 simctl[72625:361884] CoreSimulatorService connection became invalid.  Simulator services will no longer be available.\n2026-10-27 15:46:44.631 simctl[72625:361884] Logging connecton invalid: <OS_xpc_error: <dictionary: 0x1ef77e080> { count = 1, transaction: 0, voucher = 0x0, contents =\n\t\"XPCErrorDescription\" => <string: 0x1ef77e1c0> { string cache = 0x0, length = 18, contents = \"Connection invalid\" }\n}>\n2026-10-27 15:46:44.631 simctl[72625:361886] Error opening log file ($USER_HOME/Library/Logs/CoreSimulator/CoreSimulator.com.apple.CoreSimulator.simctl.log): Operation not permitted\n[-[SimDiskImageManager init]:175] ERROR : Could not kickstart simdiskimaged; SimDiskImageManager services will not be available: Error Domain=NSPOSIXErrorDomain Code=53 \"Software caused connection abort\" UserInfo={NSLocalizedDescription=Error returned in reply from CoreSimulatorService: Connection invalid}\n[-[SimServiceContext initWithDeveloperDir:connectionType:error:]_block_invoke:556] ERROR : Could not get list of trusted mount directories: Error Domain=com.apple.CoreSimulator.SimError Code=410 \"The service used to manage runtime disk images (simdiskimaged) crashed or is not responding\" UserInfo={NSLocalizedDescription=The service used to manage runtime disk images (simdiskimaged) crashed or is not responding}\n[-[SimServiceContext initWithDeveloperDir:connectionType:error:]:499] WARN  : Unable to discover any Simulator runtimes. Developer Directory is /Applications/Xcode.app/Contents/Developer.\n[-[SimDiskImageManager _onQueue_checkConnection:]:239] ERROR : simdiskimaged returned error (invalid), marking disconnected.\n[-[SimDiskImageManager _onQueue_checkConnection:]:239] ERROR : simdiskimaged returned error (invalid), marking disconnected.\n[-[SimServiceContext sendRequest:reply:error:]:1982] ERROR : Unable to deliver request ({\n    request = \"notification_subscription\";\n    \"set_path\" = \"$USER_HOME/Library/Developer/CoreSimulator/Devices\";\n}) because we are not connected to CoreSimulatorService.\n2026-10-27 15:46:44.631 simctl[72625:361881] Error Domain=NSPOSIXErrorDomain Code=61 \"Connection refused\" UserInfo={NSLocalizedDescription=CoreSimulatorService connection became invalid.  Simulator services will no longer be available.}\nUnable to locate device set: Error Domain=NSPOSIXErrorDomain Code=61 \"Connection refused\" UserInfo={NSLocalizedFailureReason=Failed to subscribe to notifications from CoreSimulatorService., NSLocalizedDescription=Failed to initialize simulator device set., NSUnderlyingError=0xa34da4810 {Error Domain=NSPOSIXErrorDomain Code=61 \"Connection refused\" UserInfo={NSLocalizedDescription=CoreSimulatorService connection became invalid.  Simulator services will no longer be available.}}}\n"
+  },
+  {
+    "command": [
+      "$ANDROID_SDK_ROOT/platform-tools/adb",
+      "devices",
+      "-l"
+    ],
+    "started_at": "2026-10-27T15:46:44+08:00",
+    "exit_code": 1,
+    "stdout": "",
+    "stderr": "* daemon not running; starting now at tcp:5037\nADB server didn't ACK\nFull server startup log: $TMPDIR//adb.501.log\nServer had pid: 72648\n--- adb starting (pid 72648) ---\n10-27 15:46:44.662 72648 361894 I adb     : main.cpp:65 Android Debug Bridge version 1.0.41\n10-27 15:46:44.662 72648 361894 I adb     : main.cpp:65 Version 37.0.1-15733141\n10-27 15:46:44.662 72648 361894 I adb     : main.cpp:65 Installed as $ANDROID_SDK_ROOT/platform-tools/adb\n10-27 15:46:44.662 72648 361894 I adb     : main.cpp:65 Running on Darwin 25.6.0 (arm64)\n10-27 15:46:44.662 72648 361894 I adb     : main.cpp:65 \n10-27 15:46:45.290 72648 361894 F adb     : main.cpp:168 could not install *smartsocket* listener: Operation not permitted\n\n* failed to start daemon\nadb: failed to check server version: cannot connect to daemon\n"
+  }
+]

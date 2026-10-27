@@ -1,0 +1,52 @@
+{
+  "date": "2026-10-27T15:57:17+08:00",
+  "scope": "M00 repository checks only; no application tests or builds.",
+  "results": [
+    {
+      "command": [
+        "python3",
+        "tool/check_baseline.py"
+      ],
+      "exit_code": 0,
+      "stdout": "PASS: 30 Markdown files; 51 local file links resolved\nPASS: 18 stories, 18 scenarios, 10 decisions, 12 cross-cutting rows\nPASS: 22 ignored + 8 trackable path probes\nPASS: limited secret/home-path scan of 39 UTF-8 files; no findings\nScope: local file links only (not anchors/remote URLs); no dependency or app tests\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--cached",
+        "--check"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "remote",
+        "-v"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "check": "source-kit preservation",
+      "result": "PASS",
+      "unchanged": 20,
+      "expected_change": "Only MILESTONES table M00 status changed from PENDING to linked PASS"
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+# Local editor and operating-system state
+.DS_Store
+.idea/
+.vscode/
+*.iml
+*.swp
+__pycache__/
+*.pyc
+
+# Flutter / Dart generated output. Keep pubspec.lock for the future application.
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.pub/
+.pub-cache/
+build/
+coverage/
+doc/api/
+
+# Android machine configuration, build output and signing
+android/.gradle/
+android/.kotlin/
+android/captures/
+android/local.properties
+android/key.properties
+android/**/GeneratedPluginRegistrant.java
+*.jks
+*.keystore
+*.apk
+*.aab
+
+# iOS generated output. Keep Podfile.lock once CocoaPods is used.
+ios/Pods/
+ios/.symlinks/
+ios/Flutter/ephemeral/
+ios/Flutter/Generated.xcconfig
+ios/Flutter/flutter_export_environment.sh
+ios/Flutter/App.framework/
+ios/Flutter/Flutter.framework/
+ios/Flutter/Flutter.podspec
+ios/Flutter/.last_build_id
+ios/Runner/GeneratedPluginRegistrant.*
+**/xcuserdata/
+DerivedData/
+*.ipa
+*.xcarchive/
+*.dSYM/
+
+# Secrets and credentials
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+*.p8
+*.mobileprovision
+*.provisionprofile
+service-account*.json
+google-services.json
+GoogleService-Info.plist
+.secrets/
+.aws/
+.ssh/
+
+# Personal media, databases and exports. Never put user data in fixtures.
+/local-data/
+/recordings/
+/media/
+/exports/
+/tmp/
+*.sqlite
+*.sqlite3
+*.db
+*.db-wal
+*.db-shm
+*.sqlite-wal
+*.sqlite-shm
+*.zip
+*.looparchive
+
+# Intentional synthetic fixtures and reviewed golden PNGs remain trackable.
+# Document their provenance and license; do not force-add personal media.

@@ -1,0 +1,155 @@
+{
+  "recorded_date": "2026-10-27",
+  "method": "Plugin Management search_plugins; one query per requested name, limit 5, plus broad discovery limit 50. Search results are not exhaustive.",
+  "searches": [
+    {
+      "query": "headless",
+      "exact_match": false,
+      "results": [
+        {
+          "id": "plugin_asdk_app_6947eaa4edd081919561e4ee3a2e5dcc",
+          "name": "wix",
+          "display_name": "Wix",
+          "installed": false,
+          "status": "ENABLED"
+        },
+        {
+          "id": "Plugin_fc9843a6fb34819195d6c7802398a8a7",
+          "name": "data-analytics",
+          "display_name": "Data",
+          "installed": false,
+          "status": "ENABLED"
+        }
+      ]
+    },
+    {
+      "query": "graphify",
+      "exact_match": false,
+      "results": []
+    },
+    {
+      "query": "ponytail",
+      "exact_match": false,
+      "results": []
+    },
+    {
+      "query": "ui-ux-pro-max",
+      "exact_match": false,
+      "results": [
+        {
+          "id": "plugin_asdk_app_6a883213fb288191aa91f89a5db31f60",
+          "name": "app-6a883213fb288191aa91f89a5db31f60",
+          "display_name": "MagicPath",
+          "installed": false,
+          "status": "ENABLED"
+        },
+        {
+          "id": "plugin_connector_68df038e0ba48191908c8434991bbac2",
+          "name": "figma",
+          "display_name": "Figma",
+          "installed": false,
+          "status": "ENABLED"
+        },
+        {
+          "id": "Plugin_fa77aec24fc08191bc6e57f377126d76",
+          "name": "product-design",
+          "display_name": "Product Design",
+          "installed": false,
+          "status": "ENABLED"
+        }
+      ]
+    },
+    {
+      "query": "web-design-guidelines",
+      "exact_match": false,
+      "results": [
+        {
+          "id": "plugin_connector_68df33b1a2d081918778431a9cfca8ba",
+          "name": "canva",
+          "display_name": "Canva",
+          "installed": false,
+          "status": "ENABLED"
+        },
+        {
+          "id": "plugin_asdk_app_6a0783a98c4c8191841404d786d4a4b9",
+          "name": "app-6a0783a98c4c8191841404d786d4a4b9",
+          "display_name": "Webflow",
+          "installed": false,
+          "status": "ENABLED"
+        },
+        {
+          "id": "plugin_asdk_app_695325bae7348191b58ae9349a963d22",
+          "name": "app-695325bae7348191b58ae9349a963d22",
+          "display_name": "TinyFish",
+          "installed": false,
+          "status": "ENABLED"
+        },
+        {
+          "id": "plugin_connector_68df038e0ba48191908c8434991bbac2",
+          "name": "figma",
+          "display_name": "Figma",
+          "installed": false,
+          "status": "ENABLED"
+        },
+        {
+          "id": "plugin_asdk_app_6a314a73f8ac819195b0d55e36b9c609",
+          "name": "app-6a314a73f8ac819195b0d55e36b9c609",
+          "display_name": "Firecrawl",
+          "installed": false,
+          "status": "ENABLED"
+        }
+      ]
+    },
+    {
+      "query": "shadcn",
+      "exact_match": false,
+      "results": []
+    },
+    {
+      "query": "hallmark",
+      "exact_match": false,
+      "results": []
+    },
+    {
+      "query": "emil-design-eng",
+      "exact_match": false,
+      "results": [
+        {
+          "id": "plugin_connector_68df038e0ba48191908c8434991bbac2",
+          "name": "figma",
+          "display_name": "Figma",
+          "installed": false,
+          "status": "ENABLED"
+        },
+        {
+          "id": "plugin_connector_68df33b1a2d081918778431a9cfca8ba",
+          "name": "canva",
+          "display_name": "Canva",
+          "installed": false,
+          "status": "ENABLED"
+        },
+        {
+          "id": "plugin_asdk_app_6a883213fb288191aa91f89a5db31f60",
+          "name": "app-6a883213fb288191aa91f89a5db31f60",
+          "display_name": "MagicPath",
+          "installed": false,
+          "status": "ENABLED"
+        },
+        {
+          "id": "Plugin_fa77aec24fc08191bc6e57f377126d76",
+          "name": "product-design",
+          "display_name": "Product Design",
+          "installed": false,
+          "status": "ENABLED"
+        },
+        {
+          "id": "plugin_asdk_app_6a0783a98c4c8191841404d786d4a4b9",
+          "name": "app-6a0783a98c4c8191841404d786d4a4b9",
+          "display_name": "Webflow",
+          "installed": false,
+          "status": "ENABLED"
+        }
+      ]
+    }
+  ]
+}
