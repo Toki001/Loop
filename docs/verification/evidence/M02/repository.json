@@ -1,0 +1,74 @@
+{
+  "date": "2026-10-27",
+  "scope": "M02 source/design checks only; no product or physical-device test claims",
+  "results": [
+    {
+      "check": "screen/state coverage",
+      "result": "PASS",
+      "screen_ids": 23,
+      "meaning": "static design contract, not implemented app flows"
+    },
+    {
+      "command": [
+        "python3",
+        "tool/check_baseline.py"
+      ],
+      "exit_code": 0,
+      "stdout": "PASS: 43 Markdown files; 122 local file links resolved\nPASS: 18 stories, 18 scenarios, 10 decisions, 12 cross-cutting rows\nPASS: 22 ignored + 8 trackable path probes\nPASS: limited secret/home-path scan of 69 UTF-8 files; no findings\nPASS: 225 synthetic native golden PNGs match reviewed provenance hashes\nScope: local file links only (not anchors/remote URLs); no dependency or app tests\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "fa316ff",
+        "--exit-code",
+        "--",
+        "docs/verification/M00.md",
+        "docs/verification/evidence/M00"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": "flutter --suppress-analytics analyze --no-pub (root)",
+      "exit_code": 0,
+      "result": "No issues found"
+    },
+    {
+      "command": "flutter --suppress-analytics analyze --no-pub (design_preview)",
+      "exit_code": 0,
+      "result": "No issues found"
+    },
+    {
+      "command": "dart --suppress-analytics format --output=none --set-exit-if-changed lib/shared/design_system design_preview/lib design_preview/test",
+      "exit_code": 0,
+      "result": "Formatted 5 files (0 changed)"
+    },
+    {
+      "check": "unmanifested PNG negative probe",
+      "result": "PASS; checker exit 1 as expected; owned temporary file removed"
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--cached",
+        "--check"
+      ],
+      "exit_code": 0,
+      "result": "PASS before milestone commit"
+    }
+  ]
+}

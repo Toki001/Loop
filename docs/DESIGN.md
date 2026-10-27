@@ -17,7 +17,7 @@ Build a modern premium product that looks **specifically designed for practice**
 | `inkMuted` | `#667085` | `#AEB8CA` | supporting text |
 | `line` | `#DCE1E9` | `#3A4250` | borders/dividers |
 | `brand` | `#365CF5` | `#86A0FF` | primary actions, key states |
-| `brandSoft` | `#E8EDFF` | `#27345C` | background highlights |
+| `brandSoft` | `#E9EEFF` | `#27345C` | background highlights; M02 light adjustment for normal-text AA |
 | `success` | `#17795E` | `#6EE7B7` | completed, validated |
 | `warning` | `#9A5C13` | `#F8CD88` | storage/permission caution |
 | `danger` | `#BA3140` | `#FF9BA6` | destructive action |

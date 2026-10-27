@@ -2,6 +2,8 @@
 """Offline documentation, traceability and limited Git hygiene checks for Loop."""
 
 from pathlib import Path
+import hashlib
+import json
 import re
 import subprocess
 import sys
@@ -27,6 +29,25 @@ def main():
     documents = 0
     links = 0
     scanned = 0
+    golden_count = 0
+    manifest_path = ROOT / "docs/verification/design/ARTIFACTS.json"
+    try:
+        golden_manifest = (
+            json.loads(manifest_path.read_text()).get("artifacts", {})
+            if manifest_path.exists() else {}
+        )
+    except (OSError, ValueError, AttributeError):
+        print("FAIL: invalid design artifact provenance manifest")
+        return 1
+    if not isinstance(golden_manifest, dict):
+        print("FAIL: design artifact manifest must map paths to provenance records")
+        return 1
+    golden_root = (ROOT / "docs/verification/design/goldens").resolve()
+    for name in golden_manifest:
+        if (not name.startswith("docs/verification/design/goldens/")
+                or not (ROOT / name).resolve().is_relative_to(golden_root)
+                or not (ROOT / name).is_file()):
+            failures.append("invalid/missing path in design artifact manifest")
     patterns = {
         "private key": re.compile(r"-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----"),
         "GitHub token": re.compile(r"\b(?:gh[pousr]_[A-Za-z0-9]{36,}|github_pat_[A-Za-z0-9_]{60,})\b"),
@@ -41,6 +62,20 @@ def main():
         if not path.is_file():
             continue
         raw = path.read_bytes()
+        if path.suffix == ".png" and name.startswith("docs/verification/design/goldens/"):
+            entry = golden_manifest.get(name, {})
+            if not isinstance(entry, dict):
+                entry = {}
+            if (
+                entry.get("provenance") == "synthetic-flutter-golden"
+                and entry.get("sha256") == hashlib.sha256(raw).hexdigest()
+                and raw.startswith(b"\x89PNG\r\n\x1a\n")
+                and len(raw) <= 10 * 1024 * 1024
+            ):
+                golden_count += 1
+            else:
+                failures.append(f"{name}: unreviewed/changed golden or invalid PNG/provenance")
+            continue
         if b"\0" in raw:
             failures.append(f"{name}: binary requires separate provenance/privacy review")
             continue
@@ -120,6 +155,8 @@ def main():
     print("PASS: 18 stories, 18 scenarios, 10 decisions, 12 cross-cutting rows")
     print(f"PASS: {len(ignored)} ignored + {len(allowed)} trackable path probes")
     print(f"PASS: limited secret/home-path scan of {scanned} UTF-8 files; no findings")
+    if golden_count:
+        print(f"PASS: {golden_count} synthetic native golden PNGs match reviewed provenance hashes")
     print("Scope: local file links only (not anchors/remote URLs); no dependency or app tests")
     return 0
 

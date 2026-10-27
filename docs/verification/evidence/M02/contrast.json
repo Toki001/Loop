@@ -1,0 +1,134 @@
+[
+  {
+    "theme": "light",
+    "pair": "body on canvas",
+    "ratio": 15.896625796879576,
+    "minimum": 4.5
+  },
+  {
+    "theme": "light",
+    "pair": "body on card",
+    "ratio": 17.029234252878663,
+    "minimum": 4.5
+  },
+  {
+    "theme": "light",
+    "pair": "supporting text on canvas",
+    "ratio": 4.64388365867896,
+    "minimum": 4.5
+  },
+  {
+    "theme": "light",
+    "pair": "supporting text on card",
+    "ratio": 4.974752735406439,
+    "minimum": 4.5
+  },
+  {
+    "theme": "light",
+    "pair": "action label",
+    "ratio": 5.241839947427472,
+    "minimum": 4.5
+  },
+  {
+    "theme": "light",
+    "pair": "brand text on card",
+    "ratio": 5.241839947427472,
+    "minimum": 4.5
+  },
+  {
+    "theme": "light",
+    "pair": "active destination label",
+    "ratio": 4.527587308373926,
+    "minimum": 4.5
+  },
+  {
+    "theme": "light",
+    "pair": "success text",
+    "ratio": 5.339420658205027,
+    "minimum": 4.5
+  },
+  {
+    "theme": "light",
+    "pair": "warning text",
+    "ratio": 5.364989360396506,
+    "minimum": 4.5
+  },
+  {
+    "theme": "light",
+    "pair": "danger text",
+    "ratio": 5.831423784045139,
+    "minimum": 4.5
+  },
+  {
+    "theme": "light",
+    "pair": "focus indicator",
+    "ratio": 6.350983325021162,
+    "minimum": 4.5
+  },
+  {
+    "theme": "dark",
+    "pair": "body on canvas",
+    "ratio": 16.862125973496767,
+    "minimum": 4.5
+  },
+  {
+    "theme": "dark",
+    "pair": "body on card",
+    "ratio": 14.977168708793698,
+    "minimum": 4.5
+  },
+  {
+    "theme": "dark",
+    "pair": "supporting text on canvas",
+    "ratio": 9.291527299715396,
+    "minimum": 4.5
+  },
+  {
+    "theme": "dark",
+    "pair": "supporting text on card",
+    "ratio": 8.252860413267422,
+    "minimum": 4.5
+  },
+  {
+    "theme": "dark",
+    "pair": "action label",
+    "ratio": 7.503037382392319,
+    "minimum": 4.5
+  },
+  {
+    "theme": "dark",
+    "pair": "brand text on card",
+    "ratio": 6.664299441310136,
+    "minimum": 4.5
+  },
+  {
+    "theme": "dark",
+    "pair": "active destination label",
+    "ratio": 4.899517693520208,
+    "minimum": 4.5
+  },
+  {
+    "theme": "dark",
+    "pair": "success text",
+    "ratio": 10.819601324312638,
+    "minimum": 4.5
+  },
+  {
+    "theme": "dark",
+    "pair": "warning text",
+    "ratio": 11.056920678112919,
+    "minimum": 4.5
+  },
+  {
+    "theme": "dark",
+    "pair": "danger text",
+    "ratio": 8.239030000094916,
+    "minimum": 4.5
+  },
+  {
+    "theme": "dark",
+    "pair": "focus indicator",
+    "ratio": 9.988739863225314,
+    "minimum": 4.5
+  }
+]

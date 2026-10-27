@@ -1,6 +1,8 @@
 # Loop — Production Development Kit
 
-**Loop** is a local-first mobile practice companion for deliberate improvement across hobbies and skills. This kit is the executable source of truth for Codex, designers, engineers, QA, and release owners. It is **planning/documentation**, not a completed Flutter app.
+**Loop** is a local-first mobile practice companion for deliberate improvement across hobbies and skills. This repository contains the product/engineering contract and a verified native design system/preview harness. It is **not a completed Flutter app**; M03–M15 product implementation and release gates remain.
+
+Current evidence: [verification ledger](docs/verification/INDEX.md), [native design preview](design_preview/README.md), [screen/state design contract](docs/SCREEN_DESIGN.md), and [continuous execution checkpoint](docs/verification/CONTINUATION.md). Design fixtures never become production data.
 
 **North-star statement:** *Practice with intention. See your progress.*
 

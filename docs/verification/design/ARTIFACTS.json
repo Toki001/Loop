@@ -1,0 +1,1168 @@
+{
+  "created_date": "2026-10-27",
+  "renderer": "macOS 26.6.2 arm64 / Flutter 3.47.5 / Dart 3.13.4",
+  "meaning": "Synthetic native widget references, not device screenshots or persistence proof. Full matrix checked; visual inspection sampled.",
+  "fonts": "Installed SDK Roboto/MaterialIcons plus local macOS Hiragino Sans GB for CJK. None redistributed.",
+  "sampled_visual_review": [
+    "today_iphone_light_1x.png",
+    "practice_android_compact_dark_2x.png",
+    "skills_iphone_light_1x.png",
+    "state_permissionDenied_android_compact_light_2x.png",
+    "welcome_android_large_light_1x.png",
+    "reflection_iphone_light_1x.png",
+    "reflection_keyboard_android_compact_light_2x.png",
+    "progress_iphone_dark_1x.png",
+    "library_tablet_dark_1x.png",
+    "settings_iphone_light_1x.png",
+    "components_iphone_light_1x.png",
+    "state_empty_tablet_light_2x.png",
+    "state_loading_android_compact_dark_1x.png",
+    "state_error_android_large_dark_2x.png",
+    "comparison_iphone_dark_1x.png"
+  ],
+  "artifacts": {
+    "docs/verification/design/goldens/comparison_android_compact_dark_1x.png": {
+      "sha256": "1c38da1d68e4bd09d12fb87fe70317fcdd7d2c69b2ba948f7002f872303583c3",
+      "bytes": 41826,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/comparison_android_compact_dark_2x.png": {
+      "sha256": "b31a1e851bf7e57040dc3751a3d9c3449488392ce4cb2992ae95021421bda1b8",
+      "bytes": 44299,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/comparison_android_compact_light_1x.png": {
+      "sha256": "2b529d085e47a078c74c8af743398c5bd70129ec5499eb4efcf6f5af08e38cb7",
+      "bytes": 41550,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/comparison_android_compact_light_2x.png": {
+      "sha256": "1888d20dacec3a63f5f213a524d6498ddc61b3fa033c7ab38f6f32d805949bdb",
+      "bytes": 44079,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/comparison_android_large_dark_1x.png": {
+      "sha256": "5a7329be17ff18547013f5fbef88da1e4418f81eddea33ba88d1bc39d4ba325e",
+      "bytes": 63650,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/comparison_android_large_dark_2x.png": {
+      "sha256": "217c00f89898cb76b490368191fe86716e16d8ed566e150cc6408c2ea96cd8f1",
+      "bytes": 71626,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/comparison_android_large_light_1x.png": {
+      "sha256": "b77ed0f88ae1c363054535929349d970b86549fbca643dd606c66a11cef365cb",
+      "bytes": 62381,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/comparison_android_large_light_2x.png": {
+      "sha256": "d2fe5dfccaa3b719f0adeb0b4ba01fda3a654630fa2c80f8d0c6b5841ebf386a",
+      "bytes": 70990,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/comparison_iphone_dark_1x.png": {
+      "sha256": "49ae66b60ca31391540aeaa0eb69e7299e97cad5e11bcd32c3bcb80e26277c7e",
+      "bytes": 63248,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/comparison_iphone_dark_2x.png": {
+      "sha256": "f29e1998863c29476fa401918eb6f6a42907201125205527c81caae75f680427",
+      "bytes": 61481,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/comparison_iphone_light_1x.png": {
+      "sha256": "95b26bd2b0ed81b3ba9d5de0ba73bae6571e91c768e217ba44c267b033775c8f",
+      "bytes": 62199,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/comparison_iphone_light_2x.png": {
+      "sha256": "5afa8f85636285a2f49e0a53bb70d34d497908c34453b5307749d7886333b4ce",
+      "bytes": 61199,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/comparison_tablet_dark_1x.png": {
+      "sha256": "cc89ea998f79696095dea5fbd172b0d135b1d74d03a63ab53de40143f63b718f",
+      "bytes": 76574,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/comparison_tablet_dark_2x.png": {
+      "sha256": "b1d77456217a112deb19bbc9fa33a1d6ff450850de66807b3772ddae5bb7efae",
+      "bytes": 77090,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/comparison_tablet_light_1x.png": {
+      "sha256": "5d97c4cdbfa494510c2ed765828bff48646619a039c8106ae8663b3fea2b3927",
+      "bytes": 75651,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/comparison_tablet_light_2x.png": {
+      "sha256": "eb325b985def5603e4588a75b2f9059dfc22f64db1eede61d25265f7fb88c052",
+      "bytes": 76744,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/components_android_compact_dark_1x.png": {
+      "sha256": "c82d139fa66ca8eb034033292ce4d1d2798218d770c8aa0eb180c0e0fc5b4e14",
+      "bytes": 35735,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/components_android_compact_dark_2x.png": {
+      "sha256": "0aaa693544dc78e8ae58ca83458bea576cdbd7b115a4d0ed8246c0184d9adef5",
+      "bytes": 38295,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/components_android_compact_light_1x.png": {
+      "sha256": "da5eff3a2da4bcf9fb26562527118fcaa8cd423f7dfd2662014b0d2ddd116025",
+      "bytes": 34834,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/components_android_compact_light_2x.png": {
+      "sha256": "b844bb4514541becad38c7d45e508f2e0c01c09de768e081ec2a67ec8d88be78",
+      "bytes": 38308,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/components_android_large_dark_1x.png": {
+      "sha256": "5ee3b3d52dac341820e317251f1ec60b03fbd0bceaf4f7ddbfb1f49515d9920a",
+      "bytes": 56478,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/components_android_large_dark_2x.png": {
+      "sha256": "0bb40054931ba1002874bb41948e13e216c21f4c32d26402fa93c11b50103a10",
+      "bytes": 69572,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/components_android_large_light_1x.png": {
+      "sha256": "d7d1adfee98ae5eb45a55776d2a9c9d6567262313564298f0172f0973c2845dd",
+      "bytes": 54986,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/components_android_large_light_2x.png": {
+      "sha256": "44831e26bc237d52704ed26b8b8c38374c141f3f5522a9be27f17c9314752f80",
+      "bytes": 68209,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/components_iphone_dark_1x.png": {
+      "sha256": "e78e06da1ddea0ed0b8c054b45c2d2fa3da97b9a82e6e57d5f5a274d6402f324",
+      "bytes": 55790,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/components_iphone_dark_2x.png": {
+      "sha256": "b7e673af39cecf39cd481cdbf059e5501fafc5140706408555dc51d31a7cf7a0",
+      "bytes": 58660,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/components_iphone_light_1x.png": {
+      "sha256": "8962be3dd4038efd96ce19e2ad6877a52802181547b81520708dd4b4e84b558f",
+      "bytes": 54372,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/components_iphone_light_2x.png": {
+      "sha256": "5115930c2b3febf243c64ed5ccb2012a2b4b027e944146e93e631f2989fe2066",
+      "bytes": 57548,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/components_tablet_dark_1x.png": {
+      "sha256": "4977cf4c5b8f67fcb35607130d2309207f04b36fd94b0b74d4c386cc244f024c",
+      "bytes": 60410,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/components_tablet_dark_2x.png": {
+      "sha256": "ee0cb65a5e38d448084d58508ba97061b33174d50ccb3a9d18e561a3c091e659",
+      "bytes": 99752,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/components_tablet_light_1x.png": {
+      "sha256": "9a919af48a8dcb59045a1d14c62eb63413796941501a5b811cd593543ff96bd1",
+      "bytes": 59158,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/components_tablet_light_2x.png": {
+      "sha256": "3208ab336998d10cbec95823639fe3eb5dd4d8cb28803546a3901ac11161fddd",
+      "bytes": 98196,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/library_android_compact_dark_1x.png": {
+      "sha256": "4b058d32b740d8727544bb788d122d634979411ba3f7ee0bb99894835b4fb2b7",
+      "bytes": 39354,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/library_android_compact_dark_2x.png": {
+      "sha256": "a74bf2b0dfa781728904f87a66fd73b146b0eae3622ff570230d8639974b7697",
+      "bytes": 33045,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/library_android_compact_light_1x.png": {
+      "sha256": "a83cd473f72e574303450b955c6b71185e0bbddf675429ce4138589f8710ab83",
+      "bytes": 38744,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/library_android_compact_light_2x.png": {
+      "sha256": "cf52d0197827a32513af9914959e332efd433deb581c16ded6e8d94122260ee7",
+      "bytes": 32463,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/library_android_large_dark_1x.png": {
+      "sha256": "5f67ba67fd81e208e59f62441f4b578e15fee6c8921f8b538e1bd38d5c9ca11b",
+      "bytes": 65840,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/library_android_large_dark_2x.png": {
+      "sha256": "47825bcf44cc54bed42b761afa67ec3329e30fccc01a130a55f936433be082b8",
+      "bytes": 64122,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/library_android_large_light_1x.png": {
+      "sha256": "4fbe9355f98126484300e65ee81217591e8ec8a7ac89df5d27c6e124249b4a6d",
+      "bytes": 64956,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/library_android_large_light_2x.png": {
+      "sha256": "83e4ac233b31fa2096d03a06cf74222084659d16e0447a4167d2c927a7120dd8",
+      "bytes": 63183,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/library_iphone_dark_1x.png": {
+      "sha256": "518f27ef3cfd9b0183ef17a7147d7a4f9ae9514f67b8e19e1c6d6d00668e8240",
+      "bytes": 65293,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/library_iphone_dark_2x.png": {
+      "sha256": "23a6065b9c4973f964b1df0431d3767f70e95f8d934c80a7137f523ab3d7f8c7",
+      "bytes": 57920,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/library_iphone_light_1x.png": {
+      "sha256": "551fcc6c2436433db358add99f5d635dd820c65e3a77a361849a9cba15323637",
+      "bytes": 64541,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/library_iphone_light_2x.png": {
+      "sha256": "154decc0820fa79424eb83b1a65012501ac61eeadc11411379fb393ff8c734fc",
+      "bytes": 57001,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/library_tablet_dark_1x.png": {
+      "sha256": "5eaa21be0c3d9324555405ebb5831f50002a71b7c9fe42d18cd547fc30fd6573",
+      "bytes": 79592,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/library_tablet_dark_2x.png": {
+      "sha256": "97d83ded3bf521ea58d657378588c1fb30c422827363c2e24ea45278f69b4d3f",
+      "bytes": 77231,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/library_tablet_light_1x.png": {
+      "sha256": "ca51b1fa496124bc1e9be6103622f8074e62ce00098c258a04cce9bd30874375",
+      "bytes": 79030,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/library_tablet_light_2x.png": {
+      "sha256": "7cce88e80577935fce5fe6e89f56840623e8270ca1bdf616c7bb8aa9803290b2",
+      "bytes": 76543,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/practice_android_compact_dark_1x.png": {
+      "sha256": "1c85948399b0696e78a74b9d9cd585cde467a7eb2b2fd27a142c9df019f3c015",
+      "bytes": 40055,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/practice_android_compact_dark_2x.png": {
+      "sha256": "52467dc8822d14aca2f0f241eeac57885f9d8a85d4c4a1c5096028223579edc6",
+      "bytes": 37171,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/practice_android_compact_light_1x.png": {
+      "sha256": "c991cc3bfba60ae64ac446c09a21c4e5d080598a06d091c0d41fbee064cd88a2",
+      "bytes": 39238,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/practice_android_compact_light_2x.png": {
+      "sha256": "15ed1f216ac6106134549b2a7c9163b0c52bccd67fbdc8dfed35efe89534a1e6",
+      "bytes": 36547,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/practice_android_large_dark_1x.png": {
+      "sha256": "4ba07a18f02c58e2dc22e7c47e9188fba15381980101f15b7d81f31fc5e7237e",
+      "bytes": 41572,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/practice_android_large_dark_2x.png": {
+      "sha256": "e711a262c6b4d865ead4b224d6e941e116c95ad6622cfb501c5c8c6230026d53",
+      "bytes": 81123,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/practice_android_large_light_1x.png": {
+      "sha256": "d0034bfe2e8be90ab155a909ae6c5d7747a0f54184f6809dc899144c8c3dec4d",
+      "bytes": 40655,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/practice_android_large_light_2x.png": {
+      "sha256": "a2ad22dd744d6869bc01b10429e42000a3d5f86f928cd37cf2e547f4897e7010",
+      "bytes": 79654,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/practice_iphone_dark_1x.png": {
+      "sha256": "e2783f6ab4731d4a49402b6286af66fd2540ee297cae6c06303b6349b12c22b4",
+      "bytes": 40974,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/practice_iphone_dark_2x.png": {
+      "sha256": "36b93248815b368b67b21a79467a78439141a28b2103b2649838a7ec272d3d34",
+      "bytes": 75160,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/practice_iphone_light_1x.png": {
+      "sha256": "c47fdd11a06db0d24e6dafdc54014ea7edfbd86250988b83ff6d2475838075bf",
+      "bytes": 40105,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/practice_iphone_light_2x.png": {
+      "sha256": "5775bd309601f351e4427c0bf333c4b4b6e54d55030560639d88060ad4d80c65",
+      "bytes": 74295,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/practice_tablet_dark_1x.png": {
+      "sha256": "13d12c05ff830d09bf13df4932844d81cb95cf34d215c7cdbbc390e31b7d80ae",
+      "bytes": 43939,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/practice_tablet_dark_2x.png": {
+      "sha256": "c7af2c8889eb57ac0349a1b95eb08a5c30b25a6b7e54435a49e0adf168bd8fc6",
+      "bytes": 82014,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/practice_tablet_light_1x.png": {
+      "sha256": "322934c9cc97a6385f199d8a4ce9b7508db6a559ccbcc51e1978e891e0ec2e4b",
+      "bytes": 42830,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/practice_tablet_light_2x.png": {
+      "sha256": "dfe2b605da654671882e6b57156cf7707144623364aece1ca63c4aa31094ba13",
+      "bytes": 80904,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/progress_android_compact_dark_1x.png": {
+      "sha256": "b912e4b3717cbbd0475da8a9b408c0061b4b2252889e545c3dfba55c7320facd",
+      "bytes": 46264,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/progress_android_compact_dark_2x.png": {
+      "sha256": "287832d5b46acb6ef74f35371900b3b9aaf4c864f1c5797b0053ab6026aab008",
+      "bytes": 38163,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/progress_android_compact_light_1x.png": {
+      "sha256": "d57a48a1ad9a0b588325a319673c72b4b81c01f6c13f03401f560b74f88003a5",
+      "bytes": 45955,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/progress_android_compact_light_2x.png": {
+      "sha256": "71dddc732b1613f6e2f7298b2090cd8c1f54fe7b4fc9bed58e9642c775518f9d",
+      "bytes": 37464,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/progress_android_large_dark_1x.png": {
+      "sha256": "d64154f60f2212d32ddbdd855f4615b3c81972349decf5085eb390c99968fba1",
+      "bytes": 70339,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/progress_android_large_dark_2x.png": {
+      "sha256": "2bfa76e267087749c93897ecaea869dd80a34fc777c608da7537d664c81e5325",
+      "bytes": 58909,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/progress_android_large_light_1x.png": {
+      "sha256": "3bc8e33f229a6de07625b82a7575aaa2a6a2ec9c6050907ea4649736b62a7ffe",
+      "bytes": 69488,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/progress_android_large_light_2x.png": {
+      "sha256": "0b19a904f559e8f4ea341ac28e667fa1cddb7d171ecaf649231ee7abc25efe33",
+      "bytes": 58200,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/progress_iphone_dark_1x.png": {
+      "sha256": "7986f09208ca20e632a2932466550498df4be2f7f15301e51380891f3abe337c",
+      "bytes": 68453,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/progress_iphone_dark_2x.png": {
+      "sha256": "1c4fa46f22524d98cece24fdc8639bb27902278d8a5980b250cdabe9645eafca",
+      "bytes": 55081,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/progress_iphone_light_1x.png": {
+      "sha256": "14f8b8aacdbfb320cb4dba976a9123a8ce6ef6c931259cae9027f17a8c8e8112",
+      "bytes": 67859,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/progress_iphone_light_2x.png": {
+      "sha256": "12dd14188a7267e3d11ff804e66edf007bda7ff9506d118df269f129ccc6f69d",
+      "bytes": 54428,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/progress_tablet_dark_1x.png": {
+      "sha256": "51a6ecd0ef6a9471ede8b2aa0d5ef8d7a7eb01e934cbfc2d2a4848f4fe634f8b",
+      "bytes": 83240,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/progress_tablet_dark_2x.png": {
+      "sha256": "b113ab1b61c46b3968dc81688e8db965faef8bc0d8bdf20fd39490f3a84f065a",
+      "bytes": 87847,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/progress_tablet_light_1x.png": {
+      "sha256": "cacf34e3b2551825c85b942f51acc154bd0f8375668fe522db4709fa5d4e9472",
+      "bytes": 82264,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/progress_tablet_light_2x.png": {
+      "sha256": "e8c13b6ea71809716c9eedab64063e2fe2c83505c1534e05727fce13fdb3554e",
+      "bytes": 86945,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/reflection_android_compact_dark_1x.png": {
+      "sha256": "f11474ef2f2a83ec933196e15c1d09760fa8445339d9fc1628aba005139cfe1b",
+      "bytes": 35816,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/reflection_android_compact_dark_2x.png": {
+      "sha256": "a256102ad12e5625e02ff1f1bd71370584bb977e2c062a36bc530fed80f88b32",
+      "bytes": 38913,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/reflection_android_compact_light_1x.png": {
+      "sha256": "9787ed02914b420567379fe7ff04f903d3d59e158871b1bc1ea0a2d736a5959e",
+      "bytes": 35217,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/reflection_android_compact_light_2x.png": {
+      "sha256": "8e657e6c323b99d1308a5bcc9a6d854a65590f34eff75d9863e58a4470cdfb6c",
+      "bytes": 38338,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/reflection_android_large_dark_1x.png": {
+      "sha256": "d1dd6f4a8573497ecc412a56746f9cbe95bd54f9d2aa0f9e707f8b21122490b0",
+      "bytes": 58376,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/reflection_android_large_dark_2x.png": {
+      "sha256": "7ea7308e50980dfc77b1c3c66ff7efd2ee2b9729c888d3e0008721ba1c909dfc",
+      "bytes": 66508,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/reflection_android_large_light_1x.png": {
+      "sha256": "584184138760451e36b2c6baeb1d300bcf0e4156744b7b4073bae6b64d87dafb",
+      "bytes": 57121,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/reflection_android_large_light_2x.png": {
+      "sha256": "a233d2a49e19d682bea38bb1967b962399d66575d8d505d480f3c831310b9083",
+      "bytes": 65328,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/reflection_iphone_dark_1x.png": {
+      "sha256": "27b7c43df01eb750bcd28fcbeb3b093a66e91aedaaf49a2dfcdd7fb31d87d332",
+      "bytes": 58029,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/reflection_iphone_dark_2x.png": {
+      "sha256": "d4df464b459f6e6a2510a661d338467b525a01d7994c58c7370e63a228d6f859",
+      "bytes": 55936,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/reflection_iphone_light_1x.png": {
+      "sha256": "14e3c6a03442337300cdeb447fc9a417d3b11904a6040b2ad272030ea1f24da1",
+      "bytes": 56863,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/reflection_iphone_light_2x.png": {
+      "sha256": "29b8796c9bdace8bc7759d6a6c477dcbf169ab58c12f5ccc60e76ce3c524613a",
+      "bytes": 54942,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/reflection_keyboard_android_compact_light_2x.png": {
+      "sha256": "fcc08c5b06fe87941cb59ace619b38a9b29335906a70803f665975d44b4c4b86",
+      "bytes": 25541,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/reflection_tablet_dark_1x.png": {
+      "sha256": "c68f2cd1c44c378cb1a9e7f55aa7edcbb620a036fe57bdca39326f44639bffcf",
+      "bytes": 62562,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/reflection_tablet_dark_2x.png": {
+      "sha256": "433c60145533c748c8ec299425ce11456b5979eddf5cc3c5f7f29ce9146fcfbb",
+      "bytes": 91481,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/reflection_tablet_light_1x.png": {
+      "sha256": "9ebcf6dcdbcaab861b346ec678b116756315ff76ff6da7f35da6f7e4eb633e2c",
+      "bytes": 61251,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/reflection_tablet_light_2x.png": {
+      "sha256": "e970f3995635f7c578f378a73c24044654544f348f866bbccd0ef1b375b586da",
+      "bytes": 89750,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/settings_android_compact_dark_1x.png": {
+      "sha256": "3ae27accf9763b0b14c4983f4d4419e5724e68599b2c76837027d06866d35a47",
+      "bytes": 36687,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/settings_android_compact_dark_2x.png": {
+      "sha256": "10631141432072b141c2c5a4eb18d3cf69185559729234aa1e259b05cd484126",
+      "bytes": 35703,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/settings_android_compact_light_1x.png": {
+      "sha256": "b08467de75ede9ac88c9b18980cfa285d3b28933a6a176a23871b90d2ea78f77",
+      "bytes": 36661,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/settings_android_compact_light_2x.png": {
+      "sha256": "5f52205d0d051edda89e3d2413f7d0791323e61be8b9cdcfec88e437d51eca53",
+      "bytes": 35583,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/settings_android_large_dark_1x.png": {
+      "sha256": "d20eb1a12e0bdd4356f94f85d9ff3fd11e256c1d028c383282ee199d16521d40",
+      "bytes": 50968,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/settings_android_large_dark_2x.png": {
+      "sha256": "dbea401a7cb1cac274bc2d61497f3ddfd6a3214d157ed30e00f5afe96e42d84a",
+      "bytes": 69010,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/settings_android_large_light_1x.png": {
+      "sha256": "d9e648804baa390aec0e49b6fb3481bbadf7f2bee0aff5c8a4de9a4666003f86",
+      "bytes": 50164,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/settings_android_large_light_2x.png": {
+      "sha256": "a5d8d38e407f6e02d40e1ec592cfd2b0b34cb00982577dd4b016135f760969ec",
+      "bytes": 68436,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/settings_iphone_dark_1x.png": {
+      "sha256": "5ea4508e2846f3667cca042a7bf37bbf760b14987bbfdf5bfc6f0590e853b572",
+      "bytes": 50173,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/settings_iphone_dark_2x.png": {
+      "sha256": "19ebf7a2f4965a8a0b757ff171a90313f1caf415eb8b9a8e321d8e62fa754a0e",
+      "bytes": 58368,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/settings_iphone_light_1x.png": {
+      "sha256": "59060b84d507adeec980cd0428528d3e9b58ce4539000fa65991ecbb80389c91",
+      "bytes": 49334,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/settings_iphone_light_2x.png": {
+      "sha256": "860a257c0100d1b5d8a31e655f4417caeccaf7057d25524ac83b4d4c2b62d8d3",
+      "bytes": 57726,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/settings_tablet_dark_1x.png": {
+      "sha256": "9cea2a286cffeadaeff8c9fb3dd95c8ab573c99c77c5ac200244ed376e6886a9",
+      "bytes": 54421,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/settings_tablet_dark_2x.png": {
+      "sha256": "651deb2f1863c5bf347f4b0fd27b20930a4a59c0e17dc60dacdceada06a11a05",
+      "bytes": 88681,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/settings_tablet_light_1x.png": {
+      "sha256": "82c450f4c4ae3108f0364bb9f11eed5fb838782cda22e4bf83148c1c2928defd",
+      "bytes": 53952,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/settings_tablet_light_2x.png": {
+      "sha256": "8afba4bdd901bb007aba76a20da6f554e4400613f09b4e282bbd25d936e1007d",
+      "bytes": 87531,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/skills_android_compact_dark_1x.png": {
+      "sha256": "2a68a96c4f43b58fc6aae14a9dcff420b447a70c52c503d4ada95149771203b9",
+      "bytes": 39272,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/skills_android_compact_dark_2x.png": {
+      "sha256": "84f70ac51c818d8c0946f7138874b35e3d69ac8087a261298f8a71161944da50",
+      "bytes": 35323,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/skills_android_compact_light_1x.png": {
+      "sha256": "ebfcd9d5f4287e6b5a78c4f08736a711e477c04480a3c2cd55600e50323e09ce",
+      "bytes": 38630,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/skills_android_compact_light_2x.png": {
+      "sha256": "2374216e44c906ba9e2bb9e0e90cacf6fd3bd1421f282d3a86c74ae9bb8e91cf",
+      "bytes": 34636,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/skills_android_large_dark_1x.png": {
+      "sha256": "6fc3fa0e2291b12bd982d8c560b2095d45212e0dc81471522c2e2bf212d5cf59",
+      "bytes": 55085,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/skills_android_large_dark_2x.png": {
+      "sha256": "e5ffd65631084f972fe0cb3b5ed5988fe6d6667911405fda0ddd013d5431884d",
+      "bytes": 57332,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/skills_android_large_light_1x.png": {
+      "sha256": "2d7c1fdf88b24a14d183357abce5c52fe2209e8c52f29228ef5f8187c966c7d0",
+      "bytes": 53840,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/skills_android_large_light_2x.png": {
+      "sha256": "7316872dc50509adca2189c41201df01196a193ac28ad6d1c0bd4f71bb44e774",
+      "bytes": 56256,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/skills_iphone_dark_1x.png": {
+      "sha256": "d75341821012666b2240a982d74100aa84ce13657fdf35812ace157769cef908",
+      "bytes": 53970,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/skills_iphone_dark_2x.png": {
+      "sha256": "57ea6c208fa0a1d8d8f0746d784220bfb61e3bf22de12a04e98ddd5d825a963c",
+      "bytes": 54382,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/skills_iphone_light_1x.png": {
+      "sha256": "2a475cd79e1b09cdab8dce6ca3828b2fe16717724bd1c60b9d65cb63a8e9ebd2",
+      "bytes": 52585,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/skills_iphone_light_2x.png": {
+      "sha256": "b59bda97319ffa45350e9902cb8f9a811572e5b22637337d101c3a64af533bc9",
+      "bytes": 53442,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/skills_tablet_dark_1x.png": {
+      "sha256": "81db7230efae9b402d1cc43bc99633d394b3e649fb2f4bdbae0f6aee90b80337",
+      "bytes": 58955,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/skills_tablet_dark_2x.png": {
+      "sha256": "589fa5fe08b89f58d3a7cdd0b84e7fef331d640bb83a6b4cd0aa1de103e1d1d3",
+      "bytes": 92143,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/skills_tablet_light_1x.png": {
+      "sha256": "307c9e98ad1adc41c0626c21422bf594ae02ad84d6353ee18fcc7d837da507b3",
+      "bytes": 57709,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/skills_tablet_light_2x.png": {
+      "sha256": "57f559c0f3001ecb992c795d8ef30a704cbcbb587e9b02e98669f21a176167d0",
+      "bytes": 90558,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/state_empty_android_compact_dark_1x.png": {
+      "sha256": "f830c9bba30af7a5f4bb08faacd1f567aa63a868092f887fb7e16d71ba30dcba",
+      "bytes": 28395,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/state_empty_android_compact_dark_2x.png": {
+      "sha256": "f33e5d2ab1be4fa35130623175043f34f3f8bc50e280007f55bd30dfe8fef185",
+      "bytes": 35368,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/state_empty_android_compact_light_1x.png": {
+      "sha256": "f28333e51a8925c3a2b303692bdfc31487160f4bb39339213bfd5daef9802f5a",
+      "bytes": 27872,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/state_empty_android_compact_light_2x.png": {
+      "sha256": "71490136987bd6d9a4f97467174cf0229dbf2ffc2a98bae0169c313891e96d95",
+      "bytes": 34804,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/state_empty_android_large_dark_1x.png": {
+      "sha256": "ec825ce994554292ee0268041745e3b12e74fd210e00d6d6ee826229f0327c03",
+      "bytes": 31039,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/state_empty_android_large_dark_2x.png": {
+      "sha256": "4e5afb6734fbdd92107593c3ed45a928cf5ff41df3ec2a0fb0798fb8afe34de1",
+      "bytes": 45971,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/state_empty_android_large_light_1x.png": {
+      "sha256": "f1af29fcbd9a483fa76d7a06dd22b16e92f716b2dcc75adefa2a5c462d740115",
+      "bytes": 30340,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/state_empty_android_large_light_2x.png": {
+      "sha256": "bf132ef1e88bdf571c6c36350f50e301892c1dda407ddfdb35816898d46b5790",
+      "bytes": 45093,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/state_empty_iphone_dark_1x.png": {
+      "sha256": "7ff59bf7dbcfb8216306d08d660e5666199f19f9514195d9279c8410c70f21d6",
+      "bytes": 30372,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/state_empty_iphone_dark_2x.png": {
+      "sha256": "f8e9d65dd3303c4c554aa7ce2db333d3291ce4efc60eb7611d1522c87213c027",
+      "bytes": 46066,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/state_empty_iphone_light_1x.png": {
+      "sha256": "91d22bff17ec2e71a89993bd5c0bdd964788bf6a4717f6eeb9475454d9a5e25a",
+      "bytes": 29638,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/state_empty_iphone_light_2x.png": {
+      "sha256": "7acecf9120d3da51d8e111062c6d53488888382d83fad66c09edc5ad34e86d97",
+      "bytes": 45024,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/state_empty_tablet_dark_1x.png": {
+      "sha256": "330e48028745fcffa146fa2cb2fd1248b858eb7c8687002702c276dc9c2e02d1",
+      "bytes": 33799,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/state_empty_tablet_dark_2x.png": {
+      "sha256": "b430dbe2b62ac74ff0a99591925c62f5daa265f28bca9d9c38a36f6e682b223c",
+      "bytes": 47132,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/state_empty_tablet_light_1x.png": {
+      "sha256": "a229e1295294544812204dc39e04e4aa13920185f5f34d3bcc28c8362ec6ff01",
+      "bytes": 33220,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/state_empty_tablet_light_2x.png": {
+      "sha256": "187ef6780168ddabf7c9c3f7cc7098adf9489ed28b534eac4badd0390dd10cb9",
+      "bytes": 46328,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/state_error_android_compact_dark_1x.png": {
+      "sha256": "dc61baace7e769cb84e94facf1a27ab07c297a5c6aef018796c967c830af7ceb",
+      "bytes": 32315,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/state_error_android_compact_dark_2x.png": {
+      "sha256": "1f2dc37c10abad880aa896294234afafd7b05e24d0a777e0ca373c15d9618f18",
+      "bytes": 32947,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/state_error_android_compact_light_1x.png": {
+      "sha256": "ae8d12f592bb4d7df1e067f2e831964a3bf63b2b08f5691383dd453566727110",
+      "bytes": 31244,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/state_error_android_compact_light_2x.png": {
+      "sha256": "853f55270209fa20a22bfd11b67ae24de9db1e815080df23d6e7e548153000e4",
+      "bytes": 32289,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/state_error_android_large_dark_1x.png": {
+      "sha256": "7bd0ea6eb595e8ee500d94c7235cf5958bf6acaf64f1bc70a1aec0b4cdbd7257",
+      "bytes": 34909,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/state_error_android_large_dark_2x.png": {
+      "sha256": "e0937d1d5b5ece6ed5215ab93dcc8718a03dc5a3fcd10abb1454c7551740f099",
+      "bytes": 56964,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/state_error_android_large_light_1x.png": {
+      "sha256": "f5268eaa830512d2298fb5ac54414b8a2fe9ed7cd1a392ec03c0488b7e45aecf",
+      "bytes": 33789,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/state_error_android_large_light_2x.png": {
+      "sha256": "8c23fd73215c0f37f5d7fb860c84d0416f3783df499e273d3f5dd650be56bfa5",
+      "bytes": 55567,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/state_error_iphone_dark_1x.png": {
+      "sha256": "534f5a46edcb35b989a04f01e4a657e4737a0840363f6babfba1abbb3d29e525",
+      "bytes": 34259,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/state_error_iphone_dark_2x.png": {
+      "sha256": "5b0a5cdacd090ab4ffd542b4e32927afbc5c25d2e478a579a616f4aca534147c",
+      "bytes": 56278,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/state_error_iphone_light_1x.png": {
+      "sha256": "00998e7d4238cff255087e776a43cb22a848e4d817e21d3e1dd341232f3e1ebf",
+      "bytes": 33006,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/state_error_iphone_light_2x.png": {
+      "sha256": "9f3212c3d92e881ca96dc7adff892312cc68ac3f4406f23debbc234071c59732",
+      "bytes": 54940,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/state_error_tablet_dark_1x.png": {
+      "sha256": "7996ee2855122453f65851e279bb4eb4dbccfabbe87b5f73f656337e66a58ad4",
+      "bytes": 37281,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/state_error_tablet_dark_2x.png": {
+      "sha256": "4934790e42988ea85a2492cadf933d793e7f3cd528a94dbb84e8514f63aa54be",
+      "bytes": 56385,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/state_error_tablet_light_1x.png": {
+      "sha256": "b158a75b89952f8791062784788d330d2752a5402b4787975049129c979c325d",
+      "bytes": 36190,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/state_error_tablet_light_2x.png": {
+      "sha256": "9e5bb86e5ea698eaf6e8dfcb30a8af857c9224e425a51fee90441e3ec7b5cb14",
+      "bytes": 55055,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/state_loading_android_compact_dark_1x.png": {
+      "sha256": "0143f844363e7f725fff1eeae650b056c19c144a419c101529501456c7528ce6",
+      "bytes": 26196,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/state_loading_android_compact_dark_2x.png": {
+      "sha256": "b04d96cfb9ea7ead0725e9e88c71293d23c296d197fa5361a2fcf82dd22ba296",
+      "bytes": 33092,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/state_loading_android_compact_light_1x.png": {
+      "sha256": "eb241f5ce0420d2fabab2c61a80338c8e25b6020b9762ebca1ca5f916296d15e",
+      "bytes": 25486,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/state_loading_android_compact_light_2x.png": {
+      "sha256": "f15bf0b61172a8840babdcba044650bd858ec8a7a59e7a075c87fbd13fe6d69a",
+      "bytes": 32532,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/state_loading_android_large_dark_1x.png": {
+      "sha256": "8ce727392e5b467576f31f004e71ffdeb43964de7521b6f55ded7f53067771ea",
+      "bytes": 29484,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/state_loading_android_large_dark_2x.png": {
+      "sha256": "0f6c43b9bb6eb50e5536a3fcdf6faf1fbf25d4b714fe77c3f651e8e56778a7ef",
+      "bytes": 46713,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/state_loading_android_large_light_1x.png": {
+      "sha256": "85c52e6af99e3884ea21a6954b1985bf66dac46ce4e417dea6ea239bf70785f7",
+      "bytes": 28803,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/state_loading_android_large_light_2x.png": {
+      "sha256": "5cf55c499e8c0e6c135e0dcdc027ae773b313fb08722f7ceef28af428b2633ac",
+      "bytes": 45936,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/state_loading_iphone_dark_1x.png": {
+      "sha256": "231dd1cc79b98c082a239a466b83b81a8e4c3e8a42678081cf4953c2689c66eb",
+      "bytes": 28904,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/state_loading_iphone_dark_2x.png": {
+      "sha256": "68b9e4fc89a841c0ed5f3644fee621d947c0a76a4c1620b66598b646446e1d43",
+      "bytes": 46087,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/state_loading_iphone_light_1x.png": {
+      "sha256": "490649219afdc3d855bf715a93e5324f09fdb024ff22953b31641d4c33a3c344",
+      "bytes": 28091,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/state_loading_iphone_light_2x.png": {
+      "sha256": "d36dcd0d02976759efee40bfdabc95614c726538e75c205789888d1cbbf7970f",
+      "bytes": 45328,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/state_loading_tablet_dark_1x.png": {
+      "sha256": "2bfc554beaacd28e9bd1128666873488104c337fc3aec26e73e18b3cc02e0187",
+      "bytes": 31662,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/state_loading_tablet_dark_2x.png": {
+      "sha256": "67b23f1983488b0c6875b55f6d190894df0733c00c26a353a691bc32f68f8cb5",
+      "bytes": 46012,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/state_loading_tablet_light_1x.png": {
+      "sha256": "f5a867b8103b3586c5deb2a4359ed9b223e861dbfb8418bf3561f00ac7f693d0",
+      "bytes": 30729,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/state_loading_tablet_light_2x.png": {
+      "sha256": "ac16ca753caeb3c898e8839dc659bdb06d2bc26475ee53c0400f05a6a8aeb3f2",
+      "bytes": 45207,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/state_permissionDenied_android_compact_dark_1x.png": {
+      "sha256": "2bb5d106d846eab5244e68997ab5af74c7834c919b879d83ea2059a412151419",
+      "bytes": 35349,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/state_permissionDenied_android_compact_dark_2x.png": {
+      "sha256": "fd51574a9d8c650591ee6baa0a74e74675f9daae465d4445186fee2a8437bd63",
+      "bytes": 30767,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/state_permissionDenied_android_compact_light_1x.png": {
+      "sha256": "bf7781ecf324f6eec6575da17e06d3043b17b5b167f43bbacb9e917389bf1715",
+      "bytes": 34709,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/state_permissionDenied_android_compact_light_2x.png": {
+      "sha256": "521c84aa38a0ab03c2c9da2c2d0826b43e5301d5951d72006e3fe7b513611360",
+      "bytes": 30160,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/state_permissionDenied_android_large_dark_1x.png": {
+      "sha256": "c0bab438f47678eef1a5a884e0a86965f12f7ae6c30bcdb280d9e280482336f5",
+      "bytes": 38671,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/state_permissionDenied_android_large_dark_2x.png": {
+      "sha256": "83f0fe7f088c5a379a1cb1c310c25503b374159d64e2ac746a7e10c62670b826",
+      "bytes": 65015,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/state_permissionDenied_android_large_light_1x.png": {
+      "sha256": "2caadf89f0df3fd55de36a4b512e647fa4536a3aff03f28434cb5bacb6b395e1",
+      "bytes": 37854,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/state_permissionDenied_android_large_light_2x.png": {
+      "sha256": "eb72d08626fc5342e91ad9b62927b6254a9f5028f9debe72e69140c402b16fc5",
+      "bytes": 63606,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/state_permissionDenied_iphone_dark_1x.png": {
+      "sha256": "95090c2e87fc1bed4cf39b1e71774e2c6f584b6916a3854b7e914e8768a461cd",
+      "bytes": 38879,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/state_permissionDenied_iphone_dark_2x.png": {
+      "sha256": "854f56fb3d969d97ae036b0b554350a27d715301e433fc72fd887f582906310a",
+      "bytes": 64253,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/state_permissionDenied_iphone_light_1x.png": {
+      "sha256": "ef5b7ec60ee9184bacb788fc94c4fb45e6688314bb8f5edff69b65579de6cebf",
+      "bytes": 37737,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/state_permissionDenied_iphone_light_2x.png": {
+      "sha256": "14ce485dd37eb7a64912242cfb43b54543a752c298f75e23459b68471029daef",
+      "bytes": 62858,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/state_permissionDenied_tablet_dark_1x.png": {
+      "sha256": "06809d7c24614cc92d738b3ad4ef79d817abc1813c9d74fc3338bcfa5b3dc653",
+      "bytes": 40329,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/state_permissionDenied_tablet_dark_2x.png": {
+      "sha256": "9a9424bd36820bf6c4867d6213ad22616c18e94ae1643e24b5682608a455f53d",
+      "bytes": 64470,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/state_permissionDenied_tablet_light_1x.png": {
+      "sha256": "ade28a5f9a02f0614424c846cd867e1bf09ea22f0d6573ec83b1da7631645fe4",
+      "bytes": 38946,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/state_permissionDenied_tablet_light_2x.png": {
+      "sha256": "7471cfb0b3c7e47ab9cf75266878ee1626a3b318536f9577c5b9258d58e4d234",
+      "bytes": 63145,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/today_android_compact_dark_1x.png": {
+      "sha256": "e80d4a4f1cba67cc5dd90bb419671ccf12edf5ec0577a83895f5aa9ccc5ed1a6",
+      "bytes": 40738,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/today_android_compact_dark_2x.png": {
+      "sha256": "5150b0959f7bbbd40c859db99ca6a7fa62d7d7479fc5c780f634667c00b9a4ae",
+      "bytes": 34999,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/today_android_compact_light_1x.png": {
+      "sha256": "48eb9db75ded06203757d916ee60338dff30a0d932a43dbbfe9fc1d87c9b5303",
+      "bytes": 40374,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/today_android_compact_light_2x.png": {
+      "sha256": "90862fd3b029d2f82a9f9873e16cf1985e7277d7781ed20fa1c46f353974c6ab",
+      "bytes": 34490,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/today_android_large_dark_1x.png": {
+      "sha256": "825c4c8492fcfbe63960b11530d6e60a1ef86df7fa975feb4e63035cc4e25588",
+      "bytes": 71627,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/today_android_large_dark_2x.png": {
+      "sha256": "b7f31862ac1e69097e1d779a10023063805fe0d52399d64e219640d72d101e20",
+      "bytes": 61934,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/today_android_large_light_1x.png": {
+      "sha256": "dd5e6107f53e15bc299968274fd3472ce3772faa7e58071edf46f7b32a93cb8a",
+      "bytes": 71345,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/today_android_large_light_2x.png": {
+      "sha256": "efd9cb304cf9f6e5317f25a876b7c2c300ee48ddcc01ae89df1fd0a52bcb045e",
+      "bytes": 61181,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/today_iphone_dark_1x.png": {
+      "sha256": "3a1dbca8a7a7e8a0f768539f9e50b7f22c95f5accdec87df1512c96b9ac65d8d",
+      "bytes": 65970,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/today_iphone_dark_2x.png": {
+      "sha256": "30ee5e81b7a1abf083ac1ebbf8194c53aaaf637c4f57f8e9038e1ffe63cb58da",
+      "bytes": 55177,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/today_iphone_light_1x.png": {
+      "sha256": "be7bb65c62a766dc903a91a44f1b5a8466d59da14db2d4e6896fa61fd47aa72a",
+      "bytes": 65671,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/today_iphone_light_2x.png": {
+      "sha256": "35794b597fd5e3328a43e3c4d11d5eb4e4b30a3d785310a276795b44977104d8",
+      "bytes": 54564,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/today_tablet_dark_1x.png": {
+      "sha256": "ec7fe5317cf62715bcfc176a938feec1b9fc7b85878ec24c574285d166172a37",
+      "bytes": 73495,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/today_tablet_dark_2x.png": {
+      "sha256": "501bcf8c760ec162a70db9ec1f50ddf1905b4008193c0c5cdca916bb839561ff",
+      "bytes": 93148,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/today_tablet_light_1x.png": {
+      "sha256": "b6c2b371343987d41dd8d5c8a7c37d6c277e051f2b23cde3d6f9d4c426577537",
+      "bytes": 72751,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/today_tablet_light_2x.png": {
+      "sha256": "a8c12f64ccda3663c702c85a20a51435b6cccd040e15baf393c838109755af04",
+      "bytes": 91818,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/welcome_android_compact_dark_1x.png": {
+      "sha256": "c79c525bac2141dc02e0de7e11298437035a99c2189f569c13f6b73607b9c2c6",
+      "bytes": 36862,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/welcome_android_compact_dark_2x.png": {
+      "sha256": "11eb62c445ef79db93ea2973135c88f6842b1c436ebe30d35810f9cc4dae2a04",
+      "bytes": 30679,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/welcome_android_compact_light_1x.png": {
+      "sha256": "56a89d8da9a17408291faed495b1ec89d8c791eda89666dec77a81e50e4a290a",
+      "bytes": 36887,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/welcome_android_compact_light_2x.png": {
+      "sha256": "346a9e1de853b32a98e44438120ffdb30506887aa5af2f5ae051babe0ba030f5",
+      "bytes": 29872,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/welcome_android_large_dark_1x.png": {
+      "sha256": "6e5fa2c1deeca4d22944f721feb6c3d41cb3a245ea6ed319afa4684b4c42a0a2",
+      "bytes": 52190,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/welcome_android_large_dark_2x.png": {
+      "sha256": "2ca0b0996b354d7096f0f3a328c4a677107d8eb21e99c30e687f4063bf55f1c1",
+      "bytes": 65074,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/welcome_android_large_light_1x.png": {
+      "sha256": "4610640accb230da5bc561effe8fb6102a90118430f7f060bbc13f105223f1c5",
+      "bytes": 51390,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/welcome_android_large_light_2x.png": {
+      "sha256": "0883673dc09c12dbeb63434343eef4361e210e2f5329560a46f6cf5e274d5427",
+      "bytes": 64202,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/welcome_iphone_dark_1x.png": {
+      "sha256": "4ca82c177a13a11633937f924dddd5b676cbec6b4caf84d6e78c8f2942989851",
+      "bytes": 51592,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/welcome_iphone_dark_2x.png": {
+      "sha256": "ab7fca6e4395e7977f620eecebffe4b178fbb6aa0e24533c552a440bcd4342e0",
+      "bytes": 52538,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/welcome_iphone_light_1x.png": {
+      "sha256": "899b5cf27ae718682a82db8084665f08283e4bd5ee7c46a901fe5594fab01a35",
+      "bytes": 50825,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/welcome_iphone_light_2x.png": {
+      "sha256": "f0e391aef533f5b59abea901e3cf42b78a8c1efc5d1a874d5b0853738c6f453e",
+      "bytes": 51625,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/welcome_tablet_dark_1x.png": {
+      "sha256": "32016b8d76235a5a33b3f2e17e59ab0c6baa6df0f0bcecfbddf46c0949ccf205",
+      "bytes": 53431,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/welcome_tablet_dark_2x.png": {
+      "sha256": "6b8a59a0ee0fd4925c038b93c6953b9d1293ac5c7925e50ef03c06e540d0f145",
+      "bytes": 96211,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/welcome_tablet_light_1x.png": {
+      "sha256": "829e8c87dc3d23e281e32f1545220bd14889298085cc57c0d8a2839eaa7ea624",
+      "bytes": 52654,
+      "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/welcome_tablet_light_2x.png": {
+      "sha256": "e8a8a19e58ee622259336ae71bc1bfd88cf4c2257eddbbcfe0b027994018af0f",
+      "bytes": 95123,
+      "provenance": "synthetic-flutter-golden"
+    }
+  },
+  "font_license_records": [
+    {
+      "resource": "Roboto",
+      "observed_license": "Apache-2.0",
+      "source": "installed Flutter SDK material_fonts/Roboto_LICENSE.txt",
+      "license_sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "resource": "MaterialIcons",
+      "observed_license": "CC-BY-4.0",
+      "source": "installed Flutter SDK material_fonts/MaterialIcons_LICENSE.txt",
+      "license_sha256": "be698262aecd042c0de6f886cc0af622f8def446462026992cc530275d8a9e74"
+    },
+    {
+      "resource": "Hiragino Sans GB",
+      "source": "installed macOS resource, local test rendering only; font not redistributed"
+    }
+  ]
+}

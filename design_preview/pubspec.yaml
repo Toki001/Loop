@@ -1,0 +1,17 @@
+name: loop_design_preview
+description: Native design-only review harness for Loop. Synthetic fixtures, no product storage.
+publish_to: none
+version: 0.0.1
+environment:
+  sdk: '>=3.13.4 <4.0.0'
+  flutter: '>=3.47.5'
+dependencies:
+  flutter:
+    sdk: flutter
+  loop:
+    path: ..
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+flutter:
+  uses-material-design: true

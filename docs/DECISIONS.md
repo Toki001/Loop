@@ -58,3 +58,5 @@
 If a changed decision affects code, add `ADR-0xx` with Context, Decision, Alternatives, Tradeoffs, Data/Security impact and date; update dependent docs and tests. Do not silently break contract.
 
 M01 reviewed all ten decisions without assuming owner approval beyond the explicitly supplied D-03 identity. General hobbyists/English-first and free v1 remain the contract's safe defaults; research/locale demand and brand conflicts are not validated. [ADR-011](adr/ADR-011-product-interpretations.md) records scope-preserving timing, optional evidence, export-mode and identity interpretations; M04/M12 security and privacy decisions remain open.
+
+M02 [ADR-012](adr/ADR-012-native-design-harness.md) records the root SDK-only design package/harness, tiny AA color correction, accessible action/navigation layouts and pinned native golden renderer/fonts. Original open-loop artwork is an engineering design, not trademark/production-brand clearance. D-04/D-09 and real-device accessibility remain at their release gates.

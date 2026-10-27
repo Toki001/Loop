@@ -1,0 +1,17 @@
+{
+  "date": "2026-10-27",
+  "command": "cd design_preview && flutter --suppress-analytics test --no-pub --machine",
+  "exit_code": 0,
+  "baseline_updates": false,
+  "logical_tests_passed": 233,
+  "failed": 0,
+  "skipped": 0,
+  "hidden_runner_records_excluded": 3,
+  "matrix_goldens": 224,
+  "keyboard_goldens": 1,
+  "contrast_pairings": 22,
+  "scope": "Native design/component tests, not app persistence, physical device or media tests",
+  "artifact_guard_negative_probe": "PASS: new unmanifested PNG rejected with exit 1; owned probe removed",
+  "hash_verified_pngs": 225,
+  "sampled_visual_review_files": 15
+}
