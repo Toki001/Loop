@@ -1,6 +1,6 @@
-# Requirement traceability — M00 baseline
+# Requirement traceability — M01 reviewed contract
 
-This maps the existing contract to planned verification. **Every application requirement and test below is NOT IMPLEMENTED / NOT RUN.** M00 establishes coverage, not M01 research or feature acceptance. M01 must review this map against real research and lock the workflows; M02 defines accepted screen states. [PRODUCT.md](../PRODUCT.md), [ACCEPTANCE_SCENARIOS.md](../ACCEPTANCE_SCENARIOS.md), [DATA_AND_METRICS.md](../DATA_AND_METRICS.md), [QUALITY.md](../QUALITY.md) and [SECURITY_PRIVACY.md](../SECURITY_PRIVACY.md) remain authoritative.
+This maps the existing contract to planned verification. **Every application requirement and test below is NOT IMPLEMENTED / NOT RUN.** M00 established coverage; M01 reviewed the scope, [F01–F08 workflow/failure paths](../WORKFLOWS.md), [optional metric/template definitions](../SKILL_TEMPLATES.md) and [explicitly pending research](../RESEARCH.md). M02 defines accepted screen states. [PRODUCT.md](../PRODUCT.md), [ACCEPTANCE_SCENARIOS.md](../ACCEPTANCE_SCENARIOS.md), [DATA_AND_METRICS.md](../DATA_AND_METRICS.md), [QUALITY.md](../QUALITY.md) and [SECURITY_PRIVACY.md](../SECURITY_PRIVACY.md) remain authoritative.
 
 Screen numbers refer to PRODUCT §6. U = unit, R = real SQLite repository/integrity, W = widget/semantics, G = golden, E = native integration, H = physical/manual. All v1 rows are launch gates, including tests deferred to M13/M14. No story is satisfied by screenshot evidence alone.
 
@@ -69,7 +69,7 @@ Decision inventory from [DECISIONS.md](../DECISIONS.md); M00 does not invent own
 |---|---|---|
 | D-01 | Research pending; general hobbyists/English/international remain assumptions | Product owner, M01 |
 | D-02 | Engineering baseline: Android API 24+, iOS 15+; operational validation pending, see [environment](ENVIRONMENT.md) | Engineering at M03; confirm audience/device coverage in M01, recheck packages and policy at M14 |
-| D-03 | Final package/bundle domain unchosen; no fabricated production identifier | Owner before M03 scaffolding |
+| D-03 | Owner resolved: Android/iOS `com.jameskierdoliguez.loop`, display name Loop; immutable without approval; store availability not yet verified | Implement in M03; availability/identity review M14 before production publication |
 | D-04 | Loop is a working name; no trademark/asset conflict clearance claimed | Owner, M01/M14 |
 | D-05 | OS-private storage baseline; app encryption spike and threat tolerance unresolved | Owner + engineering, M04/M13 |
 | D-06 | Archive encryption unresolved; plain warning is a proposal pending owner privacy sign-off | Owner before M12 enablement |
@@ -78,4 +78,4 @@ Decision inventory from [DECISIONS.md](../DECISIONS.md); M00 does not invent own
 | D-09 | English initial; text/RTL-ready architecture + 200% accessibility contract; locale scope confirmation pending | Owner/design, M02/M13 |
 | D-10 | Android beta then iOS beta proposed; public both only after validation | Owner, M14/M15 |
 
-Product timing wording needs clarification in M01: CODEX promises begin within 30 seconds and reflection within 60 seconds of finishing; PRODUCT's first-session journey and design prompt mention 60 seconds. Preserve both targets as hypotheses: measure time-to-start separately from the one-minute practice duration and time-to-save. Also reconcile PRODUCT's encrypted/optional-passphrase journey with ARCHITECTURE's explicit owner-approved plain-archive fallback before M12. Neither tension licenses dropping a launch gate.
+M01 [ADR-011](../adr/ADR-011-product-interpretations.md) preserves the strict ≤30s Start target, separately reports the ≤60s first-use threshold and ≤60s Finish-to-saved, and excludes practice duration from time-to-start. PRODUCT's archive wording now matches ARCHITECTURE: encryption must be accurate/vetted; plaintext needs explicit owner privacy sign-off before enablement. Actual timing/research and M12 export security/privacy acceptance remain pending. No launch gate is dropped.

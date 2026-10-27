@@ -6,7 +6,7 @@
 
 ## 2. Product hypotheses
 
-H1: Users can begin their first practice within one minute without needing media permissions. H2: A no-pressure reflection prompt helps users identify their next action. H3: Then-vs-Now creates perceived value over basic streak tracking. H4: Offline/without-account onboarding increases trust but may create recovery concerns; clear export workflow mitigates.
+H1: Users can begin their first practice without media permissions; measure the strict ≤30s Start target and also report the ≤60s threshold, excluding practice duration. H2: A no-pressure reflection prompt helps users identify their next action. H3: Then-vs-Now creates perceived value over basic streak tracking. H4: Offline/without-account onboarding increases trust but may create recovery concerns; clear export workflow mitigates. All remain unvalidated hypotheses. M01's [research protocol](RESEARCH.md) is prepared, not conducted.
 
 ## 3. Optional consented metrics for a future beta
 

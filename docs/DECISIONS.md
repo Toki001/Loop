@@ -45,9 +45,9 @@
 | ID | Question | Proposed safe default | Responsible milestone |
 |---|---|---|---|
 | D-01 | Primary launch audience? | General hobbyists, English locale, international | M01 |
-| D-02 | iOS/Android OS min versions? | choose stable supported baseline after device matrix and plugins | M00/M03 |
-| D-03 | App bundle ID / package ID? | owner-controlled reverse domain; never invent as final | M03 |
-| D-04 | Logo and product name conflicts? | treat Loop as working product name pending checks | M01/M14 |
+| D-02 | iOS/Android OS min versions? | M00 engineering baseline Android API 24+/iOS 15+; validate native packages/devices in M03, current store policy again in M14 | M00/M03 |
+| D-03 | App bundle ID / package ID? | RESOLVED by owner 2026-10-27: Android/iOS `com.jameskierdoliguez.loop`, display name Loop; never change without approval; production availability still to verify before publication | M03/M14 |
+| D-04 | Logo and product name conflicts? | Owner display name Loop; brand/logo/availability clearance not established and remains a release gate | M01/M14 |
 | D-05 | App encryption scope? | test OS protection and app-managed encryption costs | M04/M13 |
 | D-06 | Export encrypted default? | clear plain-archive warning until audited crypto available | M12 |
 | D-07 | Media retention/limits? | ergonomic maximums determined by performance and user tests | M08 |
@@ -56,3 +56,5 @@
 | D-10 | Platform launch sequencing? | Android beta then iOS beta; public both after validation | M14/M15 |
 
 If a changed decision affects code, add `ADR-0xx` with Context, Decision, Alternatives, Tradeoffs, Data/Security impact and date; update dependent docs and tests. Do not silently break contract.
+
+M01 reviewed all ten decisions without assuming owner approval beyond the explicitly supplied D-03 identity. General hobbyists/English-first and free v1 remain the contract's safe defaults; research/locale demand and brand conflicts are not validated. [ADR-011](adr/ADR-011-product-interpretations.md) records scope-preserving timing, optional evidence, export-mode and identity interpretations; M04/M12 security and privacy decisions remain open.

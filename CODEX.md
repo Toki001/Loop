@@ -20,7 +20,7 @@ Build a product people can trust with their personal recordings and long-term pr
 1. Choose from Guitar/Music, Drawing, Language, Programming, Singing/Voice, Typing, Fitness/Movement (manual only; not a health app) or Custom.
 2. Define a meaningful skill goal: outcome, unit, target or milestone, frequency suggestion and motivation; optional baseline evidence.
 3. Start a focused practice session with a plan or exercises; timer runs reliably and can pause/resume/cancel.
-4. Save a reflection (effort, what worked, what to repeat) and at least one form of **evidence** (optional metrics, notes, image or audio).
+4. Save the session with optional reflection (effort, what worked, what to repeat) and optional **evidence** (metrics, notes, image or audio). Encourage useful observations; blank reflection never blocks save or becomes a claim of observed improvement.
 5. Explore skill-specific charts/timelines and compare eligible photos/audio/quantitative values from two sessions.
 6. Decide the next repeatable action; optionally set a respectful reminder; export or delete their data anytime.
 

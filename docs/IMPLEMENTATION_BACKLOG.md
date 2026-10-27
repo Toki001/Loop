@@ -2,6 +2,8 @@
 
 This backlog is subordinate to `docs/MILESTONES.md` and `docs/PRODUCT.md`. IDs are suggested issue identifiers; they are not completed tickets.
 
+M01 scope lock (2026-10-27): all LOOP-01–LOOP-12 and US-01–US-18 remain mandatory for v1. No deferred item below is admitted. [WORKFLOWS.md](WORKFLOWS.md) defines the accepted flows/failure outcomes and [SKILL_TEMPLATES.md](SKILL_TEMPLATES.md) defines optional evidence/metric starting content. Research assumptions remain explicitly pending; no implemented feature is claimed by this prioritization.
+
 ## Must-have launch epics
 
 | Epic | P0/P1 task clusters | Milestones |

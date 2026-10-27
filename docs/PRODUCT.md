@@ -10,11 +10,11 @@ Not: social network, course marketplace, AI tutor, fitness/health diagnostic app
 
 ## 2. First-run experience
 
-**Acceptance journey — 60-second first session:** Launch → welcome (skip possible) → pick a suggested skill or Custom → give it an editable name → suggested 10-minute practice plan (can choose 1–180 minutes or untimed) → Start → Pause/Resume → Finish → reflection and optional metric/evidence → Save → Today updates. No account, internet, microphone, photos or notification permission required.
+**Acceptance journey — first use:** Launch → welcome (skip possible) → pick a suggested skill or Custom → give it an editable name → suggested 10-minute practice plan (can choose 1–180 minutes or untimed) → Start → Pause/Resume → Finish → optional reflection/metric/evidence → Save → Today updates. No account, internet, microphone, photos or notification permission required. Preserve the ≤30s Start target from CODEX and separately report the ≤60s first-use threshold; practice duration is outside time-to-start. Finish-to-saved target is ≤60s. These are design/test targets, not measured results; see [WORKFLOWS.md](WORKFLOWS.md).
 
 **Acceptance journey — next session:** Today surfaces last skill and recommended next exercise, not a manipulative streak. Start again in at most two taps. After multiple sessions, Progress offers changes for comparable metrics and dates; comparison offers two historical artifacts when compatible media exists.
 
-**Acceptance journey — new device:** User chooses export on old device → receives versioned encrypted/optional-passphrase archive with manifest and media → verifies backup → imports into an empty or existing installation on another device with collision-resolution preview → validates counts/hash → atomic commit or full rollback. Explain that app removal without export may irreversibly remove local history; don't mislead about system cloud backups.
+**Acceptance journey — new device:** User chooses export on old device → receives versioned portable archive with manifest and media, with accurately labeled encryption mode → verifies backup → imports into an empty or existing installation on another device with collision-resolution preview → validates counts/hash → atomic commit or full rollback. Optional passphrase encryption requires vetted authenticated crypto/KDF and tested recovery; the ARCHITECTURE plaintext fallback requires explicit warning and owner privacy sign-off before enabling. Explain that app removal without export may irreversibly remove local history; don't mislead about system cloud backups.
 
 ## 3. Primary user stories and tests
 
@@ -143,3 +143,5 @@ Ship **free v1 without a paywall** for learning and trust; all existing data is 
 ## 10. Product risks / validation
 
 Interview 8–12 hobbyists across two or more practice disciplines; 5 moderated prototype tests. Measure whether users understand *reflection* vs *timer*, whether prompts are burdensome, ability to find previous artifacts and actual intent to return. Include accessibility and low-end Android. Do not claim retention uplift without data. Use offline-first interviews where telemetry consent is absent.
+
+M01 scope review: [research protocol and hypothetical personas](RESEARCH.md), [workflow/failure contract](WORKFLOWS.md), and [starter exercise/metric definitions](SKILL_TEMPLATES.md) are prepared. Empirical validation is pending: no interviews or participant tests have occurred. Existing v1 scope is frozen for M02–M12 unless an ADR changes it; no material scope change or human research sign-off is claimed. Engineering interpretations and the owner-supplied app identity are in [ADR-011](adr/ADR-011-product-interpretations.md).
