@@ -1,0 +1,94 @@
+{
+  "results": [
+    {
+      "action": "product-main Android debug build",
+      "exit": 0,
+      "seconds": 11.216
+    },
+    {
+      "action": "product-main iOS simulator debug build",
+      "exit": 0,
+      "seconds": 22.86
+    },
+    {
+      "action": "install Android product-main preserving data",
+      "exit": 0,
+      "seconds": 11.385
+    },
+    {
+      "action": "launch Android product-main",
+      "exit": 0,
+      "seconds": 8.111
+    },
+    {
+      "action": "read Android main PID",
+      "exit": 0,
+      "seconds": 0.12
+    },
+    {
+      "action": "stop only Android Loop main process for read-only snapshot",
+      "exit": 0,
+      "seconds": 0.182
+    },
+    {
+      "action": "relaunch Android product-main",
+      "exit": 0,
+      "seconds": 5.26
+    },
+    {
+      "action": "read relaunched Android main PID",
+      "exit": 0,
+      "seconds": 0.115
+    },
+    {
+      "action": "install retainedIos product-main preserving data",
+      "exit": 0,
+      "seconds": 0.885
+    },
+    {
+      "action": "launch retainedIos product-main",
+      "exit": 0,
+      "seconds": 0.213
+    },
+    {
+      "action": "terminate only retainedIos Loop main process",
+      "exit": 0,
+      "seconds": 0.312
+    },
+    {
+      "action": "resolve retainedIos private container",
+      "exit": 0,
+      "seconds": 0.132
+    },
+    {
+      "action": "relaunch retainedIos product-main",
+      "exit": 0,
+      "seconds": 0.494
+    },
+    {
+      "action": "install freshIos product-main preserving data",
+      "exit": 0,
+      "seconds": 0.682
+    },
+    {
+      "action": "launch freshIos product-main",
+      "exit": 0,
+      "seconds": 0.22
+    },
+    {
+      "action": "terminate only freshIos Loop main process",
+      "exit": 0,
+      "seconds": 0.176
+    },
+    {
+      "action": "resolve freshIos private container",
+      "exit": 0,
+      "seconds": 0.136
+    },
+    {
+      "action": "relaunch freshIos product-main",
+      "exit": 0,
+      "seconds": 1.161
+    }
+  ]
+}

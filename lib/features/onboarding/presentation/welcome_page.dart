@@ -36,7 +36,7 @@ class WelcomePage extends ConsumerWidget {
               busy: state.saving,
               onPressed: state.saving
                   ? null
-                  : () => _finish(context, ref, '/skills'),
+                  : () => _finish(context, ref, '/skills/new'),
             ),
             const SizedBox(height: 8),
             LoopButton(

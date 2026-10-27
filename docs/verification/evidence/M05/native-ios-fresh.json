@@ -1,0 +1,48 @@
+{
+  "records": [
+    {
+      "stage": "setup",
+      "platform": "ios",
+      "pid": 6518,
+      "setupPid": 6518,
+      "schema": 3,
+      "retainedAppearance": "system",
+      "retainedOnboarding": false,
+      "freshStore": true,
+      "skillCount": 1,
+      "exerciseCount": 3,
+      "goalCount": 1,
+      "sessionCount": 0,
+      "readingCount": 0,
+      "hashRetained": true,
+      "foreignKeys": "ok",
+      "integrity": "ok",
+      "productionDataUnchanged": true
+    },
+    {
+      "stage": "resume",
+      "platform": "ios",
+      "pid": 7762,
+      "setupPid": 6518,
+      "schema": 3,
+      "retainedAppearance": "system",
+      "retainedOnboarding": false,
+      "freshStore": false,
+      "skillCount": 1,
+      "exerciseCount": 3,
+      "goalCount": 1,
+      "sessionCount": 0,
+      "readingCount": 0,
+      "hashRetained": true,
+      "foreignKeys": "ok",
+      "integrity": "ok",
+      "productionDataUnchanged": true
+    }
+  ],
+  "testsPassed": 2,
+  "testStoreAndMarkerRemoved": true,
+  "syntheticFramesCopiedAndSourceRemoved": true,
+  "target": "new iPhone17/iOS27.0 arm64 simulator",
+  "device": "97AA9381-B1F4-4EA9-AC54-3FF97CF5B6E1",
+  "physicalProtectionVerified": false
+}

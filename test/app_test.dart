@@ -8,6 +8,9 @@ import 'package:loop/app/app.dart';
 import 'package:loop/app/licenses.dart';
 import 'package:loop/app/routing.dart';
 import 'package:loop/bootstrap.dart';
+import 'package:loop/core/data/storage.dart';
+import 'package:loop/features/skills/presentation/skill_providers.dart';
+import 'package:loop/features/skills/data/skill_management_repository.dart';
 import 'package:loop/features/settings/domain/preferences.dart';
 import 'package:loop/features/settings/presentation/preferences_controller.dart';
 
@@ -20,6 +23,8 @@ Future<ProviderContainer> pumpApp(
   double scale = 1,
   Size size = const Size(390, 844),
   ControlledPreferencesRepository? repository,
+  LoopStorage? storage,
+  SkillManagementRepository? skillRepository,
 }) async {
   tester.view.physicalSize = size;
   tester.view.devicePixelRatio = 1;
@@ -36,6 +41,16 @@ Future<ProviderContainer> pumpApp(
         Preferences(onboardingSeen: seen),
       ),
       initialLocationProvider.overrideWithValue(route),
+      if (skillRepository != null)
+        skillManagementProvider.overrideWithValue(skillRepository)
+      else if (storage != null)
+        storageProvider.overrideWithValue(storage)
+      else ...[
+        skillCardsProvider(false).overrideWith((ref) => Stream.value([])),
+        skillCardsProvider(true).overrideWith((ref) => Stream.value([])),
+        skillDetailProvider('missing')
+            .overrideWith((ref) => Stream.value(null)),
+      ],
     ],
   );
   addTearDown(container.dispose);
@@ -88,7 +103,7 @@ void main() {
     repository.fail = false;
     await tester.tap(find.text('Choose a skill'));
     await tester.pumpAndSettle();
-    expect(find.text('Make room for what you want to learn'), findsOneWidget);
+    expect(find.text('What would you like to practice?'), findsOneWidget);
   });
 
   testWidgets(
@@ -97,7 +112,7 @@ void main() {
       await pumpApp(tester);
       for (final destination in [
         ('Skills', 'Make room for what you want to learn'),
-        ('Practice', 'Start with a skill'),
+        ('Practice', 'Choose what to practice'),
         ('Progress', 'Progress begins with a practice record'),
         ('Library', 'Keep the work you can come back to'),
         ('Today', 'Your practice starts here'),
@@ -185,7 +200,7 @@ void main() {
       container.read(routerProvider).routeInformationProvider.value.uri.path,
       '/practice/setup',
     );
-    expect(find.text('Start with a skill'), findsOneWidget);
+    expect(find.text('Choose what to practice'), findsOneWidget);
   });
 
   testWidgets('fresh deep links go through onboarding', (tester) async {

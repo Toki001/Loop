@@ -1,0 +1,22 @@
+# Owned skill, goal and exercise setup
+
+[M05](verification/M05.md) records actual verification status; [ADR-015](adr/ADR-015-skill-management.md) explains the architecture. The setup is native Flutter, offline and account-free. It creates no practice history, observations or improvement scores. Session timing and reflection remain M06/M07 gates.
+
+Skills supports the eight product categories, repeated names, custom names of 1–60 graphemes, a bounded icon/accent set, optional note and a suggested 1–180 minute or untimed plan. The category picker leads to an editable setup. Skills has active/archived views, local literal substring search by name/category and explicit up/down reorder controls when the complete active list is visible. Archive retains all references; restore returns the skill to the active list. Hard deletion remains the confirmed ownership flow in M12.
+
+Creating a skill atomically copies optional starter instructions/metric definitions and an optional qualitative first goal. Stable catalog template IDs are copied into owned exercise rows once; startup, category changes and upgrades never replace customizations. An exercise can be edited, duplicated into a new identity, archived/restored or reordered. Suggested duration is optional, 1–10,800 seconds. Existing session exercise references/title snapshots survive editing/archive; no journal records are created by setup.
+
+Goals have optional motivation/date and explicit active/paused/completed/archived states. Completion is a user decision; reaching a numeric target does not silently assert mastery. Archiving a completed goal retains its original completion date. Restoring it retains completion; making it active explicitly clears completion.
+
+| Goal | Meaning and eligibility |
+|---|---|
+| Cumulative | Completed recorded practice sessions/seconds, or additive count/duration readings of one definition/version/unit/method; rates, percentages and ordinal ratings are never summed |
+| Reach value | Latest compatible numeric observation, explicit direction/unit/source/sample count; no invented zero-to-target skill percentage |
+| Weekly suggestion | Distinct positive-duration practice dates in the current local calendar week, 1–7 requested days; no streak penalty |
+| Deliverable / qualitative | User-marked milestone, no numerical percentage |
+
+Missing observations remain missing; an entered zero remains a real observation. Repeated readings, incompatible definitions/units/methods, ambiguous latest timestamps and nonfinite totals are explained instead of aggregated. Legacy weekly session units require review rather than conversion to days. New custom numeric definitions commit atomically with their goal and create no readings; their unit, direction, manual source and non-negative scale are explicit. Percentages are bounded 0–100. Existing measurement semantics stay versioned and immutable.
+
+UI writes go through `SkillManagementRepository`; its aggregate streams feed cards/detail. Forms retain drafts on failed writes, stream errors/recovery and ordinary rebuilds. A busy save prevents duplicate activation; success navigation follows the database commit. Back checks pending field changes before confirming discard. Errors use safe categories and never render SQL, private paths or note parameters. Large text uses wrapping helper/error copy, scrolling forms and pinned keyboard-aware Save. Dates use native Material locale delegates; initial skill/editor/catalog feedback copy is English. Additional locale extraction/translation and physical assistive-technology certification remain the locale/M13/M14 gates.
+
+Verification uses real file SQLite for widgets, historical v1/v2 migration fixtures, separate functional goldens and native production background repositories. The native two-stage test creates a marker-owned UUID store beneath app-private support, separately hashes the normal journal, reopens the disposable records in a different process and removes only that test store after success. It never seeds retail startup. `integration_test/skill_management_test.dart` defaults to `setup`; resume with `--dart-define=M05_STAGE=resume --no-uninstall` on the same explicit target. `cleanup` only removes the strict marker-owned synthetic store after confirming the normal journal unchanged. Native widget frames are explicitly labeled synthetic/disposable in the provenance manifest; they are not OS-window captures or physical iPhone evidence.

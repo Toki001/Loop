@@ -3,17 +3,9 @@ import 'package:drift/drift.dart';
 import '../../../core/data/database/loop_database.dart';
 import '../../../core/data/local_failure.dart';
 import '../../../core/data/validation.dart';
+import '../domain/skill_kind.dart';
 
-enum SkillKind {
-  music,
-  drawing,
-  language,
-  programming,
-  voice,
-  typing,
-  movement,
-  custom,
-}
+export '../domain/skill_kind.dart';
 
 /// Skills, goals and exercises share one skill transaction boundary.
 class SkillsRepository {

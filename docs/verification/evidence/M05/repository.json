@@ -1,0 +1,53 @@
+{
+  "checks": [
+    {
+      "command": [
+        "python3",
+        "tool/check_baseline.py"
+      ],
+      "exit": 0,
+      "stdout": "PASS: 56 Markdown files; 239 local file links resolved\nPASS: 18 stories, 18 scenarios, 10 decisions, 12 cross-cutting rows\nPASS: 22 ignored + 8 trackable path probes\nPASS: limited secret/home-path scan of 253 UTF-8 files; no findings\nPASS: 253 synthetic native golden PNGs match reviewed provenance hashes\nPASS: 23 original native icon/launch PNGs match provenance hashes\nPASS: 10 reviewed native capture PNGs match provenance hashes\nScope: local file links only (not anchors/remote URLs); no dependency or app tests\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--cached",
+        "--check"
+      ],
+      "exit": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--exit-code",
+        "5157180",
+        "--",
+        "docs/verification/M00.md",
+        "docs/verification/evidence/M00",
+        "test/fixtures/database/schema_v1.sql",
+        "test/fixtures/database/schema_v2.sql",
+        "test/fixtures/database/schema_v2.json",
+        "docs/verification/design/goldens"
+      ],
+      "exit": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "frozenM00M02V1V2TrackedFilesUnchanged": true
+}

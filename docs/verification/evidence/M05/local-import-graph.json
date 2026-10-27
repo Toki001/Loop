@@ -1,0 +1,631 @@
+{
+  "method": "actual local Dart relative imports/exports; not Graphify or remote indexing",
+  "edgeCount": 156,
+  "edges": [
+    {
+      "from": "lib/app/app.dart",
+      "to": "lib/features/settings/domain/preferences.dart"
+    },
+    {
+      "from": "lib/app/app.dart",
+      "to": "lib/features/settings/presentation/preferences_controller.dart"
+    },
+    {
+      "from": "lib/app/app.dart",
+      "to": "lib/shared/design_system/tokens.dart"
+    },
+    {
+      "from": "lib/app/app.dart",
+      "to": "lib/app/l10n/app_localizations.dart"
+    },
+    {
+      "from": "lib/app/app.dart",
+      "to": "lib/app/routing.dart"
+    },
+    {
+      "from": "lib/app/l10n/app_localizations.dart",
+      "to": "lib/app/l10n/app_localizations_en.dart"
+    },
+    {
+      "from": "lib/app/l10n/app_localizations.dart",
+      "to": "lib/app/l10n/l10n/app_localizations.dart"
+    },
+    {
+      "from": "lib/app/l10n/app_localizations_en.dart",
+      "to": "lib/app/l10n/app_localizations.dart"
+    },
+    {
+      "from": "lib/app/routing.dart",
+      "to": "lib/features/onboarding/presentation/welcome_page.dart"
+    },
+    {
+      "from": "lib/app/routing.dart",
+      "to": "lib/features/settings/presentation/preferences_controller.dart"
+    },
+    {
+      "from": "lib/app/routing.dart",
+      "to": "lib/features/settings/presentation/settings_page.dart"
+    },
+    {
+      "from": "lib/app/routing.dart",
+      "to": "lib/features/skills/domain/skill_kind.dart"
+    },
+    {
+      "from": "lib/app/routing.dart",
+      "to": "lib/features/skills/presentation/exercise_editor_page.dart"
+    },
+    {
+      "from": "lib/app/routing.dart",
+      "to": "lib/features/skills/presentation/goal_editor_page.dart"
+    },
+    {
+      "from": "lib/app/routing.dart",
+      "to": "lib/features/skills/presentation/skill_detail_page.dart"
+    },
+    {
+      "from": "lib/app/routing.dart",
+      "to": "lib/features/skills/presentation/skill_editor_page.dart"
+    },
+    {
+      "from": "lib/app/routing.dart",
+      "to": "lib/features/skills/presentation/skills_page.dart"
+    },
+    {
+      "from": "lib/app/routing.dart",
+      "to": "lib/shared/design_system/components.dart"
+    },
+    {
+      "from": "lib/app/routing.dart",
+      "to": "lib/app/l10n/app_localizations.dart"
+    },
+    {
+      "from": "lib/app/routing.dart",
+      "to": "lib/app/screens/foundation_pages.dart"
+    },
+    {
+      "from": "lib/app/screens/foundation_pages.dart",
+      "to": "lib/shared/design_system/components.dart"
+    },
+    {
+      "from": "lib/app/screens/foundation_pages.dart",
+      "to": "lib/shared/design_system/tokens.dart"
+    },
+    {
+      "from": "lib/app/screens/foundation_pages.dart",
+      "to": "lib/app/l10n/app_localizations.dart"
+    },
+    {
+      "from": "lib/app/screens/foundation_pages.dart",
+      "to": "lib/app/widgets/development_notice.dart"
+    },
+    {
+      "from": "lib/app/widgets/development_notice.dart",
+      "to": "lib/shared/design_system/components.dart"
+    },
+    {
+      "from": "lib/app/widgets/development_notice.dart",
+      "to": "lib/app/l10n/app_localizations.dart"
+    },
+    {
+      "from": "lib/bootstrap.dart",
+      "to": "lib/app/app.dart"
+    },
+    {
+      "from": "lib/bootstrap.dart",
+      "to": "lib/app/l10n/app_localizations.dart"
+    },
+    {
+      "from": "lib/bootstrap.dart",
+      "to": "lib/core/data/local_failure.dart"
+    },
+    {
+      "from": "lib/bootstrap.dart",
+      "to": "lib/core/data/storage.dart"
+    },
+    {
+      "from": "lib/bootstrap.dart",
+      "to": "lib/core/data/storage_protection.dart"
+    },
+    {
+      "from": "lib/bootstrap.dart",
+      "to": "lib/features/settings/data/file_preferences_repository.dart"
+    },
+    {
+      "from": "lib/bootstrap.dart",
+      "to": "lib/features/settings/domain/preferences.dart"
+    },
+    {
+      "from": "lib/bootstrap.dart",
+      "to": "lib/features/settings/presentation/preferences_controller.dart"
+    },
+    {
+      "from": "lib/bootstrap.dart",
+      "to": "lib/shared/design_system/components.dart"
+    },
+    {
+      "from": "lib/bootstrap.dart",
+      "to": "lib/shared/design_system/tokens.dart"
+    },
+    {
+      "from": "lib/core/data/database/loop_database.dart",
+      "to": "lib/core/data/local_failure.dart"
+    },
+    {
+      "from": "lib/core/data/database/loop_database.dart",
+      "to": "lib/core/data/database/utc_datetime.dart"
+    },
+    {
+      "from": "lib/core/data/database/open_database.dart",
+      "to": "lib/core/media/private_files.dart"
+    },
+    {
+      "from": "lib/core/data/database/open_database.dart",
+      "to": "lib/core/data/local_failure.dart"
+    },
+    {
+      "from": "lib/core/data/database/open_database.dart",
+      "to": "lib/core/data/database/loop_database.dart"
+    },
+    {
+      "from": "lib/core/data/settings_repository.dart",
+      "to": "lib/core/data/database/loop_database.dart"
+    },
+    {
+      "from": "lib/core/data/settings_repository.dart",
+      "to": "lib/core/data/local_failure.dart"
+    },
+    {
+      "from": "lib/core/data/settings_repository.dart",
+      "to": "lib/core/data/validation.dart"
+    },
+    {
+      "from": "lib/core/data/storage.dart",
+      "to": "lib/features/practice/data/sessions_repository.dart"
+    },
+    {
+      "from": "lib/core/data/storage.dart",
+      "to": "lib/features/progress/data/metrics_repository.dart"
+    },
+    {
+      "from": "lib/core/data/storage.dart",
+      "to": "lib/features/reminders/data/reminders_repository.dart"
+    },
+    {
+      "from": "lib/core/data/storage.dart",
+      "to": "lib/features/settings/data/database_preferences_repository.dart"
+    },
+    {
+      "from": "lib/core/data/storage.dart",
+      "to": "lib/features/skills/data/skills_repository.dart"
+    },
+    {
+      "from": "lib/core/data/storage.dart",
+      "to": "lib/features/skills/data/skill_management_repository.dart"
+    },
+    {
+      "from": "lib/core/data/storage.dart",
+      "to": "lib/core/media/media_repository.dart"
+    },
+    {
+      "from": "lib/core/data/storage.dart",
+      "to": "lib/core/media/private_files.dart"
+    },
+    {
+      "from": "lib/core/data/storage.dart",
+      "to": "lib/core/data/database/loop_database.dart"
+    },
+    {
+      "from": "lib/core/data/storage.dart",
+      "to": "lib/core/data/database/open_database.dart"
+    },
+    {
+      "from": "lib/core/data/storage.dart",
+      "to": "lib/core/data/settings_repository.dart"
+    },
+    {
+      "from": "lib/core/data/storage_protection.dart",
+      "to": "lib/core/data/local_failure.dart"
+    },
+    {
+      "from": "lib/core/data/validation.dart",
+      "to": "lib/core/data/local_failure.dart"
+    },
+    {
+      "from": "lib/core/media/media_repository.dart",
+      "to": "lib/core/data/database/loop_database.dart"
+    },
+    {
+      "from": "lib/core/media/media_repository.dart",
+      "to": "lib/core/data/local_failure.dart"
+    },
+    {
+      "from": "lib/core/media/media_repository.dart",
+      "to": "lib/core/data/validation.dart"
+    },
+    {
+      "from": "lib/core/media/media_repository.dart",
+      "to": "lib/core/media/private_files.dart"
+    },
+    {
+      "from": "lib/core/media/private_files.dart",
+      "to": "lib/core/data/local_failure.dart"
+    },
+    {
+      "from": "lib/features/onboarding/presentation/welcome_page.dart",
+      "to": "lib/app/l10n/app_localizations.dart"
+    },
+    {
+      "from": "lib/features/onboarding/presentation/welcome_page.dart",
+      "to": "lib/shared/design_system/components.dart"
+    },
+    {
+      "from": "lib/features/onboarding/presentation/welcome_page.dart",
+      "to": "lib/features/settings/presentation/preferences_controller.dart"
+    },
+    {
+      "from": "lib/features/practice/data/sessions_repository.dart",
+      "to": "lib/core/data/database/loop_database.dart"
+    },
+    {
+      "from": "lib/features/practice/data/sessions_repository.dart",
+      "to": "lib/core/data/local_failure.dart"
+    },
+    {
+      "from": "lib/features/practice/data/sessions_repository.dart",
+      "to": "lib/core/data/validation.dart"
+    },
+    {
+      "from": "lib/features/progress/data/metrics_repository.dart",
+      "to": "lib/core/data/database/loop_database.dart"
+    },
+    {
+      "from": "lib/features/progress/data/metrics_repository.dart",
+      "to": "lib/core/data/local_failure.dart"
+    },
+    {
+      "from": "lib/features/progress/data/metrics_repository.dart",
+      "to": "lib/core/data/validation.dart"
+    },
+    {
+      "from": "lib/features/reminders/data/reminders_repository.dart",
+      "to": "lib/core/data/database/loop_database.dart"
+    },
+    {
+      "from": "lib/features/reminders/data/reminders_repository.dart",
+      "to": "lib/core/data/local_failure.dart"
+    },
+    {
+      "from": "lib/features/reminders/data/reminders_repository.dart",
+      "to": "lib/core/data/validation.dart"
+    },
+    {
+      "from": "lib/features/settings/data/database_preferences_repository.dart",
+      "to": "lib/core/data/database/loop_database.dart"
+    },
+    {
+      "from": "lib/features/settings/data/database_preferences_repository.dart",
+      "to": "lib/core/data/local_failure.dart"
+    },
+    {
+      "from": "lib/features/settings/data/database_preferences_repository.dart",
+      "to": "lib/core/data/settings_repository.dart"
+    },
+    {
+      "from": "lib/features/settings/data/database_preferences_repository.dart",
+      "to": "lib/core/data/validation.dart"
+    },
+    {
+      "from": "lib/features/settings/data/database_preferences_repository.dart",
+      "to": "lib/features/settings/domain/preferences.dart"
+    },
+    {
+      "from": "lib/features/settings/data/database_preferences_repository.dart",
+      "to": "lib/features/settings/data/file_preferences_repository.dart"
+    },
+    {
+      "from": "lib/features/settings/data/file_preferences_repository.dart",
+      "to": "lib/features/settings/domain/preferences.dart"
+    },
+    {
+      "from": "lib/features/settings/presentation/preferences_controller.dart",
+      "to": "lib/features/settings/domain/preferences.dart"
+    },
+    {
+      "from": "lib/features/settings/presentation/settings_page.dart",
+      "to": "lib/app/build_info.dart"
+    },
+    {
+      "from": "lib/features/settings/presentation/settings_page.dart",
+      "to": "lib/app/l10n/app_localizations.dart"
+    },
+    {
+      "from": "lib/features/settings/presentation/settings_page.dart",
+      "to": "lib/shared/design_system/components.dart"
+    },
+    {
+      "from": "lib/features/settings/presentation/settings_page.dart",
+      "to": "lib/features/settings/domain/preferences.dart"
+    },
+    {
+      "from": "lib/features/settings/presentation/settings_page.dart",
+      "to": "lib/features/settings/presentation/preferences_controller.dart"
+    },
+    {
+      "from": "lib/features/skills/data/skill_management_repository.dart",
+      "to": "lib/core/data/database/loop_database.dart"
+    },
+    {
+      "from": "lib/features/skills/data/skill_management_repository.dart",
+      "to": "lib/core/data/local_failure.dart"
+    },
+    {
+      "from": "lib/features/skills/data/skill_management_repository.dart",
+      "to": "lib/core/data/validation.dart"
+    },
+    {
+      "from": "lib/features/skills/data/skill_management_repository.dart",
+      "to": "lib/features/progress/data/metrics_repository.dart"
+    },
+    {
+      "from": "lib/features/skills/data/skill_management_repository.dart",
+      "to": "lib/features/skills/domain/skill_draft.dart"
+    },
+    {
+      "from": "lib/features/skills/data/skill_management_repository.dart",
+      "to": "lib/features/skills/domain/goal_rules.dart"
+    },
+    {
+      "from": "lib/features/skills/data/skill_management_repository.dart",
+      "to": "lib/features/skills/domain/goal_measure.dart"
+    },
+    {
+      "from": "lib/features/skills/data/skill_management_repository.dart",
+      "to": "lib/features/skills/domain/starter_catalog.dart"
+    },
+    {
+      "from": "lib/features/skills/data/skill_management_repository.dart",
+      "to": "lib/features/skills/data/skills_repository.dart"
+    },
+    {
+      "from": "lib/features/skills/data/skills_repository.dart",
+      "to": "lib/core/data/database/loop_database.dart"
+    },
+    {
+      "from": "lib/features/skills/data/skills_repository.dart",
+      "to": "lib/core/data/local_failure.dart"
+    },
+    {
+      "from": "lib/features/skills/data/skills_repository.dart",
+      "to": "lib/core/data/validation.dart"
+    },
+    {
+      "from": "lib/features/skills/data/skills_repository.dart",
+      "to": "lib/features/skills/domain/skill_kind.dart"
+    },
+    {
+      "from": "lib/features/skills/data/skills_repository.dart",
+      "to": "lib/features/skills/domain/skill_kind.dart"
+    },
+    {
+      "from": "lib/features/skills/domain/goal_measure.dart",
+      "to": "lib/core/data/local_failure.dart"
+    },
+    {
+      "from": "lib/features/skills/domain/goal_measure.dart",
+      "to": "lib/core/data/validation.dart"
+    },
+    {
+      "from": "lib/features/skills/domain/goal_rules.dart",
+      "to": "lib/core/data/database/loop_database.dart"
+    },
+    {
+      "from": "lib/features/skills/domain/goal_rules.dart",
+      "to": "lib/core/data/local_failure.dart"
+    },
+    {
+      "from": "lib/features/skills/domain/goal_rules.dart",
+      "to": "lib/core/data/validation.dart"
+    },
+    {
+      "from": "lib/features/skills/domain/skill_draft.dart",
+      "to": "lib/core/data/local_failure.dart"
+    },
+    {
+      "from": "lib/features/skills/domain/skill_draft.dart",
+      "to": "lib/core/data/validation.dart"
+    },
+    {
+      "from": "lib/features/skills/domain/skill_draft.dart",
+      "to": "lib/features/skills/domain/skill_kind.dart"
+    },
+    {
+      "from": "lib/features/skills/domain/skill_draft.dart",
+      "to": "lib/features/skills/domain/starter_catalog.dart"
+    },
+    {
+      "from": "lib/features/skills/domain/starter_catalog.dart",
+      "to": "lib/features/skills/domain/skill_kind.dart"
+    },
+    {
+      "from": "lib/features/skills/presentation/exercise_editor_page.dart",
+      "to": "lib/app/screens/foundation_pages.dart"
+    },
+    {
+      "from": "lib/features/skills/presentation/exercise_editor_page.dart",
+      "to": "lib/core/data/database/loop_database.dart"
+    },
+    {
+      "from": "lib/features/skills/presentation/exercise_editor_page.dart",
+      "to": "lib/shared/design_system/components.dart"
+    },
+    {
+      "from": "lib/features/skills/presentation/exercise_editor_page.dart",
+      "to": "lib/features/skills/presentation/skill_providers.dart"
+    },
+    {
+      "from": "lib/features/skills/presentation/exercise_editor_page.dart",
+      "to": "lib/features/skills/presentation/skill_widgets.dart"
+    },
+    {
+      "from": "lib/features/skills/presentation/goal_editor_page.dart",
+      "to": "lib/app/screens/foundation_pages.dart"
+    },
+    {
+      "from": "lib/features/skills/presentation/goal_editor_page.dart",
+      "to": "lib/core/data/database/loop_database.dart"
+    },
+    {
+      "from": "lib/features/skills/presentation/goal_editor_page.dart",
+      "to": "lib/shared/design_system/components.dart"
+    },
+    {
+      "from": "lib/features/skills/presentation/goal_editor_page.dart",
+      "to": "lib/features/skills/data/skill_management_repository.dart"
+    },
+    {
+      "from": "lib/features/skills/presentation/goal_editor_page.dart",
+      "to": "lib/features/skills/domain/goal_measure.dart"
+    },
+    {
+      "from": "lib/features/skills/presentation/goal_editor_page.dart",
+      "to": "lib/features/skills/domain/goal_rules.dart"
+    },
+    {
+      "from": "lib/features/skills/presentation/goal_editor_page.dart",
+      "to": "lib/features/skills/presentation/skill_providers.dart"
+    },
+    {
+      "from": "lib/features/skills/presentation/goal_editor_page.dart",
+      "to": "lib/features/skills/presentation/skill_widgets.dart"
+    },
+    {
+      "from": "lib/features/skills/presentation/skill_detail_page.dart",
+      "to": "lib/app/screens/foundation_pages.dart"
+    },
+    {
+      "from": "lib/features/skills/presentation/skill_detail_page.dart",
+      "to": "lib/core/data/database/loop_database.dart"
+    },
+    {
+      "from": "lib/features/skills/presentation/skill_detail_page.dart",
+      "to": "lib/shared/design_system/components.dart"
+    },
+    {
+      "from": "lib/features/skills/presentation/skill_detail_page.dart",
+      "to": "lib/features/skills/data/skill_management_repository.dart"
+    },
+    {
+      "from": "lib/features/skills/presentation/skill_detail_page.dart",
+      "to": "lib/features/skills/domain/goal_rules.dart"
+    },
+    {
+      "from": "lib/features/skills/presentation/skill_detail_page.dart",
+      "to": "lib/features/skills/domain/skill_kind.dart"
+    },
+    {
+      "from": "lib/features/skills/presentation/skill_detail_page.dart",
+      "to": "lib/features/skills/domain/starter_catalog.dart"
+    },
+    {
+      "from": "lib/features/skills/presentation/skill_detail_page.dart",
+      "to": "lib/features/skills/presentation/skill_providers.dart"
+    },
+    {
+      "from": "lib/features/skills/presentation/skill_detail_page.dart",
+      "to": "lib/features/skills/presentation/skill_widgets.dart"
+    },
+    {
+      "from": "lib/features/skills/presentation/skill_editor_page.dart",
+      "to": "lib/app/screens/foundation_pages.dart"
+    },
+    {
+      "from": "lib/features/skills/presentation/skill_editor_page.dart",
+      "to": "lib/core/data/database/loop_database.dart"
+    },
+    {
+      "from": "lib/features/skills/presentation/skill_editor_page.dart",
+      "to": "lib/shared/design_system/components.dart"
+    },
+    {
+      "from": "lib/features/skills/presentation/skill_editor_page.dart",
+      "to": "lib/features/skills/domain/skill_draft.dart"
+    },
+    {
+      "from": "lib/features/skills/presentation/skill_editor_page.dart",
+      "to": "lib/features/skills/domain/skill_kind.dart"
+    },
+    {
+      "from": "lib/features/skills/presentation/skill_editor_page.dart",
+      "to": "lib/features/skills/domain/starter_catalog.dart"
+    },
+    {
+      "from": "lib/features/skills/presentation/skill_editor_page.dart",
+      "to": "lib/features/skills/presentation/skill_providers.dart"
+    },
+    {
+      "from": "lib/features/skills/presentation/skill_editor_page.dart",
+      "to": "lib/features/skills/presentation/skill_widgets.dart"
+    },
+    {
+      "from": "lib/features/skills/presentation/skill_providers.dart",
+      "to": "lib/core/data/storage.dart"
+    },
+    {
+      "from": "lib/features/skills/presentation/skill_providers.dart",
+      "to": "lib/features/skills/data/skill_management_repository.dart"
+    },
+    {
+      "from": "lib/features/skills/presentation/skill_widgets.dart",
+      "to": "lib/core/data/local_failure.dart"
+    },
+    {
+      "from": "lib/features/skills/presentation/skill_widgets.dart",
+      "to": "lib/shared/design_system/components.dart"
+    },
+    {
+      "from": "lib/features/skills/presentation/skill_widgets.dart",
+      "to": "lib/shared/design_system/tokens.dart"
+    },
+    {
+      "from": "lib/features/skills/presentation/skill_widgets.dart",
+      "to": "lib/features/skills/domain/goal_rules.dart"
+    },
+    {
+      "from": "lib/features/skills/presentation/skills_page.dart",
+      "to": "lib/shared/design_system/components.dart"
+    },
+    {
+      "from": "lib/features/skills/presentation/skills_page.dart",
+      "to": "lib/features/skills/data/skill_management_repository.dart"
+    },
+    {
+      "from": "lib/features/skills/presentation/skills_page.dart",
+      "to": "lib/features/skills/domain/skill_kind.dart"
+    },
+    {
+      "from": "lib/features/skills/presentation/skills_page.dart",
+      "to": "lib/features/skills/domain/starter_catalog.dart"
+    },
+    {
+      "from": "lib/features/skills/presentation/skills_page.dart",
+      "to": "lib/features/skills/presentation/skill_providers.dart"
+    },
+    {
+      "from": "lib/features/skills/presentation/skills_page.dart",
+      "to": "lib/features/skills/presentation/skill_widgets.dart"
+    },
+    {
+      "from": "lib/main.dart",
+      "to": "lib/bootstrap.dart"
+    },
+    {
+      "from": "lib/main.dart",
+      "to": "lib/app/licenses.dart"
+    },
+    {
+      "from": "lib/shared/design_system/components.dart",
+      "to": "lib/shared/design_system/tokens.dart"
+    }
+  ],
+  "skillPresentationSqlViolations": []
+}

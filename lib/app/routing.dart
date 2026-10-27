@@ -5,13 +5,21 @@ import 'package:go_router/go_router.dart';
 import '../features/onboarding/presentation/welcome_page.dart';
 import '../features/settings/presentation/preferences_controller.dart';
 import '../features/settings/presentation/settings_page.dart';
+import '../features/skills/domain/skill_kind.dart';
+import '../features/skills/presentation/exercise_editor_page.dart';
+import '../features/skills/presentation/goal_editor_page.dart';
+import '../features/skills/presentation/skill_detail_page.dart';
+import '../features/skills/presentation/skill_editor_page.dart';
+import '../features/skills/presentation/skills_page.dart';
 import '../shared/design_system/components.dart';
 import 'l10n/app_localizations.dart';
 import 'screens/foundation_pages.dart';
 
 final initialLocationProvider = Provider<String>((ref) => '/today');
 final routerProvider = Provider<GoRouter>((ref) {
+  final rootNavigator = GlobalKey<NavigatorState>();
   final router = GoRouter(
+    navigatorKey: rootNavigator,
     initialLocation: ref.read(initialLocationProvider),
     restorationScopeId: 'loop-routes',
     debugLogDiagnostics: false,
@@ -42,8 +50,91 @@ final routerProvider = Provider<GoRouter>((ref) {
                       ? '/practice/setup'
                       : '/${destination.name}',
                   name: destination.name,
-                  builder: (context, state) =>
-                      FoundationPage(destination: destination),
+                  builder: (context, state) => switch (destination) {
+                    FoundationDestination.skills => const SkillsPage(),
+                    FoundationDestination.today => const SkillContextPage(
+                      practice: false,
+                    ),
+                    FoundationDestination.practice => const SkillContextPage(
+                      practice: true,
+                    ),
+                    _ => FoundationPage(destination: destination),
+                  },
+                  routes: destination != FoundationDestination.skills
+                      ? []
+                      : [
+                          GoRoute(
+                            path: 'new',
+                            parentNavigatorKey: rootNavigator,
+                            builder: (context, state) =>
+                                const SkillCategoryPage(),
+                            routes: [
+                              GoRoute(
+                                path: 'setup',
+                                parentNavigatorKey: rootNavigator,
+                                builder: (context, state) => SkillEditorPage(
+                                  kind:
+                                      SkillKind.values
+                                          .where(
+                                            (kind) =>
+                                                kind.name ==
+                                                state
+                                                    .uri
+                                                    .queryParameters['kind'],
+                                          )
+                                          .firstOrNull ??
+                                      SkillKind.custom,
+                                ),
+                              ),
+                            ],
+                          ),
+                          GoRoute(
+                            path: ':id',
+                            parentNavigatorKey: rootNavigator,
+                            builder: (context, state) => SkillDetailPage(
+                              id: state.pathParameters['id']!,
+                            ),
+                            routes: [
+                              GoRoute(
+                                path: 'edit',
+                                parentNavigatorKey: rootNavigator,
+                                builder: (context, state) => SkillEditorPage(
+                                  id: state.pathParameters['id']!,
+                                ),
+                              ),
+                              GoRoute(
+                                path: 'goals/new',
+                                parentNavigatorKey: rootNavigator,
+                                builder: (context, state) => GoalEditorPage(
+                                  skillId: state.pathParameters['id']!,
+                                ),
+                              ),
+                              GoRoute(
+                                path: 'goals/:goalId/edit',
+                                parentNavigatorKey: rootNavigator,
+                                builder: (context, state) => GoalEditorPage(
+                                  skillId: state.pathParameters['id']!,
+                                  id: state.pathParameters['goalId']!,
+                                ),
+                              ),
+                              GoRoute(
+                                path: 'exercises/new',
+                                parentNavigatorKey: rootNavigator,
+                                builder: (context, state) => ExerciseEditorPage(
+                                  skillId: state.pathParameters['id']!,
+                                ),
+                              ),
+                              GoRoute(
+                                path: 'exercises/:exerciseId/edit',
+                                parentNavigatorKey: rootNavigator,
+                                builder: (context, state) => ExerciseEditorPage(
+                                  skillId: state.pathParameters['id']!,
+                                  id: state.pathParameters['exerciseId']!,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
                 ),
               ],
             ),
@@ -65,10 +156,6 @@ final routerProvider = Provider<GoRouter>((ref) {
       ),
       GoRoute(
         path: '/practice/review/:id',
-        builder: (context, state) => const MissingItemPage(),
-      ),
-      GoRoute(
-        path: '/skills/:id',
         builder: (context, state) => const MissingItemPage(),
       ),
       GoRoute(

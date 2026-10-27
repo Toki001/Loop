@@ -1,0 +1,46 @@
+{
+  "records": [
+    {
+      "stage": "setup",
+      "platform": "android",
+      "pid": 26175,
+      "setupPid": 26175,
+      "schema": 3,
+      "retainedAppearance": "dark",
+      "retainedOnboarding": true,
+      "freshStore": true,
+      "skillCount": 1,
+      "exerciseCount": 3,
+      "goalCount": 1,
+      "sessionCount": 0,
+      "readingCount": 0,
+      "hashRetained": true,
+      "foreignKeys": "ok",
+      "integrity": "ok",
+      "productionDataUnchanged": true
+    },
+    {
+      "stage": "resume",
+      "platform": "android",
+      "pid": 26831,
+      "setupPid": 26175,
+      "schema": 3,
+      "retainedAppearance": "dark",
+      "retainedOnboarding": true,
+      "freshStore": false,
+      "skillCount": 1,
+      "exerciseCount": 3,
+      "goalCount": 1,
+      "sessionCount": 0,
+      "readingCount": 0,
+      "hashRetained": true,
+      "foreignKeys": "ok",
+      "integrity": "ok",
+      "productionDataUnchanged": true
+    }
+  ],
+  "testsPassed": 2,
+  "testStoreAndMarkerRemoved": true,
+  "syntheticFramesCopiedAndSourceRemoved": true,
+  "target": "physical Android16/API36 arm64 2409BRN2CA"
+}

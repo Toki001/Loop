@@ -7,6 +7,7 @@ import '../../features/progress/data/metrics_repository.dart';
 import '../../features/reminders/data/reminders_repository.dart';
 import '../../features/settings/data/database_preferences_repository.dart';
 import '../../features/skills/data/skills_repository.dart';
+import '../../features/skills/data/skill_management_repository.dart';
 import '../media/media_repository.dart';
 import '../media/private_files.dart';
 import 'database/loop_database.dart';
@@ -20,6 +21,7 @@ final storageProvider = Provider<LoopStorage>(
 class LoopStorage {
   LoopStorage._(this.database, this.files, Directory directory)
     : skills = SkillsRepository(database),
+      skillManagement = SkillManagementRepository(database),
       sessions = SessionsRepository(database),
       metrics = MetricsRepository(database),
       reminders = RemindersRepository(database),
@@ -30,6 +32,7 @@ class LoopStorage {
   final LoopDatabase database;
   final PrivateFiles files;
   final SkillsRepository skills;
+  final SkillManagementRepository skillManagement;
   final SessionsRepository sessions;
   final MetricsRepository metrics;
   final RemindersRepository reminders;

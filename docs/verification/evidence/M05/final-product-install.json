@@ -1,0 +1,50 @@
+{
+  "physicalAndroid": {
+    "schema": 3,
+    "integrity": "ok",
+    "foreignKeys": 0,
+    "journalCounts": {
+      "skills": 0,
+      "goals": 0,
+      "exercises": 0,
+      "sessions": 0,
+      "metric_readings": 0,
+      "media_assets": 0
+    },
+    "firstPid": "29880",
+    "secondPid": "30448",
+    "testFixturesAbsentFromNormalJournal": true
+  },
+  "retainedIos": {
+    "schema": 3,
+    "integrity": "ok",
+    "foreignKeys": 0,
+    "journalCounts": {
+      "skills": 0,
+      "goals": 0,
+      "exercises": 0,
+      "sessions": 0,
+      "metric_readings": 0,
+      "media_assets": 0
+    },
+    "firstLaunch": "com.jameskierdoliguez.loop: 19390",
+    "secondLaunch": "com.jameskierdoliguez.loop: 19419",
+    "testFixturesAbsentFromNormalJournal": true
+  },
+  "freshIos": {
+    "schema": 3,
+    "integrity": "ok",
+    "foreignKeys": 0,
+    "journalCounts": {
+      "skills": 0,
+      "goals": 0,
+      "exercises": 0,
+      "sessions": 0,
+      "metric_readings": 0,
+      "media_assets": 0
+    },
+    "firstLaunch": "com.jameskierdoliguez.loop: 19452",
+    "secondLaunch": "com.jameskierdoliguez.loop: 19489",
+    "testFixturesAbsentFromNormalJournal": true
+  }
+}

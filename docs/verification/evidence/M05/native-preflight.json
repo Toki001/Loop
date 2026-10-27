@@ -1,0 +1,31 @@
+{
+  "physicalAndroid": {
+    "schemaVersion": 2,
+    "integrity": "ok",
+    "journalCounts": {
+      "skills": 0,
+      "goals": 0,
+      "exercises": 0,
+      "sessions": 0,
+      "metric_readings": 0,
+      "media_assets": 0
+    },
+    "model": "2409BRN2CA",
+    "os": "Android16/API36",
+    "forceStopExit": 0
+  },
+  "iosSimulator": {
+    "schemaVersion": 2,
+    "integrity": "ok",
+    "journalCounts": {
+      "skills": 0,
+      "goals": 0,
+      "exercises": 0,
+      "sessions": 0,
+      "metric_readings": 0,
+      "media_assets": 0
+    },
+    "target": "iPhone17/iOS27.0 simulator",
+    "terminateExit": 0
+  }
+}

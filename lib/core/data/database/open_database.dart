@@ -8,7 +8,7 @@ import 'loop_database.dart';
 void _prepare(Database database) {
   final version =
       database.select('PRAGMA user_version').single.values.single as int;
-  if (version > 2)
+  if (version > LoopDatabase.currentVersion)
     throw const LocalFailure(LocalFailureKind.unsupportedVersion);
   if (version == 0 &&
       database

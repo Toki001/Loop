@@ -1,0 +1,8 @@
+{
+  "pidBeforeStop": "",
+  "pidLookupBeforeExit": 1,
+  "forceStopExit": 0,
+  "pidAfterStop": "",
+  "pidLookupAfterExit": 1,
+  "setupFrameCaptured": true
+}

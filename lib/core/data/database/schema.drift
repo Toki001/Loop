@@ -54,9 +54,10 @@ CREATE TABLE goals (
   completed_at_utc DATETIME MAPPED BY `const UtcDateTimeConverter()`,
   created_at_utc DATETIME MAPPED BY `const UtcDateTimeConverter()` NOT NULL,
   updated_at_utc DATETIME MAPPED BY `const UtcDateTimeConverter()` NOT NULL,
+  motivation TEXT CHECK(length(motivation) <= 4000),
   FOREIGN KEY (metric_definition_id, definition_version, skill_id) REFERENCES metric_definitions(id, version, skill_id),
   CHECK((metric_definition_id IS NULL) = (definition_version IS NULL)),
-  CHECK((status = 'completed') = (completed_at_utc IS NOT NULL)),
+  CHECK((status != 'completed' OR completed_at_utc IS NOT NULL) AND (status IN ('completed','archived') OR completed_at_utc IS NULL)),
   CHECK(type NOT IN ('cumulative','weekly_target') OR (target_value IS NOT NULL AND target_value > 0)),
   CHECK(type != 'threshold' OR (target_value IS NOT NULL AND metric_definition_id IS NOT NULL))
 );

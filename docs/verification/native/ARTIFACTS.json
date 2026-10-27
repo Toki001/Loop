@@ -1,5 +1,5 @@
 {
-  "reviewContext": "Actual product-main empty shells, individually visually reviewed with target and milestone provenance. No personal/practice data. Device/simulator limits remain in each milestone report; no production-release claim.",
+  "reviewContext": "M03/M04 product-main empty shells and M05 isolated synthetic native widget frames. All exact hashes reviewed, including identical-frame groups. No personal/observed practice data; target/entrypoint/capture distinctions are explicit. No release or physical iPhone claim.",
   "artifacts": {
     "docs/verification/native/M03/welcome-first-launch.png": {
       "sha256": "6f228e5929e22616cebbd25edaf6e58c5710d881a21a03470093def654b57fe4",
@@ -29,6 +29,80 @@
       "provenance": "native-simulator-empty-shell",
       "reviewedNoPersonalData": true,
       "scene": "iPhone17 iOS27.0 simulator product-main debug after separate OS process relaunch; real retained M03 Dark/onboarding imported to SQLite; empty journal; physical protection unverified"
+    },
+    "docs/verification/native/M05/android-synthetic-skill-resume.png": {
+      "sha256": "e11f9693da592936cb8572a2ba0e24cd6626da509951e57af471b143a2654098",
+      "bytes": 43914,
+      "provenance": "native-device-synthetic-widget-frame",
+      "target": "physical-android",
+      "reviewedNoPersonalData": true,
+      "syntheticStoreIsolated": true,
+      "capture": "native-flutter-repaint-boundary",
+      "entrypoint": "integration_test/skill_management_test.dart",
+      "scene": "Disposable M05 skill/qualitative goal, no observed sessions/readings; setup/resume process hash retained. Native widget pixels, not OS chrome. Identical hashes grouped in visual review; synthetic store removed after resume."
+    },
+    "docs/verification/native/M05/android-synthetic-skill-setup.png": {
+      "sha256": "e11f9693da592936cb8572a2ba0e24cd6626da509951e57af471b143a2654098",
+      "bytes": 43914,
+      "provenance": "native-device-synthetic-widget-frame",
+      "target": "physical-android",
+      "reviewedNoPersonalData": true,
+      "syntheticStoreIsolated": true,
+      "capture": "native-flutter-repaint-boundary",
+      "entrypoint": "integration_test/skill_management_test.dart",
+      "scene": "Disposable M05 skill/qualitative goal, no observed sessions/readings; setup/resume process hash retained. Native widget pixels, not OS chrome. Identical hashes grouped in visual review; synthetic store removed after resume."
+    },
+    "docs/verification/native/M05/ios-fresh-synthetic-skill-resume.png": {
+      "sha256": "ede6a0f409104e48518b8653c91ebb9049692c2bfcecf03161e4c7f8366701b1",
+      "bytes": 51583,
+      "provenance": "native-simulator-synthetic-widget-frame",
+      "target": "ios-simulator",
+      "reviewedNoPersonalData": true,
+      "syntheticStoreIsolated": true,
+      "capture": "native-flutter-repaint-boundary",
+      "entrypoint": "integration_test/skill_management_test.dart",
+      "scene": "Disposable M05 skill/qualitative goal, no observed sessions/readings; setup/resume process hash retained. Native widget pixels, not OS chrome. Identical hashes grouped in visual review; synthetic store removed after resume."
+    },
+    "docs/verification/native/M05/ios-fresh-synthetic-skill-setup.png": {
+      "sha256": "ede6a0f409104e48518b8653c91ebb9049692c2bfcecf03161e4c7f8366701b1",
+      "bytes": 51583,
+      "provenance": "native-simulator-synthetic-widget-frame",
+      "target": "ios-simulator",
+      "reviewedNoPersonalData": true,
+      "syntheticStoreIsolated": true,
+      "capture": "native-flutter-repaint-boundary",
+      "entrypoint": "integration_test/skill_management_test.dart",
+      "scene": "Disposable M05 skill/qualitative goal, no observed sessions/readings; setup/resume process hash retained. Native widget pixels, not OS chrome. Identical hashes grouped in visual review; synthetic store removed after resume."
+    },
+    "docs/verification/native/M05/ios-synthetic-skill-resume.png": {
+      "sha256": "ede6a0f409104e48518b8653c91ebb9049692c2bfcecf03161e4c7f8366701b1",
+      "bytes": 51583,
+      "provenance": "native-simulator-synthetic-widget-frame",
+      "target": "ios-simulator",
+      "reviewedNoPersonalData": true,
+      "syntheticStoreIsolated": true,
+      "capture": "native-flutter-repaint-boundary",
+      "entrypoint": "integration_test/skill_management_test.dart",
+      "scene": "Disposable M05 skill/qualitative goal, no observed sessions/readings; setup/resume process hash retained. Native widget pixels, not OS chrome. Identical hashes grouped in visual review; synthetic store removed after resume."
+    },
+    "docs/verification/native/M05/ios-synthetic-skill-setup.png": {
+      "sha256": "ede6a0f409104e48518b8653c91ebb9049692c2bfcecf03161e4c7f8366701b1",
+      "bytes": 51583,
+      "provenance": "native-simulator-synthetic-widget-frame",
+      "target": "ios-simulator",
+      "reviewedNoPersonalData": true,
+      "syntheticStoreIsolated": true,
+      "capture": "native-flutter-repaint-boundary",
+      "entrypoint": "integration_test/skill_management_test.dart",
+      "scene": "Disposable M05 skill/qualitative goal, no observed sessions/readings; setup/resume process hash retained. Native widget pixels, not OS chrome. Identical hashes grouped in visual review; synthetic store removed after resume."
     }
+  },
+  "M05_reviewed_unique_frames": [
+    "android-synthetic-skill-resume.png",
+    "ios-synthetic-skill-setup.png"
+  ],
+  "M05_reviewed_identical_hash_groups": {
+    "e11f9693da592936cb8572a2ba0e24cd6626da509951e57af471b143a2654098": 2,
+    "ede6a0f409104e48518b8653c91ebb9049692c2bfcecf03161e4c7f8366701b1": 4
   }
 }

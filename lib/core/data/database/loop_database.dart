@@ -9,9 +9,10 @@ part 'loop_database.g.dart';
 @DriftDatabase(include: {'schema.drift'})
 class LoopDatabase extends _$LoopDatabase {
   LoopDatabase(super.executor);
+  static const currentVersion = 3;
 
   @override
-  int get schemaVersion => 2;
+  int get schemaVersion => currentVersion;
 
   @override
   MigrationStrategy get migration => MigrationStrategy(
@@ -19,26 +20,39 @@ class LoopDatabase extends _$LoopDatabase {
       await migrator.createAll();
       await into(dataMigrations).insert(
         DataMigrationsCompanion.insert(
-          version: const Value(2),
+          version: const Value(currentVersion),
           completedAtUtc: DateTime.now().toUtc(),
         ),
       );
-      await customStatement('PRAGMA user_version = 2');
+      await customStatement('PRAGMA user_version = $currentVersion');
     }),
     onUpgrade: (migrator, from, to) => transaction(() async {
-      if (from != 1 || to != 2) {
+      if (from < 1 || from >= currentVersion || to != currentVersion) {
         throw const LocalFailure(LocalFailureKind.unsupportedVersion);
       }
-      // V1 is the unreleased, frozen M04 schema before durable deletion work.
-      await migrator.createTable(fileCleanupQueue);
-      await migrator.createTrigger(cleanupDeletedMedia);
+      if (from < 2) {
+        // V1 is the unreleased, frozen M04 schema before durable deletion work.
+        await migrator.createTable(fileCleanupQueue);
+        await migrator.createTrigger(cleanupDeletedMedia);
+        await into(dataMigrations).insert(
+          DataMigrationsCompanion.insert(
+            version: const Value(2),
+            completedAtUtc: DateTime.now().toUtc(),
+          ),
+        );
+      }
+      // Goals have no inbound foreign keys. Rebuild transactionally to preserve
+      // completion dates while archived; Drift retains associated unit triggers.
+      await migrator.alterTable(
+        TableMigration(goals, newColumns: [goals.motivation]),
+      );
       await into(dataMigrations).insert(
         DataMigrationsCompanion.insert(
-          version: const Value(2),
+          version: const Value(currentVersion),
           completedAtUtc: DateTime.now().toUtc(),
         ),
       );
-      await customStatement('PRAGMA user_version = 2');
+      await customStatement('PRAGMA user_version = $currentVersion');
     }),
     beforeOpen: (details) async {
       await customStatement('PRAGMA foreign_keys = ON');

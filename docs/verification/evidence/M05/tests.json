@@ -1,0 +1,31 @@
+{
+  "verifiedAtUtc": "2026-10-27T14:42:53.139393+00:00",
+  "finalCiLog": "tmp/m05-final-ci-onboarding.log",
+  "ciSelectedChecks": 16,
+  "exit": 0,
+  "applicationTestsIncludingFunctionalGoldens": 153,
+  "designPreviewTests": 233,
+  "ciIosFoundationTests": 1,
+  "newM05FunctionalGoldenComparisons": 28,
+  "frozenM02GoldensUnchanged": 225,
+  "formattedDartFilesUnchanged": 68,
+  "selectedM05DataAndWidgetTests": 32,
+  "nativeM05FeatureTests": 6,
+  "nativeM05Targets": [
+    "physical Android16/API36 arm64 2409BRN2CA",
+    "retained iPhone17/iOS27 simulator",
+    "fresh iPhone17/iOS27 simulator"
+  ],
+  "skips": 0,
+  "earlierFailuresCorrected": [
+    "widget async I/O harness settle timeout",
+    "immediate input/back guard",
+    "progress semantics number format",
+    "large-text helper ellipsis",
+    "CI trailing blank line at EOF"
+  ],
+  "dependencyChanges": false,
+  "privacyPermissionsAdded": false,
+  "foundationNativeTestsAcrossThreeTargets": 3,
+  "finalProductMainTargetsVerified": 3
+}

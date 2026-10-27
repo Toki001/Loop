@@ -1,6 +1,6 @@
 # Private persistence and recovery
 
-[ADR 014](adr/ADR-014-private-persistence.md) maps the [logical schema](DATA_AND_METRICS.md) to Drift/SQLite. The milestone report controls actual verification status and platform limits. Skill, timer, journal, media and reminder UI remain gated by their later milestones.
+[ADR 014](adr/ADR-014-private-persistence.md) maps the [logical schema](DATA_AND_METRICS.md) to Drift/SQLite. The milestone report controls actual verification status and platform limits. [M05 skill management](verification/M05.md) supplies verified owned setup; timer, journal, media and reminder UI remain gated by their later milestones.
 
 ## Data boundary
 
@@ -14,7 +14,7 @@ Repositories own validation and writes. Skill names are trimmed and limited to 6
 
 ## Migration and preferences
 
-Current schema is 2. The frozen, **synthetic unreleased** v1 fixture predates the durable deletion queue. V1 → v2 adds that queue and its cascade trigger. DDL, migration record and `user_version` commit together. Migration failure rolls back; tests compare fresh/upgraded schemas including constraints/indexes/triggers and seed every prior table. An existing unversioned database with user tables is rejected rather than treated as a fresh install. Future schema versions, corrupt bytes or FK violations are recovery cases, never a reason to delete/recreate the database.
+Current schema is 3. The frozen, **synthetic unreleased** v1 fixture predates the durable deletion queue. V1 → v2 adds that queue and its cascade trigger. V2 → v3 adds nullable goal motivation and preserves completion timestamps on archive via a goals-table rebuild, retaining unit triggers. Goals have no inbound FKs. [ADR-015](adr/ADR-015-skill-management.md) records semantics, including legacy weekly-unit review. DDL, migration record and `user_version` commit together. Migration failure rolls back; tests compare fresh/upgraded schemas including constraints/indexes/triggers and seed every prior table, then interrupt after the actual rebuild to verify rollback/retry. An existing unversioned database with user tables is rejected rather than treated as a fresh install. Future schema versions, corrupt bytes or FK violations are recovery cases, never a reason to delete/recreate the database.
 
 `preferences.json` from M03 remains unchanged. Theme, onboarding version and unknown fields import into typed JSON settings with a marker in the same transaction. Existing SQL values take priority if an internal prior schema already owns a setting. Interruption/retry cannot overwrite later SQL choices with the retained legacy file. A corrupt legacy preferences file alone may be reset with an original recovery copy; SQL journal/settings damage does not expose a reset button. Unsupported legacy versions are preserved.
 

@@ -1,0 +1,21 @@
+{
+  "sourceState": "M05 worktree built before local commit; source-content digest below",
+  "sourceContentSha256": "e53c5479e05297ebdbea0edc33e84c3f8067e5f00d848d9ffcabf1fcb5eec158",
+  "sourceFilesHashed": 69,
+  "applicationId": "com.jameskierdoliguez.loop",
+  "androidApk": {
+    "bytes": 236777078,
+    "sha256": "61e9265a74704218a5b9118799e4a7b5f9ba3edbd045e1ee3ed94dce392388a8",
+    "ordinarySqliteAssets": [
+      "lib/arm64-v8a/libsqlite3.so",
+      "lib/armeabi-v7a/libsqlite3.so",
+      "lib/x86_64/libsqlite3.so"
+    ],
+    "nativeM05TestEntrypointAbsent": true
+  },
+  "iosSimulatorKernel": {
+    "sha256": "4f6fe93296914260bb436b8d4c38974f01eb3d59bfbf93a09c8366bc2b638424",
+    "nativeM05TestEntrypointAbsent": true
+  },
+  "signing": "Android debug only; iOS simulator --no-codesign; no production signing"
+}

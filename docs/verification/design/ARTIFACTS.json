@@ -1145,6 +1145,202 @@
       "sha256": "e8a8a19e58ee622259336ae71bc1bfd88cf4c2257eddbbcfe0b027994018af0f",
       "bytes": 95123,
       "provenance": "synthetic-flutter-golden"
+    },
+    "docs/verification/design/goldens/m05_categories_compact_2x_dark.png": {
+      "sha256": "2ae77438bbccbaaec178344582ad2b41798f6d0eff7aa7bfd9592c7bba4a9f02",
+      "provenance": "synthetic-flutter-golden",
+      "milestone": "M05",
+      "source": "test/skill_goldens_test.dart",
+      "review": "28-case layout/scroll/action checks; sampled visual inspection recorded below"
+    },
+    "docs/verification/design/goldens/m05_categories_compact_2x_light.png": {
+      "sha256": "e9c86558f14770098c5e11e04f797ba340dc6ccfa1cf366174913f70fe7432de",
+      "provenance": "synthetic-flutter-golden",
+      "milestone": "M05",
+      "source": "test/skill_goldens_test.dart",
+      "review": "28-case layout/scroll/action checks; sampled visual inspection recorded below"
+    },
+    "docs/verification/design/goldens/m05_categories_phone_1x_dark.png": {
+      "sha256": "f287860fb2aef8ebdb89de4bd7e99e46fdf021e1365dc5c26d072be1f5f44b1f",
+      "provenance": "synthetic-flutter-golden",
+      "milestone": "M05",
+      "source": "test/skill_goldens_test.dart",
+      "review": "28-case layout/scroll/action checks; sampled visual inspection recorded below"
+    },
+    "docs/verification/design/goldens/m05_categories_phone_1x_light.png": {
+      "sha256": "ec1316014cc3a5105fc5db5e038544d56347303618092834730250351df4a529",
+      "provenance": "synthetic-flutter-golden",
+      "milestone": "M05",
+      "source": "test/skill_goldens_test.dart",
+      "review": "28-case layout/scroll/action checks; sampled visual inspection recorded below"
+    },
+    "docs/verification/design/goldens/m05_detail_compact_2x_dark.png": {
+      "sha256": "1d6fdbcef70da9511174d03726dd15e12e21409319502454ba8ab33c2e186a3c",
+      "provenance": "synthetic-flutter-golden",
+      "milestone": "M05",
+      "source": "test/skill_goldens_test.dart",
+      "review": "28-case layout/scroll/action checks; sampled visual inspection recorded below"
+    },
+    "docs/verification/design/goldens/m05_detail_compact_2x_light.png": {
+      "sha256": "161f68a9e4bdf9fada4af82855ad9842765a348ffa57b73c5164c01a11f0c555",
+      "provenance": "synthetic-flutter-golden",
+      "milestone": "M05",
+      "source": "test/skill_goldens_test.dart",
+      "review": "28-case layout/scroll/action checks; sampled visual inspection recorded below"
+    },
+    "docs/verification/design/goldens/m05_detail_phone_1x_dark.png": {
+      "sha256": "c4c825a7c408f1f2fea46529b1afa0cf61983d98cb52c7bf1c9bbadbc224c882",
+      "provenance": "synthetic-flutter-golden",
+      "milestone": "M05",
+      "source": "test/skill_goldens_test.dart",
+      "review": "28-case layout/scroll/action checks; sampled visual inspection recorded below"
+    },
+    "docs/verification/design/goldens/m05_detail_phone_1x_light.png": {
+      "sha256": "cad856c5ab2eab14b59effadf93b8ed0907f881bcb5a3607151b2410ad1a94d0",
+      "provenance": "synthetic-flutter-golden",
+      "milestone": "M05",
+      "source": "test/skill_goldens_test.dart",
+      "review": "28-case layout/scroll/action checks; sampled visual inspection recorded below"
+    },
+    "docs/verification/design/goldens/m05_exercise_compact_2x_dark.png": {
+      "sha256": "0c18070f56807e870b31359b9060e8082891826ac993c200adfb25f8d801cc05",
+      "provenance": "synthetic-flutter-golden",
+      "milestone": "M05",
+      "source": "test/skill_goldens_test.dart",
+      "review": "28-case layout/scroll/action checks; sampled visual inspection recorded below"
+    },
+    "docs/verification/design/goldens/m05_exercise_compact_2x_light.png": {
+      "sha256": "274f4f237a57238f8dd09b78c6f006215c15dd245e2441067745a79d5acaddc4",
+      "provenance": "synthetic-flutter-golden",
+      "milestone": "M05",
+      "source": "test/skill_goldens_test.dart",
+      "review": "28-case layout/scroll/action checks; sampled visual inspection recorded below"
+    },
+    "docs/verification/design/goldens/m05_exercise_phone_1x_dark.png": {
+      "sha256": "53e7f8afd102d2e163deb47990127d770256acf195a424da713e750f932a0a38",
+      "provenance": "synthetic-flutter-golden",
+      "milestone": "M05",
+      "source": "test/skill_goldens_test.dart",
+      "review": "28-case layout/scroll/action checks; sampled visual inspection recorded below"
+    },
+    "docs/verification/design/goldens/m05_exercise_phone_1x_light.png": {
+      "sha256": "4c84bec8e790eae74ff00daff056f187899695128dbac70e2b5e3dc78dea39cc",
+      "provenance": "synthetic-flutter-golden",
+      "milestone": "M05",
+      "source": "test/skill_goldens_test.dart",
+      "review": "28-case layout/scroll/action checks; sampled visual inspection recorded below"
+    },
+    "docs/verification/design/goldens/m05_goal_compact_2x_dark.png": {
+      "sha256": "ac1b3615e924656e9c45d6fa97ba6566e18d7102626f80ecfad2633c8ec564b0",
+      "provenance": "synthetic-flutter-golden",
+      "milestone": "M05",
+      "source": "test/skill_goldens_test.dart",
+      "review": "28-case layout/scroll/action checks; sampled visual inspection recorded below"
+    },
+    "docs/verification/design/goldens/m05_goal_compact_2x_light.png": {
+      "sha256": "c90816aac6d07d30874e32f8d86452bf9cccc570da3b87802f260980c83b6909",
+      "provenance": "synthetic-flutter-golden",
+      "milestone": "M05",
+      "source": "test/skill_goldens_test.dart",
+      "review": "28-case layout/scroll/action checks; sampled visual inspection recorded below"
+    },
+    "docs/verification/design/goldens/m05_goal_phone_1x_dark.png": {
+      "sha256": "373143dcb3e297efc4fbb5b261e686ec4a3c2125eb7d75c33913d9b053705405",
+      "provenance": "synthetic-flutter-golden",
+      "milestone": "M05",
+      "source": "test/skill_goldens_test.dart",
+      "review": "28-case layout/scroll/action checks; sampled visual inspection recorded below"
+    },
+    "docs/verification/design/goldens/m05_goal_phone_1x_light.png": {
+      "sha256": "4e1dd0c556b1361f9e5a398b92e50ad86bd71d34f13a22c5ae5668288d9f6183",
+      "provenance": "synthetic-flutter-golden",
+      "milestone": "M05",
+      "source": "test/skill_goldens_test.dart",
+      "review": "28-case layout/scroll/action checks; sampled visual inspection recorded below"
+    },
+    "docs/verification/design/goldens/m05_measured_goal_compact_2x_dark.png": {
+      "sha256": "685ba7b7f749ba85c7e80c0dae3206497c460b6339e7cf96dffd8441abc2cd4e",
+      "provenance": "synthetic-flutter-golden",
+      "milestone": "M05",
+      "source": "test/skill_goldens_test.dart",
+      "review": "28-case layout/scroll/action checks; sampled visual inspection recorded below"
+    },
+    "docs/verification/design/goldens/m05_measured_goal_compact_2x_light.png": {
+      "sha256": "026cb7f68c0040ed0f109fb08092b4f42b759b5c2444d1e89d893d950def6a7e",
+      "provenance": "synthetic-flutter-golden",
+      "milestone": "M05",
+      "source": "test/skill_goldens_test.dart",
+      "review": "28-case layout/scroll/action checks; sampled visual inspection recorded below"
+    },
+    "docs/verification/design/goldens/m05_measured_goal_phone_1x_dark.png": {
+      "sha256": "904339dc3795eb672ede870083b7c8f76605eb75511a2a7b19c2866dd59bb33b",
+      "provenance": "synthetic-flutter-golden",
+      "milestone": "M05",
+      "source": "test/skill_goldens_test.dart",
+      "review": "28-case layout/scroll/action checks; sampled visual inspection recorded below"
+    },
+    "docs/verification/design/goldens/m05_measured_goal_phone_1x_light.png": {
+      "sha256": "956a7a35bab3d8b7cf230586db55d6f39238d2417f1b9cb5ac0ca9467c471397",
+      "provenance": "synthetic-flutter-golden",
+      "milestone": "M05",
+      "source": "test/skill_goldens_test.dart",
+      "review": "28-case layout/scroll/action checks; sampled visual inspection recorded below"
+    },
+    "docs/verification/design/goldens/m05_setup_compact_2x_dark.png": {
+      "sha256": "d7669ec462aad7a82017c9e5133c24030f6d9e116c6a4bf040bcfa3e5c58329e",
+      "provenance": "synthetic-flutter-golden",
+      "milestone": "M05",
+      "source": "test/skill_goldens_test.dart",
+      "review": "28-case layout/scroll/action checks; sampled visual inspection recorded below"
+    },
+    "docs/verification/design/goldens/m05_setup_compact_2x_light.png": {
+      "sha256": "0d3859e47a0e2012e39cab0517ef195276a3d615fe2219c41aee93d054409488",
+      "provenance": "synthetic-flutter-golden",
+      "milestone": "M05",
+      "source": "test/skill_goldens_test.dart",
+      "review": "28-case layout/scroll/action checks; sampled visual inspection recorded below"
+    },
+    "docs/verification/design/goldens/m05_setup_phone_1x_dark.png": {
+      "sha256": "cc8c8bd13e13f874bcb390941bf9ff6c9ed38340031df35ef138ae5eb819b14b",
+      "provenance": "synthetic-flutter-golden",
+      "milestone": "M05",
+      "source": "test/skill_goldens_test.dart",
+      "review": "28-case layout/scroll/action checks; sampled visual inspection recorded below"
+    },
+    "docs/verification/design/goldens/m05_setup_phone_1x_light.png": {
+      "sha256": "8dcb0e5a6d28b47969dc98c729c7456a4b90511a2437b210ff879b2bff6e8642",
+      "provenance": "synthetic-flutter-golden",
+      "milestone": "M05",
+      "source": "test/skill_goldens_test.dart",
+      "review": "28-case layout/scroll/action checks; sampled visual inspection recorded below"
+    },
+    "docs/verification/design/goldens/m05_skills_compact_2x_dark.png": {
+      "sha256": "5529ccc423c8a470ac311ec9878cb77ee71491e3c1283b88c4fd6755c02d8970",
+      "provenance": "synthetic-flutter-golden",
+      "milestone": "M05",
+      "source": "test/skill_goldens_test.dart",
+      "review": "28-case layout/scroll/action checks; sampled visual inspection recorded below"
+    },
+    "docs/verification/design/goldens/m05_skills_compact_2x_light.png": {
+      "sha256": "317f7d2f955631757676478500587737ab2240d83fa68287216530e61c39cb9a",
+      "provenance": "synthetic-flutter-golden",
+      "milestone": "M05",
+      "source": "test/skill_goldens_test.dart",
+      "review": "28-case layout/scroll/action checks; sampled visual inspection recorded below"
+    },
+    "docs/verification/design/goldens/m05_skills_phone_1x_dark.png": {
+      "sha256": "ca87ef16d61d90fdb15cf26f55da40b5bc5357e70620b8f165a45ab2e812edc6",
+      "provenance": "synthetic-flutter-golden",
+      "milestone": "M05",
+      "source": "test/skill_goldens_test.dart",
+      "review": "28-case layout/scroll/action checks; sampled visual inspection recorded below"
+    },
+    "docs/verification/design/goldens/m05_skills_phone_1x_light.png": {
+      "sha256": "a77df9540ba03db6db0ad185ce81d5ff3b578d6340ad3471f9b2f7f92a62e759",
+      "provenance": "synthetic-flutter-golden",
+      "milestone": "M05",
+      "source": "test/skill_goldens_test.dart",
+      "review": "28-case layout/scroll/action checks; sampled visual inspection recorded below"
     }
   },
   "font_license_records": [
@@ -1164,5 +1360,14 @@
       "resource": "Hiragino Sans GB",
       "source": "installed macOS resource, local test rendering only; font not redistributed"
     }
+  ],
+  "m05_sampled_visual_review": [
+    "m05_skills_phone_1x_light.png",
+    "m05_measured_goal_phone_1x_dark.png",
+    "m05_setup_compact_2x_light.png",
+    "m05_detail_phone_1x_light.png",
+    "m05_goal_compact_2x_dark.png",
+    "m05_exercise_phone_1x_light.png",
+    "m05_categories_phone_1x_dark.png"
   ]
 }

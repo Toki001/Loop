@@ -77,7 +77,7 @@ void main() {
         await waitFor(tester, find.text('Your practice starts here'));
         for (final entry in [
           ('Skills', 'Make room for what you want to learn'),
-          ('Practice', 'Start with a skill'),
+          ('Practice', 'Choose what to practice'),
           ('Progress', 'Progress begins with a practice record'),
           ('Library', 'Keep the work you can come back to'),
         ]) {

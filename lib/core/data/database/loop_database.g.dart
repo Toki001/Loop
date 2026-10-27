@@ -1833,6 +1833,17 @@ class Goals extends Table with TableInfo<Goals, Goal> {
         requiredDuringInsert: true,
         $customConstraints: 'NOT NULL',
       ).withConverter<DateTime>(Goals.$converterupdatedAtUtc);
+  static const VerificationMeta _motivationMeta = const VerificationMeta(
+    'motivation',
+  );
+  late final GeneratedColumn<String> motivation = GeneratedColumn<String>(
+    'motivation',
+    aliasedName,
+    true,
+    type: DriftSqlType.string,
+    requiredDuringInsert: false,
+    $customConstraints: 'CHECK (length(motivation) <= 4000)',
+  );
   @override
   List<GeneratedColumn> get $columns => [
     id,
@@ -1848,6 +1859,7 @@ class Goals extends Table with TableInfo<Goals, Goal> {
     completedAtUtc,
     createdAtUtc,
     updatedAtUtc,
+    motivation,
   ];
   @override
   String get aliasedName => _alias ?? actualTableName;
@@ -1940,6 +1952,12 @@ class Goals extends Table with TableInfo<Goals, Goal> {
     } else if (isInserting) {
       context.missing(_statusMeta);
     }
+    if (data.containsKey('motivation')) {
+      context.handle(
+        _motivationMeta,
+        motivation.isAcceptableOrUnknown(data['motivation']!, _motivationMeta),
+      );
+    }
     return context;
   }
 
@@ -2007,6 +2025,10 @@ class Goals extends Table with TableInfo<Goals, Goal> {
           data['${effectivePrefix}updated_at_utc'],
         )!,
       ),
+      motivation: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}motivation'],
+      ),
     );
   }
 
@@ -2027,7 +2049,7 @@ class Goals extends Table with TableInfo<Goals, Goal> {
   List<String> get customConstraints => const [
     'FOREIGN KEY(metric_definition_id, definition_version, skill_id)REFERENCES metric_definitions(id, version, skill_id)',
     'CHECK((metric_definition_id IS NULL)=(definition_version IS NULL))',
-    'CHECK((status = \'completed\')=(completed_at_utc IS NOT NULL))',
+    'CHECK((status != \'completed\' OR completed_at_utc IS NOT NULL)AND(status IN (\'completed\', \'archived\') OR completed_at_utc IS NULL))',
     'CHECK(type NOT IN (\'cumulative\', \'weekly_target\') OR(target_value IS NOT NULL AND target_value > 0))',
     'CHECK(type != \'threshold\' OR(target_value IS NOT NULL AND metric_definition_id IS NOT NULL))',
   ];
@@ -2049,6 +2071,7 @@ class Goal extends DataClass implements Insertable<Goal> {
   final DateTime? completedAtUtc;
   final DateTime createdAtUtc;
   final DateTime updatedAtUtc;
+  final String? motivation;
   const Goal({
     required this.id,
     required this.skillId,
@@ -2063,6 +2086,7 @@ class Goal extends DataClass implements Insertable<Goal> {
     this.completedAtUtc,
     required this.createdAtUtc,
     required this.updatedAtUtc,
+    this.motivation,
   });
   @override
   Map<String, Expression> toColumns(bool nullToAbsent) {
@@ -2102,6 +2126,9 @@ class Goal extends DataClass implements Insertable<Goal> {
         Goals.$converterupdatedAtUtc.toSql(updatedAtUtc),
       );
     }
+    if (!nullToAbsent || motivation != null) {
+      map['motivation'] = Variable<String>(motivation);
+    }
     return map;
   }
 
@@ -2132,6 +2159,9 @@ class Goal extends DataClass implements Insertable<Goal> {
           : Value(completedAtUtc),
       createdAtUtc: Value(createdAtUtc),
       updatedAtUtc: Value(updatedAtUtc),
+      motivation: motivation == null && nullToAbsent
+          ? const Value.absent()
+          : Value(motivation),
     );
   }
 
@@ -2156,6 +2186,7 @@ class Goal extends DataClass implements Insertable<Goal> {
       completedAtUtc: serializer.fromJson<DateTime?>(json['completed_at_utc']),
       createdAtUtc: serializer.fromJson<DateTime>(json['created_at_utc']),
       updatedAtUtc: serializer.fromJson<DateTime>(json['updated_at_utc']),
+      motivation: serializer.fromJson<String?>(json['motivation']),
     );
   }
   @override
@@ -2175,6 +2206,7 @@ class Goal extends DataClass implements Insertable<Goal> {
       'completed_at_utc': serializer.toJson<DateTime?>(completedAtUtc),
       'created_at_utc': serializer.toJson<DateTime>(createdAtUtc),
       'updated_at_utc': serializer.toJson<DateTime>(updatedAtUtc),
+      'motivation': serializer.toJson<String?>(motivation),
     };
   }
 
@@ -2192,6 +2224,7 @@ class Goal extends DataClass implements Insertable<Goal> {
     Value<DateTime?> completedAtUtc = const Value.absent(),
     DateTime? createdAtUtc,
     DateTime? updatedAtUtc,
+    Value<String?> motivation = const Value.absent(),
   }) => Goal(
     id: id ?? this.id,
     skillId: skillId ?? this.skillId,
@@ -2214,6 +2247,7 @@ class Goal extends DataClass implements Insertable<Goal> {
         : this.completedAtUtc,
     createdAtUtc: createdAtUtc ?? this.createdAtUtc,
     updatedAtUtc: updatedAtUtc ?? this.updatedAtUtc,
+    motivation: motivation.present ? motivation.value : this.motivation,
   );
   Goal copyWithCompanion(GoalsCompanion data) {
     return Goal(
@@ -2246,6 +2280,9 @@ class Goal extends DataClass implements Insertable<Goal> {
       updatedAtUtc: data.updatedAtUtc.present
           ? data.updatedAtUtc.value
           : this.updatedAtUtc,
+      motivation: data.motivation.present
+          ? data.motivation.value
+          : this.motivation,
     );
   }
 
@@ -2264,7 +2301,8 @@ class Goal extends DataClass implements Insertable<Goal> {
           ..write('status: $status, ')
           ..write('completedAtUtc: $completedAtUtc, ')
           ..write('createdAtUtc: $createdAtUtc, ')
-          ..write('updatedAtUtc: $updatedAtUtc')
+          ..write('updatedAtUtc: $updatedAtUtc, ')
+          ..write('motivation: $motivation')
           ..write(')'))
         .toString();
   }
@@ -2284,6 +2322,7 @@ class Goal extends DataClass implements Insertable<Goal> {
     completedAtUtc,
     createdAtUtc,
     updatedAtUtc,
+    motivation,
   );
   @override
   bool operator ==(Object other) =>
@@ -2301,7 +2340,8 @@ class Goal extends DataClass implements Insertable<Goal> {
           other.status == this.status &&
           other.completedAtUtc == this.completedAtUtc &&
           other.createdAtUtc == this.createdAtUtc &&
-          other.updatedAtUtc == this.updatedAtUtc);
+          other.updatedAtUtc == this.updatedAtUtc &&
+          other.motivation == this.motivation);
 }
 
 class GoalsCompanion extends UpdateCompanion<Goal> {
@@ -2318,6 +2358,7 @@ class GoalsCompanion extends UpdateCompanion<Goal> {
   final Value<DateTime?> completedAtUtc;
   final Value<DateTime> createdAtUtc;
   final Value<DateTime> updatedAtUtc;
+  final Value<String?> motivation;
   final Value<int> rowid;
   const GoalsCompanion({
     this.id = const Value.absent(),
@@ -2333,6 +2374,7 @@ class GoalsCompanion extends UpdateCompanion<Goal> {
     this.completedAtUtc = const Value.absent(),
     this.createdAtUtc = const Value.absent(),
     this.updatedAtUtc = const Value.absent(),
+    this.motivation = const Value.absent(),
     this.rowid = const Value.absent(),
   });
   GoalsCompanion.insert({
@@ -2349,6 +2391,7 @@ class GoalsCompanion extends UpdateCompanion<Goal> {
     this.completedAtUtc = const Value.absent(),
     required DateTime createdAtUtc,
     required DateTime updatedAtUtc,
+    this.motivation = const Value.absent(),
     this.rowid = const Value.absent(),
   }) : id = Value(id),
        skillId = Value(skillId),
@@ -2371,6 +2414,7 @@ class GoalsCompanion extends UpdateCompanion<Goal> {
     Expression<DateTime>? completedAtUtc,
     Expression<DateTime>? createdAtUtc,
     Expression<DateTime>? updatedAtUtc,
+    Expression<String>? motivation,
     Expression<int>? rowid,
   }) {
     return RawValuesInsertable({
@@ -2388,6 +2432,7 @@ class GoalsCompanion extends UpdateCompanion<Goal> {
       if (completedAtUtc != null) 'completed_at_utc': completedAtUtc,
       if (createdAtUtc != null) 'created_at_utc': createdAtUtc,
       if (updatedAtUtc != null) 'updated_at_utc': updatedAtUtc,
+      if (motivation != null) 'motivation': motivation,
       if (rowid != null) 'rowid': rowid,
     });
   }
@@ -2406,6 +2451,7 @@ class GoalsCompanion extends UpdateCompanion<Goal> {
     Value<DateTime?>? completedAtUtc,
     Value<DateTime>? createdAtUtc,
     Value<DateTime>? updatedAtUtc,
+    Value<String?>? motivation,
     Value<int>? rowid,
   }) {
     return GoalsCompanion(
@@ -2422,6 +2468,7 @@ class GoalsCompanion extends UpdateCompanion<Goal> {
       completedAtUtc: completedAtUtc ?? this.completedAtUtc,
       createdAtUtc: createdAtUtc ?? this.createdAtUtc,
       updatedAtUtc: updatedAtUtc ?? this.updatedAtUtc,
+      motivation: motivation ?? this.motivation,
       rowid: rowid ?? this.rowid,
     );
   }
@@ -2474,6 +2521,9 @@ class GoalsCompanion extends UpdateCompanion<Goal> {
         Goals.$converterupdatedAtUtc.toSql(updatedAtUtc.value),
       );
     }
+    if (motivation.present) {
+      map['motivation'] = Variable<String>(motivation.value);
+    }
     if (rowid.present) {
       map['rowid'] = Variable<int>(rowid.value);
     }
@@ -2496,6 +2546,7 @@ class GoalsCompanion extends UpdateCompanion<Goal> {
           ..write('completedAtUtc: $completedAtUtc, ')
           ..write('createdAtUtc: $createdAtUtc, ')
           ..write('updatedAtUtc: $updatedAtUtc, ')
+          ..write('motivation: $motivation, ')
           ..write('rowid: $rowid')
           ..write(')'))
         .toString();

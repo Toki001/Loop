@@ -95,7 +95,7 @@ void main() {
             .data
             .values
             .single,
-        2,
+        3,
       );
       expect(await db.select(db.dataMigrations).get(), hasLength(1));
       expect(db.allTables, hasLength(13));

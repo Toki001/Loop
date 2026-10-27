@@ -1,0 +1,71 @@
+{
+  "records": [
+    {
+      "target": "retained-ios-ci",
+      "testCount": 1,
+      "exit": 0,
+      "evidence": {
+        "platform": "ios",
+        "native": {
+          "protectionPolicy": "NSFileProtectionCompleteUntilFirstUserAuthentication",
+          "privateStorage": true,
+          "backupExcluded": true,
+          "protectionInspectable": false,
+          "allEntriesProtected": false,
+          "isSimulator": true,
+          "protection": "unknown",
+          "protectedEntriesChecked": 6
+        },
+        "legacyPreferencesRetained": true,
+        "schemaVersion": 3,
+        "integrity": "ok",
+        "appearance": "dark",
+        "onboardingSeen": true,
+        "preferenceImportCommitted": true
+      }
+    },
+    {
+      "target": "physical-android",
+      "testCount": 1,
+      "exit": 0,
+      "evidence": {
+        "platform": "android",
+        "native": {
+          "privateStorage": true,
+          "backupExcluded": true
+        },
+        "legacyPreferencesRetained": false,
+        "schemaVersion": 3,
+        "integrity": "ok",
+        "appearance": "dark",
+        "onboardingSeen": true,
+        "preferenceImportCommitted": true
+      }
+    },
+    {
+      "target": "fresh-ios",
+      "testCount": 1,
+      "exit": 0,
+      "evidence": {
+        "platform": "ios",
+        "native": {
+          "protectedEntriesChecked": 5,
+          "protection": "unknown",
+          "isSimulator": true,
+          "privateStorage": true,
+          "protectionPolicy": "NSFileProtectionCompleteUntilFirstUserAuthentication",
+          "backupExcluded": true,
+          "protectionInspectable": false,
+          "allEntriesProtected": false
+        },
+        "legacyPreferencesRetained": false,
+        "schemaVersion": 3,
+        "integrity": "ok",
+        "appearance": "dark",
+        "onboardingSeen": true,
+        "preferenceImportCommitted": true
+      }
+    }
+  ],
+  "testsPassed": 3
+}
