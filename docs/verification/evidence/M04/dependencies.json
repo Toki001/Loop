@@ -1,0 +1,1528 @@
+{
+  "sdks": [
+    {
+      "name": "Dart",
+      "version": "3.13.4"
+    },
+    {
+      "name": "Flutter",
+      "version": "3.47.5"
+    }
+  ],
+  "scopeNote": "Read resolved package metadata/licenses without installing anything.\n\nResolved dependency closure includes build hooks and packages declared upstream\nas runtime dependencies; it does not assert which code survives AOT tree shaking.\nSDK engine notices are multi-license and must never be labeled a single license.",
+  "packages": [
+    {
+      "name": "_fe_analyzer_shared",
+      "version": "110.0.0",
+      "source": "hosted",
+      "scope": "development-only",
+      "license": "BSD-3-Clause",
+      "licenseSource": "package LICENSE",
+      "licenseSha256": "efa31b5ac790016736fa9761642b0af16d37cd4fb483de2905adb5258cb89722",
+      "dependencies": [
+        "meta"
+      ]
+    },
+    {
+      "name": "analyzer",
+      "version": "14.6.0",
+      "source": "hosted",
+      "scope": "development-only",
+      "license": "BSD-3-Clause",
+      "licenseSource": "package LICENSE",
+      "licenseSha256": "7e124af6a556f045cb3a20cafbdaa31602ac2c82cbcb3c3b15faaaf514b06028",
+      "dependencies": [
+        "_fe_analyzer_shared",
+        "collection",
+        "convert",
+        "crypto",
+        "glob",
+        "meta",
+        "package_config",
+        "path",
+        "pub_semver",
+        "source_span",
+        "watcher",
+        "yaml"
+      ]
+    },
+    {
+      "name": "args",
+      "version": "2.7.0",
+      "source": "hosted",
+      "scope": "resolved-runtime-closure",
+      "license": "BSD-3-Clause",
+      "licenseSource": "package LICENSE",
+      "licenseSha256": "dfb09c74e29386cd3e2719f32d4995d59526179753931d31840757c77fbf2791",
+      "dependencies": []
+    },
+    {
+      "name": "async",
+      "version": "2.13.1",
+      "source": "hosted",
+      "scope": "resolved-runtime-closure",
+      "license": "BSD-3-Clause",
+      "licenseSource": "package LICENSE",
+      "licenseSha256": "ff15faa32a2e638107b7789592b14426162a75ba620044ee2340a20ec6ce5e73",
+      "dependencies": [
+        "collection",
+        "meta"
+      ]
+    },
+    {
+      "name": "boolean_selector",
+      "version": "2.1.2",
+      "source": "hosted",
+      "scope": "resolved-runtime-closure",
+      "license": "BSD-3-Clause",
+      "licenseSource": "package LICENSE",
+      "licenseSha256": "b71519245009a3b8f126196a5408ec031e216e8e0d985085958c6543f82a8a2a",
+      "dependencies": [
+        "source_span",
+        "string_scanner"
+      ]
+    },
+    {
+      "name": "build",
+      "version": "5.0.0",
+      "source": "hosted",
+      "scope": "development-only",
+      "license": "BSD-3-Clause",
+      "licenseSource": "package LICENSE",
+      "licenseSha256": "a4b5d7d31626e90b77e8696f1c47643aa31f52e17c1907c1ab60b068110e6e10",
+      "dependencies": [
+        "analyzer",
+        "crypto",
+        "glob",
+        "logging",
+        "package_config",
+        "path"
+      ]
+    },
+    {
+      "name": "build_config",
+      "version": "1.4.0",
+      "source": "hosted",
+      "scope": "development-only",
+      "license": "BSD-3-Clause",
+      "licenseSource": "package LICENSE",
+      "licenseSha256": "ea97a7558a7bd7cee4e2355f7529e3cbebb0dcbb546ddb9a90f10c9eb6b08da5",
+      "dependencies": [
+        "checked_yaml",
+        "json_annotation",
+        "path",
+        "pubspec_parse"
+      ]
+    },
+    {
+      "name": "build_daemon",
+      "version": "4.1.7",
+      "source": "hosted",
+      "scope": "development-only",
+      "license": "BSD-3-Clause",
+      "licenseSource": "package LICENSE",
+      "licenseSha256": "0371d1da6a57fb791db29d29b95333429205f51f3cb2eb3a0c12d91838a38744",
+      "dependencies": [
+        "built_collection",
+        "built_value",
+        "crypto",
+        "http_multi_server",
+        "logging",
+        "package_config",
+        "path",
+        "pool",
+        "pub_semver",
+        "shelf",
+        "shelf_web_socket",
+        "stream_transform",
+        "watcher",
+        "web_socket_channel",
+        "yaml"
+      ]
+    },
+    {
+      "name": "build_runner",
+      "version": "2.17.1",
+      "source": "hosted",
+      "scope": "development-only",
+      "license": "BSD-3-Clause",
+      "licenseSource": "package LICENSE",
+      "licenseSha256": "a4b5d7d31626e90b77e8696f1c47643aa31f52e17c1907c1ab60b068110e6e10",
+      "dependencies": [
+        "analyzer",
+        "args",
+        "async",
+        "build",
+        "build_config",
+        "build_daemon",
+        "built_collection",
+        "built_value",
+        "collection",
+        "convert",
+        "crypto",
+        "dart_style",
+        "glob",
+        "graphs",
+        "http_multi_server",
+        "io",
+        "json_annotation",
+        "logging",
+        "meta",
+        "mime",
+        "package_config",
+        "path",
+        "pool",
+        "pub_semver",
+        "shelf",
+        "shelf_web_socket",
+        "stream_transform",
+        "watcher",
+        "web_socket_channel",
+        "yaml"
+      ]
+    },
+    {
+      "name": "built_collection",
+      "version": "5.1.2",
+      "source": "hosted",
+      "scope": "development-only",
+      "license": "BSD-3-Clause",
+      "licenseSource": "package LICENSE",
+      "licenseSha256": "4f1b0f444c862e8dc586122c00592538fb0e9dd6d81a5214882b25b8054f7dfa",
+      "dependencies": []
+    },
+    {
+      "name": "built_value",
+      "version": "8.13.0",
+      "source": "hosted",
+      "scope": "development-only",
+      "license": "BSD-3-Clause",
+      "licenseSource": "package LICENSE",
+      "licenseSha256": "4f1b0f444c862e8dc586122c00592538fb0e9dd6d81a5214882b25b8054f7dfa",
+      "dependencies": [
+        "built_collection",
+        "collection",
+        "fixnum",
+        "meta"
+      ]
+    },
+    {
+      "name": "characters",
+      "version": "1.4.1",
+      "source": "hosted",
+      "scope": "resolved-runtime-closure",
+      "license": "BSD-3-Clause",
+      "licenseSource": "package LICENSE",
+      "licenseSha256": "0371d1da6a57fb791db29d29b95333429205f51f3cb2eb3a0c12d91838a38744",
+      "dependencies": []
+    },
+    {
+      "name": "charcode",
+      "version": "1.4.0",
+      "source": "hosted",
+      "scope": "development-only",
+      "license": "BSD-3-Clause",
+      "licenseSource": "package LICENSE",
+      "licenseSha256": "8a4dbe6d3ddcf937b18d1768d13f9ba718b45bcb43bc00a3b63eb160d264acf7",
+      "dependencies": []
+    },
+    {
+      "name": "checked_yaml",
+      "version": "2.0.4",
+      "source": "hosted",
+      "scope": "development-only",
+      "license": "BSD-3-Clause",
+      "licenseSource": "package LICENSE",
+      "licenseSha256": "4771d808721f4d5f02318ab857c92f5a5dce87b14ae1c3770fe21ca7fd4a9280",
+      "dependencies": [
+        "json_annotation",
+        "source_span",
+        "yaml"
+      ]
+    },
+    {
+      "name": "cli_util",
+      "version": "0.6.0",
+      "source": "hosted",
+      "scope": "development-only",
+      "license": "BSD-3-Clause",
+      "licenseSource": "package LICENSE",
+      "licenseSha256": "ff15faa32a2e638107b7789592b14426162a75ba620044ee2340a20ec6ce5e73",
+      "dependencies": [
+        "ffi",
+        "meta",
+        "path"
+      ]
+    },
+    {
+      "name": "clock",
+      "version": "1.1.3",
+      "source": "hosted",
+      "scope": "resolved-runtime-closure",
+      "license": "Apache-2.0",
+      "licenseSource": "package LICENSE",
+      "licenseSha256": "58d1e17ffe5109a7ae296caafcadfdbe6a7d176f0bc4ab01e12a689b0499d8bd",
+      "dependencies": []
+    },
+    {
+      "name": "code_assets",
+      "version": "2.1.0",
+      "source": "hosted",
+      "scope": "resolved-runtime-closure",
+      "license": "BSD-3-Clause",
+      "licenseSource": "package LICENSE",
+      "licenseSha256": "21ae23b0b9ff67a2dc75ab085d1e8db8ac548c5faf370af17f28dd2ef3b52b7b",
+      "dependencies": [
+        "collection",
+        "hooks",
+        "logging"
+      ]
+    },
+    {
+      "name": "collection",
+      "version": "1.19.1",
+      "source": "hosted",
+      "scope": "resolved-runtime-closure",
+      "license": "BSD-3-Clause",
+      "licenseSource": "package LICENSE",
+      "licenseSha256": "ff15faa32a2e638107b7789592b14426162a75ba620044ee2340a20ec6ce5e73",
+      "dependencies": []
+    },
+    {
+      "name": "convert",
+      "version": "3.1.2",
+      "source": "hosted",
+      "scope": "resolved-runtime-closure",
+      "license": "BSD-3-Clause",
+      "licenseSource": "package LICENSE",
+      "licenseSha256": "ad6a71997da90924b2cfb1fb47ec46537f70faf469efe016168794ae45ed6888",
+      "dependencies": [
+        "typed_data"
+      ]
+    },
+    {
+      "name": "crypto",
+      "version": "3.0.8",
+      "source": "hosted",
+      "scope": "resolved-runtime-closure",
+      "license": "BSD-3-Clause",
+      "licenseSource": "package LICENSE",
+      "licenseSha256": "ad6a71997da90924b2cfb1fb47ec46537f70faf469efe016168794ae45ed6888",
+      "dependencies": []
+    },
+    {
+      "name": "cupertino_ui",
+      "version": "1.1.4",
+      "source": "hosted",
+      "scope": "resolved-runtime-closure",
+      "license": "BSD-3-Clause",
+      "licenseSource": "package LICENSE",
+      "licenseSha256": "420f7739f169097f0aad1242045169cd643c8f1d94e62866fad265ae4c369b7d",
+      "dependencies": [
+        "collection",
+        "flutter",
+        "flutter_localizations",
+        "intl"
+      ]
+    },
+    {
+      "name": "dart_style",
+      "version": "3.1.14",
+      "source": "hosted",
+      "scope": "development-only",
+      "license": "BSD-3-Clause",
+      "licenseSource": "package LICENSE",
+      "licenseSha256": "3c32b53167c7dae9190c38dab5dd9fe1789c53623ebc7d1babcb29914c5b3f16",
+      "dependencies": [
+        "analyzer",
+        "args",
+        "collection",
+        "package_config",
+        "path",
+        "pub_semver",
+        "source_span",
+        "yaml"
+      ]
+    },
+    {
+      "name": "drift",
+      "version": "2.35.3",
+      "source": "hosted",
+      "scope": "resolved-runtime-closure",
+      "license": "MIT",
+      "licenseSource": "package LICENSE",
+      "licenseSha256": "31f84e4edff98f0238a5bef1c2ce754e401fbab149782f0ff4dc9b68fd086f75",
+      "dependencies": [
+        "async",
+        "convert",
+        "collection",
+        "meta",
+        "stream_channel",
+        "sqlite3",
+        "path",
+        "stack_trace",
+        "web"
+      ]
+    },
+    {
+      "name": "drift_dev",
+      "version": "2.35.2",
+      "source": "hosted",
+      "scope": "development-only",
+      "license": "MIT",
+      "licenseSource": "package LICENSE",
+      "licenseSha256": "31f84e4edff98f0238a5bef1c2ce754e401fbab149782f0ff4dc9b68fd086f75",
+      "dependencies": [
+        "charcode",
+        "collection",
+        "recase",
+        "meta",
+        "path",
+        "json_annotation",
+        "stream_transform",
+        "args",
+        "logging",
+        "cli_util",
+        "yaml",
+        "yaml_edit",
+        "io",
+        "drift",
+        "sqlite3",
+        "sqlparser",
+        "analyzer",
+        "source_span",
+        "package_config",
+        "pub_semver",
+        "build",
+        "build_config",
+        "dart_style",
+        "source_gen",
+        "string_scanner"
+      ]
+    },
+    {
+      "name": "fake_async",
+      "version": "1.3.3",
+      "source": "hosted",
+      "scope": "resolved-runtime-closure",
+      "license": "Apache-2.0",
+      "licenseSource": "package LICENSE",
+      "licenseSha256": "58d1e17ffe5109a7ae296caafcadfdbe6a7d176f0bc4ab01e12a689b0499d8bd",
+      "dependencies": [
+        "clock",
+        "collection"
+      ]
+    },
+    {
+      "name": "ffi",
+      "version": "2.2.0",
+      "source": "hosted",
+      "scope": "resolved-runtime-closure",
+      "license": "BSD-3-Clause",
+      "licenseSource": "package LICENSE",
+      "licenseSha256": "0371d1da6a57fb791db29d29b95333429205f51f3cb2eb3a0c12d91838a38744",
+      "dependencies": []
+    },
+    {
+      "name": "file",
+      "version": "7.0.1",
+      "source": "hosted",
+      "scope": "resolved-runtime-closure",
+      "license": "BSD-3-Clause",
+      "licenseSource": "package LICENSE",
+      "licenseSha256": "f6df86b1412172537273e8e80ee2fb8a66aa7307ce0b39ea5ddab47ca41b8c49",
+      "dependencies": [
+        "meta",
+        "path"
+      ]
+    },
+    {
+      "name": "fixnum",
+      "version": "1.1.1",
+      "source": "hosted",
+      "scope": "resolved-runtime-closure",
+      "license": "BSD-3-Clause",
+      "licenseSource": "package LICENSE",
+      "licenseSha256": "ff0b91d4f3c32b25cb6ec84985e8da89b0ba2a2b2f7eef353cda5e5423a20390",
+      "dependencies": []
+    },
+    {
+      "name": "flutter",
+      "version": "0.0.0",
+      "source": "sdk",
+      "scope": "resolved-runtime-closure",
+      "license": "BSD-3-Clause",
+      "licenseSource": "package LICENSE",
+      "licenseSha256": "a598db94b6290ffbe10b5ecf911057b6a943351c727fdda9e5f2891d68700a20",
+      "dependencies": [
+        "characters",
+        "collection",
+        "material_color_utilities",
+        "meta",
+        "vector_math",
+        "sky_engine"
+      ]
+    },
+    {
+      "name": "flutter_driver",
+      "version": "0.0.0",
+      "source": "sdk",
+      "scope": "development-only",
+      "license": "BSD-3-Clause",
+      "licenseSource": "Flutter SDK LICENSE",
+      "licenseSha256": "a598db94b6290ffbe10b5ecf911057b6a943351c727fdda9e5f2891d68700a20",
+      "dependencies": [
+        "file",
+        "flutter",
+        "flutter_test",
+        "fuchsia_remote_debug_protocol",
+        "path",
+        "meta",
+        "vm_service",
+        "webdriver",
+        "matcher"
+      ]
+    },
+    {
+      "name": "flutter_localizations",
+      "version": "0.0.0",
+      "source": "sdk",
+      "scope": "resolved-runtime-closure",
+      "license": "BSD-3-Clause",
+      "licenseSource": "Flutter SDK LICENSE",
+      "licenseSha256": "a598db94b6290ffbe10b5ecf911057b6a943351c727fdda9e5f2891d68700a20",
+      "dependencies": [
+        "flutter",
+        "intl",
+        "path"
+      ]
+    },
+    {
+      "name": "flutter_riverpod",
+      "version": "3.4.3",
+      "source": "hosted",
+      "scope": "resolved-runtime-closure",
+      "license": "MIT",
+      "licenseSource": "package LICENSE",
+      "licenseSha256": "757d9c09a9a2a701144328c0fd596234ea287ff62952b39cd22f9ad4caed1171",
+      "dependencies": [
+        "collection",
+        "flutter",
+        "flutter_test",
+        "meta",
+        "riverpod",
+        "state_notifier"
+      ]
+    },
+    {
+      "name": "flutter_test",
+      "version": "0.0.0",
+      "source": "sdk",
+      "scope": "resolved-runtime-closure",
+      "license": "BSD-3-Clause",
+      "licenseSource": "Flutter SDK LICENSE",
+      "licenseSha256": "a598db94b6290ffbe10b5ecf911057b6a943351c727fdda9e5f2891d68700a20",
+      "dependencies": [
+        "flutter",
+        "test_api",
+        "matcher",
+        "path",
+        "fake_async",
+        "clock",
+        "stack_trace",
+        "vector_math",
+        "leak_tracker_flutter_testing",
+        "collection",
+        "meta",
+        "stream_channel"
+      ]
+    },
+    {
+      "name": "flutter_web_plugins",
+      "version": "0.0.0",
+      "source": "sdk",
+      "scope": "resolved-runtime-closure",
+      "license": "BSD-3-Clause",
+      "licenseSource": "Flutter SDK LICENSE",
+      "licenseSha256": "a598db94b6290ffbe10b5ecf911057b6a943351c727fdda9e5f2891d68700a20",
+      "dependencies": [
+        "flutter"
+      ]
+    },
+    {
+      "name": "fuchsia_remote_debug_protocol",
+      "version": "0.0.0",
+      "source": "sdk",
+      "scope": "development-only",
+      "license": "BSD-3-Clause",
+      "licenseSource": "Flutter SDK LICENSE",
+      "licenseSha256": "a598db94b6290ffbe10b5ecf911057b6a943351c727fdda9e5f2891d68700a20",
+      "dependencies": [
+        "process",
+        "vm_service",
+        "meta"
+      ]
+    },
+    {
+      "name": "glob",
+      "version": "2.2.0",
+      "source": "hosted",
+      "scope": "resolved-runtime-closure",
+      "license": "BSD-3-Clause",
+      "licenseSource": "package LICENSE",
+      "licenseSha256": "3c32b53167c7dae9190c38dab5dd9fe1789c53623ebc7d1babcb29914c5b3f16",
+      "dependencies": [
+        "async",
+        "collection",
+        "file",
+        "path",
+        "string_scanner"
+      ]
+    },
+    {
+      "name": "go_router",
+      "version": "18.1.1",
+      "source": "hosted",
+      "scope": "resolved-runtime-closure",
+      "license": "BSD-3-Clause",
+      "licenseSource": "package LICENSE",
+      "licenseSha256": "420f7739f169097f0aad1242045169cd643c8f1d94e62866fad265ae4c369b7d",
+      "dependencies": [
+        "collection",
+        "cupertino_ui",
+        "flutter",
+        "flutter_web_plugins",
+        "logging",
+        "material_ui",
+        "meta"
+      ]
+    },
+    {
+      "name": "graphs",
+      "version": "2.3.2",
+      "source": "hosted",
+      "scope": "development-only",
+      "license": "BSD-3-Clause",
+      "licenseSource": "package LICENSE",
+      "licenseSha256": "ea97a7558a7bd7cee4e2355f7529e3cbebb0dcbb546ddb9a90f10c9eb6b08da5",
+      "dependencies": [
+        "collection"
+      ]
+    },
+    {
+      "name": "hooks",
+      "version": "2.2.0",
+      "source": "hosted",
+      "scope": "resolved-runtime-closure",
+      "license": "BSD-3-Clause",
+      "licenseSource": "package LICENSE",
+      "licenseSha256": "21ae23b0b9ff67a2dc75ab085d1e8db8ac548c5faf370af17f28dd2ef3b52b7b",
+      "dependencies": [
+        "collection",
+        "crypto",
+        "logging",
+        "pub_semver",
+        "record_use",
+        "yaml"
+      ]
+    },
+    {
+      "name": "http_multi_server",
+      "version": "3.2.3",
+      "source": "hosted",
+      "scope": "development-only",
+      "license": "BSD-3-Clause",
+      "licenseSource": "package LICENSE",
+      "licenseSha256": "ff0b91d4f3c32b25cb6ec84985e8da89b0ba2a2b2f7eef353cda5e5423a20390",
+      "dependencies": [
+        "async"
+      ]
+    },
+    {
+      "name": "http_parser",
+      "version": "4.1.2",
+      "source": "hosted",
+      "scope": "development-only",
+      "license": "BSD-3-Clause",
+      "licenseSource": "package LICENSE",
+      "licenseSha256": "3c32b53167c7dae9190c38dab5dd9fe1789c53623ebc7d1babcb29914c5b3f16",
+      "dependencies": [
+        "collection",
+        "source_span",
+        "string_scanner",
+        "typed_data"
+      ]
+    },
+    {
+      "name": "integration_test",
+      "version": "0.0.0",
+      "source": "sdk",
+      "scope": "development-only",
+      "license": "BSD-3-Clause",
+      "licenseSource": "Flutter SDK LICENSE",
+      "licenseSha256": "a598db94b6290ffbe10b5ecf911057b6a943351c727fdda9e5f2891d68700a20",
+      "dependencies": [
+        "flutter",
+        "flutter_driver",
+        "flutter_test",
+        "path",
+        "vm_service"
+      ]
+    },
+    {
+      "name": "intl",
+      "version": "0.20.3",
+      "source": "hosted",
+      "scope": "resolved-runtime-closure",
+      "license": "BSD-3-Clause",
+      "licenseSource": "package LICENSE",
+      "licenseSha256": "7e124af6a556f045cb3a20cafbdaa31602ac2c82cbcb3c3b15faaaf514b06028",
+      "dependencies": [
+        "clock",
+        "meta",
+        "path"
+      ]
+    },
+    {
+      "name": "io",
+      "version": "1.1.0",
+      "source": "hosted",
+      "scope": "development-only",
+      "license": "BSD-3-Clause",
+      "licenseSource": "package LICENSE",
+      "licenseSha256": "ea97a7558a7bd7cee4e2355f7529e3cbebb0dcbb546ddb9a90f10c9eb6b08da5",
+      "dependencies": [
+        "meta",
+        "path",
+        "string_scanner"
+      ]
+    },
+    {
+      "name": "jni",
+      "version": "1.1.1",
+      "source": "hosted",
+      "scope": "resolved-runtime-closure",
+      "license": "BSD-3-Clause",
+      "licenseSource": "package LICENSE",
+      "licenseSha256": "08a004aa8956c3cf3b24f7f69c966247233953e18e6afaa61191ea47b7eb70f6",
+      "dependencies": [
+        "args",
+        "collection",
+        "ffi",
+        "jni_util",
+        "meta",
+        "package_config",
+        "path",
+        "plugin_platform_interface"
+      ]
+    },
+    {
+      "name": "jni_flutter",
+      "version": "1.0.4+1",
+      "source": "hosted",
+      "scope": "resolved-runtime-closure",
+      "license": "BSD-3-Clause",
+      "licenseSource": "package LICENSE",
+      "licenseSha256": "b1fcb475d67817411f335ac92872507011e574c4cb29cfdaaf7707b75641932c",
+      "dependencies": [
+        "flutter",
+        "jni"
+      ]
+    },
+    {
+      "name": "jni_util",
+      "version": "1.0.0",
+      "source": "hosted",
+      "scope": "resolved-runtime-closure",
+      "license": "BSD-3-Clause",
+      "licenseSource": "package LICENSE",
+      "licenseSha256": "b1fcb475d67817411f335ac92872507011e574c4cb29cfdaaf7707b75641932c",
+      "dependencies": [
+        "path"
+      ]
+    },
+    {
+      "name": "json_annotation",
+      "version": "4.12.0",
+      "source": "hosted",
+      "scope": "development-only",
+      "license": "BSD-3-Clause",
+      "licenseSource": "package LICENSE",
+      "licenseSha256": "143839f62c9b7f88143ea9f688361c27050888acde7696b34e04414bd254fafc",
+      "dependencies": [
+        "meta"
+      ]
+    },
+    {
+      "name": "leak_tracker",
+      "version": "11.0.2",
+      "source": "hosted",
+      "scope": "resolved-runtime-closure",
+      "license": "BSD-3-Clause",
+      "licenseSource": "package LICENSE",
+      "licenseSha256": "08a004aa8956c3cf3b24f7f69c966247233953e18e6afaa61191ea47b7eb70f6",
+      "dependencies": [
+        "clock",
+        "collection",
+        "meta",
+        "path",
+        "vm_service"
+      ]
+    },
+    {
+      "name": "leak_tracker_flutter_testing",
+      "version": "3.0.10",
+      "source": "hosted",
+      "scope": "resolved-runtime-closure",
+      "license": "BSD-3-Clause",
+      "licenseSource": "package LICENSE",
+      "licenseSha256": "08a004aa8956c3cf3b24f7f69c966247233953e18e6afaa61191ea47b7eb70f6",
+      "dependencies": [
+        "flutter",
+        "leak_tracker",
+        "leak_tracker_testing",
+        "matcher",
+        "meta"
+      ]
+    },
+    {
+      "name": "leak_tracker_testing",
+      "version": "3.0.2",
+      "source": "hosted",
+      "scope": "resolved-runtime-closure",
+      "license": "BSD-3-Clause",
+      "licenseSource": "package LICENSE",
+      "licenseSha256": "08a004aa8956c3cf3b24f7f69c966247233953e18e6afaa61191ea47b7eb70f6",
+      "dependencies": [
+        "leak_tracker",
+        "matcher",
+        "meta"
+      ]
+    },
+    {
+      "name": "listen",
+      "version": "1.0.1",
+      "source": "hosted",
+      "scope": "resolved-runtime-closure",
+      "license": "BSD-3-Clause",
+      "licenseSource": "package LICENSE",
+      "licenseSha256": "420f7739f169097f0aad1242045169cd643c8f1d94e62866fad265ae4c369b7d",
+      "dependencies": [
+        "meta"
+      ]
+    },
+    {
+      "name": "logging",
+      "version": "1.3.0",
+      "source": "hosted",
+      "scope": "resolved-runtime-closure",
+      "license": "BSD-3-Clause",
+      "licenseSource": "package LICENSE",
+      "licenseSha256": "dfb09c74e29386cd3e2719f32d4995d59526179753931d31840757c77fbf2791",
+      "dependencies": []
+    },
+    {
+      "name": "matcher",
+      "version": "0.12.20",
+      "source": "hosted",
+      "scope": "resolved-runtime-closure",
+      "license": "BSD-3-Clause",
+      "licenseSource": "package LICENSE",
+      "licenseSha256": "3c32b53167c7dae9190c38dab5dd9fe1789c53623ebc7d1babcb29914c5b3f16",
+      "dependencies": [
+        "async",
+        "meta",
+        "stack_trace",
+        "term_glyph",
+        "test_api"
+      ]
+    },
+    {
+      "name": "material_color_utilities",
+      "version": "0.13.0",
+      "source": "hosted",
+      "scope": "resolved-runtime-closure",
+      "license": "Apache-2.0",
+      "licenseSource": "package LICENSE",
+      "licenseSha256": "d103f246ef4c18dab8af0c1dcf6a8af884e5cff554da7261a48ac43c17d98f2e",
+      "dependencies": [
+        "collection"
+      ]
+    },
+    {
+      "name": "material_ui",
+      "version": "1.8.0",
+      "source": "hosted",
+      "scope": "resolved-runtime-closure",
+      "license": "BSD-3-Clause",
+      "licenseSource": "package LICENSE",
+      "licenseSha256": "420f7739f169097f0aad1242045169cd643c8f1d94e62866fad265ae4c369b7d",
+      "dependencies": [
+        "collection",
+        "cupertino_ui",
+        "flutter",
+        "flutter_localizations",
+        "intl",
+        "material_color_utilities",
+        "vector_math"
+      ]
+    },
+    {
+      "name": "meta",
+      "version": "1.19.0",
+      "source": "hosted",
+      "scope": "resolved-runtime-closure",
+      "license": "BSD-3-Clause",
+      "licenseSource": "package LICENSE",
+      "licenseSha256": "b71519245009a3b8f126196a5408ec031e216e8e0d985085958c6543f82a8a2a",
+      "dependencies": []
+    },
+    {
+      "name": "mime",
+      "version": "2.1.0",
+      "source": "hosted",
+      "scope": "development-only",
+      "license": "BSD-3-Clause",
+      "licenseSource": "package LICENSE",
+      "licenseSha256": "ff15faa32a2e638107b7789592b14426162a75ba620044ee2340a20ec6ce5e73",
+      "dependencies": []
+    },
+    {
+      "name": "native_toolchain_c",
+      "version": "0.19.5",
+      "source": "hosted",
+      "scope": "resolved-runtime-closure",
+      "license": "BSD-3-Clause",
+      "licenseSource": "package LICENSE",
+      "licenseSha256": "aa81abb1ac43e40d2f5a606385edd37e974a5858d4109f7f439dd43d964487a7",
+      "dependencies": [
+        "code_assets",
+        "file",
+        "glob",
+        "hooks",
+        "logging",
+        "meta",
+        "process",
+        "pub_semver"
+      ]
+    },
+    {
+      "name": "objective_c",
+      "version": "9.6.2",
+      "source": "hosted",
+      "scope": "resolved-runtime-closure",
+      "license": "BSD-3-Clause",
+      "licenseSource": "package LICENSE",
+      "licenseSha256": "1cda25a8de6880c5338de0b4a06ee89e8537c213eb1379c16a4c035bfd198b5c",
+      "dependencies": [
+        "code_assets",
+        "collection",
+        "ffi",
+        "hooks",
+        "logging",
+        "meta",
+        "pub_semver"
+      ]
+    },
+    {
+      "name": "package_config",
+      "version": "3.0.0",
+      "source": "hosted",
+      "scope": "resolved-runtime-closure",
+      "license": "BSD-3-Clause",
+      "licenseSource": "package LICENSE",
+      "licenseSha256": "0371d1da6a57fb791db29d29b95333429205f51f3cb2eb3a0c12d91838a38744",
+      "dependencies": [
+        "meta"
+      ]
+    },
+    {
+      "name": "path",
+      "version": "1.9.1",
+      "source": "hosted",
+      "scope": "resolved-runtime-closure",
+      "license": "BSD-3-Clause",
+      "licenseSource": "package LICENSE",
+      "licenseSha256": "3c32b53167c7dae9190c38dab5dd9fe1789c53623ebc7d1babcb29914c5b3f16",
+      "dependencies": []
+    },
+    {
+      "name": "path_provider",
+      "version": "2.1.6",
+      "source": "hosted",
+      "scope": "resolved-runtime-closure",
+      "license": "BSD-3-Clause",
+      "licenseSource": "package LICENSE",
+      "licenseSha256": "420f7739f169097f0aad1242045169cd643c8f1d94e62866fad265ae4c369b7d",
+      "dependencies": [
+        "flutter",
+        "path_provider_android",
+        "path_provider_foundation",
+        "path_provider_linux",
+        "path_provider_platform_interface",
+        "path_provider_windows"
+      ]
+    },
+    {
+      "name": "path_provider_android",
+      "version": "2.3.1",
+      "source": "hosted",
+      "scope": "resolved-runtime-closure",
+      "license": "BSD-3-Clause",
+      "licenseSource": "package LICENSE",
+      "licenseSha256": "420f7739f169097f0aad1242045169cd643c8f1d94e62866fad265ae4c369b7d",
+      "dependencies": [
+        "flutter",
+        "jni",
+        "jni_flutter",
+        "path_provider_platform_interface"
+      ]
+    },
+    {
+      "name": "path_provider_foundation",
+      "version": "2.6.0",
+      "source": "hosted",
+      "scope": "resolved-runtime-closure",
+      "license": "BSD-3-Clause",
+      "licenseSource": "package LICENSE",
+      "licenseSha256": "420f7739f169097f0aad1242045169cd643c8f1d94e62866fad265ae4c369b7d",
+      "dependencies": [
+        "ffi",
+        "flutter",
+        "objective_c",
+        "path_provider_platform_interface"
+      ]
+    },
+    {
+      "name": "path_provider_linux",
+      "version": "2.2.2",
+      "source": "hosted",
+      "scope": "resolved-runtime-closure",
+      "license": "BSD-3-Clause",
+      "licenseSource": "package LICENSE",
+      "licenseSha256": "420f7739f169097f0aad1242045169cd643c8f1d94e62866fad265ae4c369b7d",
+      "dependencies": [
+        "ffi",
+        "flutter",
+        "path",
+        "path_provider_platform_interface",
+        "xdg_directories"
+      ]
+    },
+    {
+      "name": "path_provider_platform_interface",
+      "version": "2.1.3",
+      "source": "hosted",
+      "scope": "resolved-runtime-closure",
+      "license": "BSD-3-Clause",
+      "licenseSource": "package LICENSE",
+      "licenseSha256": "420f7739f169097f0aad1242045169cd643c8f1d94e62866fad265ae4c369b7d",
+      "dependencies": [
+        "flutter",
+        "platform",
+        "plugin_platform_interface"
+      ]
+    },
+    {
+      "name": "path_provider_windows",
+      "version": "2.3.0",
+      "source": "hosted",
+      "scope": "resolved-runtime-closure",
+      "license": "BSD-3-Clause",
+      "licenseSource": "package LICENSE",
+      "licenseSha256": "89519eca6f7b9529b35bdddd623a58c3af06a88c458dbd6531ddb4675acf75a9",
+      "dependencies": [
+        "ffi",
+        "flutter",
+        "path",
+        "path_provider_platform_interface"
+      ]
+    },
+    {
+      "name": "platform",
+      "version": "3.2.0",
+      "source": "hosted",
+      "scope": "resolved-runtime-closure",
+      "license": "BSD-3-Clause",
+      "licenseSource": "package LICENSE",
+      "licenseSha256": "143839f62c9b7f88143ea9f688361c27050888acde7696b34e04414bd254fafc",
+      "dependencies": [
+        "meta"
+      ]
+    },
+    {
+      "name": "plugin_platform_interface",
+      "version": "2.1.8",
+      "source": "hosted",
+      "scope": "resolved-runtime-closure",
+      "license": "BSD-3-Clause",
+      "licenseSource": "package LICENSE",
+      "licenseSha256": "89519eca6f7b9529b35bdddd623a58c3af06a88c458dbd6531ddb4675acf75a9",
+      "dependencies": [
+        "meta"
+      ]
+    },
+    {
+      "name": "pool",
+      "version": "1.5.3",
+      "source": "hosted",
+      "scope": "development-only",
+      "license": "BSD-3-Clause",
+      "licenseSource": "package LICENSE",
+      "licenseSha256": "3c32b53167c7dae9190c38dab5dd9fe1789c53623ebc7d1babcb29914c5b3f16",
+      "dependencies": [
+        "async",
+        "stack_trace"
+      ]
+    },
+    {
+      "name": "process",
+      "version": "5.0.6",
+      "source": "hosted",
+      "scope": "resolved-runtime-closure",
+      "license": "BSD-3-Clause",
+      "licenseSource": "package LICENSE",
+      "licenseSha256": "5f018bbc25a55406d7a4e1d3229135439e315210b0050ca56dbb367a4934e85d",
+      "dependencies": [
+        "file",
+        "path",
+        "platform"
+      ]
+    },
+    {
+      "name": "pub_semver",
+      "version": "2.2.1",
+      "source": "hosted",
+      "scope": "resolved-runtime-closure",
+      "license": "BSD-3-Clause",
+      "licenseSource": "package LICENSE",
+      "licenseSha256": "3c32b53167c7dae9190c38dab5dd9fe1789c53623ebc7d1babcb29914c5b3f16",
+      "dependencies": [
+        "collection"
+      ]
+    },
+    {
+      "name": "pubspec_parse",
+      "version": "1.7.0",
+      "source": "hosted",
+      "scope": "development-only",
+      "license": "BSD-3-Clause",
+      "licenseSource": "package LICENSE",
+      "licenseSha256": "479bb84361ed3d6b78f55871c9ae5d6c8f15f49c2089e59fc1d6644d8b0ed32b",
+      "dependencies": [
+        "checked_yaml",
+        "collection",
+        "json_annotation",
+        "pub_semver",
+        "yaml"
+      ]
+    },
+    {
+      "name": "recase",
+      "version": "4.1.0",
+      "source": "hosted",
+      "scope": "development-only",
+      "license": "BSD-2-Clause",
+      "licenseSource": "package LICENSE",
+      "licenseSha256": "389acee6b73f27ef83bdd997f32acc7dc12970c68fbc505284b7bf39d6d80bde",
+      "dependencies": []
+    },
+    {
+      "name": "record_use",
+      "version": "1.1.1",
+      "source": "hosted",
+      "scope": "resolved-runtime-closure",
+      "license": "BSD-3-Clause",
+      "licenseSource": "package LICENSE",
+      "licenseSha256": "1cda25a8de6880c5338de0b4a06ee89e8537c213eb1379c16a4c035bfd198b5c",
+      "dependencies": [
+        "collection",
+        "meta",
+        "pub_semver"
+      ]
+    },
+    {
+      "name": "riverpod",
+      "version": "3.4.3",
+      "source": "hosted",
+      "scope": "resolved-runtime-closure",
+      "license": "MIT",
+      "licenseSource": "package LICENSE",
+      "licenseSha256": "757d9c09a9a2a701144328c0fd596234ea287ff62952b39cd22f9ad4caed1171",
+      "dependencies": [
+        "async",
+        "clock",
+        "collection",
+        "listen",
+        "meta",
+        "stack_trace",
+        "state_notifier",
+        "test_api",
+        "uuid"
+      ]
+    },
+    {
+      "name": "shelf",
+      "version": "1.4.3",
+      "source": "hosted",
+      "scope": "development-only",
+      "license": "BSD-3-Clause",
+      "licenseSource": "package LICENSE",
+      "licenseSha256": "ff0b91d4f3c32b25cb6ec84985e8da89b0ba2a2b2f7eef353cda5e5423a20390",
+      "dependencies": [
+        "async",
+        "collection",
+        "http_parser",
+        "path",
+        "stack_trace",
+        "stream_channel"
+      ]
+    },
+    {
+      "name": "shelf_web_socket",
+      "version": "3.0.0",
+      "source": "hosted",
+      "scope": "development-only",
+      "license": "BSD-3-Clause",
+      "licenseSource": "package LICENSE",
+      "licenseSha256": "ff0b91d4f3c32b25cb6ec84985e8da89b0ba2a2b2f7eef353cda5e5423a20390",
+      "dependencies": [
+        "shelf",
+        "stream_channel",
+        "web_socket_channel"
+      ]
+    },
+    {
+      "name": "sky_engine",
+      "version": "0.0.0",
+      "source": "sdk",
+      "scope": "resolved-runtime-closure",
+      "license": "Flutter engine bundled third-party notices (multiple licenses)",
+      "licenseSource": "package LICENSE",
+      "licenseSha256": "3c0040023a5789bf56d6bf41fd44f08b21758523d41f128fb7dd6beb398d1191",
+      "dependencies": []
+    },
+    {
+      "name": "source_gen",
+      "version": "4.3.1",
+      "source": "hosted",
+      "scope": "development-only",
+      "license": "BSD-3-Clause",
+      "licenseSource": "package LICENSE",
+      "licenseSha256": "ad6a71997da90924b2cfb1fb47ec46537f70faf469efe016168794ae45ed6888",
+      "dependencies": [
+        "analyzer",
+        "async",
+        "build",
+        "dart_style",
+        "glob",
+        "path",
+        "pub_semver",
+        "source_span",
+        "yaml"
+      ]
+    },
+    {
+      "name": "source_span",
+      "version": "1.10.2",
+      "source": "hosted",
+      "scope": "resolved-runtime-closure",
+      "license": "BSD-3-Clause",
+      "licenseSource": "package LICENSE",
+      "licenseSha256": "3c32b53167c7dae9190c38dab5dd9fe1789c53623ebc7d1babcb29914c5b3f16",
+      "dependencies": [
+        "collection",
+        "path",
+        "term_glyph"
+      ]
+    },
+    {
+      "name": "sqlite3",
+      "version": "3.8.0",
+      "source": "hosted",
+      "scope": "resolved-runtime-closure",
+      "license": "MIT",
+      "licenseSource": "package LICENSE",
+      "licenseSha256": "67e5d73a3a0c6e41f33d688a672b1161bf7f16e04da9ae48a7a14f1ba7436a4d",
+      "dependencies": [
+        "collection",
+        "ffi",
+        "meta",
+        "path",
+        "web",
+        "typed_data",
+        "hooks",
+        "code_assets",
+        "native_toolchain_c",
+        "crypto"
+      ]
+    },
+    {
+      "name": "sqlparser",
+      "version": "0.45.1",
+      "source": "hosted",
+      "scope": "development-only",
+      "license": "MIT",
+      "licenseSource": "package LICENSE",
+      "licenseSha256": "bec8c7a58f3e043a40123d332260048aeff40ebdcaf33bf8d497a3fea84b8f84",
+      "dependencies": [
+        "meta",
+        "collection",
+        "source_span",
+        "charcode"
+      ]
+    },
+    {
+      "name": "stack_trace",
+      "version": "1.12.2",
+      "source": "hosted",
+      "scope": "resolved-runtime-closure",
+      "license": "BSD-3-Clause",
+      "licenseSource": "package LICENSE",
+      "licenseSha256": "ff0b91d4f3c32b25cb6ec84985e8da89b0ba2a2b2f7eef353cda5e5423a20390",
+      "dependencies": [
+        "path"
+      ]
+    },
+    {
+      "name": "state_notifier",
+      "version": "1.0.0",
+      "source": "hosted",
+      "scope": "resolved-runtime-closure",
+      "license": "MIT",
+      "licenseSource": "package LICENSE",
+      "licenseSha256": "757d9c09a9a2a701144328c0fd596234ea287ff62952b39cd22f9ad4caed1171",
+      "dependencies": [
+        "meta"
+      ]
+    },
+    {
+      "name": "stream_channel",
+      "version": "2.1.4",
+      "source": "hosted",
+      "scope": "resolved-runtime-closure",
+      "license": "BSD-3-Clause",
+      "licenseSource": "package LICENSE",
+      "licenseSha256": "ff15faa32a2e638107b7789592b14426162a75ba620044ee2340a20ec6ce5e73",
+      "dependencies": [
+        "async"
+      ]
+    },
+    {
+      "name": "stream_transform",
+      "version": "2.1.2",
+      "source": "hosted",
+      "scope": "development-only",
+      "license": "BSD-3-Clause",
+      "licenseSource": "package LICENSE",
+      "licenseSha256": "ea97a7558a7bd7cee4e2355f7529e3cbebb0dcbb546ddb9a90f10c9eb6b08da5",
+      "dependencies": []
+    },
+    {
+      "name": "string_scanner",
+      "version": "1.4.1",
+      "source": "hosted",
+      "scope": "resolved-runtime-closure",
+      "license": "BSD-3-Clause",
+      "licenseSource": "package LICENSE",
+      "licenseSha256": "3c32b53167c7dae9190c38dab5dd9fe1789c53623ebc7d1babcb29914c5b3f16",
+      "dependencies": [
+        "source_span"
+      ]
+    },
+    {
+      "name": "sync_http",
+      "version": "0.3.1",
+      "source": "hosted",
+      "scope": "development-only",
+      "license": "BSD-3-Clause",
+      "licenseSource": "package LICENSE",
+      "licenseSha256": "b9b748d4dd6f725387bf69e96df4e4ebff167ae83547954242a731504d037644",
+      "dependencies": []
+    },
+    {
+      "name": "term_glyph",
+      "version": "1.2.2",
+      "source": "hosted",
+      "scope": "resolved-runtime-closure",
+      "license": "BSD-3-Clause",
+      "licenseSource": "package LICENSE",
+      "licenseSha256": "ea97a7558a7bd7cee4e2355f7529e3cbebb0dcbb546ddb9a90f10c9eb6b08da5",
+      "dependencies": []
+    },
+    {
+      "name": "test_api",
+      "version": "0.7.12",
+      "source": "hosted",
+      "scope": "resolved-runtime-closure",
+      "license": "BSD-3-Clause",
+      "licenseSource": "package LICENSE",
+      "licenseSha256": "ff1b9f0df9036c04be424b1e3ce12789bea880ad5ffc3a48e069ae2d40a087a4",
+      "dependencies": [
+        "async",
+        "boolean_selector",
+        "collection",
+        "meta",
+        "source_span",
+        "stack_trace",
+        "stream_channel",
+        "string_scanner",
+        "term_glyph"
+      ]
+    },
+    {
+      "name": "typed_data",
+      "version": "1.4.0",
+      "source": "hosted",
+      "scope": "resolved-runtime-closure",
+      "license": "BSD-3-Clause",
+      "licenseSource": "package LICENSE",
+      "licenseSha256": "ff15faa32a2e638107b7789592b14426162a75ba620044ee2340a20ec6ce5e73",
+      "dependencies": [
+        "collection"
+      ]
+    },
+    {
+      "name": "uuid",
+      "version": "4.6.0",
+      "source": "hosted",
+      "scope": "resolved-runtime-closure",
+      "license": "MIT",
+      "licenseSource": "package LICENSE",
+      "licenseSha256": "ad3e5523e51004e94ba9ce728805b1b4242dbccdb65e62b523800e35a8a7cfdc",
+      "dependencies": [
+        "crypto",
+        "fixnum"
+      ]
+    },
+    {
+      "name": "vector_math",
+      "version": "2.4.4",
+      "source": "hosted",
+      "scope": "resolved-runtime-closure",
+      "license": "BSD-3-Clause",
+      "licenseSource": "package LICENSE",
+      "licenseSha256": "420f7739f169097f0aad1242045169cd643c8f1d94e62866fad265ae4c369b7d",
+      "dependencies": []
+    },
+    {
+      "name": "vm_service",
+      "version": "15.4.0",
+      "source": "hosted",
+      "scope": "resolved-runtime-closure",
+      "license": "BSD-3-Clause",
+      "licenseSource": "package LICENSE",
+      "licenseSha256": "ad6a71997da90924b2cfb1fb47ec46537f70faf469efe016168794ae45ed6888",
+      "dependencies": []
+    },
+    {
+      "name": "watcher",
+      "version": "1.2.1",
+      "source": "hosted",
+      "scope": "development-only",
+      "license": "BSD-3-Clause",
+      "licenseSource": "package LICENSE",
+      "licenseSha256": "3c32b53167c7dae9190c38dab5dd9fe1789c53623ebc7d1babcb29914c5b3f16",
+      "dependencies": [
+        "async",
+        "path"
+      ]
+    },
+    {
+      "name": "web",
+      "version": "1.1.2",
+      "source": "hosted",
+      "scope": "resolved-runtime-closure",
+      "license": "BSD-3-Clause",
+      "licenseSource": "package LICENSE",
+      "licenseSha256": "aa913ff50d7542eb8cc35b9f48a80928ac6819ba9057f85d424655e3e8dc271c",
+      "dependencies": []
+    },
+    {
+      "name": "web_socket",
+      "version": "1.0.1",
+      "source": "hosted",
+      "scope": "development-only",
+      "license": "BSD-3-Clause",
+      "licenseSource": "package LICENSE",
+      "licenseSha256": "cbe822ef3446af4366b2b82c48b0979d0b12865edfe74c22b9aa617fc362d6e0",
+      "dependencies": [
+        "web"
+      ]
+    },
+    {
+      "name": "web_socket_channel",
+      "version": "3.0.3",
+      "source": "hosted",
+      "scope": "development-only",
+      "license": "BSD-3-Clause",
+      "licenseSource": "package LICENSE",
+      "licenseSha256": "a4b5d7d31626e90b77e8696f1c47643aa31f52e17c1907c1ab60b068110e6e10",
+      "dependencies": [
+        "async",
+        "crypto",
+        "stream_channel",
+        "web",
+        "web_socket"
+      ]
+    },
+    {
+      "name": "webdriver",
+      "version": "3.2.0",
+      "source": "hosted",
+      "scope": "development-only",
+      "license": "Apache-2.0",
+      "licenseSource": "package LICENSE",
+      "licenseSha256": "74cb46b123c9fa918ea8e0a0f5be736a1cd661edf145ccc723dc7ce30324ebab",
+      "dependencies": [
+        "matcher",
+        "path",
+        "stack_trace",
+        "sync_http",
+        "web"
+      ]
+    },
+    {
+      "name": "xdg_directories",
+      "version": "1.1.0",
+      "source": "hosted",
+      "scope": "resolved-runtime-closure",
+      "license": "BSD-3-Clause",
+      "licenseSource": "package LICENSE",
+      "licenseSha256": "89519eca6f7b9529b35bdddd623a58c3af06a88c458dbd6531ddb4675acf75a9",
+      "dependencies": [
+        "meta",
+        "path"
+      ]
+    },
+    {
+      "name": "yaml",
+      "version": "3.1.4",
+      "source": "hosted",
+      "scope": "resolved-runtime-closure",
+      "license": "MIT",
+      "licenseSource": "package LICENSE",
+      "licenseSha256": "d47b93335401b052d79a2f5a3710e4cf7b5aed782faedf84d40fbdd6eb934ec7",
+      "dependencies": [
+        "collection",
+        "source_span",
+        "string_scanner"
+      ]
+    },
+    {
+      "name": "yaml_edit",
+      "version": "2.2.4",
+      "source": "hosted",
+      "scope": "development-only",
+      "license": "BSD-3-Clause",
+      "licenseSource": "package LICENSE",
+      "licenseSha256": "021c41b9b081664f6ee181aaf4e03602c51591204dabe9ac8c8d736f0965b851",
+      "dependencies": [
+        "collection",
+        "meta",
+        "source_span",
+        "yaml"
+      ]
+    }
+  ]
+}

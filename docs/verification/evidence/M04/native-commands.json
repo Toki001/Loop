@@ -1,0 +1,47 @@
+[
+  {
+    "name": "android-native-final",
+    "command": [
+      "flutter",
+      "--suppress-analytics",
+      "test",
+      "integration_test/foundation_test.dart",
+      "-d",
+      "NBDEXCJNL7JR9DIJ",
+      "--no-pub",
+      "--no-uninstall",
+      "--reporter",
+      "expanded"
+    ],
+    "exit": 0,
+    "seconds": 39.029
+  },
+  {
+    "name": "android-product-main-final",
+    "command": [
+      "flutter",
+      "--suppress-analytics",
+      "build",
+      "apk",
+      "--debug",
+      "--no-pub"
+    ],
+    "exit": 0,
+    "seconds": 10.321
+  },
+  {
+    "name": "ios-product-main-final",
+    "command": [
+      "flutter",
+      "--suppress-analytics",
+      "build",
+      "ios",
+      "--simulator",
+      "--debug",
+      "--no-codesign",
+      "--no-pub"
+    ],
+    "exit": 0,
+    "seconds": 22.307
+  }
+]

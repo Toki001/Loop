@@ -1,0 +1,77 @@
+{
+  "source": "sqlite3mc",
+  "platform": "macos",
+  "sqliteVersion": "3.54.0",
+  "cipher": "chacha20",
+  "cipherAvailable": true,
+  "walWrite": true,
+  "plaintextHeaderAbsent": true,
+  "missingKeyRejected": true,
+  "wrongKeyRejected": true,
+  "wrongKeyPreservedFile": true,
+  "correctKeyReopen": true,
+  "corruptionRejectedWithoutReset": true,
+  "verifiedBackupRecovery": true,
+  "explicitDecryptionPreservedData": true,
+  "physicalDeviceOrKeyLifecycleVerified": false,
+  "benchmark": {
+    "rows": 1000,
+    "payloadBytesPerRow": 256,
+    "runsPerMode": 5,
+    "sameEngineUnencrypted": [
+      {
+        "openAndCreateMicros": 974,
+        "writeTransactionMicros": 11816,
+        "aggregateReadMicros": 738
+      },
+      {
+        "openAndCreateMicros": 959,
+        "writeTransactionMicros": 4170,
+        "aggregateReadMicros": 391
+      },
+      {
+        "openAndCreateMicros": 998,
+        "writeTransactionMicros": 4444,
+        "aggregateReadMicros": 425
+      },
+      {
+        "openAndCreateMicros": 970,
+        "writeTransactionMicros": 2125,
+        "aggregateReadMicros": 364
+      },
+      {
+        "openAndCreateMicros": 948,
+        "writeTransactionMicros": 3221,
+        "aggregateReadMicros": 332
+      }
+    ],
+    "encrypted": [
+      {
+        "openAndCreateMicros": 28348,
+        "writeTransactionMicros": 3883,
+        "aggregateReadMicros": 293
+      },
+      {
+        "openAndCreateMicros": 21894,
+        "writeTransactionMicros": 3672,
+        "aggregateReadMicros": 655
+      },
+      {
+        "openAndCreateMicros": 25747,
+        "writeTransactionMicros": 3903,
+        "aggregateReadMicros": 274
+      },
+      {
+        "openAndCreateMicros": 24690,
+        "writeTransactionMicros": 3384,
+        "aggregateReadMicros": 364
+      },
+      {
+        "openAndCreateMicros": 23450,
+        "writeTransactionMicros": 2105,
+        "aggregateReadMicros": 231
+      }
+    ],
+    "scope": "local probe; not a production Flutter benchmark"
+  }
+}

@@ -7,6 +7,7 @@ analyzer:
     - build/**
     - android/**
     - ios/**
+    - tmp/**
 linter:
   rules:
     - avoid_print

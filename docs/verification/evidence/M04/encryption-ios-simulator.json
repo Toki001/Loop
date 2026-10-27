@@ -1,0 +1,77 @@
+{
+  "source": "sqlite3mc",
+  "platform": "ios",
+  "sqliteVersion": "3.54.0",
+  "cipher": "chacha20",
+  "cipherAvailable": true,
+  "walWrite": true,
+  "plaintextHeaderAbsent": true,
+  "missingKeyRejected": true,
+  "wrongKeyRejected": true,
+  "wrongKeyPreservedFile": true,
+  "correctKeyReopen": true,
+  "corruptionRejectedWithoutReset": true,
+  "verifiedBackupRecovery": true,
+  "explicitDecryptionPreservedData": true,
+  "physicalDeviceOrKeyLifecycleVerified": false,
+  "benchmark": {
+    "rows": 1000,
+    "payloadBytesPerRow": 256,
+    "runsPerMode": 5,
+    "sameEngineUnencrypted": [
+      {
+        "openAndCreateMicros": 775,
+        "writeTransactionMicros": 4470,
+        "aggregateReadMicros": 1732
+      },
+      {
+        "openAndCreateMicros": 990,
+        "writeTransactionMicros": 2198,
+        "aggregateReadMicros": 173
+      },
+      {
+        "openAndCreateMicros": 754,
+        "writeTransactionMicros": 2015,
+        "aggregateReadMicros": 181
+      },
+      {
+        "openAndCreateMicros": 789,
+        "writeTransactionMicros": 1451,
+        "aggregateReadMicros": 148
+      },
+      {
+        "openAndCreateMicros": 731,
+        "writeTransactionMicros": 1726,
+        "aggregateReadMicros": 161
+      }
+    ],
+    "encrypted": [
+      {
+        "openAndCreateMicros": 19296,
+        "writeTransactionMicros": 2927,
+        "aggregateReadMicros": 183
+      },
+      {
+        "openAndCreateMicros": 18905,
+        "writeTransactionMicros": 3682,
+        "aggregateReadMicros": 300
+      },
+      {
+        "openAndCreateMicros": 18729,
+        "writeTransactionMicros": 2382,
+        "aggregateReadMicros": 171
+      },
+      {
+        "openAndCreateMicros": 18601,
+        "writeTransactionMicros": 1989,
+        "aggregateReadMicros": 175
+      },
+      {
+        "openAndCreateMicros": 18735,
+        "writeTransactionMicros": 1799,
+        "aggregateReadMicros": 169
+      }
+    ],
+    "scope": "local probe; not a production Flutter benchmark"
+  }
+}

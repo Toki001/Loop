@@ -1,0 +1,41 @@
+# Private persistence and recovery
+
+[ADR 014](adr/ADR-014-private-persistence.md) maps the [logical schema](DATA_AND_METRICS.md) to Drift/SQLite. The milestone report controls actual verification status and platform limits. Skill, timer, journal, media and reminder UI remain gated by their later milestones.
+
+## Data boundary
+
+Bootstrap resolves the OS application-support directory, configures native protection/backup exclusions, opens SQLite on Drift's background executor, migrates, imports legacy preferences once, and performs bounded file reconciliation before providing repositories. UI receives `LoopStorage` through Riverpod; views must use repositories and never execute database writes. Core transaction use cases may coordinate repositories on the same database.
+
+The schema has settings, skills, goals, exercises, sessions, session exercise snapshots, metric definitions/readings, media assets, reminders, migration/export metadata and file cleanup work. Metric definitions physically use `(id, version)` and goals carry `definitionVersion`; same-skill foreign keys and measurement checks prevent mixing observations. Semantic metric edits require a new version; existing readings retain units and provenance. No attempt/repetition series is supported yet, so one definition per session is unique across versions.
+
+SQLite stores wall-clock timestamps as UTC epoch **seconds**. A converter returns explicitly UTC `DateTime` values; subsecond wall-clock precision is not promised. Display timezone intent is separate. Timer accrual is an integer duration, never `end - start`; M06 supplies monotonic segments/checkpoints. Missing measurement values stay null; numerical values are finite doubles, not arbitrary-precision financial decimals. Rating/effort interpretation and derived analytics remain governed by the metrics contract.
+
+Repositories own validation and writes. Skill names are trimmed and limited to 60 graphemes with a separate 4,096-code-unit storage bound. IDs use cryptographic UUIDv4 randomness, independent of names. Session updates compare expected revision, increment it once, enforce transitions and allow only one running session. Manual zero-duration completion requires explicit evidence-only intent. Exercise titles are snapshots, allocations are bounded by recorded duration, and deleting a template clears its FK without erasing the title snapshot. Default skill removal is archive; the destructive cascade API is explicitly named `deleteConfirmed` for a future confirmed ownership flow.
+
+## Migration and preferences
+
+Current schema is 2. The frozen, **synthetic unreleased** v1 fixture predates the durable deletion queue. V1 → v2 adds that queue and its cascade trigger. DDL, migration record and `user_version` commit together. Migration failure rolls back; tests compare fresh/upgraded schemas including constraints/indexes/triggers and seed every prior table. An existing unversioned database with user tables is rejected rather than treated as a fresh install. Future schema versions, corrupt bytes or FK violations are recovery cases, never a reason to delete/recreate the database.
+
+`preferences.json` from M03 remains unchanged. Theme, onboarding version and unknown fields import into typed JSON settings with a marker in the same transaction. Existing SQL values take priority if an internal prior schema already owns a setting. Interruption/retry cannot overwrite later SQL choices with the retained legacy file. A corrupt legacy preferences file alone may be reset with an original recovery copy; SQL journal/settings damage does not expose a reset button. Unsupported legacy versions are preserved.
+
+## Files and deletion
+
+Files use generated `media/<UUIDv4>.blob` paths under the same private root; intermediate writes use generated names beneath `staging/`. Source filenames do not form destination paths. Relative paths are strict, flat and checked before access. Nonordinary files, symlinks, directory replacement, traversal, percent-encoded paths and URI/absolute paths are rejected. The app-controlled sandbox boundary does not claim race-proof syscalls against an already compromised same-UID process.
+
+Writes stream with a size bound, SHA-256, flush/close and same-root rename before metadata commit. A failed reference commit compensates only its newly created file; if storage also prevents compensation, retain/report it. Reads verify size/hash. M04 does not decode media or attest an extension/MIME from bytes: M08 must add codec validation, EXIF policy, permission and real capture/import tests before enabling media UI.
+
+Deleting a media row, session or skill queues file paths in the same transaction through a SQL trigger. Startup retries only explicit cleanup work and checks that no remaining reference owns a path. It counts unreferenced files without deleting them; interrupted promotion must not silently erase precious evidence. Missing/checksum-invalid referenced files become `missing`, not crashes or invented successful attachments. Reconciliation scans at most 200 rows/files per run and reports its limit; later library/ownership work must expose recovery and larger maintenance flows. Reminder rows currently contain intent only; OS scheduling/cancellation is M11.
+
+## Protection and backup
+
+Android uses private credential-protected application files. Manifest `allowBackup=false` plus legacy and Android 12+ exclusion rules cover cloud backup and device transfer across all data domains. iOS excludes application support from backup and applies `NSFileProtectionCompleteUntilFirstUserAuthentication`, including existing content on upgrade. Native inspection reads returned attributes. The actual iOS 27 simulator accepts the protection setting but exposes no protection attribute; this remains explicitly unverified. A compile-time simulator distinction permits other database checks, while physical iOS builds require the actual root/descendant protection readback. Physical iPhone lock/unlock, OEM transfer and backup/restore compliance remain release tests. Cross-platform transfer registration is absent; Android 16 QPR2/API36.1 transfer behavior requires a later explicit review with the approved Apple team identity, not an invented team ID. These are configured exclusions, not forensic or OEM guarantees.
+
+Loop has no application encryption key, account token or secure-storage dependency in this baseline. It does not claim end-to-end encryption or that Loop separately encrypts every media file. The approved cipher experiment is a separate app/package, never imported by the product. Host, simulator and Android results must be interpreted with their recorded mode and device context; successful SQL cipher primitives do not establish key storage, rotation, loss, restore or full media protection. Keep the product's ordinary SQLite setup until a complete encryption lifecycle has a verified ADR.
+
+Automatic backup exclusion means uninstall/device loss can lose content. In-app privacy copy states that consequence. Manual export/restore must pass M12 before controls are exposed; there is no fabricated export success in this milestone. OS backups, forensic deletion and recipients of deliberately shared files are not promises the app can make from a debug build.
+
+## Failures and verification
+
+Storage failures expose safe categories (`full`, `unavailable`, `corrupt`, `unsupportedVersion`, `conflict`, `notFound`, `invalid`, `unsafePath`, `checksum`). Raw SQLite exceptions can include notes, SQL parameters or key PRAGMAs; do not log/render them. Disk-full tests use a bounded SQLite page limit rather than filling the host disk. Process-kill tests terminate only a test-owned child, verify committed rows, roll back pending writes and reopen. Native process and protection evidence belongs in [M04](verification/M04.md); host tests alone never prove native behavior.
+
+Relevant tests: `test/persistence_test.dart`, `private_files_test.dart`, `migrations_test.dart`, `process_recovery_test.dart`, bootstrap cases in `app_test.dart`/`storage_recovery_test.dart`, and `integration_test/foundation_test.dart`. Fixtures never enter product startup. Current and historical package/native evidence remain separate by milestone.

@@ -1,0 +1,10 @@
+targets:
+  $default:
+    builders:
+      drift_dev:
+        options:
+          generate_manager: false
+          databases:
+            loop: lib/core/data/database/loop_database.dart
+            schema_dir: test/fixtures/database
+            test_dir: test/migrations/generated

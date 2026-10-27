@@ -257,10 +257,7 @@ void main() {
         ),
       );
       await tester.pumpAndSettle();
-      expect(
-        find.text('We could not open your local preferences'),
-        findsOneWidget,
-      );
+      expect(find.text('We could not open your practice data'), findsOneWidget);
       expect(find.textContaining('private internal diagnostic'), findsNothing);
       expect(find.textContaining('Reset preferences and'), findsNothing);
       await tester.tap(find.text('Try again'));

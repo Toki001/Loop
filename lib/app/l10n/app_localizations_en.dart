@@ -128,20 +128,31 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get privacyBody =>
-      'Loop has no account or cloud service. Optional media and notifications are requested only when you choose those features. Device backups and files you deliberately share are controlled by the operating system and recipient.';
+      'Loop has no account or cloud service. Your practice stays in private app storage. Loop excludes its private data from automatic system backups and device transfers. Uninstalling Loop or losing your device can lose this data. Files you deliberately share are controlled by the recipient. Optional media and notifications are requested only when you choose those features.';
 
   @override
   String get openingTitle => 'Opening Loop';
 
   @override
-  String get openingBody => 'Reading your local preferences.';
+  String get openingBody => 'Opening your private practice data.';
+
+  @override
+  String get storageRecoveryTitle => 'We could not open your practice data';
+
+  @override
+  String get storageRecoveryBody =>
+      'Loop has not reset or replaced your data. Check available device storage, then try again. Keep your app data if the problem continues; do not uninstall Loop to troubleshoot.';
+
+  @override
+  String get unsupportedStorage =>
+      'This data needs a newer version of Loop. Keep your app data and install a compatible version. Nothing has been reset.';
 
   @override
   String get recoveryTitle => 'We could not open your local preferences';
 
   @override
   String get recoveryBody =>
-      'Your files have not been changed. Try again. If the preferences file is damaged, you can reset only preferences while keeping a recovery copy.';
+      'Your practice data has not been reset. Try again. If the preferences file is damaged, you can reset only preferences while keeping a recovery copy.';
 
   @override
   String get resetPreferences => 'Reset preferences and keep a recovery copy';

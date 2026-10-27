@@ -1,0 +1,27 @@
+{
+  "context": "Actual UI-written preferences after product-main process stop; read only a local debug-app snapshot. No practice fixtures added.",
+  "model": "2409BRN2CA",
+  "android": "16",
+  "api": "36",
+  "settings": {
+    "m03PreferencesImported": true,
+    "onboardingVersion": 1,
+    "theme": "dark"
+  },
+  "schemaVersion": 2,
+  "integrity": "ok",
+  "emptyJournalRowCounts": {
+    "skills": 0,
+    "sessions": 0,
+    "metric_readings": 0,
+    "media_assets": 0
+  },
+  "process": {
+    "install": "Performing Streamed Install\nSuccess",
+    "firstLaunch": "Starting: Intent { cmp=com.jameskierdoliguez.loop/.MainActivity }\nStatus: ok\nLaunchState: COLD\nActivity: com.jameskierdoliguez.loop/.MainActivity\nTotalTime: 6854\nWaitTime: 6865\nComplete",
+    "firstPid": "21293",
+    "stoppedPid": "",
+    "secondLaunch": "Starting: Intent { cmp=com.jameskierdoliguez.loop/.MainActivity }\nStatus: ok\nLaunchState: COLD\nActivity: com.jameskierdoliguez.loop/.MainActivity\nTotalTime: 5167\nWaitTime: 5190\nComplete",
+    "secondPid": "21649"
+  }
+}

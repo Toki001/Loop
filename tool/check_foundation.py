@@ -5,6 +5,7 @@ from pathlib import Path
 import plistlib
 import re
 import subprocess
+import xml.etree.ElementTree as ET
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -29,6 +30,20 @@ def main():
     manifest = (ROOT / "android/app/src/main/AndroidManifest.xml").read_text()
     assert 'android:label="Loop"' in manifest
     assert "uses-permission" not in manifest, "Review any new production permission"
+    app = ET.fromstring(manifest).find('application')
+    namespace = '{http://schemas.android.com/apk/res/android}'
+    assert app.get(namespace + 'allowBackup') == 'false'
+    assert app.get(namespace + 'fullBackupContent') == '@xml/backup_rules'
+    assert app.get(namespace + 'dataExtractionRules') == '@xml/data_extraction_rules'
+    domains = {'root', 'file', 'database', 'sharedpref', 'external',
+               'device_root', 'device_file', 'device_database', 'device_sharedpref'}
+    xml = ROOT / 'android/app/src/main/res/xml'
+    legacy = ET.parse(xml / 'backup_rules.xml').getroot()
+    extraction = ET.parse(xml / 'data_extraction_rules.xml').getroot()
+    for rules in [legacy, extraction.find('cloud-backup'), extraction.find('device-transfer')]:
+        assert rules is not None, 'Backup/transfer policy missing'
+        assert not rules.findall('include'), 'Private backup inclusion needs review'
+        assert {e.get('domain') for e in rules.findall('exclude') if e.get('path') == '.'} == domains
     project = (ROOT / "ios/Runner.xcodeproj/project.pbxproj").read_text()
     app_ids = re.findall(r"PRODUCT_BUNDLE_IDENTIFIER = ([^;]+);", project)
     assert app_ids.count(application_id) == 3 and set(app_ids) == {application_id, application_id + ".RunnerTests"}
@@ -46,7 +61,7 @@ def main():
     for source in (ROOT / "lib").rglob("*.dart"):
         text = source.read_text()
         assert not re.search(r"(?:import|export)\s+['\"][^'\"]*(?:design_preview|preview\.dart)", text), "Preview imported by application"
-    print("PASS: exact Flutter/Dart pin, native IDs/minimums, version, permissions and preview isolation")
+    print("PASS: exact SDK/identity, permissions, backup/transfer exclusions and preview isolation")
 
 
 if __name__ == "__main__":

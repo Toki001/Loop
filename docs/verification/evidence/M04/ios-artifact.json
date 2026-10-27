@@ -1,0 +1,67 @@
+{
+  "artifact": "build/ios/iphonesimulator/Runner.app",
+  "kind": "product main simulator debug; not signed production release",
+  "metadata": {
+    "CFBundleIdentifier": "com.jameskierdoliguez.loop",
+    "CFBundleDisplayName": "Loop",
+    "CFBundleName": "Loop",
+    "CFBundleShortVersionString": "0.1.0",
+    "CFBundleVersion": "1",
+    "MinimumOSVersion": "15.0",
+    "CFBundleSupportedPlatforms": [
+      "iPhoneSimulator"
+    ]
+  },
+  "files": {
+    "Runner": {
+      "sha256": "3721cc3f7a85342a2a6cc28ea030e68f44a098a6a960aabe8a103315e111793a",
+      "bytes": 72984
+    },
+    "Info.plist": {
+      "sha256": "7d2cf9919163426f66dad92c208168533fcb86b2396ba4528d6560fc65656edb",
+      "bytes": 1985
+    },
+    "Frameworks/sqlite3.framework/sqlite3": {
+      "sha256": "bb5793ec6d2f5e4f5e444ee4fb760fbe263e0ad2c13cd14072b8ba3a65397b1a",
+      "bytes": 3509888
+    },
+    "Frameworks/App.framework/flutter_assets/kernel_blob.bin": {
+      "sha256": "db5f2481a3ef78f7d50151a72ff67b4f970e0fa63a5088b8f51dbe13a479b637",
+      "bytes": 91163736
+    },
+    "Frameworks/App.framework/flutter_assets/assets/licenses/MaterialIcons_LICENSE.txt": {
+      "sha256": "be698262aecd042c0de6f886cc0af622f8def446462026992cc530275d8a9e74",
+      "bytes": 18531
+    },
+    "Frameworks/Flutter.framework/PrivacyInfo.xcprivacy": {
+      "sha256": "9f95d7e7862a4b56b66ed926bd6d622d2a6545a827d19847278b438d571d4212",
+      "bytes": 845
+    }
+  },
+  "enginePrivacyManifest": {
+    "NSPrivacyTracking": false,
+    "NSPrivacyTrackingDomains": [],
+    "NSPrivacyCollectedDataTypes": [],
+    "NSPrivacyAccessedAPITypes": [
+      {
+        "NSPrivacyAccessedAPIType": "NSPrivacyAccessedAPICategoryFileTimestamp",
+        "NSPrivacyAccessedAPITypeReasons": [
+          "0A2A.1",
+          "C617.1"
+        ]
+      },
+      {
+        "NSPrivacyAccessedAPIType": "NSPrivacyAccessedAPICategorySystemBootTime",
+        "NSPrivacyAccessedAPITypeReasons": [
+          "35F9.1"
+        ]
+      }
+    ]
+  },
+  "review": {
+    "ordinarySQLiteBundled": true,
+    "cipherLibraryAbsent": true,
+    "persistencePackageNoticesPresent": true
+  },
+  "limits": "Simulator protection readback is unavailable; physical iPhone, lock/reboot, signed release and store availability remain unverified."
+}

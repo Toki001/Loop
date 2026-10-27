@@ -1,0 +1,50 @@
+{
+  "artifact": "build/app/outputs/flutter-apk/app-debug.apk",
+  "kind": "product main debug; not signed production release",
+  "sha256": "865e9181e32eb6f67ba8d6de9531c031bd2ba306e58dba34cf1051688632e41c",
+  "bytes": 236668856,
+  "aaptBadging": [
+    "package: name='com.jameskierdoliguez.loop' versionCode='1' versionName='0.1.0' platformBuildVersionName='16' platformBuildVersionCode='36' compileSdkVersion='36' compileSdkVersionCodename='16'",
+    "sdkVersion:'24'",
+    "targetSdkVersion:'36'",
+    "uses-permission: name='android.permission.INTERNET'",
+    "uses-permission: name='com.jameskierdoliguez.loop.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION'",
+    "application: label='Loop' icon='res/mipmap-mdpi-v4/ic_launcher.png'",
+    "application-debuggable",
+    "native-code: 'arm64-v8a' 'armeabi-v7a' 'x86_64'"
+  ],
+  "review": {
+    "allowBackupFalseInCompiledManifest": true,
+    "backupAndTransferRulesSourceGuarded": true,
+    "packageNoticesPresent": [
+      "drift",
+      "sqlite3",
+      "crypto",
+      "uuid",
+      "flutter_riverpod",
+      "go_router",
+      "path_provider"
+    ],
+    "iconLicenseSupplementBundledAndMatches": true,
+    "previewAssetsAbsent": true,
+    "cipherLibraryAbsent": true,
+    "sqliteBinaries": [
+      {
+        "path": "lib/arm64-v8a/libsqlite3.so",
+        "sha256": "f4b91af775957cd9b536f8a4a445f5740bf8ada6085dd0015125a9ba28c19358",
+        "bytes": 1749200
+      },
+      {
+        "path": "lib/armeabi-v7a/libsqlite3.so",
+        "sha256": "dc1b23dc9bf72ac59951fffb94741ebc7a45f455acc371261274f399ae0c7f4c",
+        "bytes": 1733984
+      },
+      {
+        "path": "lib/x86_64/libsqlite3.so",
+        "sha256": "42736248fc380a4a8f395df6aa3be739bd18e6337c2be753188ccecbc04a953c",
+        "bytes": 1725992
+      }
+    ]
+  },
+  "limits": "Debug Internet permission for Flutter tooling; production manifest has no uses-permission. OEM backup/transfer, release signing and store publication unverified."
+}

@@ -30,7 +30,7 @@
 
 ## ADR-008 — App-managed database encryption TBD after security spike
 
-**Decision:** private directory and honest OS protection baseline; choose SQLCipher or comparable well-maintained encryption only after cross-platform native spike, key lifecycle and archive implications documented. Never claim blanket encryption if only DB encrypted while media remain plaintext. **Open blocker:** owner threat tolerance and native compatibility review.
+**Decision:** private directory and honest OS protection baseline; choose application encryption only after native/key/restore lifecycle validation. M04's owner-approved cipher primitive experiment passed host, iOS simulator and physical Android checks; [ADR-014](adr/ADR-014-private-persistence.md) retains ordinary SQLite until the complete key/media lifecycle is proved. Physical iPhone/OEM/release threat review remains open. Never claim blanket media encryption.
 
 ## ADR-009 — No media video in public v1
 
@@ -48,7 +48,7 @@
 | D-02 | iOS/Android OS min versions? | M00 engineering baseline Android API 24+/iOS 15+; validate native packages/devices in M03, current store policy again in M14 | M00/M03 |
 | D-03 | App bundle ID / package ID? | RESOLVED by owner 2026-10-27: Android/iOS `com.jameskierdoliguez.loop`, display name Loop; never change without approval; production availability still to verify before publication | M03/M14 |
 | D-04 | Logo and product name conflicts? | Owner display name Loop; brand/logo/availability clearance not established and remains a release gate | M01/M14 |
-| D-05 | App encryption scope? | test OS protection and app-managed encryption costs | M04/M13 |
+| D-05 | App encryption scope? | M04 platform baseline selected under owner authority after synthetic cipher tests; no app-managed key/cipher integrated; physical/key/restore/OEM threat review remains | M04/M13/M14 |
 | D-06 | Export encrypted default? | clear plain-archive warning until audited crypto available | M12 |
 | D-07 | Media retention/limits? | ergonomic maximums determined by performance and user tests | M08 |
 | D-08 | Subscription model? | none in v1; separate monetization sprint | post-launch |

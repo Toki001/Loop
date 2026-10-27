@@ -1,0 +1,35 @@
+{
+  "rootApplication": {
+    "passed": 93,
+    "failed": 0,
+    "skipped": 0
+  },
+  "designPreview": {
+    "passed": 233,
+    "failed": 0,
+    "skipped": 0,
+    "frozenGoldenComparisons": 225,
+    "AAColorPairs": 22
+  },
+  "nativeIntegration": {
+    "physicalAndroidDebug": {
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0
+    },
+    "iOSSimulatorDebug": {
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  "format": {
+    "files": 49,
+    "changed": 0
+  },
+  "strictAnalysis": {
+    "root": "pass",
+    "designPreview": "pass"
+  },
+  "selection": "16 selected local CI checks plus separately run physical Android integration; not remote CI or release builds"
+}

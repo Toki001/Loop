@@ -1,0 +1,27 @@
+{
+  "baseline": {
+    "exit": 0,
+    "stdout": [
+      "PASS: 53 Markdown files; 207 local file links resolved",
+      "PASS: 18 stories, 18 scenarios, 10 decisions, 12 cross-cutting rows",
+      "PASS: 22 ignored + 8 trackable path probes",
+      "PASS: limited secret/home-path scan of 211 UTF-8 files; no findings",
+      "PASS: 225 synthetic native golden PNGs match reviewed provenance hashes",
+      "PASS: 23 original native icon/launch PNGs match provenance hashes",
+      "PASS: 4 reviewed empty-shell native PNGs match provenance hashes",
+      "Scope: local file links only (not anchors/remote URLs); no dependency or app tests"
+    ]
+  },
+  "checks": {
+    "git diff --check": {
+      "exit": 0
+    },
+    "git diff --cached --check": {
+      "exit": 0
+    },
+    "python3 -m py_compile tool/check_baseline.py tool/check_foundation.py tool/check_persistence_codegen.py tool/ci.py tool/prepare_cipher_probe.py": {
+      "exit": 0
+    }
+  },
+  "historicalM00AndFrozenGoldensUnchanged": true
+}

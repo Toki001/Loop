@@ -1,0 +1,9 @@
+{
+  "productMainInstallAndroidAndIOSCommandsCompleted": true,
+  "loopDataRetained": true,
+  "androidRunningPid": "23489",
+  "iosRunningLaunch": "com.jameskierdoliguez.loop: 79425",
+  "androidSyntheticProbe": "already absent when cleanup queried; uninstall returned nonzero, confirmed package lookup exit1/empty",
+  "iosSyntheticProbe": "removed this experiment-created app; confirmed absent",
+  "context": "Final product-main debug apps restored after native tests. No Loop uninstall/data reset. Only synthetic experiment apps targeted for cleanup."
+}

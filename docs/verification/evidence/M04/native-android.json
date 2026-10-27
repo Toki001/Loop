@@ -1,0 +1,13 @@
+{
+  "platform": "android",
+  "native": {
+    "privateStorage": true,
+    "backupExcluded": true
+  },
+  "legacyPreferencesRetained": false,
+  "schemaVersion": 2,
+  "integrity": "ok",
+  "appearance": "dark",
+  "onboardingSeen": true,
+  "preferenceImportCommitted": true
+}

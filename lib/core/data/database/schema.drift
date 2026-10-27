@@ -1,0 +1,290 @@
+import 'utc_datetime.dart';
+
+CREATE TABLE settings (
+  "key" TEXT NOT NULL PRIMARY KEY CHECK(length("key") BETWEEN 1 AND 128),
+  value_json TEXT NOT NULL CHECK(json_valid(value_json)),
+  updated_at_utc DATETIME MAPPED BY `const UtcDateTimeConverter()` NOT NULL
+);
+
+CREATE TABLE skills (
+  id TEXT NOT NULL PRIMARY KEY CHECK(length(id) = 36),
+  name TEXT NOT NULL CHECK(length(trim(name)) BETWEEN 1 AND 4096),
+  kind TEXT NOT NULL CHECK(kind IN ('music','drawing','language','programming','voice','typing','movement','custom')),
+  icon_key TEXT NOT NULL,
+  accent_key TEXT NOT NULL,
+  description TEXT,
+  created_at_utc DATETIME MAPPED BY `const UtcDateTimeConverter()` NOT NULL,
+  updated_at_utc DATETIME MAPPED BY `const UtcDateTimeConverter()` NOT NULL,
+  archived_at_utc DATETIME MAPPED BY `const UtcDateTimeConverter()`,
+  sort_order INTEGER NOT NULL DEFAULT 0,
+  default_practice_minutes INTEGER CHECK(default_practice_minutes BETWEEN 1 AND 1440)
+);
+
+CREATE TABLE metric_definitions (
+  id TEXT NOT NULL CHECK(length(id) = 36),
+  version INTEGER NOT NULL CHECK(version >= 1),
+  skill_id TEXT NOT NULL REFERENCES skills(id) ON DELETE CASCADE,
+  label TEXT NOT NULL CHECK(length(trim(label)) BETWEEN 1 AND 4096),
+  unit_key TEXT NOT NULL,
+  value_type TEXT NOT NULL CHECK(value_type IN ('numeric','checklist','text')),
+  direction TEXT NOT NULL CHECK(direction IN ('up','down','toward_target','none')),
+  target_value REAL CHECK(abs(target_value) <= CAST('1.7976931348623157e308' AS REAL)),
+  scale_min REAL CHECK(abs(scale_min) <= CAST('1.7976931348623157e308' AS REAL)),
+  scale_max REAL CHECK(abs(scale_max) <= CAST('1.7976931348623157e308' AS REAL)),
+  source_hint TEXT NOT NULL CHECK(source_hint IN ('manual','instrument','self_rating')),
+  archived_at_utc DATETIME MAPPED BY `const UtcDateTimeConverter()`,
+  PRIMARY KEY (id, version),
+  UNIQUE (id, version, skill_id),
+  CHECK(scale_min IS NULL OR scale_max IS NULL OR scale_min <= scale_max),
+  CHECK(direction != 'toward_target' OR target_value IS NOT NULL),
+  CHECK(target_value IS NULL OR ((scale_min IS NULL OR target_value >= scale_min) AND (scale_max IS NULL OR target_value <= scale_max)))
+);
+
+CREATE TABLE goals (
+  id TEXT NOT NULL PRIMARY KEY CHECK(length(id) = 36),
+  skill_id TEXT NOT NULL REFERENCES skills(id) ON DELETE CASCADE,
+  title TEXT NOT NULL CHECK(length(trim(title)) BETWEEN 1 AND 4096),
+  type TEXT NOT NULL CHECK(type IN ('cumulative','threshold','weekly_target','deliverable','qualitative')),
+  metric_definition_id TEXT,
+  definition_version INTEGER,
+  target_value REAL CHECK(abs(target_value) <= CAST('1.7976931348623157e308' AS REAL)),
+  target_unit TEXT,
+  target_date_local TEXT,
+  status TEXT NOT NULL CHECK(status IN ('active','completed','paused','archived')),
+  completed_at_utc DATETIME MAPPED BY `const UtcDateTimeConverter()`,
+  created_at_utc DATETIME MAPPED BY `const UtcDateTimeConverter()` NOT NULL,
+  updated_at_utc DATETIME MAPPED BY `const UtcDateTimeConverter()` NOT NULL,
+  FOREIGN KEY (metric_definition_id, definition_version, skill_id) REFERENCES metric_definitions(id, version, skill_id),
+  CHECK((metric_definition_id IS NULL) = (definition_version IS NULL)),
+  CHECK((status = 'completed') = (completed_at_utc IS NOT NULL)),
+  CHECK(type NOT IN ('cumulative','weekly_target') OR (target_value IS NOT NULL AND target_value > 0)),
+  CHECK(type != 'threshold' OR (target_value IS NOT NULL AND metric_definition_id IS NOT NULL))
+);
+
+CREATE TABLE exercises (
+  id TEXT NOT NULL PRIMARY KEY CHECK(length(id) = 36),
+  skill_id TEXT NOT NULL REFERENCES skills(id) ON DELETE CASCADE,
+  template_id TEXT,
+  title TEXT NOT NULL CHECK(length(trim(title)) BETWEEN 1 AND 4096),
+  instructions TEXT NOT NULL DEFAULT '',
+  default_seconds INTEGER CHECK(default_seconds BETWEEN 0 AND 86400),
+  sort_order INTEGER NOT NULL DEFAULT 0,
+  is_archived BOOLEAN NOT NULL DEFAULT FALSE CHECK(is_archived IN (0, 1)),
+  created_at_utc DATETIME MAPPED BY `const UtcDateTimeConverter()` NOT NULL,
+  updated_at_utc DATETIME MAPPED BY `const UtcDateTimeConverter()` NOT NULL,
+  UNIQUE (skill_id, template_id)
+);
+CREATE INDEX exercises_skill_sort ON exercises(skill_id, sort_order);
+
+CREATE TABLE sessions (
+  id TEXT NOT NULL PRIMARY KEY CHECK(length(id) = 36),
+  skill_id TEXT NOT NULL REFERENCES skills(id) ON DELETE CASCADE,
+  started_at_utc DATETIME MAPPED BY `const UtcDateTimeConverter()`,
+  ended_at_utc DATETIME MAPPED BY `const UtcDateTimeConverter()`,
+  active_seconds INTEGER NOT NULL DEFAULT 0 CHECK(active_seconds >= 0),
+  entry_mode TEXT NOT NULL CHECK(entry_mode IN ('timed','manual')),
+  manual_intent TEXT CHECK(manual_intent IN ('duration','evidence_only')),
+  status TEXT NOT NULL CHECK(status IN ('draft','running','paused','completed','discarded')),
+  interruption_reason TEXT,
+  created_at_utc DATETIME MAPPED BY `const UtcDateTimeConverter()` NOT NULL,
+  updated_at_utc DATETIME MAPPED BY `const UtcDateTimeConverter()` NOT NULL,
+  revision INTEGER NOT NULL DEFAULT 0 CHECK(revision >= 0),
+  note TEXT,
+  next_step TEXT,
+  effort_rating INTEGER CHECK(effort_rating BETWEEN 1 AND 5),
+  local_display_zone TEXT,
+  source_device_id TEXT,
+  CHECK((entry_mode = 'manual') = (manual_intent IS NOT NULL)),
+  CHECK(entry_mode != 'manual' OR status NOT IN ('running','paused')),
+  CHECK(status != 'running' OR started_at_utc IS NOT NULL),
+  CHECK(status != 'completed' OR ended_at_utc IS NOT NULL),
+  CHECK(ended_at_utc IS NULL OR started_at_utc IS NULL OR ended_at_utc >= started_at_utc),
+  CHECK(entry_mode != 'manual' OR status != 'completed' OR active_seconds > 0 OR manual_intent = 'evidence_only')
+);
+CREATE INDEX sessions_skill_end ON sessions(skill_id, ended_at_utc);
+CREATE UNIQUE INDEX one_running_session ON sessions(status) WHERE status = 'running';
+
+CREATE TABLE session_exercises (
+  session_id TEXT NOT NULL REFERENCES sessions(id) ON DELETE CASCADE,
+  exercise_id TEXT REFERENCES exercises(id) ON DELETE SET NULL,
+  exercise_title_snapshot TEXT NOT NULL,
+  ordinal INTEGER NOT NULL CHECK(ordinal >= 0),
+  allocated_seconds INTEGER CHECK(allocated_seconds >= 0),
+  result_note TEXT,
+  PRIMARY KEY (session_id, ordinal)
+);
+
+CREATE TABLE metric_readings (
+  id TEXT NOT NULL PRIMARY KEY CHECK(length(id) = 36),
+  session_id TEXT NOT NULL REFERENCES sessions(id) ON DELETE CASCADE,
+  metric_definition_id TEXT NOT NULL,
+  definition_version INTEGER NOT NULL,
+  numeric_value REAL CHECK(abs(numeric_value) <= CAST('1.7976931348623157e308' AS REAL)),
+  text_value TEXT,
+  bool_value BOOLEAN CHECK(bool_value IN (0, 1)),
+  source_type TEXT NOT NULL CHECK(source_type IN ('self_reported','instrument_import','derived')),
+  source_note TEXT,
+  measured_at_utc DATETIME MAPPED BY `const UtcDateTimeConverter()` NOT NULL,
+  created_at_utc DATETIME MAPPED BY `const UtcDateTimeConverter()` NOT NULL,
+  FOREIGN KEY (metric_definition_id, definition_version) REFERENCES metric_definitions(id, version),
+  UNIQUE (session_id, metric_definition_id)
+);
+CREATE INDEX readings_definition_measured ON metric_readings(metric_definition_id, measured_at_utc);
+
+CREATE TABLE media_assets (
+  id TEXT NOT NULL PRIMARY KEY CHECK(length(id) = 36),
+  session_id TEXT NOT NULL REFERENCES sessions(id) ON DELETE CASCADE,
+  kind TEXT NOT NULL CHECK(kind IN ('image','audio')),
+  mime TEXT NOT NULL,
+  byte_length INTEGER NOT NULL CHECK(byte_length > 0),
+  sha256 TEXT NOT NULL CHECK(length(sha256) = 64 AND sha256 NOT GLOB '*[^0-9a-f]*'),
+  relative_path TEXT NOT NULL UNIQUE,
+  thumbnail_relative_path TEXT UNIQUE,
+  duration_ms INTEGER CHECK(duration_ms >= 0),
+  width INTEGER CHECK(width > 0),
+  height INTEGER CHECK(height > 0),
+  label TEXT,
+  is_baseline BOOLEAN NOT NULL DEFAULT FALSE CHECK(is_baseline IN (0, 1)),
+  capture_source TEXT NOT NULL CHECK(capture_source IN ('camera','microphone','file_import')),
+  created_at_utc DATETIME MAPPED BY `const UtcDateTimeConverter()` NOT NULL,
+  storage_state TEXT NOT NULL CHECK(storage_state IN ('pending','ready','cleanup_pending','missing')),
+  CHECK(relative_path GLOB 'media/*' AND relative_path NOT LIKE '%..%' AND relative_path NOT LIKE '%\%' AND instr(relative_path, ':') = 0),
+  CHECK(thumbnail_relative_path IS NULL OR (thumbnail_relative_path GLOB 'media/*' AND thumbnail_relative_path NOT LIKE '%..%' AND thumbnail_relative_path NOT LIKE '%\%' AND instr(thumbnail_relative_path, ':') = 0))
+);
+CREATE INDEX media_session_kind ON media_assets(session_id, kind);
+
+CREATE TABLE reminders (
+  id TEXT NOT NULL PRIMARY KEY CHECK(length(id) = 36),
+  skill_id TEXT REFERENCES skills(id) ON DELETE CASCADE,
+  enabled BOOLEAN NOT NULL DEFAULT FALSE CHECK(enabled IN (0, 1)),
+  local_time_h_hmm TEXT NOT NULL CHECK(length(local_time_h_hmm) = 5 AND local_time_h_hmm GLOB '[0-2][0-9]:[0-5][0-9]' AND substr(local_time_h_hmm,1,2) <= '23'),
+  weekdays_bitset INTEGER NOT NULL CHECK(weekdays_bitset BETWEEN 1 AND 127),
+  iana_zone TEXT NOT NULL CHECK(length(iana_zone) BETWEEN 1 AND 128),
+  quiet_hours_override BOOLEAN NOT NULL DEFAULT FALSE CHECK(quiet_hours_override IN (0, 1)),
+  message_id TEXT NOT NULL,
+  os_notification_id INTEGER UNIQUE,
+  last_scheduled_at_utc DATETIME MAPPED BY `const UtcDateTimeConverter()`,
+  updated_at_utc DATETIME MAPPED BY `const UtcDateTimeConverter()` NOT NULL
+);
+
+CREATE TABLE data_migrations (
+  version INTEGER NOT NULL PRIMARY KEY,
+  completed_at_utc DATETIME MAPPED BY `const UtcDateTimeConverter()` NOT NULL
+);
+
+CREATE TABLE export_history (
+  id TEXT NOT NULL PRIMARY KEY,
+  created_at_utc DATETIME MAPPED BY `const UtcDateTimeConverter()` NOT NULL,
+  archive_schema INTEGER NOT NULL CHECK(archive_schema > 0),
+  byte_length INTEGER CHECK(byte_length >= 0),
+  outcome TEXT NOT NULL CHECK(outcome IN ('success','failure'))
+);
+
+CREATE TABLE file_cleanup_queue (
+  relative_path TEXT NOT NULL PRIMARY KEY,
+  queued_at_utc DATETIME MAPPED BY `const UtcDateTimeConverter()` NOT NULL
+);
+
+CREATE TRIGGER immutable_metric_semantics BEFORE UPDATE ON metric_definitions
+WHEN NEW.id != OLD.id OR NEW.version != OLD.version OR NEW.skill_id != OLD.skill_id
+  OR NEW.label != OLD.label OR NEW.unit_key != OLD.unit_key OR NEW.value_type != OLD.value_type
+  OR NEW.direction != OLD.direction OR NEW.target_value IS NOT OLD.target_value
+  OR NEW.scale_min IS NOT OLD.scale_min OR NEW.scale_max IS NOT OLD.scale_max OR NEW.source_hint != OLD.source_hint
+BEGIN
+  SELECT RAISE(ABORT, 'metric_version_immutable');
+END;
+
+CREATE TRIGGER validate_goal_insert BEFORE INSERT ON goals
+WHEN NEW.metric_definition_id IS NOT NULL AND NEW.target_value IS NOT NULL AND NOT EXISTS (
+  SELECT 1 FROM metric_definitions d WHERE d.id = NEW.metric_definition_id AND d.version = NEW.definition_version
+  AND d.skill_id = NEW.skill_id AND d.value_type = 'numeric' AND d.unit_key = NEW.target_unit)
+BEGIN
+  SELECT RAISE(ABORT, 'goal_metric_unit');
+END;
+
+CREATE TRIGGER validate_goal_update BEFORE UPDATE ON goals
+WHEN NEW.metric_definition_id IS NOT NULL AND NEW.target_value IS NOT NULL AND NOT EXISTS (
+  SELECT 1 FROM metric_definitions d WHERE d.id = NEW.metric_definition_id AND d.version = NEW.definition_version
+  AND d.skill_id = NEW.skill_id AND d.value_type = 'numeric' AND d.unit_key = NEW.target_unit)
+BEGIN
+  SELECT RAISE(ABORT, 'goal_metric_unit');
+END;
+
+CREATE TRIGGER next_metric_version BEFORE INSERT ON metric_definitions
+WHEN NEW.version != COALESCE((SELECT MAX(version) + 1 FROM metric_definitions WHERE id = NEW.id), 1)
+  OR EXISTS(SELECT 1 FROM metric_definitions WHERE id = NEW.id AND skill_id != NEW.skill_id)
+BEGIN
+  SELECT RAISE(ABORT, 'metric_version_sequence');
+END;
+
+CREATE TRIGGER legal_session_transition BEFORE UPDATE ON sessions
+WHEN NEW.skill_id != OLD.skill_id OR NEW.id != OLD.id OR NEW.entry_mode != OLD.entry_mode
+  OR NEW.manual_intent IS NOT OLD.manual_intent
+  OR NEW.revision != OLD.revision + 1
+  OR (NEW.status != OLD.status AND NOT (
+    (OLD.status = 'draft' AND NEW.status IN ('running','completed','discarded')) OR
+    (OLD.status = 'running' AND NEW.status IN ('paused','completed','discarded')) OR
+    (OLD.status = 'paused' AND NEW.status IN ('running','completed','discarded'))))
+  OR NEW.active_seconds < COALESCE((SELECT SUM(allocated_seconds) FROM session_exercises WHERE session_id = OLD.id), 0)
+BEGIN
+  SELECT RAISE(ABORT, 'session_conflict');
+END;
+
+CREATE TRIGGER validate_exercise_insert BEFORE INSERT ON session_exercises
+WHEN (NEW.exercise_id IS NOT NULL AND NOT EXISTS (
+    SELECT 1 FROM exercises e JOIN sessions s ON s.id = NEW.session_id
+    WHERE e.id = NEW.exercise_id AND e.skill_id = s.skill_id))
+  OR COALESCE(NEW.allocated_seconds, 0) + COALESCE((SELECT SUM(allocated_seconds) FROM session_exercises WHERE session_id = NEW.session_id), 0)
+    > (SELECT active_seconds FROM sessions WHERE id = NEW.session_id)
+BEGIN
+  SELECT RAISE(ABORT, 'exercise_allocation');
+END;
+
+CREATE TRIGGER validate_exercise_update BEFORE UPDATE ON session_exercises
+WHEN (NEW.exercise_id IS NOT NULL AND NOT EXISTS (
+    SELECT 1 FROM exercises e JOIN sessions s ON s.id = NEW.session_id
+    WHERE e.id = NEW.exercise_id AND e.skill_id = s.skill_id))
+  OR COALESCE(NEW.allocated_seconds, 0) + COALESCE((SELECT SUM(allocated_seconds) FROM session_exercises
+    WHERE session_id = NEW.session_id AND NOT (session_id = OLD.session_id AND ordinal = OLD.ordinal)), 0)
+    > (SELECT active_seconds FROM sessions WHERE id = NEW.session_id)
+BEGIN
+  SELECT RAISE(ABORT, 'exercise_allocation');
+END;
+
+CREATE TRIGGER validate_reading_insert BEFORE INSERT ON metric_readings
+WHEN NOT EXISTS (
+  SELECT 1 FROM metric_definitions d JOIN sessions s ON s.id = NEW.session_id
+  WHERE d.id = NEW.metric_definition_id AND d.version = NEW.definition_version AND d.skill_id = s.skill_id
+  AND ((d.value_type = 'numeric' AND NEW.numeric_value IS NOT NULL AND NEW.text_value IS NULL AND NEW.bool_value IS NULL
+    AND (d.scale_min IS NULL OR NEW.numeric_value >= d.scale_min) AND (d.scale_max IS NULL OR NEW.numeric_value <= d.scale_max))
+    OR (d.value_type = 'text' AND NEW.text_value IS NOT NULL AND NEW.numeric_value IS NULL AND NEW.bool_value IS NULL)
+    OR (d.value_type = 'checklist' AND NEW.bool_value IS NOT NULL AND NEW.text_value IS NULL AND NEW.numeric_value IS NULL)))
+BEGIN
+  SELECT RAISE(ABORT, 'reading_type_range_skill');
+END;
+
+CREATE TRIGGER validate_reading_update BEFORE UPDATE ON metric_readings
+WHEN NOT EXISTS (
+  SELECT 1 FROM metric_definitions d JOIN sessions s ON s.id = NEW.session_id
+  WHERE d.id = NEW.metric_definition_id AND d.version = NEW.definition_version AND d.skill_id = s.skill_id
+  AND ((d.value_type = 'numeric' AND NEW.numeric_value IS NOT NULL AND NEW.text_value IS NULL AND NEW.bool_value IS NULL
+    AND (d.scale_min IS NULL OR NEW.numeric_value >= d.scale_min) AND (d.scale_max IS NULL OR NEW.numeric_value <= d.scale_max))
+    OR (d.value_type = 'text' AND NEW.text_value IS NOT NULL AND NEW.numeric_value IS NULL AND NEW.bool_value IS NULL)
+    OR (d.value_type = 'checklist' AND NEW.bool_value IS NOT NULL AND NEW.text_value IS NULL AND NEW.numeric_value IS NULL)))
+BEGIN
+  SELECT RAISE(ABORT, 'reading_type_range_skill');
+END;
+
+CREATE TRIGGER cleanup_deleted_media AFTER DELETE ON media_assets
+BEGIN
+  INSERT OR IGNORE INTO file_cleanup_queue(relative_path, queued_at_utc) VALUES(OLD.relative_path, unixepoch());
+  INSERT OR IGNORE INTO file_cleanup_queue(relative_path, queued_at_utc)
+    SELECT OLD.thumbnail_relative_path, unixepoch() WHERE OLD.thumbnail_relative_path IS NOT NULL;
+END;
+
+CREATE TRIGGER immutable_media_identity BEFORE UPDATE ON media_assets
+WHEN NEW.id != OLD.id OR NEW.session_id != OLD.session_id OR NEW.relative_path != OLD.relative_path
+  OR NEW.thumbnail_relative_path IS NOT OLD.thumbnail_relative_path OR NEW.sha256 != OLD.sha256 OR NEW.byte_length != OLD.byte_length
+BEGIN
+  SELECT RAISE(ABORT, 'media_identity_immutable');
+END;

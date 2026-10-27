@@ -1,0 +1,19 @@
+{
+  "platform": "ios",
+  "native": {
+    "protectionPolicy": "NSFileProtectionCompleteUntilFirstUserAuthentication",
+    "protectionInspectable": false,
+    "isSimulator": true,
+    "protection": "unknown",
+    "allEntriesProtected": false,
+    "backupExcluded": true,
+    "protectedEntriesChecked": 6,
+    "privateStorage": true
+  },
+  "legacyPreferencesRetained": true,
+  "schemaVersion": 2,
+  "integrity": "ok",
+  "appearance": "dark",
+  "onboardingSeen": true,
+  "preferenceImportCommitted": true
+}

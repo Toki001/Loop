@@ -39,6 +39,7 @@ def main():
     run(flutter + ["pub", "get", "--enforce-lockfile"])
     run(flutter + ["pub", "get", "--enforce-lockfile"], ROOT / "design_preview")
     run([sys.executable, "tool/dependency_inventory.py"])
+    run([sys.executable, "tool/check_persistence_codegen.py"])
     run(["dart", "--suppress-analytics", "format", "--output=none", "--set-exit-if-changed",
          "lib", "test", "integration_test", "tool", "design_preview/lib", "design_preview/test"])
     run(flutter + ["analyze"])

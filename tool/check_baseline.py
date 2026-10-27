@@ -99,13 +99,15 @@ def main():
         if path.suffix == ".png" and simulator_pattern.fullmatch(name):
             entry = simulator_manifest.get(name, {})
             if (isinstance(entry, dict)
-                    and entry.get("provenance") == "native-simulator-empty-shell"
+                    and entry.get("provenance") in {"native-simulator-empty-shell", "native-device-empty-shell"}
+                    and (entry.get("provenance") != "native-device-empty-shell"
+                         or entry.get("target") == "physical-android")
                     and entry.get("reviewedNoPersonalData") is True
                     and entry.get("sha256") == hashlib.sha256(raw).hexdigest()
                     and raw.startswith(b"\x89PNG\r\n\x1a\n") and len(raw) <= 10 * 1024 * 1024):
                 simulator_count += 1
             else:
-                failures.append(f"{name}: unreviewed/changed simulator screenshot")
+                failures.append(f"{name}: unreviewed/changed native screenshot")
             continue
         if path.suffix == ".png" and native_pattern.fullmatch(name):
             entry = native_manifest.get(name, {})
@@ -215,7 +217,7 @@ def main():
     if native_count:
         print(f"PASS: {native_count} original native icon/launch PNGs match provenance hashes")
     if simulator_count:
-        print(f"PASS: {simulator_count} reviewed empty-shell simulator PNGs match provenance hashes")
+        print(f"PASS: {simulator_count} reviewed empty-shell native PNGs match provenance hashes")
     print("Scope: local file links only (not anchors/remote URLs); no dependency or app tests")
     return 0
 

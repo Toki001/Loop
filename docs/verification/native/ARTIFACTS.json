@@ -1,5 +1,5 @@
 {
-  "reviewContext": "Actual product main on isolated LoopM03Verification iPhone 17/iOS 27.0 simulator. Empty foundation, no personal/practice data. Visually inspected; not device/real-practice or production-release evidence.",
+  "reviewContext": "Actual product-main empty shells, individually visually reviewed with target and milestone provenance. No personal/practice data. Device/simulator limits remain in each milestone report; no production-release claim.",
   "artifacts": {
     "docs/verification/native/M03/welcome-first-launch.png": {
       "sha256": "6f228e5929e22616cebbd25edaf6e58c5710d881a21a03470093def654b57fe4",
@@ -14,6 +14,21 @@
       "provenance": "native-simulator-empty-shell",
       "reviewedNoPersonalData": true,
       "scene": "product main in a new process, actual UI-saved Dark/onboarding retained, honest empty Today and debug capability notice"
+    },
+    "docs/verification/native/M04/android-today-dark-after-process-relaunch.png": {
+      "sha256": "7400a06bf1407e576384600023dfe438e6e5f37de5a0ffd56eba75010d5ddbc6",
+      "bytes": 130403,
+      "provenance": "native-device-empty-shell",
+      "target": "physical-android",
+      "reviewedNoPersonalData": true,
+      "scene": "2409BRN2CA Android16/API36; product-main debug after separate OS process relaunch, actual UI-saved Dark/onboarding in SQLite; honest empty Today; no seeded practice data"
+    },
+    "docs/verification/native/M04/ios-today-dark-after-process-relaunch.png": {
+      "sha256": "bc17943d889ebdca4471a81c961783017393e0059194632e0910246d474f91ea",
+      "bytes": 248376,
+      "provenance": "native-simulator-empty-shell",
+      "reviewedNoPersonalData": true,
+      "scene": "iPhone17 iOS27.0 simulator product-main debug after separate OS process relaunch; real retained M03 Dark/onboarding imported to SQLite; empty journal; physical protection unverified"
     }
   }
 }

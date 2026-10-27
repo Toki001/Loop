@@ -1,0 +1,20 @@
+{
+  "context": "Retained real M03 preference file, UI-written Dark/onboarding imported to SQL once; product-main process terminate/relaunch, not simulated provider reset.",
+  "target": "iPhone17 iOS27.0 simulator",
+  "firstLaunch": "com.jameskierdoliguez.loop: 72920",
+  "settings": {
+    "m03PreferencesImported": true,
+    "onboardingVersion": 1,
+    "theme": "dark"
+  },
+  "schemaVersion": 2,
+  "integrity": "ok",
+  "emptyJournalRowCounts": {
+    "skills": 0,
+    "sessions": 0,
+    "metric_readings": 0,
+    "media_assets": 0
+  },
+  "retainedLegacyFileSha256": "56db3e56e0eb70f7d10a2b4d27819eb2d2767b350e8ded449f8bc939d7ca7844",
+  "secondLaunch": "com.jameskierdoliguez.loop: 72973"
+}

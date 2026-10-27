@@ -44,6 +44,7 @@ def main():
         if inherited:
             license_path = sdk_root / "LICENSE"
         body = license_path.read_text()
+        digest = hashlib.sha256(license_path.read_bytes()).hexdigest()
         if name == "sky_engine":
             license_name = "Flutter engine bundled third-party notices (multiple licenses)"
         elif "Apache License" in body:
@@ -52,12 +53,17 @@ def main():
             license_name = "MIT"
         elif "Neither the name" in body:
             license_name = "BSD-3-Clause"
+        elif (name, package["version"], digest) == (
+                "recase", "4.1.0", "389acee6b73f27ef83bdd997f32acc7dc12970c68fbc505284b7bf39d6d80bde"):
+            # Full two-clause text manually reviewed for M04. Do not classify
+            # arbitrary unrecognized licenses by absence of a third clause.
+            license_name = "BSD-2-Clause"
         else:
             raise ValueError(f"Manual license review required: {name}")
         records.append({"name": name, "version": package["version"], "source": package["source"],
                         "scope": "resolved-runtime-closure" if name in closure else "development-only",
                         "license": license_name, "licenseSource": "Flutter SDK LICENSE" if inherited else "package LICENSE",
-                        "licenseSha256": hashlib.sha256(license_path.read_bytes()).hexdigest(),
+                        "licenseSha256": digest,
                         "dependencies": package["dependencies"]})
     output = ROOT / "build/verification/dependencies.json"
     output.parent.mkdir(parents=True, exist_ok=True)

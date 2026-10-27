@@ -1,0 +1,23 @@
+import 'dart:convert';
+
+import 'package:flutter/widgets.dart';
+import 'package:flutter_test/flutter_test.dart';
+import 'package:integration_test/integration_test.dart';
+
+import '../lib/experiment.dart';
+
+void main() {
+  final binding = IntegrationTestWidgetsFlutterBinding.ensureInitialized();
+  testWidgets('isolated native cipher integrity and bounded performance', (tester) async {
+    await tester.pumpWidget(const Directionality(textDirection: TextDirection.ltr, child: Center(child: Text('Loop encryption experiment'))));
+    final result = await runEncryptionExperiment();
+    expect(result['correctKeyReopen'], true);
+    expect(result['wrongKeyRejected'], true);
+    expect(result['corruptionRejectedWithoutReset'], true);
+    expect(result['explicitDecryptionPreservedData'], true);
+    binding.reportData = result;
+    // Contains measurements and booleans only. No keys, paths or user content.
+    // ignore: avoid_print
+    print('LOOP_CIPHER_PROBE_RESULT ${jsonEncode(result)}');
+  });
+}

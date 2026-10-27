@@ -313,7 +313,7 @@ abstract class AppLocalizations {
   /// No description provided for @privacyBody.
   ///
   /// In en, this message translates to:
-  /// **'Loop has no account or cloud service. Optional media and notifications are requested only when you choose those features. Device backups and files you deliberately share are controlled by the operating system and recipient.'**
+  /// **'Loop has no account or cloud service. Your practice stays in private app storage. Loop excludes its private data from automatic system backups and device transfers. Uninstalling Loop or losing your device can lose this data. Files you deliberately share are controlled by the recipient. Optional media and notifications are requested only when you choose those features.'**
   String get privacyBody;
 
   /// No description provided for @openingTitle.
@@ -325,8 +325,26 @@ abstract class AppLocalizations {
   /// No description provided for @openingBody.
   ///
   /// In en, this message translates to:
-  /// **'Reading your local preferences.'**
+  /// **'Opening your private practice data.'**
   String get openingBody;
+
+  /// No description provided for @storageRecoveryTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'We could not open your practice data'**
+  String get storageRecoveryTitle;
+
+  /// No description provided for @storageRecoveryBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Loop has not reset or replaced your data. Check available device storage, then try again. Keep your app data if the problem continues; do not uninstall Loop to troubleshoot.'**
+  String get storageRecoveryBody;
+
+  /// No description provided for @unsupportedStorage.
+  ///
+  /// In en, this message translates to:
+  /// **'This data needs a newer version of Loop. Keep your app data and install a compatible version. Nothing has been reset.'**
+  String get unsupportedStorage;
 
   /// No description provided for @recoveryTitle.
   ///
@@ -337,7 +355,7 @@ abstract class AppLocalizations {
   /// No description provided for @recoveryBody.
   ///
   /// In en, this message translates to:
-  /// **'Your files have not been changed. Try again. If the preferences file is damaged, you can reset only preferences while keeping a recovery copy.'**
+  /// **'Your practice data has not been reset. Try again. If the preferences file is damaged, you can reset only preferences while keeping a recovery copy.'**
   String get recoveryBody;
 
   /// No description provided for @resetPreferences.

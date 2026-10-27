@@ -17,6 +17,8 @@ The owner supplied these identifiers on 2026-10-27. Never change them without ap
 
 ## Boot and durable settings
 
+The steps below describe the original M03 foundation. M04 supersedes file-only settings with [Drift/private persistence](PERSISTENCE.md): native protection/exclusions, transactional retained-file import, SQL-backed preferences and non-destructive database recovery. The original M03 report/artifacts remain historical. The current CI also checks generated Drift output, schema fixtures and backup XML. Physical Android storage/process tests became available in M04; physical iPhone and release gates remain pending.
+
 1. `lib/main.dart` initializes Flutter bindings and a generic error widget without raw exception text, then starts `BootstrapHost`.
 2. Bootstrap resolves the native application-support directory through `path_provider`. While waiting it shows a truthful local-loading state.
 3. `FilePreferencesRepository` loads `preferences.json`, a bounded schema-v1 JSON file containing appearance and onboarding choice. An absent file is a legitimate first install. No skills, timer, metrics or history are seeded.

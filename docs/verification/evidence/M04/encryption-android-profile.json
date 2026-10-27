@@ -1,0 +1,77 @@
+{
+  "source": "sqlite3mc",
+  "platform": "android",
+  "sqliteVersion": "3.54.0",
+  "cipher": "chacha20",
+  "cipherAvailable": true,
+  "walWrite": true,
+  "plaintextHeaderAbsent": true,
+  "missingKeyRejected": true,
+  "wrongKeyRejected": true,
+  "wrongKeyPreservedFile": true,
+  "correctKeyReopen": true,
+  "corruptionRejectedWithoutReset": true,
+  "verifiedBackupRecovery": true,
+  "explicitDecryptionPreservedData": true,
+  "physicalDeviceOrKeyLifecycleVerified": false,
+  "benchmark": {
+    "rows": 1000,
+    "payloadBytesPerRow": 256,
+    "runsPerMode": 5,
+    "sameEngineUnencrypted": [
+      {
+        "openAndCreateMicros": 158674,
+        "writeTransactionMicros": 25514,
+        "aggregateReadMicros": 1749
+      },
+      {
+        "openAndCreateMicros": 12165,
+        "writeTransactionMicros": 7971,
+        "aggregateReadMicros": 812
+      },
+      {
+        "openAndCreateMicros": 10611,
+        "writeTransactionMicros": 9044,
+        "aggregateReadMicros": 754
+      },
+      {
+        "openAndCreateMicros": 16345,
+        "writeTransactionMicros": 11117,
+        "aggregateReadMicros": 1009
+      },
+      {
+        "openAndCreateMicros": 10177,
+        "writeTransactionMicros": 11844,
+        "aggregateReadMicros": 1324
+      }
+    ],
+    "encrypted": [
+      {
+        "openAndCreateMicros": 94820,
+        "writeTransactionMicros": 16401,
+        "aggregateReadMicros": 2420
+      },
+      {
+        "openAndCreateMicros": 107262,
+        "writeTransactionMicros": 10430,
+        "aggregateReadMicros": 760
+      },
+      {
+        "openAndCreateMicros": 88526,
+        "writeTransactionMicros": 9714,
+        "aggregateReadMicros": 770
+      },
+      {
+        "openAndCreateMicros": 89393,
+        "writeTransactionMicros": 10355,
+        "aggregateReadMicros": 874
+      },
+      {
+        "openAndCreateMicros": 98382,
+        "writeTransactionMicros": 14199,
+        "aggregateReadMicros": 940
+      }
+    ],
+    "scope": "local probe; not a production Flutter benchmark"
+  }
+}
