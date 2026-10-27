@@ -2,6 +2,14 @@
 
 **Run sequence:** One milestone at a time. Complete acceptance tests and evidence file before commit. The presence of documents is not evidence that a milestone has been executed. Initial state: **all PENDING**. M00 baseline starts from the kit; do not claim code, CI, builds, screenshots, native tests or publication already exist.
 
+## Continuous Milestone Execution Policy
+
+Effective 2026-10-27, the owner authorizes automatic M01–M15 progression and future-session resumption. M00 is already verified. Read [CONTINUATION.md](verification/CONTINUATION.md) and [PROGRESS.md](verification/PROGRESS.md), inspect the repository, and resume the first incomplete milestone. Keep one milestone in progress at a time and one verified local commit per successful milestone.
+
+For each: read requirements/prerequisites → branch → implement → test → fix and rerun affected/regression checks → document actual evidence and update traceability/status → commit → confirm commit and clean worktree → immediately begin the next milestone. Do not ask the owner whether to continue. Preserve all quality gates and M00 historical results. Routine local engineering is authorized; external accounts, unapproved third-party tools/services, remote indexing/data exposure, costs, out-of-scope destruction, pushes, production credentials, legal agreements and store publishing still require explicit approval.
+
+Required failing or blocked checks prevent PASS. Record BLOCKED/FAIL truthfully with reproduction/remediation and retain completed safe preparation; only proceed to independent work whose prerequisites are satisfied. Missing optional tools do not lower acceptance. Keep durable progress/checkpoint records after each milestone and before session interruption. At the end, execute the full available verification and report actual supported-platform readiness separately from hardware, signing, policy and publication blockers. See [CODEX.md](../CODEX.md) for the complete policy.
+
 ## Global milestone template
 
 Each MXX requires (1) preconditions from earlier gates, (2) scoped plan and implementation, (3) test cases, (4) visual/permission/security review when relevant, (5) `docs/verification/MXX.md` with actual commands and outcomes, (6) Git commit after verified success, (7) follow-up owner decisions/blockers. Commit format `milestone-XX: concise verified outcome`. Use `docs/QUALITY.md` as universal overlay. No hidden 'skip tests to finish faster'. Do not push/deploy/publish without owner authorization. Evidence distinguishes emulator, physical device and mocked tests.

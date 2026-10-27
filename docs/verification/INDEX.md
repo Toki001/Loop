@@ -1,6 +1,6 @@
 # Loop verification ledger
 
-M00 is the only milestone executed in this work. This ledger records evidence, not the presence of planned feature descriptions. The app is not scaffolded, tested, built or ready for release.
+M00 is verified. The owner authorized continuous M01–M15 execution on 2026-10-27. This ledger records evidence, not the presence of planned feature descriptions. Follow [PROGRESS.md](PROGRESS.md) and [CONTINUATION.md](CONTINUATION.md) for durable session state. The app is not yet scaffolded, tested, built or ready for release.
 
 | Milestone | Execution status | Evidence / next gate |
 |---|---|---|
@@ -23,4 +23,4 @@ M00 is the only milestone executed in this work. This ledger records evidence, n
 
 Read the [traceability matrix](TRACEABILITY.md), [tool audit](TOOLS.md), [environment baseline](ENVIRONMENT.md), [initial diagnostics](evidence/M00/environment-commands.json) and [successful diagnostic retries](evidence/M00/diagnostics-final.json). Unavailable requested plugins are assigned manual/native fallbacks; none were installed. Android has no configured AVD/connected target; iOS simulators are present and shut down; physical mobile verification remains open. Flutter doctor succeeds through host-approved access to the installed SDK and services.
 
-Next authorized task is **M01 only**, when requested. No M01 interviews, product sign-off or M02 UI work has occurred. Follow [MILESTONES.md](../MILESTONES.md) and the contribution workflow. M00's repository checks cannot replace later application tests, native-device evidence, policy review or owner approvals.
+Next task is **M01**, followed automatically by each next incomplete milestone after verified local commit. No M01 interviews, product sign-off or M02 UI work has occurred yet. Follow [MILESTONES.md](../MILESTONES.md) and the contribution workflow. M00's report remains historical; its then-current authorization wording is superseded by the owner's continuous execution policy. Repository checks cannot replace later application tests, native-device evidence, policy review or owner approvals.

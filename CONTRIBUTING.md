@@ -2,7 +2,7 @@
 
 Read [AGENTS.md](AGENTS.md), [AGENT.md](AGENT.md), [CODEX.md](CODEX.md) and the specifications in [README.md](README.md) before editing. The current execution status lives in the [verification index](docs/verification/INDEX.md). The kit describes the intended app; it is not working application code.
 
-Work on exactly one authorized milestone from [MILESTONES.md](docs/MILESTONES.md). Use branches `milestone/XX-short-name`; the initial branch is `milestone/00-baseline`. Keep existing history and unrelated changes. Commit only reviewed, verified work as `milestone-XX: <verified outcome>`. Never push, publish, install third-party tools, grant OAuth access, index private source remotely, or spend money without explicit owner authorization. A local commit is not release approval.
+The owner has authorized continuous M01–M15 execution: work on one milestone at a time from [MILESTONES.md](docs/MILESTONES.md), then continue automatically after verification and commit. Read [CONTINUATION.md](docs/verification/CONTINUATION.md) and [PROGRESS.md](docs/verification/PROGRESS.md) to resume; do not redo M00. Use branches `milestone/XX-short-name`; the initial branch is `milestone/00-baseline`. Keep existing history and unrelated changes. Commit only reviewed, verified work as `milestone-XX: <verified outcome>`. Never push, publish, install unapproved third-party agent tools/services, grant OAuth access, index private source remotely, or spend money without explicit owner authorization. A local commit is not release approval.
 
 For this documentation baseline, run from the repository root:
 

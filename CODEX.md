@@ -57,6 +57,20 @@ An item is done only when: accepted UX spec and tests exist; data survives proce
 
 Read `docs/MILESTONES.md` for **16 gated milestones M00–M15**. Complete them in order, with one local commit per successful milestone; no combining unverified phases and no external deployment without approval.
 
+## Continuous Milestone Execution Policy
+
+**Owner authorization dated 2026-10-27:** continue M01 → M02 → M03 → M04 → M05 → M06 → M07 → M08 → M09 → M10 → M11 → M12 → M13 → M14 → M15 automatically within the active session and resume this policy in future sessions. After a successful milestone, do not stop to request another prompt. M00 is already PASS; preserve its historical verification.
+
+Read the next milestone's full requirements and prerequisites; use a local `milestone/XX-short-name` branch; implement its real behavior; run applicable format/analyze/unit/widget/golden/integration/native-build/migration/accessibility/responsive/privacy/security/performance and regression gates. Diagnose and properly fix failures, rerun affected checks and regressions, and repeat until acceptance passes. Never weaken assertions, bypass failing tests, remove legitimate features or replace production behavior with mocks to obtain green results.
+
+Update `docs/verification/MXX.md`, `PROGRESS.md`, `CONTINUATION.md`, requirement traceability and the milestone/status ledgers. Record actual commands/exits/counts, artifacts, screenshots, security/dependency impact, outstanding issues and next prerequisite. Commit each successful milestone locally with the prescribed subject; verify the resulting SHA and clean worktree, then **VERIFY → DOCUMENT → COMMIT → CONTINUE AUTOMATICALLY**. Routine local engineering, feature implementation, refactors, files/directories, tests, screenshots, local branches and commits require no additional confirmation.
+
+If a genuine external blocker prevents acceptance, use BLOCKED with concrete evidence and the missing prerequisite, never PASS. Continue safe preparation and independent milestones only if their prerequisites can still be satisfied; do not declare dependent gates waived. Record the current branch, completed commits, exact resume commands, test status, unresolved blockers and next action in `docs/verification/CONTINUATION.md`, including before context/session interruption whenever possible. A future session must inspect actual Git state and resume the first incomplete milestone without repeating verified work.
+
+The following still require explicit approval: unapproved third-party agent plugins or services requiring authorization; external-account connections/OAuth; exposing private code, remote indexing or private user-data uploads; purchases/charges; destructive or irreversible actions outside approved scope; remote pushes; app-store publication; production credentials; legal agreements. Finish all safe local preparation before asking, and never bypass security safeguards. Native hardware/signing/legal/publication limitations remain real release blockers.
+
+Preserve the accepted native design contract and accessible/responsive interactions; use only verified available skills/tools. Once all implementation milestones pass, run the full available suite, final regressions and supported native builds, audit production/privacy/security/accessibility configuration, verify cleanliness, and produce a final report distinguishing completed work, environmental limits, owner approvals and actual release status. Continuous execution does not authorize claims of physical testing or publication that did not happen.
+
 | Phase | Milestones | Main exit |
 |---|---|---|
 | Discovery and setup | M00–M02 | repo toolchain, product/UX decisions, approved design system |

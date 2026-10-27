@@ -9,7 +9,7 @@
 1. Read `AGENTS.md` (auto-discovered by many coding agents), `AGENT.md`, and `CODEX.md`.
 2. Read `docs/PRODUCT.md`, `docs/DESIGN.md`, `docs/ARCHITECTURE.md`, and `docs/MILESTONES.md` before making changes.
 3. Start Codex at an empty `loop/` repository using `prompts/START_CODEX.md` (copy/paste). Codex must inspect local tools, discover skills, and create the initial files for Milestone 00, **not pretend it has built the whole app**.
-4. After each milestone, run `prompts/NEXT_MILESTONE.md` with the applicable milestone ID; complete the quality gate and create a Git commit.
+4. Continuous execution is authorized for M01–M15: complete each milestone's quality gate, create and verify its local Git commit, then immediately proceed to the next incomplete milestone without another prompt. Read the durable checkpoint in `docs/verification/CONTINUATION.md` when resuming.
 5. Keep decision, evidence and blocker logs in `docs/verification/` in the application repository.
 
 ## Files and authorities
