@@ -169,7 +169,8 @@ void main() {
             'Verification milestone',
           );
           await _tap(tester, find.text('Create skill'));
-          await waitFor(tester, find.text('Current goals'));
+          await waitFor(tester, find.widgetWithText(ChoiceChip, 'Exercises'));
+          await _tap(tester, find.widgetWithText(ChoiceChip, 'Exercises'));
           final skill =
               (await storage.skillManagement.watchCards().first).single.skill;
           final detail = (await storage.skillManagement.detail(skill.id))!;
@@ -212,6 +213,7 @@ void main() {
         }
         await waitFor(tester, find.text(_skillName));
         await _tap(tester, find.text('View skill'));
+        await _tap(tester, find.widgetWithText(ChoiceChip, 'Exercises'));
         await waitFor(tester, find.text('Verification exercise'));
         final detail = (await storage.skillManagement.detail(
           metadata['skillId'] as String,

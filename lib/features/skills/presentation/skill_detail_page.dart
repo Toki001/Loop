@@ -10,16 +10,32 @@ import '../domain/goal_rules.dart';
 import '../domain/skill_kind.dart';
 import '../domain/starter_catalog.dart';
 import 'skill_providers.dart';
+import '../../journal/presentation/journal_widgets.dart';
 import 'skill_widgets.dart';
 
 class SkillDetailPage extends ConsumerStatefulWidget {
-  const SkillDetailPage({super.key, required this.id});
+  const SkillDetailPage({
+    super.key,
+    required this.id,
+    this.initialSection = 'timeline',
+  });
   final String id;
+  final String initialSection;
   @override
   ConsumerState<SkillDetailPage> createState() => _SkillDetailPageState();
 }
 
 class _SkillDetailPageState extends ConsumerState<SkillDetailPage> {
+  String _validSection(String value) =>
+      ['timeline', 'goals', 'exercises'].contains(value) ? value : 'timeline';
+  late String _section = _validSection(widget.initialSection);
+  @override
+  void didUpdateWidget(covariant SkillDetailPage oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    if (oldWidget.initialSection != widget.initialSection)
+      _section = _validSection(widget.initialSection);
+  }
+
   bool _busy = false;
   bool _archivedGoals = false;
   bool _archivedExercises = false;
@@ -209,194 +225,216 @@ class _SkillDetailPageState extends ConsumerState<SkillDetailPage> {
               icon: Icons.error_outline,
             ),
           ),
-        const LoopSectionHeader(title: 'Goals'),
+        if (skill.archivedAtUtc == null)
+          LoopButton(
+            label: 'Practice this skill',
+            onPressed: () => context.go('/practice/setup?skill=${skill.id}'),
+          ),
         Wrap(
           spacing: 8,
           runSpacing: 8,
           children: [
-            ChoiceChip(
-              label: const Text('Current goals'),
-              selected: !_archivedGoals,
-              onSelected: (_) => setState(() => _archivedGoals = false),
-            ),
-            ChoiceChip(
-              label: const Text('Archived goals'),
-              selected: _archivedGoals,
-              onSelected: (_) => setState(() => _archivedGoals = true),
-            ),
-          ],
-        ),
-        if (goals.isEmpty)
-          Text(
-            _archivedGoals ? 'No archived goals.' : 'No goals yet. Add one when it helps give your practice direction.',
-          ),
-        for (final goal in goals)
-          GoalSummaryCard(
-            goal: goal,
-            data: data,
-            actions: PopupMenuButton<String>(
-              tooltip: 'Actions for goal ${goal.title}',
-              enabled: !_busy,
-              onSelected: (action) => _goalAction(goal, action),
-              itemBuilder: (_) => [
-                const PopupMenuItem(value: 'edit', child: Text('Edit goal')),
-                if (goal.status == 'archived')
-                  const PopupMenuItem(
-                    value: 'restore',
-                    child: Text('Restore goal'),
-                  )
-                else ...[
-                  if (goal.status != 'completed')
-                    const PopupMenuItem(
-                      value: 'completed',
-                      child: Text('Mark complete'),
-                    ),
-                  if (goal.status == 'completed' || goal.status == 'paused')
-                    const PopupMenuItem(
-                      value: 'active',
-                      child: Text('Make active'),
-                    ),
-                  if (goal.status == 'active')
-                    const PopupMenuItem(
-                      value: 'paused',
-                      child: Text('Pause goal'),
-                    ),
-                  const PopupMenuItem(
-                    value: 'archived',
-                    child: Text('Archive goal'),
-                  ),
-                ],
-              ],
-            ),
-          ),
-        LoopButton(
-          label: 'Add goal',
-          icon: Icons.add,
-          kind: LoopButtonKind.secondary,
-          onPressed: _busy
-              ? null
-              : () => context.push('/skills/${skill.id}/goals/new'),
-        ),
-        const LoopSectionHeader(title: 'Exercises'),
-        Wrap(
-          spacing: 8,
-          runSpacing: 8,
-          children: [
-            ChoiceChip(
-              label: const Text('Current exercises'),
-              selected: !_archivedExercises,
-              onSelected: (_) => setState(() {
-                _archivedExercises = false;
-                _reorder = false;
-              }),
-            ),
-            ChoiceChip(
-              label: const Text('Archived exercises'),
-              selected: _archivedExercises,
-              onSelected: (_) => setState(() {
-                _archivedExercises = true;
-                _reorder = false;
-              }),
-            ),
-            if (!_archivedExercises && exercises.length > 1)
-              FilterChip(
-                label: const Text('Reorder exercises'),
-                selected: _reorder,
-                onSelected: (value) => setState(() => _reorder = value),
+            for (final section in ['timeline', 'goals', 'exercises'])
+              ChoiceChip(
+                label: Text(section[0].toUpperCase() + section.substring(1)),
+                selected: _section == section,
+                onSelected: (_) => setState(() => _section = section),
               ),
           ],
         ),
-        if (exercises.isEmpty)
-          Text(
-            _archivedExercises
-                ? 'No archived exercises.'
-                : 'Choose your own small, repeatable exercise.',
+        if (_section == 'timeline') RecentJournalSection(skillId: skill.id),
+        if (_section == 'goals') ...[
+          const LoopSectionHeader(title: 'Goals'),
+          Wrap(
+            spacing: 8,
+            runSpacing: 8,
+            children: [
+              ChoiceChip(
+                label: const Text('Current goals'),
+                selected: !_archivedGoals,
+                onSelected: (_) => setState(() => _archivedGoals = false),
+              ),
+              ChoiceChip(
+                label: const Text('Archived goals'),
+                selected: _archivedGoals,
+                onSelected: (_) => setState(() => _archivedGoals = true),
+              ),
+            ],
           ),
-        for (var i = 0; i < exercises.length; i++)
-          LoopCard(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Expanded(
-                      child: Text(
-                        exercises[i].title,
-                        style: Theme.of(context).textTheme.titleLarge,
+          if (goals.isEmpty)
+            Text(
+              _archivedGoals ? 'No archived goals.' : 'No goals yet. Add one when it helps give your practice direction.',
+            ),
+          for (final goal in goals)
+            GoalSummaryCard(
+              goal: goal,
+              data: data,
+              actions: PopupMenuButton<String>(
+                tooltip: 'Actions for goal ${goal.title}',
+                enabled: !_busy,
+                onSelected: (action) => _goalAction(goal, action),
+                itemBuilder: (_) => [
+                  const PopupMenuItem(value: 'edit', child: Text('Edit goal')),
+                  if (goal.status == 'archived')
+                    const PopupMenuItem(
+                      value: 'restore',
+                      child: Text('Restore goal'),
+                    )
+                  else ...[
+                    if (goal.status != 'completed')
+                      const PopupMenuItem(
+                        value: 'completed',
+                        child: Text('Mark complete'),
                       ),
-                    ),
-                    PopupMenuButton<String>(
-                      tooltip: 'Actions for exercise ${exercises[i].title}',
-                      enabled: !_busy,
-                      onSelected: (action) =>
-                          _exerciseAction(exercises[i], action),
-                      itemBuilder: (_) => [
-                        const PopupMenuItem(
-                          value: 'edit',
-                          child: Text('Edit exercise'),
-                        ),
-                        const PopupMenuItem(
-                          value: 'duplicate',
-                          child: Text('Duplicate exercise'),
-                        ),
-                        if (exercises[i].isArchived)
-                          const PopupMenuItem(
-                            value: 'restore',
-                            child: Text('Restore exercise'),
-                          )
-                        else
-                          const PopupMenuItem(
-                            value: 'archive',
-                            child: Text('Archive exercise'),
-                          ),
-                      ],
+                    if (goal.status == 'completed' || goal.status == 'paused')
+                      const PopupMenuItem(
+                        value: 'active',
+                        child: Text('Make active'),
+                      ),
+                    if (goal.status == 'active')
+                      const PopupMenuItem(
+                        value: 'paused',
+                        child: Text('Pause goal'),
+                      ),
+                    const PopupMenuItem(
+                      value: 'archived',
+                      child: Text('Archive goal'),
                     ),
                   ],
-                ),
-                if (exercises[i].instructions.isNotEmpty) ...[
-                  const SizedBox(height: 8),
-                  Text(exercises[i].instructions),
                 ],
-                const SizedBox(height: 12),
-                Text(
-                  exercises[i].defaultSeconds == null
-                      ? 'No suggested duration'
-                      : '${exercises[i].defaultSeconds} suggested seconds',
-                  style: Theme.of(context).textTheme.bodySmall,
+              ),
+            ),
+          LoopButton(
+            label: 'Add goal',
+            icon: Icons.add,
+            kind: LoopButtonKind.secondary,
+            onPressed: _busy
+                ? null
+                : () => context.push('/skills/${skill.id}/goals/new'),
+          ),
+        ],
+        if (_section == 'exercises') ...[
+          const LoopSectionHeader(title: 'Exercises'),
+          Wrap(
+            spacing: 8,
+            runSpacing: 8,
+            children: [
+              ChoiceChip(
+                label: const Text('Current exercises'),
+                selected: !_archivedExercises,
+                onSelected: (_) => setState(() {
+                  _archivedExercises = false;
+                  _reorder = false;
+                }),
+              ),
+              ChoiceChip(
+                label: const Text('Archived exercises'),
+                selected: _archivedExercises,
+                onSelected: (_) => setState(() {
+                  _archivedExercises = true;
+                  _reorder = false;
+                }),
+              ),
+              if (!_archivedExercises && exercises.length > 1)
+                FilterChip(
+                  label: const Text('Reorder exercises'),
+                  selected: _reorder,
+                  onSelected: (value) => setState(() => _reorder = value),
                 ),
-                if (_reorder && !_archivedExercises)
-                  Wrap(
-                    spacing: 8,
-                    runSpacing: 8,
+            ],
+          ),
+          if (exercises.isEmpty)
+            Text(
+              _archivedExercises
+                  ? 'No archived exercises.'
+                  : 'Choose your own small, repeatable exercise.',
+            ),
+          for (var i = 0; i < exercises.length; i++)
+            LoopCard(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      IconButton(
-                        tooltip: 'Move ${exercises[i].title} earlier',
-                        onPressed: _busy || i == 0
-                            ? null
-                            : () => _moveExercise(exercises, i, -1),
-                        icon: const Icon(Icons.arrow_upward),
+                      Expanded(
+                        child: Text(
+                          exercises[i].title,
+                          style: Theme.of(context).textTheme.titleLarge,
+                        ),
                       ),
-                      IconButton(
-                        tooltip: 'Move ${exercises[i].title} later',
-                        onPressed: _busy || i == exercises.length - 1
-                            ? null
-                            : () => _moveExercise(exercises, i, 1),
-                        icon: const Icon(Icons.arrow_downward),
+                      PopupMenuButton<String>(
+                        tooltip: 'Actions for exercise ${exercises[i].title}',
+                        enabled: !_busy,
+                        onSelected: (action) =>
+                            _exerciseAction(exercises[i], action),
+                        itemBuilder: (_) => [
+                          const PopupMenuItem(
+                            value: 'edit',
+                            child: Text('Edit exercise'),
+                          ),
+                          const PopupMenuItem(
+                            value: 'duplicate',
+                            child: Text('Duplicate exercise'),
+                          ),
+                          if (exercises[i].isArchived)
+                            const PopupMenuItem(
+                              value: 'restore',
+                              child: Text('Restore exercise'),
+                            )
+                          else
+                            const PopupMenuItem(
+                              value: 'archive',
+                              child: Text('Archive exercise'),
+                            ),
+                        ],
                       ),
                     ],
                   ),
-              ],
+                  if (exercises[i].instructions.isNotEmpty) ...[
+                    const SizedBox(height: 8),
+                    Text(exercises[i].instructions),
+                  ],
+                  const SizedBox(height: 12),
+                  Text(
+                    exercises[i].defaultSeconds == null
+                        ? 'No suggested duration'
+                        : '${exercises[i].defaultSeconds} suggested seconds',
+                    style: Theme.of(context).textTheme.bodySmall,
+                  ),
+                  if (_reorder && !_archivedExercises)
+                    Wrap(
+                      spacing: 8,
+                      runSpacing: 8,
+                      children: [
+                        IconButton(
+                          tooltip: 'Move ${exercises[i].title} earlier',
+                          onPressed: _busy || i == 0
+                              ? null
+                              : () => _moveExercise(exercises, i, -1),
+                          icon: const Icon(Icons.arrow_upward),
+                        ),
+                        IconButton(
+                          tooltip: 'Move ${exercises[i].title} later',
+                          onPressed: _busy || i == exercises.length - 1
+                              ? null
+                              : () => _moveExercise(exercises, i, 1),
+                          icon: const Icon(Icons.arrow_downward),
+                        ),
+                      ],
+                    ),
+                ],
+              ),
             ),
+          LoopButton(
+            label: 'Add exercise',
+            icon: Icons.add,
+            kind: LoopButtonKind.secondary,
+            onPressed: _busy
+                ? null
+                : () => context.push('/skills/${skill.id}/exercises/new'),
           ),
-        LoopButton(
-          label: 'Add exercise',
-          icon: Icons.add,
-          kind: LoopButtonKind.secondary,
-          onPressed: _busy
-              ? null
-              : () => context.push('/skills/${skill.id}/exercises/new'),
-        ),
+        ],
       ],
     );
   }

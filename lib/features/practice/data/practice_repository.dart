@@ -160,6 +160,11 @@ class PracticeRepository {
               checkpointAtUtc: utcNow(),
             ),
           );
+      if (saved.status == 'discarded') {
+        await (database.delete(
+          database.journalDrafts,
+        )..where((d) => d.sessionId.equals(saved.id))).go();
+      }
       return (await find(saved.id))!;
     }),
   );

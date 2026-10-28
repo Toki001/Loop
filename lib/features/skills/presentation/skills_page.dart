@@ -3,11 +3,15 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../../shared/design_system/components.dart';
+import '../../../app/local_time.dart';
+import '../../../shared/design_system/expressive_widgets.dart';
+import '../../journal/presentation/journal_overview.dart';
 import '../../practice/presentation/practice_pages.dart';
 import '../data/skill_management_repository.dart';
 import '../domain/skill_kind.dart';
 import '../domain/starter_catalog.dart';
 import 'skill_providers.dart';
+import '../../journal/presentation/journal_widgets.dart';
 import 'skill_widgets.dart';
 
 class SkillsPage extends ConsumerStatefulWidget {
@@ -223,12 +227,9 @@ class SkillSummaryCard extends StatelessWidget {
         Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            ExcludeSemantics(
-              child: Icon(
-                skillIcon(data.skill.iconKey),
-                size: 28,
-                color: skillAccent(context, data.skill.accentKey),
-              ),
+            LoopSkillBadge(
+              icon: skillIcon(data.skill.iconKey),
+              color: skillAccent(context, data.skill.accentKey),
             ),
             const SizedBox(width: 12),
             Expanded(
@@ -237,7 +238,8 @@ class SkillSummaryCard extends StatelessWidget {
                 children: [
                   Text(
                     data.skill.name,
-                    style: Theme.of(context).textTheme.titleLarge,
+                    style: Theme.of(context).textTheme.titleLarge
+                        ?.copyWith(fontWeight: FontWeight.w700),
                   ),
                   const SizedBox(height: 4),
                   Text(
@@ -269,6 +271,7 @@ class SkillSummaryCard extends StatelessWidget {
         LoopButton(
           label: 'View skill',
           kind: LoopButtonKind.secondary,
+          icon: Icons.arrow_outward_rounded,
           onPressed: onOpen,
         ),
         if (reorder != null) ...[const SizedBox(height: 8), reorder!],
@@ -296,51 +299,68 @@ class SkillContextPage extends ConsumerWidget {
       children: [
         if (!practice)
           Text(
-            MaterialLocalizations.of(context).formatFullDate(DateTime.now()),
+            MaterialLocalizations.of(context)
+                .formatFullDate(ref.watch(localNowProvider)()),
             style: Theme.of(context).textTheme.bodySmall,
           ),
         if (!practice) const PendingPracticeNotice(),
         ...cards.when(
-          data: (items) => items.isEmpty
-              ? [
-                  LoopNotice(
-                    title: practice
-                        ? 'Choose what to practice'
-                        : 'Your practice starts here',
-                    message: 'Add a skill and shape your first practice plan.',
-                    icon: Icons.layers_outlined,
-                    action: LoopButton(
-                      label: 'Add a skill',
-                      onPressed: () => context.push('/skills/new'),
-                    ),
-                  ),
-                ]
-              : [
-                  Text(
-                    practice
-                        ? 'Your practice plans'
-                        : 'Ready for your next step',
-                    style: Theme.of(context).textTheme.headlineSmall,
-                  ),
-                  for (final card in practice ? items : items.take(1))
-                    SkillSummaryCard(
-                      data: card,
-                      onOpen: () => context.push('/skills/${card.skill.id}'),
-                    ),
-                  if (!practice)
-                    LoopButton(
-                      label: 'Practice now',
-                      icon: Icons.play_arrow,
-                      onPressed: () => context.go(
-                        '/practice/setup?skill=${items.first.skill.id}',
-                      ),
-                    ),
-                  LoopButton(
-                    label: 'See skills',
-                    kind: LoopButtonKind.text,
-                    onPressed: () => context.go('/skills'),
-                  ),
-                ],
+          data: (items) => [
+            if (!practice)
+              Text(
+                'A little\nfurther.',
+                style: Theme.of(context).textTheme.displaySmall?.copyWith(
+                  fontWeight: FontWeight.w700,
+                  fontSize: MediaQuery.textScalerOf(context).scale(16) > 20
+                      ? 28
+                      : 38,
+                  letterSpacing: -1.2,
+                ),
+              ),
+            if (items.isEmpty)
+              LoopHeroCard(
+                eyebrow: 'A LITTLE PRACTICE. A NEW POSSIBILITY.',
+                title: practice
+                    ? 'Choose what to practice'
+                    : 'Your practice starts here',
+                description: 'Add a skill and shape your first practice plan.',
+                actionLabel: 'Add a skill',
+                onAction: () => context.push('/skills/new'),
+              )
+            else if (!practice)
+              LoopHeroCard(
+                eyebrow: 'NEXT UP · YOUR FOCUS',
+                title: items.first.skill.name,
+                description:
+                    items.first.nextStep ??
+                    items.first.goal ??
+                    'One small thing to work on. A little room to get better.',
+                actionLabel: 'Practice now',
+                onAction: () =>
+                    context.go('/practice/setup?skill=${items.first.skill.id}'),
+                secondaryLabel: 'View skill',
+                onSecondary: () =>
+                    context.push('/skills/${items.first.skill.id}'),
+              )
+            else ...[
+              Text(
+                'Your practice plans',
+                style: Theme.of(context).textTheme.headlineSmall,
+              ),
+              for (final card in items)
+                SkillSummaryCard(
+                  data: card,
+                  onOpen: () => context.push('/skills/${card.skill.id}'),
+                ),
+            ],
+            if (!practice) const JournalOverviewSection(),
+            if (items.isNotEmpty)
+              LoopButton(
+                label: 'See skills',
+                kind: LoopButtonKind.text,
+                onPressed: () => context.go('/skills'),
+              ),
+          ],
           loading: () => [
             SkillLoadNotice(
               retry: () => ref.invalidate(skillCardsProvider(false)),
@@ -353,6 +373,7 @@ class SkillContextPage extends ConsumerWidget {
             ),
           ],
         ),
+        if (!practice) const RecentJournalSection(),
       ],
     );
   }

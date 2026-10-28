@@ -81,6 +81,7 @@ class _LoopDesignPreviewState extends State<LoopDesignPreview> {
     debugShowCheckedModeBanner: false,
     theme: LoopTheme.build(
       widget.brightness,
+      expressive: false,
       fontFamily: widget.fontFamily,
       fontFamilyFallback: widget.fontFamily == 'LoopReviewRoboto'
           ? const ['LoopReviewCJK']

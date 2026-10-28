@@ -1,0 +1,34 @@
+{
+  "command": "flutter --suppress-analytics pub outdated --json",
+  "exit": 0,
+  "packagesWithNewerPublishedVersions": [
+    {
+      "package": "built_collection",
+      "kind": "transitive",
+      "current": "5.1.2",
+      "upgradable": "5.1.2",
+      "latest": "6.0.0",
+      "retracted": false,
+      "discontinued": false
+    },
+    {
+      "package": "material_color_utilities",
+      "kind": "transitive",
+      "current": "0.13.0",
+      "upgradable": "0.13.0",
+      "latest": "0.13.1",
+      "retracted": false,
+      "discontinued": false
+    },
+    {
+      "package": "test_api",
+      "kind": "transitive",
+      "current": "0.7.12",
+      "upgradable": "0.7.12",
+      "latest": "0.7.15",
+      "retracted": false,
+      "discontinued": false
+    }
+  ],
+  "meaning": "Package metadata, not a complete vulnerability or compatibility guarantee. No lockfile changes."
+}

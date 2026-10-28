@@ -62,10 +62,15 @@ void main() {
   test('v3 migration preserves all existing rows and legacy running time', () async {
     final raw = sql.sqlite3.open((await files.databaseFile()).path);
     final before = <String, List<Map<String, Object?>>>{};
+    final columns = <String, List<String>>{};
     for (final table in raw.select(
       "SELECT name FROM sqlite_master WHERE type='table' AND name NOT LIKE 'sqlite_%'",
     )) {
       final name = table['name'] as String;
+      columns[name] = raw
+          .select('PRAGMA table_info("$name")')
+          .map((r) => r['name'] as String)
+          .toList();
       before[name] = raw
           .select('SELECT * FROM "$name"')
           .map(Map<String, Object?>.from)
@@ -80,9 +85,10 @@ void main() {
       ),
     );
     for (final name in before.keys) {
+      final projection = columns[name]!.map((c) => '"$c"').join(',');
       final rows = await db!
           .customSelect(
-            'SELECT * FROM "$name"${name == 'data_migrations' ? ' WHERE version <= 3' : ''}',
+            'SELECT $projection FROM "$name"${name == 'data_migrations' ? ' WHERE version <= 3' : ''}',
           )
           .get();
       expect(
@@ -135,7 +141,7 @@ void main() {
             .data
             .values
             .single,
-        4,
+        LoopDatabase.currentVersion,
       );
       expect(await db!.select(db!.sessions).get(), hasLength(2));
     },

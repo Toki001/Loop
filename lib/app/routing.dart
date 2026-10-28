@@ -3,6 +3,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 import '../features/onboarding/presentation/welcome_page.dart';
+import '../features/journal/presentation/journal_editor_page.dart';
+import '../features/journal/presentation/journal_timeline_page.dart';
 import '../features/practice/presentation/practice_pages.dart';
 import '../features/settings/presentation/preferences_controller.dart';
 import '../features/settings/presentation/settings_page.dart';
@@ -93,6 +95,9 @@ final routerProvider = Provider<GoRouter>((ref) {
                             parentNavigatorKey: rootNavigator,
                             builder: (context, state) => SkillDetailPage(
                               id: state.pathParameters['id']!,
+                              initialSection:
+                                  state.uri.queryParameters['section'] ??
+                                  'timeline',
                             ),
                             routes: [
                               GoRoute(
@@ -156,7 +161,18 @@ final routerProvider = Provider<GoRouter>((ref) {
       ),
       GoRoute(
         path: '/practice/review/:id',
-        builder: (context, state) => const MissingItemPage(),
+        builder: (context, state) =>
+            JournalEditorPage(id: state.pathParameters['id']!),
+      ),
+      GoRoute(
+        path: '/sessions',
+        builder: (context, state) =>
+            JournalTimelinePage(skillId: state.uri.queryParameters['skill']),
+      ),
+      GoRoute(
+        path: '/sessions/:id/edit',
+        builder: (context, state) =>
+            JournalEditorPage(id: state.pathParameters['id']!, editing: true),
       ),
       GoRoute(
         path: '/sessions/:id',

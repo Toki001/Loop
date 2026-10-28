@@ -1,3 +1,5 @@
+import 'package:loop/app/local_time.dart';
+
 import 'dart:async';
 import 'dart:io';
 
@@ -16,11 +18,16 @@ import 'package:loop/features/practice/data/practice_repository.dart';
 import 'package:loop/features/practice/domain/practice_clock.dart';
 import 'package:loop/features/practice/presentation/practice_providers.dart';
 import 'package:loop/features/skills/presentation/skill_providers.dart';
+import 'package:loop/features/skills/domain/skill_kind.dart';
 import 'package:loop/features/skills/data/skill_management_repository.dart';
 import 'package:loop/features/settings/domain/preferences.dart';
 import 'package:loop/features/settings/presentation/preferences_controller.dart';
 
 import 'helpers/drive_async.dart';
+
+import 'package:loop/features/journal/data/journal_repository.dart';
+import 'package:loop/features/journal/presentation/journal_providers.dart';
+
 import 'preferences_test.dart' show ControlledPreferencesRepository;
 
 Future<ProviderContainer> pumpApp(
@@ -34,6 +41,7 @@ Future<ProviderContainer> pumpApp(
   SkillManagementRepository? skillRepository,
   PracticeRepository? practiceRepository,
   PracticeClock? practiceClock,
+  JournalRepository? journalRepository,
 }) async {
   tester.view.physicalSize = size;
   tester.view.devicePixelRatio = 1;
@@ -47,9 +55,20 @@ Future<ProviderContainer> pumpApp(
     practiceRepository = PracticeRepository(emptyPracticeDatabase);
     addTearDown(() => tester.runAsync(emptyPracticeDatabase!.close));
   }
+
   final container = ProviderContainer(
     overrides: [
       practiceTickingProvider.overrideWithValue(false),
+      localNowProvider.overrideWithValue(() => DateTime(2026, 10, 28)),
+      if (journalRepository != null)
+        journalRepositoryProvider.overrideWithValue(journalRepository)
+      else if (storage == null && practiceRepository != null)
+        journalRepositoryProvider.overrideWithValue(
+          JournalRepository(
+            practiceRepository.database,
+            practice: practiceRepository,
+          ),
+        ),
       if (practiceClock != null)
         practiceClockProvider.overrideWithValue(practiceClock),
       if (practiceRepository != null)
@@ -423,6 +442,101 @@ void main() {
         await driveAsync(tester, engine.idle);
         await driveAsync(tester, storage.close());
       }
+      expect(tester.takeException(), isNull);
+    },
+  );
+  testWidgets(
+    'root shutdown drains a debounced journal draft before closing SQL',
+    (tester) async {
+      final directory = (await tester.runAsync(
+        () => Directory.systemTemp.createTemp('loop-root-journal-shutdown-'),
+      ))!;
+      addTearDown(
+        () => tester.runAsync(() => directory.delete(recursive: true)),
+      );
+      await tester.pumpWidget(
+        BootstrapHost(directoryProvider: () async => directory),
+      );
+      final deadline = DateTime.now().add(const Duration(seconds: 8));
+      while (find.byType(PracticeLifecycleHost).evaluate().isEmpty &&
+          DateTime.now().isBefore(deadline)) {
+        await tester.runAsync(
+          () => Future<void>.delayed(const Duration(milliseconds: 10)),
+        );
+        await tester.pump();
+      }
+      expect(find.byType(PracticeLifecycleHost), findsOneWidget);
+      final scope = ProviderScope.containerOf(
+        tester.element(find.byType(PracticeLifecycleHost)),
+        listen: false,
+      );
+      final storage = scope.read(storageProvider);
+      final engine = scope.read(practiceEngineProvider);
+      final writer = scope.read(journalDraftWriterProvider);
+      await driveAsync(tester, engine.idle);
+      final skill = await driveAsync(
+        tester,
+        storage.skills.create(
+          name: 'Synthetic shutdown',
+          kind: SkillKind.custom,
+        ),
+      );
+      expect(
+        await driveAsync(
+          tester,
+          engine.create(skillId: skill.id, start: false),
+        ),
+        true,
+      );
+      final session = engine.record!.session;
+      final entered = Completer<void>(),
+          release = Completer<void>(),
+          probe = Completer<void>();
+      final usable = Completer<bool>();
+      final held = storage.database.transaction(() async {
+        await storage.database.customSelect('SELECT 1').get();
+        entered.complete();
+        await probe.future;
+        try {
+          await storage.database.customSelect('SELECT 1').get();
+          usable.complete(true);
+        } on Object {
+          usable.complete(false);
+        }
+        await release.future;
+      });
+      await driveAsync(tester, entered.future);
+      writer.stage(
+        sessionId: session.id,
+        purpose: 'finish',
+        baseRevision: session.revision,
+        form: {'version': 1, 'note': 'Retain queued reflection'},
+      );
+      expect(writer.hasPending, true);
+      try {
+        await tester.pumpWidget(const SizedBox.shrink());
+        probe.complete();
+        expect(
+          await driveAsync(tester, usable.future),
+          true,
+          reason:
+              'Bootstrap must not close SQL beneath the queued journal draft.',
+        );
+      } finally {
+        if (!probe.isCompleted) probe.complete();
+        release.complete();
+        await driveAsync(tester, held);
+        await driveAsync(tester, writer.close());
+        await driveAsync(tester, engine.idle);
+        await driveAsync(tester, storage.close());
+      }
+      final reopened = await driveAsync(tester, LoopStorage.open(directory));
+      final draft = await driveAsync(
+        tester,
+        JournalRepository(reopened.database).draft(session.id, 'finish'),
+      );
+      expect(draft!.formJson, contains('Retain queued reflection'));
+      await driveAsync(tester, reopened.close());
       expect(tester.takeException(), isNull);
     },
   );

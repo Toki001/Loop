@@ -1,0 +1,13 @@
+# ADR-018 — Owner-directed expressive native design
+
+Date: 2026-10-28. Status: accepted; M07 expressive product UI, contrast/goldens and native product review passed.
+
+The owner supplied seven visual references and explicitly requested a substantial, apparent UI/UX improvement while continuing the current milestone. This is an authorized revision of the original restrained presentation contract, not a new feature milestone. Functional M07 journaling and its native/restart gates remain required. Existing M00–M06 evidence remains historical.
+
+Adopt rich cobalt/indigo focus surfaces, ink-colored floating navigation with a distinct central Practice action, rounded layered cards, editorial headings, compact colorful skill badges and stronger numeric hierarchy. Light uses a cool pale canvas with white surfaces; dark uses near-black blue surfaces with restrained luminous blue/teal accents. Apply across actual native screens, not only a preview. Real activity counts/durations support hierarchy; empty states remain honest and useful. No decorative charts, invented improvement percentages, account/avatar identity or seeded activity.
+
+The seven supplied compositions inform separate qualities: reference1 compact pill navigation and organized rows; reference2 soft depth and clear information hierarchy; reference3 geometric blue hero and prominent action; reference4 layered colored skill/context cards; reference5 deliberate near-black dark mode and accent discipline; reference6 monochrome structure and generous rounded surfaces; reference7 bold numerical focus and layered sections. These are inspiration only: no third-party logos, UI screenshots, avatars or artwork are redistributed.
+
+Keep native Flutter focus, pressed feedback, accessibility semantics, back/gesture behavior, keyboard-safe actions and reduced motion. Large-text navigation retains its labeled accessible alternative; all five destinations remain reachable. Touch targets stay at least48 logical pixels. Text and meaningful controls require contrast checks in both themes. Decorative open-loop geometry is excluded from semantics and never represents fabricated progress.
+
+A theme extension selects the expressive production presentation. The separately identified M02 design gallery remains an explicit legacy reference so its225 frozen images remain reproducible; it is not presented as current product UI. New production goldens use M07 filenames, retaining historical M05/M06 files and manifests. Current-source product widget/golden/native checks and normal-main installation must be rerun after the design changes. No earlier native screenshot proves the new design.

@@ -222,7 +222,7 @@ void main() {
     var calls = 0;
     await tester.pumpWidget(
       MaterialApp(
-        theme: LoopTheme.build(Brightness.light),
+        theme: LoopTheme.build(Brightness.light, expressive: false),
         home: Scaffold(
           body: Center(
             child: LoopButton(

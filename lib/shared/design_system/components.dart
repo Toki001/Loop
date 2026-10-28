@@ -3,6 +3,7 @@ import 'dart:math' as math;
 import 'package:flutter/material.dart';
 
 import 'tokens.dart';
+import 'expressive_widgets.dart';
 
 class LoopScaffold extends StatelessWidget {
   const LoopScaffold({
@@ -78,15 +79,65 @@ class LoopListRow extends StatelessWidget {
   final VoidCallback? onTap;
 
   @override
-  Widget build(BuildContext context) => ListTile(
-    contentPadding: const EdgeInsets.symmetric(horizontal: 4, vertical: 8),
-    leading: ExcludeSemantics(
-      child: Icon(icon, color: LoopPalette.of(context).brand),
-    ),
-    title: Text(title, style: Theme.of(context).textTheme.titleMedium),
-    subtitle: Text(subtitle, style: Theme.of(context).textTheme.bodySmall),
-    onTap: onTap,
-  );
+  Widget build(BuildContext context) {
+    if (LoopVisuals.enabled(context)) {
+      final p = LoopPalette.of(context);
+      return Padding(
+        padding: const EdgeInsets.only(bottom: 10),
+        child: Material(
+          color: p.surface,
+          borderRadius: BorderRadius.circular(22),
+          child: InkWell(
+            onTap: onTap,
+            borderRadius: BorderRadius.circular(22),
+            child: Padding(
+              padding: const EdgeInsets.all(16),
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  LoopSkillBadge(icon: icon, color: p.brand),
+                  const SizedBox(width: 14),
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          title,
+                          style: Theme.of(context).textTheme.titleMedium,
+                        ),
+                        const SizedBox(height: 6),
+                        Text(
+                          subtitle,
+                          style: Theme.of(context).textTheme.bodySmall,
+                        ),
+                      ],
+                    ),
+                  ),
+                  if (onTap != null) ...[
+                    const SizedBox(width: 8),
+                    Icon(
+                      Icons.arrow_outward_rounded,
+                      size: 18,
+                      color: p.inkMuted,
+                    ),
+                  ],
+                ],
+              ),
+            ),
+          ),
+        ),
+      );
+    }
+    return ListTile(
+      contentPadding: const EdgeInsets.symmetric(horizontal: 4, vertical: 8),
+      leading: ExcludeSemantics(
+        child: Icon(icon, color: LoopPalette.of(context).brand),
+      ),
+      title: Text(title, style: Theme.of(context).textTheme.titleMedium),
+      subtitle: Text(subtitle, style: Theme.of(context).textTheme.bodySmall),
+      onTap: onTap,
+    );
+  }
 }
 
 enum LoopButtonKind { primary, secondary, text, destructive, destructiveText }
@@ -213,7 +264,9 @@ class LoopButton extends StatelessWidget {
       ),
       shape: WidgetStatePropertyAll(
         RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(LoopSpace.controlRadius),
+          borderRadius: BorderRadius.circular(
+            LoopVisuals.enabled(context) ? 18 : LoopSpace.controlRadius,
+          ),
         ),
       ),
       animationDuration: LoopMotion.duration(context, LoopMotion.press),
@@ -283,14 +336,36 @@ class LoopCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final p = LoopPalette.of(context);
-    return Material(
-      color: p.surface,
-      clipBehavior: Clip.antiAlias,
-      shape: RoundedRectangleBorder(
-        side: BorderSide(color: p.line),
-        borderRadius: BorderRadius.circular(LoopSpace.cardRadius),
+    final expressive = LoopVisuals.enabled(context);
+    return Container(
+      decoration: expressive
+          ? BoxDecoration(
+              borderRadius: BorderRadius.circular(26),
+              boxShadow: [
+                BoxShadow(
+                  color: p.ink.withValues(
+                    alpha: Theme.of(context).brightness == Brightness.dark
+                        ? .06
+                        : .05,
+                  ),
+                  blurRadius: 24,
+                  offset: const Offset(0, 8),
+                  spreadRadius: -10,
+                ),
+              ],
+            )
+          : null,
+      child: Material(
+        color: p.surface,
+        clipBehavior: Clip.antiAlias,
+        shape: RoundedRectangleBorder(
+          side: expressive ? BorderSide.none : BorderSide(color: p.line),
+          borderRadius: BorderRadius.circular(
+            expressive ? 26 : LoopSpace.cardRadius,
+          ),
+        ),
+        child: Padding(padding: EdgeInsets.all(padding), child: child),
       ),
-      child: Padding(padding: EdgeInsets.all(padding), child: child),
     );
   }
 }
@@ -371,17 +446,17 @@ class TimerDisplay extends StatelessWidget {
     final digits = Text(
       '${minutes.toString().padLeft(2, '0')}:${remainder.toString().padLeft(2, '0')}',
       style: Theme.of(context).textTheme.displaySmall?.copyWith(
-        fontSize: 56,
+        fontSize: LoopVisuals.enabled(context) ? 72 : 56,
         fontFeatures: const [FontFeature.tabularFigures()],
       ),
     );
-    return Semantics(
+    final display = Semantics(
       label:
           '$minutes minutes $remainder seconds${caption == null ? '' : ', $caption'}',
       child: ExcludeSemantics(
         child: Column(
           children: [
-            if (minutes >= 100)
+            if (minutes >= 100 || LoopVisuals.enabled(context))
               SizedBox(
                 width: double.infinity,
                 child: FittedBox(fit: BoxFit.scaleDown, child: digits),
@@ -395,6 +470,20 @@ class TimerDisplay extends StatelessWidget {
           ],
         ),
       ),
+    );
+    if (!LoopVisuals.enabled(context)) return display;
+    final p = LoopPalette.of(context);
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 28),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(28),
+        gradient: LinearGradient(
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+          colors: [p.brandSoft, p.surface],
+        ),
+      ),
+      child: display,
     );
   }
 }
@@ -491,6 +580,13 @@ class LoopBottomNav extends StatelessWidget {
   Widget build(BuildContext context) {
     final p = LoopPalette.of(context);
     final largeType = MediaQuery.textScalerOf(context).scale(14) > 17.5;
+    if (LoopVisuals.enabled(context) && !largeType)
+      return LoopStudioNav(
+        index: index,
+        labels: labels,
+        icons: _destinationIcons,
+        onChanged: onChanged,
+      );
     return Material(
       color: p.surface,
       child: SafeArea(

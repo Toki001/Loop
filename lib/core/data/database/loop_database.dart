@@ -9,7 +9,7 @@ part 'loop_database.g.dart';
 @DriftDatabase(include: {'schema.drift'})
 class LoopDatabase extends _$LoopDatabase {
   LoopDatabase(super.executor);
-  static const currentVersion = 4;
+  static const currentVersion = 5;
 
   @override
   int get schemaVersion => currentVersion;
@@ -53,13 +53,26 @@ class LoopDatabase extends _$LoopDatabase {
           ),
         );
       }
-      await migrator.createTable(practiceCheckpoints);
-      await into(dataMigrations).insert(
-        DataMigrationsCompanion.insert(
-          version: const Value(currentVersion),
-          completedAtUtc: DateTime.now().toUtc(),
-        ),
-      );
+      if (from < 4) {
+        await migrator.createTable(practiceCheckpoints);
+        await into(dataMigrations).insert(
+          DataMigrationsCompanion.insert(
+            version: const Value(4),
+            completedAtUtc: DateTime.now().toUtc(),
+          ),
+        );
+      }
+      if (from < 5) {
+        // ADD COLUMN preserves inbound session references and clock fractions.
+        await migrator.addColumn(sessions, sessions.whatGotEasier);
+        await migrator.createTable(journalDrafts);
+        await into(dataMigrations).insert(
+          DataMigrationsCompanion.insert(
+            version: const Value(5),
+            completedAtUtc: DateTime.now().toUtc(),
+          ),
+        );
+      }
       await customStatement('PRAGMA user_version = $currentVersion');
     }),
     beforeOpen: (details) async {

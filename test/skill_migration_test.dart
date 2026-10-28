@@ -107,6 +107,7 @@ void main() {
       2,
       3,
       4,
+      5,
     ]);
     // Recreated goal-unit triggers must still reject incompatible updates.
     await expectLater(

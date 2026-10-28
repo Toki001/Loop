@@ -4,6 +4,8 @@ import 'package:drift/drift.dart' show Value;
 import 'package:flutter/foundation.dart';
 
 import '../../../core/data/local_failure.dart';
+import '../../journal/data/journal_repository.dart';
+import '../../journal/domain/journal_entry.dart';
 import '../data/practice_repository.dart';
 import '../data/sessions_repository.dart';
 import 'practice_clock.dart';
@@ -12,14 +14,19 @@ import 'practice_clock.dart';
 class PracticeEngine extends ChangeNotifier {
   PracticeEngine(
     this.repository, {
+    JournalRepository? journal,
     PracticeClock? clock,
     DateTime Function()? utcNow,
     bool ticking = true,
-  }) : _clock = clock ?? StopwatchPracticeClock(),
+  }) : journal =
+           journal ??
+           JournalRepository(repository.database, practice: repository),
+       _clock = clock ?? StopwatchPracticeClock(),
        _now = utcNow ?? (() => DateTime.now().toUtc()),
        _ticking = ticking;
   final bool _ticking;
   final PracticeRepository repository;
+  final JournalRepository journal;
   final PracticeClock _clock;
   final DateTime Function() _now;
   Timer? _ticker;
@@ -132,6 +139,7 @@ class PracticeEngine extends ChangeNotifier {
     String? note,
     DateTime? ended,
     DateTime? started,
+    JournalReflection? reflection,
   }) async {
     final current = record;
     if (current == null) throw const LocalFailure(LocalFailureKind.notFound);
@@ -150,12 +158,20 @@ class PracticeEngine extends ChangeNotifier {
       startedAtUtc: started == null ? const Value.absent() : Value(started),
       endedAtUtc: ended == null ? const Value.absent() : Value(ended),
     );
-    record = await repository.write(
-      value,
-      milliseconds: elapsed,
-      manualSeconds: includeDraft ? _manualSeconds : null,
-      manualDateLocal: includeDraft ? _manualDate : null,
-    );
+    record = reflection == null
+        ? await repository.write(
+            value,
+            milliseconds: elapsed,
+            manualSeconds: includeDraft ? _manualSeconds : null,
+            manualDateLocal: includeDraft ? _manualDate : null,
+          )
+        : await journal.complete(
+            value,
+            milliseconds: elapsed,
+            reflection: reflection,
+            manualSeconds: includeDraft ? _manualSeconds : null,
+            manualDateLocal: includeDraft ? _manualDate : null,
+          );
     _savedMilliseconds = elapsed;
   }
 
@@ -240,12 +256,21 @@ class PracticeEngine extends ChangeNotifier {
     await _persist(note: note);
   });
 
-  Future<bool> finish() {
+  Future<bool> finish({JournalReflection? reflection}) {
     _freeze();
     return _serial(() async {
       _freeze();
       final session = record?.session;
-      if (session?.status == 'completed') return;
+      if (session?.status == 'completed') {
+        if (reflection != null) {
+          record = await journal.complete(
+            session!,
+            milliseconds: milliseconds,
+            reflection: reflection,
+          );
+        }
+        return;
+      }
       if (session == null ||
           session.entryMode != 'timed' ||
           !['running', 'paused'].contains(session.status))
@@ -261,6 +286,7 @@ class PracticeEngine extends ChangeNotifier {
         status: 'completed',
         ended: end,
         reason: now.isBefore(end) ? 'clock_adjusted' : null,
+        reflection: reflection,
       );
       pending = await repository.pending();
     });
@@ -271,6 +297,7 @@ class PracticeEngine extends ChangeNotifier {
     required DateTime endedAtUtc,
     required bool confirmed,
     String note = '',
+    JournalReflection? reflection,
   }) => _serial(() async {
     final session = record?.session;
     if (session != null &&
@@ -280,8 +307,16 @@ class PracticeEngine extends ChangeNotifier {
         seconds == session.activeSeconds &&
         endedAtUtc.toUtc().millisecondsSinceEpoch ~/ 1000 ==
             session.endedAtUtc!.millisecondsSinceEpoch ~/ 1000 &&
-        note == (session.note ?? ''))
+        note == (session.note ?? '')) {
+      if (reflection != null) {
+        record = await journal.complete(
+          session,
+          milliseconds: milliseconds,
+          reflection: reflection,
+        );
+      }
       return;
+    }
     if (!confirmed ||
         session == null ||
         session.entryMode != 'manual' ||
@@ -293,11 +328,14 @@ class PracticeEngine extends ChangeNotifier {
         (seconds != 0 && session.manualIntent == 'evidence_only'))
       throw const LocalFailure(LocalFailureKind.invalid);
     _baseMilliseconds = seconds * 1000;
+    _manualSeconds = seconds;
+    _manualDate = endedAtUtc.toLocal().toIso8601String().substring(0, 10);
     await _persist(
       status: 'completed',
       note: note,
       ended: endedAtUtc.toUtc(),
       started: endedAtUtc.toUtc().subtract(Duration(seconds: seconds)),
+      reflection: reflection,
     );
     pending = await repository.pending();
   });

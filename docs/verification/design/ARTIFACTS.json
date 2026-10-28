@@ -1565,6 +1565,742 @@
       "milestone": "M06",
       "source": "test/practice_goldens_test.dart",
       "review": "32-case layout/action/scroll checks; sampled visual inspection recorded below"
+    },
+    "docs/verification/design/goldens/m07_detail_compact_2x_dark.png": {
+      "sha256": "febf06e104927469bfdae69e9e9063cef158105fb16134e06f00a91a39117a16",
+      "bytes": 73163,
+      "provenance": "synthetic-flutter-golden",
+      "milestone": "M07",
+      "scene": "m07_detail_compact_2x_dark",
+      "fixture": "Real disposable SQLite repositories and injected practice clock; not retail history or a device screenshot."
+    },
+    "docs/verification/design/goldens/m07_detail_compact_2x_light.png": {
+      "sha256": "64edb48419872741a7d8f604785566d1c76ea2253c5473875472551e3094c472",
+      "bytes": 60268,
+      "provenance": "synthetic-flutter-golden",
+      "milestone": "M07",
+      "scene": "m07_detail_compact_2x_light",
+      "fixture": "Real disposable SQLite repositories and injected practice clock; not retail history or a device screenshot."
+    },
+    "docs/verification/design/goldens/m07_detail_phone_1x_dark.png": {
+      "sha256": "c0ebb77bcd7b6aac616e5583a87e3af643ba993851dcef33c6a1742efcfd73d2",
+      "bytes": 96116,
+      "provenance": "synthetic-flutter-golden",
+      "milestone": "M07",
+      "scene": "m07_detail_phone_1x_dark",
+      "fixture": "Real disposable SQLite repositories and injected practice clock; not retail history or a device screenshot."
+    },
+    "docs/verification/design/goldens/m07_detail_phone_1x_light.png": {
+      "sha256": "c2bdcfe0e7e9d361d8ed3b2ddb86cad152f98264739372cb8b8d05ca2d11e453",
+      "bytes": 87360,
+      "provenance": "synthetic-flutter-golden",
+      "milestone": "M07",
+      "scene": "m07_detail_phone_1x_light",
+      "fixture": "Real disposable SQLite repositories and injected practice clock; not retail history or a device screenshot."
+    },
+    "docs/verification/design/goldens/m07_edit_compact_2x_dark.png": {
+      "sha256": "2f8029f52fb0c85dbe3f341fcc5ba4b0c4942dc3efd3e825e544e58c5eb608bb",
+      "bytes": 65465,
+      "provenance": "synthetic-flutter-golden",
+      "milestone": "M07",
+      "scene": "m07_edit_compact_2x_dark",
+      "fixture": "Real disposable SQLite repositories and injected practice clock; not retail history or a device screenshot."
+    },
+    "docs/verification/design/goldens/m07_edit_compact_2x_light.png": {
+      "sha256": "02364ba21520ac5cb43f124982e38fb4c09344af28918da4b5d957e7691a68da",
+      "bytes": 57568,
+      "provenance": "synthetic-flutter-golden",
+      "milestone": "M07",
+      "scene": "m07_edit_compact_2x_light",
+      "fixture": "Real disposable SQLite repositories and injected practice clock; not retail history or a device screenshot."
+    },
+    "docs/verification/design/goldens/m07_edit_phone_1x_dark.png": {
+      "sha256": "76d2c3fdbd24bbf0de66d90d42843c930f7620e5cd500e271e2c39584f729a19",
+      "bytes": 101055,
+      "provenance": "synthetic-flutter-golden",
+      "milestone": "M07",
+      "scene": "m07_edit_phone_1x_dark",
+      "fixture": "Real disposable SQLite repositories and injected practice clock; not retail history or a device screenshot."
+    },
+    "docs/verification/design/goldens/m07_edit_phone_1x_light.png": {
+      "sha256": "12d62caf7603778fd5c7ee2185cf57b2a7782fd1c9c3bf2e01e5393fec53921d",
+      "bytes": 92306,
+      "provenance": "synthetic-flutter-golden",
+      "milestone": "M07",
+      "scene": "m07_edit_phone_1x_light",
+      "fixture": "Real disposable SQLite repositories and injected practice clock; not retail history or a device screenshot."
+    },
+    "docs/verification/design/goldens/m07_empty_compact_2x_dark.png": {
+      "sha256": "de5e755d3ae2543637461b6e18d2227a995f76e90097da72c14d7bc321d35ede",
+      "bytes": 49047,
+      "provenance": "synthetic-flutter-golden",
+      "milestone": "M07",
+      "scene": "m07_empty_compact_2x_dark",
+      "fixture": "Real disposable SQLite repositories and injected practice clock; not retail history or a device screenshot."
+    },
+    "docs/verification/design/goldens/m07_empty_compact_2x_light.png": {
+      "sha256": "84e72f49837849dba162fb87efc4256f14cfc9a15d25ae91cfacebcdf53a2d11",
+      "bytes": 48565,
+      "provenance": "synthetic-flutter-golden",
+      "milestone": "M07",
+      "scene": "m07_empty_compact_2x_light",
+      "fixture": "Real disposable SQLite repositories and injected practice clock; not retail history or a device screenshot."
+    },
+    "docs/verification/design/goldens/m07_empty_phone_1x_dark.png": {
+      "sha256": "738b4dd07923749a6d9d541e9eb6aff0ba77df55ae22c2d99093abb2171c2b9c",
+      "bytes": 47707,
+      "provenance": "synthetic-flutter-golden",
+      "milestone": "M07",
+      "scene": "m07_empty_phone_1x_dark",
+      "fixture": "Real disposable SQLite repositories and injected practice clock; not retail history or a device screenshot."
+    },
+    "docs/verification/design/goldens/m07_empty_phone_1x_light.png": {
+      "sha256": "435260939fea0419accaab912ca76f8ae186525d9d953dacfb7cf99999828173",
+      "bytes": 46590,
+      "provenance": "synthetic-flutter-golden",
+      "milestone": "M07",
+      "scene": "m07_empty_phone_1x_light",
+      "fixture": "Real disposable SQLite repositories and injected practice clock; not retail history or a device screenshot."
+    },
+    "docs/verification/design/goldens/m07_keyboard_compact_2x_dark.png": {
+      "sha256": "4eb6e26c95bd1f522429d78890d6ef10ab3963f871381d8a9c8fbb554f8e01b7",
+      "bytes": 24905,
+      "provenance": "synthetic-flutter-golden",
+      "milestone": "M07",
+      "scene": "m07_keyboard_compact_2x_dark",
+      "fixture": "Real disposable SQLite repositories and injected practice clock; not retail history or a device screenshot."
+    },
+    "docs/verification/design/goldens/m07_keyboard_compact_2x_light.png": {
+      "sha256": "f8c01082421794e94f0309079ec13fd9e5116d55b430f3e7f2514d0d682b3be3",
+      "bytes": 24411,
+      "provenance": "synthetic-flutter-golden",
+      "milestone": "M07",
+      "scene": "m07_keyboard_compact_2x_light",
+      "fixture": "Real disposable SQLite repositories and injected practice clock; not retail history or a device screenshot."
+    },
+    "docs/verification/design/goldens/m07_keyboard_phone_1x_dark.png": {
+      "sha256": "b2e15ef8d89d6023abcfaf38540106693838ee9233cf1b680d33e2cc39c53fd2",
+      "bytes": 37962,
+      "provenance": "synthetic-flutter-golden",
+      "milestone": "M07",
+      "scene": "m07_keyboard_phone_1x_dark",
+      "fixture": "Real disposable SQLite repositories and injected practice clock; not retail history or a device screenshot."
+    },
+    "docs/verification/design/goldens/m07_keyboard_phone_1x_light.png": {
+      "sha256": "ef93e12b282523956866afd6c230f3a808896f047db4f404ff0cc694f41a5983",
+      "bytes": 37312,
+      "provenance": "synthetic-flutter-golden",
+      "milestone": "M07",
+      "scene": "m07_keyboard_phone_1x_light",
+      "fixture": "Real disposable SQLite repositories and injected practice clock; not retail history or a device screenshot."
+    },
+    "docs/verification/design/goldens/m07_practice_failure_compact_2x_dark.png": {
+      "sha256": "9ed8462f759e5add97709fda38b6f97b460d717f88172cc09dccecf9e38a8a79",
+      "bytes": 53106,
+      "provenance": "synthetic-flutter-golden",
+      "milestone": "M07",
+      "scene": "m07_practice_failure_compact_2x_dark",
+      "fixture": "Real disposable SQLite repositories and injected practice clock; not retail history or a device screenshot."
+    },
+    "docs/verification/design/goldens/m07_practice_failure_compact_2x_light.png": {
+      "sha256": "a91c26b19bcaefffc6226664056dc4282c042d78f53e5cfa8bbd913655327d9a",
+      "bytes": 44635,
+      "provenance": "synthetic-flutter-golden",
+      "milestone": "M07",
+      "scene": "m07_practice_failure_compact_2x_light",
+      "fixture": "Real disposable SQLite repositories and injected practice clock; not retail history or a device screenshot."
+    },
+    "docs/verification/design/goldens/m07_practice_failure_phone_1x_dark.png": {
+      "sha256": "4d824b84d4b8718843f514546eb65967db28b0c8e40fe9f97bc1db79c9981c51",
+      "bytes": 85971,
+      "provenance": "synthetic-flutter-golden",
+      "milestone": "M07",
+      "scene": "m07_practice_failure_phone_1x_dark",
+      "fixture": "Real disposable SQLite repositories and injected practice clock; not retail history or a device screenshot."
+    },
+    "docs/verification/design/goldens/m07_practice_failure_phone_1x_light.png": {
+      "sha256": "076947bc6c4dfea55b31c85b077032a2bc797062cf467fe0e9e9fe2b8ef795fd",
+      "bytes": 74933,
+      "provenance": "synthetic-flutter-golden",
+      "milestone": "M07",
+      "scene": "m07_practice_failure_phone_1x_light",
+      "fixture": "Real disposable SQLite repositories and injected practice clock; not retail history or a device screenshot."
+    },
+    "docs/verification/design/goldens/m07_practice_journal_compact_2x_dark.png": {
+      "sha256": "1570a088398010cd6db266b60146a1654126c2b90238b4a3ddb3211987de1e72",
+      "bytes": 41046,
+      "provenance": "synthetic-flutter-golden",
+      "milestone": "M07",
+      "scene": "m07_practice_journal_compact_2x_dark",
+      "fixture": "Real disposable SQLite repositories and injected practice clock; not retail history or a device screenshot."
+    },
+    "docs/verification/design/goldens/m07_practice_journal_compact_2x_light.png": {
+      "sha256": "25504003f2ba61f94df5f974db86c79ab18369463f9d6014c0f1c85635c0f875",
+      "bytes": 40771,
+      "provenance": "synthetic-flutter-golden",
+      "milestone": "M07",
+      "scene": "m07_practice_journal_compact_2x_light",
+      "fixture": "Real disposable SQLite repositories and injected practice clock; not retail history or a device screenshot."
+    },
+    "docs/verification/design/goldens/m07_practice_journal_phone_1x_dark.png": {
+      "sha256": "94c4a074512880c05dc03e0998caf0210dca9e26a7a37e8d0a0d55663665e06b",
+      "bytes": 78243,
+      "provenance": "synthetic-flutter-golden",
+      "milestone": "M07",
+      "scene": "m07_practice_journal_phone_1x_dark",
+      "fixture": "Real disposable SQLite repositories and injected practice clock; not retail history or a device screenshot."
+    },
+    "docs/verification/design/goldens/m07_practice_journal_phone_1x_light.png": {
+      "sha256": "b6790b5bb9018e31b647b30968e25f2d8e2ef4aae6ae2e2e428bf1fadaa97d0e",
+      "bytes": 78625,
+      "provenance": "synthetic-flutter-golden",
+      "milestone": "M07",
+      "scene": "m07_practice_journal_phone_1x_light",
+      "fixture": "Real disposable SQLite repositories and injected practice clock; not retail history or a device screenshot."
+    },
+    "docs/verification/design/goldens/m07_practice_manual_compact_2x_dark.png": {
+      "sha256": "d9909c0ed81f296d66504e8f97ac893b13634d21ee3c8ba647ee6513ea6b39ff",
+      "bytes": 45783,
+      "provenance": "synthetic-flutter-golden",
+      "milestone": "M07",
+      "scene": "m07_practice_manual_compact_2x_dark",
+      "fixture": "Real disposable SQLite repositories and injected practice clock; not retail history or a device screenshot."
+    },
+    "docs/verification/design/goldens/m07_practice_manual_compact_2x_light.png": {
+      "sha256": "54f1d9c953064fd31e5fb96fa3b0bc6670577b4d61f5d8b9f66f14c05a623840",
+      "bytes": 45456,
+      "provenance": "synthetic-flutter-golden",
+      "milestone": "M07",
+      "scene": "m07_practice_manual_compact_2x_light",
+      "fixture": "Real disposable SQLite repositories and injected practice clock; not retail history or a device screenshot."
+    },
+    "docs/verification/design/goldens/m07_practice_manual_phone_1x_dark.png": {
+      "sha256": "d07d007c1150760a4e98e9c5c655e38606fa2a96e3c0b5e1dc4b2253d7a44fa6",
+      "bytes": 80237,
+      "provenance": "synthetic-flutter-golden",
+      "milestone": "M07",
+      "scene": "m07_practice_manual_phone_1x_dark",
+      "fixture": "Real disposable SQLite repositories and injected practice clock; not retail history or a device screenshot."
+    },
+    "docs/verification/design/goldens/m07_practice_manual_phone_1x_light.png": {
+      "sha256": "d8b5cdabe07b52349d3b173a95785e7e6e0e69680376d544ccd0683b138c2829",
+      "bytes": 80567,
+      "provenance": "synthetic-flutter-golden",
+      "milestone": "M07",
+      "scene": "m07_practice_manual_phone_1x_light",
+      "fixture": "Real disposable SQLite repositories and injected practice clock; not retail history or a device screenshot."
+    },
+    "docs/verification/design/goldens/m07_practice_paused_compact_2x_dark.png": {
+      "sha256": "9ed8462f759e5add97709fda38b6f97b460d717f88172cc09dccecf9e38a8a79",
+      "bytes": 53106,
+      "provenance": "synthetic-flutter-golden",
+      "milestone": "M07",
+      "scene": "m07_practice_paused_compact_2x_dark",
+      "fixture": "Real disposable SQLite repositories and injected practice clock; not retail history or a device screenshot."
+    },
+    "docs/verification/design/goldens/m07_practice_paused_compact_2x_light.png": {
+      "sha256": "a91c26b19bcaefffc6226664056dc4282c042d78f53e5cfa8bbd913655327d9a",
+      "bytes": 44635,
+      "provenance": "synthetic-flutter-golden",
+      "milestone": "M07",
+      "scene": "m07_practice_paused_compact_2x_light",
+      "fixture": "Real disposable SQLite repositories and injected practice clock; not retail history or a device screenshot."
+    },
+    "docs/verification/design/goldens/m07_practice_paused_phone_1x_dark.png": {
+      "sha256": "74a591610dd1a5ea68cea3f0818d4db0f4b3d7bed8ecff5df87b1b264e0846d2",
+      "bytes": 78870,
+      "provenance": "synthetic-flutter-golden",
+      "milestone": "M07",
+      "scene": "m07_practice_paused_phone_1x_dark",
+      "fixture": "Real disposable SQLite repositories and injected practice clock; not retail history or a device screenshot."
+    },
+    "docs/verification/design/goldens/m07_practice_paused_phone_1x_light.png": {
+      "sha256": "8b94f837afc5d1c878967f6253a6ca6c98002472d19ff8bf746bcef7e056b2d4",
+      "bytes": 69072,
+      "provenance": "synthetic-flutter-golden",
+      "milestone": "M07",
+      "scene": "m07_practice_paused_phone_1x_light",
+      "fixture": "Real disposable SQLite repositories and injected practice clock; not retail history or a device screenshot."
+    },
+    "docs/verification/design/goldens/m07_practice_recovered_compact_2x_dark.png": {
+      "sha256": "9ed8462f759e5add97709fda38b6f97b460d717f88172cc09dccecf9e38a8a79",
+      "bytes": 53106,
+      "provenance": "synthetic-flutter-golden",
+      "milestone": "M07",
+      "scene": "m07_practice_recovered_compact_2x_dark",
+      "fixture": "Real disposable SQLite repositories and injected practice clock; not retail history or a device screenshot."
+    },
+    "docs/verification/design/goldens/m07_practice_recovered_compact_2x_light.png": {
+      "sha256": "a91c26b19bcaefffc6226664056dc4282c042d78f53e5cfa8bbd913655327d9a",
+      "bytes": 44635,
+      "provenance": "synthetic-flutter-golden",
+      "milestone": "M07",
+      "scene": "m07_practice_recovered_compact_2x_light",
+      "fixture": "Real disposable SQLite repositories and injected practice clock; not retail history or a device screenshot."
+    },
+    "docs/verification/design/goldens/m07_practice_recovered_phone_1x_dark.png": {
+      "sha256": "cfbf586d9b364a483411705a41cf4ce09dc70e97b83198210a2ed1eef104bc76",
+      "bytes": 87112,
+      "provenance": "synthetic-flutter-golden",
+      "milestone": "M07",
+      "scene": "m07_practice_recovered_phone_1x_dark",
+      "fixture": "Real disposable SQLite repositories and injected practice clock; not retail history or a device screenshot."
+    },
+    "docs/verification/design/goldens/m07_practice_recovered_phone_1x_light.png": {
+      "sha256": "b0ebbecb9be597f89e913bfd00577ebdeca86e5f2d5249f1e0df48c31e784cb4",
+      "bytes": 76941,
+      "provenance": "synthetic-flutter-golden",
+      "milestone": "M07",
+      "scene": "m07_practice_recovered_phone_1x_light",
+      "fixture": "Real disposable SQLite repositories and injected practice clock; not retail history or a device screenshot."
+    },
+    "docs/verification/design/goldens/m07_practice_running_compact_2x_dark.png": {
+      "sha256": "4534893e9ee1aef3fe11998e239d9c38133b2e19b4712be7ee425e8e60275bba",
+      "bytes": 52861,
+      "provenance": "synthetic-flutter-golden",
+      "milestone": "M07",
+      "scene": "m07_practice_running_compact_2x_dark",
+      "fixture": "Real disposable SQLite repositories and injected practice clock; not retail history or a device screenshot."
+    },
+    "docs/verification/design/goldens/m07_practice_running_compact_2x_light.png": {
+      "sha256": "90a52d810fb639d69d47a5aac93b9332b13c0e36377d6886824e755041052221",
+      "bytes": 44013,
+      "provenance": "synthetic-flutter-golden",
+      "milestone": "M07",
+      "scene": "m07_practice_running_compact_2x_light",
+      "fixture": "Real disposable SQLite repositories and injected practice clock; not retail history or a device screenshot."
+    },
+    "docs/verification/design/goldens/m07_practice_running_phone_1x_dark.png": {
+      "sha256": "2bc4e9a9ed4f9cbf5434255352c328b504775249697b85214fa7046153e39081",
+      "bytes": 69192,
+      "provenance": "synthetic-flutter-golden",
+      "milestone": "M07",
+      "scene": "m07_practice_running_phone_1x_dark",
+      "fixture": "Real disposable SQLite repositories and injected practice clock; not retail history or a device screenshot."
+    },
+    "docs/verification/design/goldens/m07_practice_running_phone_1x_light.png": {
+      "sha256": "04eb4cc917be24de34532ef1ad4b3d52cf6cdbf6e45d3cdd63f6702bd49eab49",
+      "bytes": 59449,
+      "provenance": "synthetic-flutter-golden",
+      "milestone": "M07",
+      "scene": "m07_practice_running_phone_1x_light",
+      "fixture": "Real disposable SQLite repositories and injected practice clock; not retail history or a device screenshot."
+    },
+    "docs/verification/design/goldens/m07_practice_saved_compact_2x_dark.png": {
+      "sha256": "febf06e104927469bfdae69e9e9063cef158105fb16134e06f00a91a39117a16",
+      "bytes": 73163,
+      "provenance": "synthetic-flutter-golden",
+      "milestone": "M07",
+      "scene": "m07_practice_saved_compact_2x_dark",
+      "fixture": "Real disposable SQLite repositories and injected practice clock; not retail history or a device screenshot."
+    },
+    "docs/verification/design/goldens/m07_practice_saved_compact_2x_light.png": {
+      "sha256": "64edb48419872741a7d8f604785566d1c76ea2253c5473875472551e3094c472",
+      "bytes": 60268,
+      "provenance": "synthetic-flutter-golden",
+      "milestone": "M07",
+      "scene": "m07_practice_saved_compact_2x_light",
+      "fixture": "Real disposable SQLite repositories and injected practice clock; not retail history or a device screenshot."
+    },
+    "docs/verification/design/goldens/m07_practice_saved_phone_1x_dark.png": {
+      "sha256": "03428f9597b7ff9deeb5b4f4e79513b77766179351e735150a035057912fe793",
+      "bytes": 85075,
+      "provenance": "synthetic-flutter-golden",
+      "milestone": "M07",
+      "scene": "m07_practice_saved_phone_1x_dark",
+      "fixture": "Real disposable SQLite repositories and injected practice clock; not retail history or a device screenshot."
+    },
+    "docs/verification/design/goldens/m07_practice_saved_phone_1x_light.png": {
+      "sha256": "09a4b483433115cbcf409801c5b8a2f00101be5ee4949622af136b74a30f90bc",
+      "bytes": 75762,
+      "provenance": "synthetic-flutter-golden",
+      "milestone": "M07",
+      "scene": "m07_practice_saved_phone_1x_light",
+      "fixture": "Real disposable SQLite repositories and injected practice clock; not retail history or a device screenshot."
+    },
+    "docs/verification/design/goldens/m07_practice_setup_compact_2x_dark.png": {
+      "sha256": "91e05c36bbde0eabc20a8eae7a16f03b9ce6655f9a9cd5ceb11ab28cee1a2f7b",
+      "bytes": 34638,
+      "provenance": "synthetic-flutter-golden",
+      "milestone": "M07",
+      "scene": "m07_practice_setup_compact_2x_dark",
+      "fixture": "Real disposable SQLite repositories and injected practice clock; not retail history or a device screenshot."
+    },
+    "docs/verification/design/goldens/m07_practice_setup_compact_2x_light.png": {
+      "sha256": "ffa2fbad77224a472a14d9a469c07138682e2f2f0b8a24d65ed5ddfe9610137b",
+      "bytes": 33807,
+      "provenance": "synthetic-flutter-golden",
+      "milestone": "M07",
+      "scene": "m07_practice_setup_compact_2x_light",
+      "fixture": "Real disposable SQLite repositories and injected practice clock; not retail history or a device screenshot."
+    },
+    "docs/verification/design/goldens/m07_practice_setup_phone_1x_dark.png": {
+      "sha256": "aa3503ff22bf664e88f4f8ac1796970e54725eb7555f61dba974962d7795500e",
+      "bytes": 63865,
+      "provenance": "synthetic-flutter-golden",
+      "milestone": "M07",
+      "scene": "m07_practice_setup_phone_1x_dark",
+      "fixture": "Real disposable SQLite repositories and injected practice clock; not retail history or a device screenshot."
+    },
+    "docs/verification/design/goldens/m07_practice_setup_phone_1x_light.png": {
+      "sha256": "2d68b98ac6a84d99947a97a0cbcac68bc39deced36fe541aea22939187b8bc91",
+      "bytes": 64009,
+      "provenance": "synthetic-flutter-golden",
+      "milestone": "M07",
+      "scene": "m07_practice_setup_phone_1x_light",
+      "fixture": "Real disposable SQLite repositories and injected practice clock; not retail history or a device screenshot."
+    },
+    "docs/verification/design/goldens/m07_reflection_compact_2x_dark.png": {
+      "sha256": "ff54d19658639dbaca96a346dca7552cef33b4eaa6ea65acead417c5d9610c4f",
+      "bytes": 65917,
+      "provenance": "synthetic-flutter-golden",
+      "milestone": "M07",
+      "scene": "m07_reflection_compact_2x_dark",
+      "fixture": "Real disposable SQLite repositories and injected practice clock; not retail history or a device screenshot."
+    },
+    "docs/verification/design/goldens/m07_reflection_compact_2x_light.png": {
+      "sha256": "30a860946faf321cd62f5dc2d3b6d9439166696edc63c6bb1f6a19197bbd9715",
+      "bytes": 58076,
+      "provenance": "synthetic-flutter-golden",
+      "milestone": "M07",
+      "scene": "m07_reflection_compact_2x_light",
+      "fixture": "Real disposable SQLite repositories and injected practice clock; not retail history or a device screenshot."
+    },
+    "docs/verification/design/goldens/m07_reflection_phone_1x_dark.png": {
+      "sha256": "a22768ac3170075efa3770dd6d6b31cf3b11beefac36f0bace41f040f44e774f",
+      "bytes": 87769,
+      "provenance": "synthetic-flutter-golden",
+      "milestone": "M07",
+      "scene": "m07_reflection_phone_1x_dark",
+      "fixture": "Real disposable SQLite repositories and injected practice clock; not retail history or a device screenshot."
+    },
+    "docs/verification/design/goldens/m07_reflection_phone_1x_light.png": {
+      "sha256": "101f03c7f8f1648fab2037cc32c8c3702368ea912a697050e9f72bd962076f7a",
+      "bytes": 78604,
+      "provenance": "synthetic-flutter-golden",
+      "milestone": "M07",
+      "scene": "m07_reflection_phone_1x_light",
+      "fixture": "Real disposable SQLite repositories and injected practice clock; not retail history or a device screenshot."
+    },
+    "docs/verification/design/goldens/m07_skill_categories_compact_2x_dark.png": {
+      "sha256": "1e88c4b1eb81787f29f02e6be511bc8830a8314b47a9ac2a3c95a36c3f360cb9",
+      "bytes": 47823,
+      "provenance": "synthetic-flutter-golden",
+      "milestone": "M07",
+      "scene": "m07_skill_categories_compact_2x_dark",
+      "fixture": "Real disposable SQLite repositories and injected practice clock; not retail history or a device screenshot."
+    },
+    "docs/verification/design/goldens/m07_skill_categories_compact_2x_light.png": {
+      "sha256": "c9c7ceb7e06642e9bf352682d3b7ecf54f06c600a2d660c8718c91de398ce4c6",
+      "bytes": 47730,
+      "provenance": "synthetic-flutter-golden",
+      "milestone": "M07",
+      "scene": "m07_skill_categories_compact_2x_light",
+      "fixture": "Real disposable SQLite repositories and injected practice clock; not retail history or a device screenshot."
+    },
+    "docs/verification/design/goldens/m07_skill_categories_phone_1x_dark.png": {
+      "sha256": "8db9cb4178dae572233ef9532d84b6945c0b9ed87dc4b63398ad15a3fe49fdb1",
+      "bytes": 51593,
+      "provenance": "synthetic-flutter-golden",
+      "milestone": "M07",
+      "scene": "m07_skill_categories_phone_1x_dark",
+      "fixture": "Real disposable SQLite repositories and injected practice clock; not retail history or a device screenshot."
+    },
+    "docs/verification/design/goldens/m07_skill_categories_phone_1x_light.png": {
+      "sha256": "84a43b87fddc2e726d94492350ba69f29f89217de6a1231fd40c277d0125de3d",
+      "bytes": 51212,
+      "provenance": "synthetic-flutter-golden",
+      "milestone": "M07",
+      "scene": "m07_skill_categories_phone_1x_light",
+      "fixture": "Real disposable SQLite repositories and injected practice clock; not retail history or a device screenshot."
+    },
+    "docs/verification/design/goldens/m07_skill_detail_compact_2x_dark.png": {
+      "sha256": "5490b79f275ae4524a4301277b9680d7d4b422e589a498c1a535d97d7b93bbcd",
+      "bytes": 36797,
+      "provenance": "synthetic-flutter-golden",
+      "milestone": "M07",
+      "scene": "m07_skill_detail_compact_2x_dark",
+      "fixture": "Real disposable SQLite repositories and injected practice clock; not retail history or a device screenshot."
+    },
+    "docs/verification/design/goldens/m07_skill_detail_compact_2x_light.png": {
+      "sha256": "c73e5d6626b14942472a14fd300f06f4896c0c97d55776fc6120171472466ea2",
+      "bytes": 36567,
+      "provenance": "synthetic-flutter-golden",
+      "milestone": "M07",
+      "scene": "m07_skill_detail_compact_2x_light",
+      "fixture": "Real disposable SQLite repositories and injected practice clock; not retail history or a device screenshot."
+    },
+    "docs/verification/design/goldens/m07_skill_detail_phone_1x_dark.png": {
+      "sha256": "48eb89b12906672543317a5a05f456755cc793ab6a921fc3b39014a1ded19c88",
+      "bytes": 49703,
+      "provenance": "synthetic-flutter-golden",
+      "milestone": "M07",
+      "scene": "m07_skill_detail_phone_1x_dark",
+      "fixture": "Real disposable SQLite repositories and injected practice clock; not retail history or a device screenshot."
+    },
+    "docs/verification/design/goldens/m07_skill_detail_phone_1x_light.png": {
+      "sha256": "cf8fb9bae9f9af2498a09128f8b8839f14afdf6ae99dd1a3b8474278982970c8",
+      "bytes": 48463,
+      "provenance": "synthetic-flutter-golden",
+      "milestone": "M07",
+      "scene": "m07_skill_detail_phone_1x_light",
+      "fixture": "Real disposable SQLite repositories and injected practice clock; not retail history or a device screenshot."
+    },
+    "docs/verification/design/goldens/m07_skill_exercise_compact_2x_dark.png": {
+      "sha256": "cace0995fce37804f0bc9981a99bff6dfb6bebe4589c63810120c6f43985d3a2",
+      "bytes": 54321,
+      "provenance": "synthetic-flutter-golden",
+      "milestone": "M07",
+      "scene": "m07_skill_exercise_compact_2x_dark",
+      "fixture": "Real disposable SQLite repositories and injected practice clock; not retail history or a device screenshot."
+    },
+    "docs/verification/design/goldens/m07_skill_exercise_compact_2x_light.png": {
+      "sha256": "9cad46f1d879c671da669eeb7ee1e718718eff8ffb37b46abaf2ae010ff32527",
+      "bytes": 53975,
+      "provenance": "synthetic-flutter-golden",
+      "milestone": "M07",
+      "scene": "m07_skill_exercise_compact_2x_light",
+      "fixture": "Real disposable SQLite repositories and injected practice clock; not retail history or a device screenshot."
+    },
+    "docs/verification/design/goldens/m07_skill_exercise_phone_1x_dark.png": {
+      "sha256": "6b5dca6a5ee77a71bc15135490407d3f1dbf628f8ac8665f64f3413f50d47040",
+      "bytes": 53877,
+      "provenance": "synthetic-flutter-golden",
+      "milestone": "M07",
+      "scene": "m07_skill_exercise_phone_1x_dark",
+      "fixture": "Real disposable SQLite repositories and injected practice clock; not retail history or a device screenshot."
+    },
+    "docs/verification/design/goldens/m07_skill_exercise_phone_1x_light.png": {
+      "sha256": "3bf52692d6a1ed3ac831e2b83e17519ceb52c9b3fa22ec3b025150e35d12f715",
+      "bytes": 54328,
+      "provenance": "synthetic-flutter-golden",
+      "milestone": "M07",
+      "scene": "m07_skill_exercise_phone_1x_light",
+      "fixture": "Real disposable SQLite repositories and injected practice clock; not retail history or a device screenshot."
+    },
+    "docs/verification/design/goldens/m07_skill_goal_compact_2x_dark.png": {
+      "sha256": "945f15a6d10c13641a377fb8e5c1fd9cc9bbf709ad8d07841902afcb12a135c0",
+      "bytes": 45928,
+      "provenance": "synthetic-flutter-golden",
+      "milestone": "M07",
+      "scene": "m07_skill_goal_compact_2x_dark",
+      "fixture": "Real disposable SQLite repositories and injected practice clock; not retail history or a device screenshot."
+    },
+    "docs/verification/design/goldens/m07_skill_goal_compact_2x_light.png": {
+      "sha256": "3d3e2cbe71afc2d9668764f2f20591403ac6db66f0c587c8d594891325453c21",
+      "bytes": 45305,
+      "provenance": "synthetic-flutter-golden",
+      "milestone": "M07",
+      "scene": "m07_skill_goal_compact_2x_light",
+      "fixture": "Real disposable SQLite repositories and injected practice clock; not retail history or a device screenshot."
+    },
+    "docs/verification/design/goldens/m07_skill_goal_phone_1x_dark.png": {
+      "sha256": "1df8bbb390fb0d49a83dbed13ad60b9d4d9dc8f005d54fab3d125a711b1c695c",
+      "bytes": 49088,
+      "provenance": "synthetic-flutter-golden",
+      "milestone": "M07",
+      "scene": "m07_skill_goal_phone_1x_dark",
+      "fixture": "Real disposable SQLite repositories and injected practice clock; not retail history or a device screenshot."
+    },
+    "docs/verification/design/goldens/m07_skill_goal_phone_1x_light.png": {
+      "sha256": "04227075d422d2f6bfce37a5ced385b576c402be7cabd7268e0abf137d918f52",
+      "bytes": 48929,
+      "provenance": "synthetic-flutter-golden",
+      "milestone": "M07",
+      "scene": "m07_skill_goal_phone_1x_light",
+      "fixture": "Real disposable SQLite repositories and injected practice clock; not retail history or a device screenshot."
+    },
+    "docs/verification/design/goldens/m07_skill_measured_goal_compact_2x_dark.png": {
+      "sha256": "9d5bd72af089bf219bb178b89a1805879a2eddbe75f9f991f918df5b45204c61",
+      "bytes": 43542,
+      "provenance": "synthetic-flutter-golden",
+      "milestone": "M07",
+      "scene": "m07_skill_measured_goal_compact_2x_dark",
+      "fixture": "Real disposable SQLite repositories and injected practice clock; not retail history or a device screenshot."
+    },
+    "docs/verification/design/goldens/m07_skill_measured_goal_compact_2x_light.png": {
+      "sha256": "9279e8d947be3aff8b19c9bcc0f0d08a26abe423c83acdb753b19fd0144e7549",
+      "bytes": 42955,
+      "provenance": "synthetic-flutter-golden",
+      "milestone": "M07",
+      "scene": "m07_skill_measured_goal_compact_2x_light",
+      "fixture": "Real disposable SQLite repositories and injected practice clock; not retail history or a device screenshot."
+    },
+    "docs/verification/design/goldens/m07_skill_measured_goal_phone_1x_dark.png": {
+      "sha256": "9199d42c2b0cdc79074319126f14cc769a9f010bd5fd941f71a3f5eae7142fc2",
+      "bytes": 65847,
+      "provenance": "synthetic-flutter-golden",
+      "milestone": "M07",
+      "scene": "m07_skill_measured_goal_phone_1x_dark",
+      "fixture": "Real disposable SQLite repositories and injected practice clock; not retail history or a device screenshot."
+    },
+    "docs/verification/design/goldens/m07_skill_measured_goal_phone_1x_light.png": {
+      "sha256": "39a0469f64d279bb4e3000e602ca8557a9640b636bf09abaad24853a2394737d",
+      "bytes": 65428,
+      "provenance": "synthetic-flutter-golden",
+      "milestone": "M07",
+      "scene": "m07_skill_measured_goal_phone_1x_light",
+      "fixture": "Real disposable SQLite repositories and injected practice clock; not retail history or a device screenshot."
+    },
+    "docs/verification/design/goldens/m07_skill_setup_compact_2x_dark.png": {
+      "sha256": "d757f410b90a9e3d229c4634c20b7032ed4709ef62344d9da02fb3ff51fa120a",
+      "bytes": 39075,
+      "provenance": "synthetic-flutter-golden",
+      "milestone": "M07",
+      "scene": "m07_skill_setup_compact_2x_dark",
+      "fixture": "Real disposable SQLite repositories and injected practice clock; not retail history or a device screenshot."
+    },
+    "docs/verification/design/goldens/m07_skill_setup_compact_2x_light.png": {
+      "sha256": "75181c015320729358c768cb6a0ab6e5767df1b577f596273b023a5fd7ba11ef",
+      "bytes": 38441,
+      "provenance": "synthetic-flutter-golden",
+      "milestone": "M07",
+      "scene": "m07_skill_setup_compact_2x_light",
+      "fixture": "Real disposable SQLite repositories and injected practice clock; not retail history or a device screenshot."
+    },
+    "docs/verification/design/goldens/m07_skill_setup_phone_1x_dark.png": {
+      "sha256": "449737a00e5f2351df5584e147467563802e7c3ff5bd80e35e6f2d5bc580db56",
+      "bytes": 52777,
+      "provenance": "synthetic-flutter-golden",
+      "milestone": "M07",
+      "scene": "m07_skill_setup_phone_1x_dark",
+      "fixture": "Real disposable SQLite repositories and injected practice clock; not retail history or a device screenshot."
+    },
+    "docs/verification/design/goldens/m07_skill_setup_phone_1x_light.png": {
+      "sha256": "17bbdb5bd371349641a632dde0b6c7a3fcefa5f9052a585325395b11efc95662",
+      "bytes": 51866,
+      "provenance": "synthetic-flutter-golden",
+      "milestone": "M07",
+      "scene": "m07_skill_setup_phone_1x_light",
+      "fixture": "Real disposable SQLite repositories and injected practice clock; not retail history or a device screenshot."
+    },
+    "docs/verification/design/goldens/m07_skill_skills_compact_2x_dark.png": {
+      "sha256": "2b0ec8d9d400b5506698daf107f045eafc1b9d91efd5979d70be2723e444d9b0",
+      "bytes": 36530,
+      "provenance": "synthetic-flutter-golden",
+      "milestone": "M07",
+      "scene": "m07_skill_skills_compact_2x_dark",
+      "fixture": "Real disposable SQLite repositories and injected practice clock; not retail history or a device screenshot."
+    },
+    "docs/verification/design/goldens/m07_skill_skills_compact_2x_light.png": {
+      "sha256": "d72de3b7593f19f702b6dc46c6437968669cec0a93e6b80bf49740e5c7c633ce",
+      "bytes": 35922,
+      "provenance": "synthetic-flutter-golden",
+      "milestone": "M07",
+      "scene": "m07_skill_skills_compact_2x_light",
+      "fixture": "Real disposable SQLite repositories and injected practice clock; not retail history or a device screenshot."
+    },
+    "docs/verification/design/goldens/m07_skill_skills_phone_1x_dark.png": {
+      "sha256": "cb3e60a4268799e0fe93dc5f7f41edf0ce7f4ca6cdc56c3b2d5a2548e8e33dcb",
+      "bytes": 63263,
+      "provenance": "synthetic-flutter-golden",
+      "milestone": "M07",
+      "scene": "m07_skill_skills_phone_1x_dark",
+      "fixture": "Real disposable SQLite repositories and injected practice clock; not retail history or a device screenshot."
+    },
+    "docs/verification/design/goldens/m07_skill_skills_phone_1x_light.png": {
+      "sha256": "a3428ebe159942568caabab407980aa3ce51767f197ea859afee32e09cd46fa1",
+      "bytes": 62912,
+      "provenance": "synthetic-flutter-golden",
+      "milestone": "M07",
+      "scene": "m07_skill_skills_phone_1x_light",
+      "fixture": "Real disposable SQLite repositories and injected practice clock; not retail history or a device screenshot."
+    },
+    "docs/verification/design/goldens/m07_timeline_compact_2x_dark.png": {
+      "sha256": "7173b9dc3a3286ca925638b1f81dedc8a61fc21e0d4b6777d77da140ae24e4ac",
+      "bytes": 51985,
+      "provenance": "synthetic-flutter-golden",
+      "milestone": "M07",
+      "scene": "m07_timeline_compact_2x_dark",
+      "fixture": "Real disposable SQLite repositories and injected practice clock; not retail history or a device screenshot."
+    },
+    "docs/verification/design/goldens/m07_timeline_compact_2x_light.png": {
+      "sha256": "fb46185664f9b27197946ba49ed7dfa5f392d12f45828a463e614d4d368b08cc",
+      "bytes": 51521,
+      "provenance": "synthetic-flutter-golden",
+      "milestone": "M07",
+      "scene": "m07_timeline_compact_2x_light",
+      "fixture": "Real disposable SQLite repositories and injected practice clock; not retail history or a device screenshot."
+    },
+    "docs/verification/design/goldens/m07_timeline_phone_1x_dark.png": {
+      "sha256": "ccb02eef211dfdac439239b3cb8ca456981331dfb3b874a99ac2c2194228eaed",
+      "bytes": 43038,
+      "provenance": "synthetic-flutter-golden",
+      "milestone": "M07",
+      "scene": "m07_timeline_phone_1x_dark",
+      "fixture": "Real disposable SQLite repositories and injected practice clock; not retail history or a device screenshot."
+    },
+    "docs/verification/design/goldens/m07_timeline_phone_1x_light.png": {
+      "sha256": "d695eeb3436d7aff4db38b7dec7aabfd229dfcb716cfc41a870449f07a4d226f",
+      "bytes": 42383,
+      "provenance": "synthetic-flutter-golden",
+      "milestone": "M07",
+      "scene": "m07_timeline_phone_1x_light",
+      "fixture": "Real disposable SQLite repositories and injected practice clock; not retail history or a device screenshot."
+    },
+    "docs/verification/design/goldens/m07_today_compact_2x_dark.png": {
+      "sha256": "3a5ce73a83a74b5cdcff866796e33406e7e927ea52c9bad5c09e5646e3e3a20c",
+      "bytes": 53766,
+      "provenance": "synthetic-flutter-golden",
+      "milestone": "M07",
+      "scene": "m07_today_compact_2x_dark",
+      "fixture": "Real disposable SQLite repositories and injected practice clock; not retail history or a device screenshot."
+    },
+    "docs/verification/design/goldens/m07_today_compact_2x_light.png": {
+      "sha256": "9fedf4958036c184a9ce9c537907601ab8c254f15d8f649d9a7bfa49f796ce01",
+      "bytes": 53495,
+      "provenance": "synthetic-flutter-golden",
+      "milestone": "M07",
+      "scene": "m07_today_compact_2x_light",
+      "fixture": "Real disposable SQLite repositories and injected practice clock; not retail history or a device screenshot."
+    },
+    "docs/verification/design/goldens/m07_today_first_compact_2x_dark.png": {
+      "sha256": "346a560f5f84583e5dd904674b283770887c12f385c39013e6ab1fe6c9146bf3",
+      "bytes": 52808,
+      "provenance": "synthetic-flutter-golden",
+      "milestone": "M07",
+      "scene": "m07_today_first_compact_2x_dark",
+      "fixture": "Real disposable SQLite repositories and injected practice clock; not retail history or a device screenshot."
+    },
+    "docs/verification/design/goldens/m07_today_first_compact_2x_light.png": {
+      "sha256": "7f7f065ea1ed34315c51d6575819e422736937c3ad8483977daf6a83bb845003",
+      "bytes": 52550,
+      "provenance": "synthetic-flutter-golden",
+      "milestone": "M07",
+      "scene": "m07_today_first_compact_2x_light",
+      "fixture": "Real disposable SQLite repositories and injected practice clock; not retail history or a device screenshot."
+    },
+    "docs/verification/design/goldens/m07_today_first_phone_1x_dark.png": {
+      "sha256": "d526a4925d864dba732156c57f96a1e88ace303be67465f005789bf302ed1298",
+      "bytes": 106697,
+      "provenance": "synthetic-flutter-golden",
+      "milestone": "M07",
+      "scene": "m07_today_first_phone_1x_dark",
+      "fixture": "Real disposable SQLite repositories and injected practice clock; not retail history or a device screenshot."
+    },
+    "docs/verification/design/goldens/m07_today_first_phone_1x_light.png": {
+      "sha256": "b8810e5d65cb11e9ed58c9df7b5012eac16ff4281d8d2b3439a00b3e7c3a428c",
+      "bytes": 107222,
+      "provenance": "synthetic-flutter-golden",
+      "milestone": "M07",
+      "scene": "m07_today_first_phone_1x_light",
+      "fixture": "Real disposable SQLite repositories and injected practice clock; not retail history or a device screenshot."
+    },
+    "docs/verification/design/goldens/m07_today_phone_1x_dark.png": {
+      "sha256": "3e40163ec756d6db1529d8a5511cb1a2dce48dada42431e560ca2239270e66e5",
+      "bytes": 105847,
+      "provenance": "synthetic-flutter-golden",
+      "milestone": "M07",
+      "scene": "m07_today_phone_1x_dark",
+      "fixture": "Real disposable SQLite repositories and injected practice clock; not retail history or a device screenshot."
+    },
+    "docs/verification/design/goldens/m07_today_phone_1x_light.png": {
+      "sha256": "790787042c36fa0aa869ad5a0ab974754b989f322872b27a08df3b582065a438",
+      "bytes": 106276,
+      "provenance": "synthetic-flutter-golden",
+      "milestone": "M07",
+      "scene": "m07_today_phone_1x_light",
+      "fixture": "Real disposable SQLite repositories and injected practice clock; not retail history or a device screenshot."
     }
   },
   "font_license_records": [
@@ -1605,5 +2341,19 @@
     "m06_saved_compact_2x_dark.png",
     "m06_setup_compact_2x_dark.png",
     "m06_setup_phone_1x_light.png"
-  ]
+  ],
+  "m07_sampled_visual_review": [
+    "m07_today_phone_1x_light.png",
+    "m07_today_phone_1x_dark.png",
+    "m07_today_compact_2x_light.png",
+    "m07_skill_skills_phone_1x_dark.png",
+    "m07_skill_goal_compact_2x_dark.png",
+    "m07_timeline_phone_1x_light.png",
+    "m07_reflection_phone_1x_light.png",
+    "m07_keyboard_compact_2x_dark.png",
+    "m07_detail_compact_2x_dark.png",
+    "m07_practice_running_phone_1x_dark.png",
+    "m07_practice_manual_phone_1x_light.png"
+  ],
+  "m07_meaning": "Owner-directed expressive product UI;92 current functional references, all285 historical references retained unchanged. Automated matrix plus sampled visual review. M02 gallery explicitly retains legacy styling."
 }

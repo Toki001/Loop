@@ -179,6 +179,156 @@
       "scene": "Normal lib/main.dart debug app after two separate-process launches, empty real journal, Dark preference retained. Actual Android OS screenshot including chrome; reviewed no personal content.",
       "capture": "adb-screencap",
       "entrypoint": "lib/main.dart"
+    },
+    "docs/verification/native/M07/android-reflection.png": {
+      "sha256": "2ca1b7e21a5fc3f94717ab60dace4739d0f6c5477c28b87cca7b3896962b14b1",
+      "bytes": 33333,
+      "provenance": "native-device-synthetic-widget-frame",
+      "target": "physical-android",
+      "reviewedNoPersonalData": true,
+      "syntheticStoreIsolated": true,
+      "capture": "native-flutter-repaint-boundary",
+      "entrypoint": "integration_test/journal_test.dart",
+      "scene": "M07 expressive design; isolated synthetic reflection workflow. Excludes OS chrome. Setup and resume detail have identical reviewed hashes."
+    },
+    "docs/verification/native/M07/android-resume-detail.png": {
+      "sha256": "7e39916b77f5eadd2857377e4fb8c27d106251b9f08ad9fdaadfe65a87b5fd10",
+      "bytes": 70337,
+      "provenance": "native-device-synthetic-widget-frame",
+      "target": "physical-android",
+      "reviewedNoPersonalData": true,
+      "syntheticStoreIsolated": true,
+      "capture": "native-flutter-repaint-boundary",
+      "entrypoint": "integration_test/journal_test.dart",
+      "scene": "M07 expressive design; isolated synthetic resume-detail workflow. Excludes OS chrome. Setup and resume detail have identical reviewed hashes."
+    },
+    "docs/verification/native/M07/android-setup-detail.png": {
+      "sha256": "7e39916b77f5eadd2857377e4fb8c27d106251b9f08ad9fdaadfe65a87b5fd10",
+      "bytes": 70337,
+      "provenance": "native-device-synthetic-widget-frame",
+      "target": "physical-android",
+      "reviewedNoPersonalData": true,
+      "syntheticStoreIsolated": true,
+      "capture": "native-flutter-repaint-boundary",
+      "entrypoint": "integration_test/journal_test.dart",
+      "scene": "M07 expressive design; isolated synthetic setup-detail workflow. Excludes OS chrome. Setup and resume detail have identical reviewed hashes."
+    },
+    "docs/verification/native/M07/android-timeline.png": {
+      "sha256": "0196069e668f92fbf4f159671a5d0f7599481470aa2bd7359567ed6b8751533e",
+      "bytes": 39817,
+      "provenance": "native-device-synthetic-widget-frame",
+      "target": "physical-android",
+      "reviewedNoPersonalData": true,
+      "syntheticStoreIsolated": true,
+      "capture": "native-flutter-repaint-boundary",
+      "entrypoint": "integration_test/journal_test.dart",
+      "scene": "M07 expressive design; isolated synthetic timeline workflow. Excludes OS chrome. Setup and resume detail have identical reviewed hashes."
+    },
+    "docs/verification/native/M07/android-today.png": {
+      "sha256": "8c1c023ae8a67e9150c3207743f859ce4d617aa152aed8486f36fa77e012aedf",
+      "bytes": 103145,
+      "provenance": "native-device-synthetic-widget-frame",
+      "target": "physical-android",
+      "reviewedNoPersonalData": true,
+      "syntheticStoreIsolated": true,
+      "capture": "native-flutter-repaint-boundary",
+      "entrypoint": "integration_test/journal_test.dart",
+      "scene": "M07 expressive design; isolated synthetic today workflow. Excludes OS chrome. Setup and resume detail have identical reviewed hashes."
+    },
+    "docs/verification/native/M07/ios-reflection.png": {
+      "sha256": "a2f656191194220163e5327d60f3091e7c300676347b2e14d1d4c51da73a6d71",
+      "bytes": 56983,
+      "provenance": "native-simulator-synthetic-widget-frame",
+      "target": "ios-simulator",
+      "reviewedNoPersonalData": true,
+      "syntheticStoreIsolated": true,
+      "capture": "native-flutter-repaint-boundary",
+      "entrypoint": "integration_test/journal_test.dart",
+      "scene": "M07 expressive native journal reflection. Isolated synthetic store on retained iOS27 simulator; excludes OS chrome. Setup/resume detail identical reviewed hash."
+    },
+    "docs/verification/native/M07/ios-resume-detail.png": {
+      "sha256": "2015476ccbc1321e62aac816181823b3858fe3cfd606ca3c0a0dbf334205c40f",
+      "bytes": 81693,
+      "provenance": "native-simulator-synthetic-widget-frame",
+      "target": "ios-simulator",
+      "reviewedNoPersonalData": true,
+      "syntheticStoreIsolated": true,
+      "capture": "native-flutter-repaint-boundary",
+      "entrypoint": "integration_test/journal_test.dart",
+      "scene": "M07 expressive native journal resume-detail. Isolated synthetic store on retained iOS27 simulator; excludes OS chrome. Setup/resume detail identical reviewed hash."
+    },
+    "docs/verification/native/M07/ios-setup-detail.png": {
+      "sha256": "2015476ccbc1321e62aac816181823b3858fe3cfd606ca3c0a0dbf334205c40f",
+      "bytes": 81693,
+      "provenance": "native-simulator-synthetic-widget-frame",
+      "target": "ios-simulator",
+      "reviewedNoPersonalData": true,
+      "syntheticStoreIsolated": true,
+      "capture": "native-flutter-repaint-boundary",
+      "entrypoint": "integration_test/journal_test.dart",
+      "scene": "M07 expressive native journal setup-detail. Isolated synthetic store on retained iOS27 simulator; excludes OS chrome. Setup/resume detail identical reviewed hash."
+    },
+    "docs/verification/native/M07/ios-timeline.png": {
+      "sha256": "a05e9b6e7b6ab885013645e3516340fa3c1a25ec907d12df10be49159c2bd67a",
+      "bytes": 42490,
+      "provenance": "native-simulator-synthetic-widget-frame",
+      "target": "ios-simulator",
+      "reviewedNoPersonalData": true,
+      "syntheticStoreIsolated": true,
+      "capture": "native-flutter-repaint-boundary",
+      "entrypoint": "integration_test/journal_test.dart",
+      "scene": "M07 expressive native journal timeline. Isolated synthetic store on retained iOS27 simulator; excludes OS chrome. Setup/resume detail identical reviewed hash."
+    },
+    "docs/verification/native/M07/ios-today.png": {
+      "sha256": "288957e7907bc485abf6a4593249bc3933ea2a3773f235651145cca4e5c3c5cc",
+      "bytes": 112854,
+      "provenance": "native-simulator-synthetic-widget-frame",
+      "target": "ios-simulator",
+      "reviewedNoPersonalData": true,
+      "syntheticStoreIsolated": true,
+      "capture": "native-flutter-repaint-boundary",
+      "entrypoint": "integration_test/journal_test.dart",
+      "scene": "M07 expressive native journal today. Isolated synthetic store on retained iOS27 simulator; excludes OS chrome. Setup/resume detail identical reviewed hash."
+    },
+    "docs/verification/native/M07/android-product-launch.png": {
+      "sha256": "958fe583b17faa994cf8d2f9a4731e9df79ad5d4475b3bd28b408f2fa411936d",
+      "bytes": 274393,
+      "provenance": "native-device-empty-shell",
+      "target": "physical-android",
+      "reviewedNoPersonalData": true,
+      "capture": "adb-screencap",
+      "entrypoint": "lib/main.dart",
+      "scene": "M07 final normal main, expressive design, empty real journal and retained Dark preference. Actual OS frame including chrome; reviewed no personal content. physicalAndroid"
+    },
+    "docs/verification/native/M07/ios-retained-product-launch.png": {
+      "sha256": "613d12d454b4e2b26f0c88b9912375973b9d5e5f3a44a26f8529768223eb3e91",
+      "bytes": 750697,
+      "provenance": "native-simulator-empty-shell",
+      "target": "ios-simulator",
+      "reviewedNoPersonalData": true,
+      "capture": "simctl-screenshot",
+      "entrypoint": "lib/main.dart",
+      "scene": "M07 final normal main, expressive design, empty real journal and retained Dark preference. Actual OS frame including chrome; reviewed no personal content. retainedIos"
+    },
+    "docs/verification/native/M07/ios-m05fresh-product-launch.png": {
+      "sha256": "613d12d454b4e2b26f0c88b9912375973b9d5e5f3a44a26f8529768223eb3e91",
+      "bytes": 750697,
+      "provenance": "native-simulator-empty-shell",
+      "target": "ios-simulator",
+      "reviewedNoPersonalData": true,
+      "capture": "simctl-screenshot",
+      "entrypoint": "lib/main.dart",
+      "scene": "M07 final normal main, expressive design, empty real journal and retained Dark preference. Actual OS frame including chrome; reviewed no personal content. m05FreshIos"
+    },
+    "docs/verification/native/M07/ios-older-product-launch.png": {
+      "sha256": "740ae8009ff9cafb1f95e02970814770133368745c4fbde13328270d06096f89",
+      "bytes": 404049,
+      "provenance": "native-simulator-empty-shell",
+      "target": "ios-simulator",
+      "reviewedNoPersonalData": true,
+      "capture": "simctl-screenshot",
+      "entrypoint": "lib/main.dart",
+      "scene": "M07 final normal main, expressive design, empty real journal and retained Dark preference. Actual OS frame including chrome; reviewed no personal content. olderIos"
     }
   },
   "M05_reviewed_unique_frames": [

@@ -1,5 +1,7 @@
 # Loop native design review harness
 
+This gallery preserves the historical M02 visual foundation. Current production UI follows the owner-directed [ADR-018](../docs/adr/ADR-018-expressive-native-design.md) revision and separately named M07 functional references. The gallery explicitly selects legacy styling to keep225 frozen references reproducible.
+
 This package renders **synthetic design fixtures only**. It is not a practice timer, private media store or finished Loop application. Every screen identifies itself as a design preview; explanatory interactions never claim data saved. Root `lib/shared/design_system` contains reusable native primitives with no fixture dependency. This harness imports the root SDK-only Flutter package; M03 adds the actual Android/iOS app separately.
 
 Ten representative screens: Welcome, Today, Skills, Practice, Finish, Progress, Then-vs-Now, Library, Settings and Components. Four shared states: empty, loading, storage error and permission denied. Screen/state selectors are development controls. All 23 screen contracts, data/recovery/accessibility states and remaining component patterns are in [SCREEN_DESIGN.md](../docs/SCREEN_DESIGN.md).

@@ -1,0 +1,36 @@
+{
+  "frames": [
+    {
+      "artifact": "docs/verification/native/M07/android-reflection.png",
+      "sha256": "2ca1b7e21a5fc3f94717ab60dace4739d0f6c5477c28b87cca7b3896962b14b1",
+      "sourceCopyMatched": true,
+      "sourceFrameRemoved": true
+    },
+    {
+      "artifact": "docs/verification/native/M07/android-resume-detail.png",
+      "sha256": "7e39916b77f5eadd2857377e4fb8c27d106251b9f08ad9fdaadfe65a87b5fd10",
+      "sourceCopyMatched": true,
+      "sourceFrameRemoved": true
+    },
+    {
+      "artifact": "docs/verification/native/M07/android-setup-detail.png",
+      "sha256": "7e39916b77f5eadd2857377e4fb8c27d106251b9f08ad9fdaadfe65a87b5fd10",
+      "sourceCopyMatched": true,
+      "sourceFrameRemoved": true
+    },
+    {
+      "artifact": "docs/verification/native/M07/android-timeline.png",
+      "sha256": "0196069e668f92fbf4f159671a5d0f7599481470aa2bd7359567ed6b8751533e",
+      "sourceCopyMatched": true,
+      "sourceFrameRemoved": true
+    },
+    {
+      "artifact": "docs/verification/native/M07/android-today.png",
+      "sha256": "8c1c023ae8a67e9150c3207743f859ce4d617aa152aed8486f36fa77e012aedf",
+      "sourceCopyMatched": true,
+      "sourceFrameRemoved": true
+    }
+  ],
+  "ownedMarkerAbsent": true,
+  "scope": "Only five hash-matched copied test frames removed; no product journal deletion."
+}

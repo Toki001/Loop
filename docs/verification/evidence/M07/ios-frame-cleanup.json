@@ -1,0 +1,36 @@
+{
+  "frames": [
+    {
+      "artifact": "docs/verification/native/M07/ios-reflection.png",
+      "sha256": "a2f656191194220163e5327d60f3091e7c300676347b2e14d1d4c51da73a6d71",
+      "sourceCopyMatched": true,
+      "sourceFrameRemoved": true
+    },
+    {
+      "artifact": "docs/verification/native/M07/ios-resume-detail.png",
+      "sha256": "2015476ccbc1321e62aac816181823b3858fe3cfd606ca3c0a0dbf334205c40f",
+      "sourceCopyMatched": true,
+      "sourceFrameRemoved": true
+    },
+    {
+      "artifact": "docs/verification/native/M07/ios-setup-detail.png",
+      "sha256": "2015476ccbc1321e62aac816181823b3858fe3cfd606ca3c0a0dbf334205c40f",
+      "sourceCopyMatched": true,
+      "sourceFrameRemoved": true
+    },
+    {
+      "artifact": "docs/verification/native/M07/ios-timeline.png",
+      "sha256": "a05e9b6e7b6ab885013645e3516340fa3c1a25ec907d12df10be49159c2bd67a",
+      "sourceCopyMatched": true,
+      "sourceFrameRemoved": true
+    },
+    {
+      "artifact": "docs/verification/native/M07/ios-today.png",
+      "sha256": "288957e7907bc485abf6a4593249bc3933ea2a3773f235651145cca4e5c3c5cc",
+      "sourceCopyMatched": true,
+      "sourceFrameRemoved": true
+    }
+  ],
+  "ownedMarkerAbsent": true,
+  "scope": "Only five hash-matched copied test frames removed; normal journal retained."
+}

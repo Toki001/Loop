@@ -1,6 +1,8 @@
 # Loop
 
-**Loop** is a local-first mobile practice companion for deliberate improvement across hobbies and skills. This repository contains the native design system, Android/iOS foundation, private relational persistence and verified owned skill/goal/exercise setup. M06 foreground practice, paused recovery and manual entry pass automated and physical Android acceptance. It is **not a completed practice journal**; M07–M15 journal, evidence and release gates remain open.
+**Loop** is a local-first mobile practice companion for deliberate improvement across hobbies and skills. This repository contains the native design system, Android/iOS foundation, private relational persistence and verified owned skill/goal/exercise setup. M06 foreground practice, paused recovery and manual entry pass automated and physical Android acceptance. M07 completes the locally verified offline reflection/journal loop. Media, comparison, ownership and release gates remain M08–M15.
+
+The owner-directed visual revision is implemented and locally verified in M07: rich blue focus cards, layered surfaces, stronger typography and a deliberate dark theme. [Design decision](docs/adr/ADR-018-expressive-native-design.md).
 
 Current evidence: [verification ledger](docs/verification/INDEX.md), [owned skill setup](docs/SKILL_MANAGEMENT.md), [practice clock and provenance](docs/PRACTICE.md), [native boot/identity/verification](docs/NATIVE_FOUNDATION.md), [private persistence and recovery](docs/PERSISTENCE.md), [native design preview](design_preview/README.md), [screen/state design contract](docs/SCREEN_DESIGN.md), and [continuous execution checkpoint](docs/verification/CONTINUATION.md). Design fixtures never become production data.
 

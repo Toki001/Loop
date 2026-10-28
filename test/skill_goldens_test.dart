@@ -27,7 +27,7 @@ void main() {
         'measured_goal',
         'exercise',
       ]) {
-        testWidgets('M05 functional screen golden $scene $variant', (
+        testWidgets('M07 current skill screen golden $scene $variant', (
           tester,
         ) async {
           late String id;
@@ -117,7 +117,7 @@ void main() {
             'setup' => field('Skill name'),
             'goal' || 'measured_goal' => field('Goal title'),
             'exercise' => field('Exercise title'),
-            'detail' => find.text('Current goals'),
+            'detail' => find.widgetWithText(ChoiceChip, 'Timeline'),
             _ => find.text('Studio practice · 練習'),
           };
           await waitForSkillWidget(tester, ready);
@@ -125,7 +125,7 @@ void main() {
           await expectLater(
             find.byType(MaterialApp),
             matchesGoldenFile(
-              '../docs/verification/design/goldens/m05_${scene}_$variant.png',
+              '../docs/verification/design/goldens/m07_skill_${scene}_$variant.png',
             ),
           );
           if (scene == 'setup' ||

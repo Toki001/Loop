@@ -67,6 +67,7 @@ class SessionsRepository {
       guardLocal(
         () => _db.transaction(() async {
           validText(value.note);
+          validText(value.whatGotEasier);
           validText(value.nextStep, maximum: 10000);
           final next = value.copyWith(
             updatedAtUtc: utcNow(),

@@ -30,7 +30,9 @@ void main() {
         'failure',
         'saved',
       ]) {
-        testWidgets('M06 functional golden $scene $variant', (tester) async {
+        testWidgets('M07 current practice golden $scene $variant', (
+          tester,
+        ) async {
           final context = await pumpPractice(
             tester,
             scale: compact ? 2 : 1,
@@ -110,6 +112,13 @@ void main() {
                       milliseconds: 65432,
                     ),
                   );
+                  await driveAsync(
+                    tester,
+                    context.db.customStatement(
+                      'UPDATE sessions SET updated_at_utc = ?, revision = revision + 1 WHERE id = ?',
+                      [1793095265, saved.session.id],
+                    ),
+                  );
                   route = '/sessions/${saved.session.id}';
                   await driveAsync(tester, engine.initialize());
                 }
@@ -153,20 +162,11 @@ void main() {
           await expectLater(
             find.byType(MaterialApp),
             matchesGoldenFile(
-              '../docs/verification/design/goldens/m06_${scene}_$variant.png',
+              '../docs/verification/design/goldens/m07_practice_${scene}_$variant.png',
             ),
           );
           if (scene == 'manual' || scene == 'journal') {
-            expect(
-              find
-                  .text(
-                    scene == 'manual'
-                        ? 'Save manual practice'
-                        : 'Save journal entry',
-                  )
-                  .hitTestable(),
-              findsOneWidget,
-            );
+            expect(find.text('Save and finish').hitTestable(), findsOneWidget);
             await tester.ensureVisible(find.text('Discard entry'));
           } else if (!['setup', 'saved'].contains(scene)) {
             expect(find.text('Finish').hitTestable(), findsOneWidget);

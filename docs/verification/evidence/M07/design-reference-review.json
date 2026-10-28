@@ -1,0 +1,64 @@
+{
+  "date": "2026-10-28",
+  "authorization": "Owner explicitly requested an apparent visual revision using all seven attachments while continuing the current milestone.",
+  "decision": "ADR-018",
+  "references": [
+    {
+      "attachment": "4f9c8dce8bda29d4d0d042e5556d2fc6.webp",
+      "sha256": "7f68efc9ece7a22b34a741a45ff06563b99c16dad5911b54a6ac0f581b73a33f",
+      "bytes": 97172,
+      "appliedQuality": "compact navigation and structured rows",
+      "visuallyReviewed": true,
+      "redistributed": false
+    },
+    {
+      "attachment": "86f8f7fa8f79a9cf2d8e6d40d6a852a9.webp",
+      "sha256": "258e9970f3ad65748dcba75f874a4bd0b71d119c5b2d176462a3c74b304f5825",
+      "bytes": 139412,
+      "appliedQuality": "soft depth and hierarchy",
+      "visuallyReviewed": true,
+      "redistributed": false
+    },
+    {
+      "attachment": "3300f9161e14beb9fac89ce8e7770021-2.webp",
+      "sha256": "6dcd9df2c63daaa615f2fc350064f0cfcb1ec97c1a721a5b049ee5aea834fcdb",
+      "bytes": 131958,
+      "appliedQuality": "geometric blue hero and primary action",
+      "visuallyReviewed": true,
+      "redistributed": false
+    },
+    {
+      "attachment": "209710132135053.61b11de6a32d8.png.webp",
+      "sha256": "f9c75c3a36f93100457907fbece11851331407ebe8b86c5b0ce641007ee394c4",
+      "bytes": 67792,
+      "appliedQuality": "layered category/context cards",
+      "visuallyReviewed": true,
+      "redistributed": false
+    },
+    {
+      "attachment": "636614ea40c805b596633e1db98e41ae.webp",
+      "sha256": "58d1026df933b0bc04fa57e585ddb2692f45c65be1e916c52eabad89d1fdcb84",
+      "bytes": 137028,
+      "appliedQuality": "near-black dark surfaces and accent discipline",
+      "visuallyReviewed": true,
+      "redistributed": false
+    },
+    {
+      "attachment": "original-4ca8a8895e74ec0c60bebcd37da112db.webp",
+      "sha256": "f384d64eb37ec5dbff3f1455c9cca476263ed9460a96addd5bc336b6213293d2",
+      "bytes": 45426,
+      "appliedQuality": "monochrome structure and rounded spacing",
+      "visuallyReviewed": true,
+      "redistributed": false
+    },
+    {
+      "attachment": "original-a3800f3162f5ed51214b57ee0c3340b0.webp",
+      "sha256": "f0707e4f8f4e4751d0ca4e7b2d1007d69d9e8c46ce60b6c866b37cc3f9c23b5d",
+      "bytes": 88980,
+      "appliedQuality": "numerical hierarchy and layered sections",
+      "visuallyReviewed": true,
+      "redistributed": false
+    }
+  ],
+  "implementation": "Original native Flutter/code-drawn artwork; no copied logos, images, avatars or font assets."
+}

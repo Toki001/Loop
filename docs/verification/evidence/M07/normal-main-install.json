@@ -1,0 +1,211 @@
+{
+  "physicalAndroid": {
+    "before": {
+      "schema": 5,
+      "integrity": "ok",
+      "foreignKeyViolations": 0,
+      "journalCounts": {
+        "skills": 0,
+        "goals": 0,
+        "exercises": 0,
+        "sessions": 0,
+        "metric_readings": 0,
+        "media_assets": 0,
+        "reminders": 0,
+        "practice_checkpoints": 0
+      },
+      "settingsHash": "e47d5de587f3523750720e61c25ffb918454b313242dee6d9f5d093ee054c1b1",
+      "retainedPreferences": {
+        "onboardingVersion": 1,
+        "theme": "dark"
+      }
+    },
+    "after": {
+      "schema": 5,
+      "integrity": "ok",
+      "foreignKeyViolations": 0,
+      "journalCounts": {
+        "skills": 0,
+        "goals": 0,
+        "exercises": 0,
+        "sessions": 0,
+        "metric_readings": 0,
+        "media_assets": 0,
+        "reminders": 0,
+        "practice_checkpoints": 0
+      },
+      "settingsHash": "e47d5de587f3523750720e61c25ffb918454b313242dee6d9f5d093ee054c1b1",
+      "retainedPreferences": {
+        "onboardingVersion": 1,
+        "theme": "dark"
+      }
+    },
+    "firstPid": "23708",
+    "secondPid": "23947",
+    "normalMainInstalled": true,
+    "settingsRetained": true,
+    "journalCountsRetained": true,
+    "m07MarkerAbsent": true,
+    "uiReviewPending": false,
+    "foregroundUiVerified": true,
+    "reviewedCapture": "docs/verification/native/M07/android-product-launch.png",
+    "systemNavigationAreaMatchesTheme": true,
+    "initialCaptureObservation": "First host capture showed only system chrome; a later capture without restarting showed Today. No Flutter exception in owned-PID log. No cold-start latency or cause is inferred; profile/performance gate remains M13."
+  },
+  "retainedIos": {
+    "before": {
+      "schema": 5,
+      "integrity": "ok",
+      "foreignKeyViolations": 0,
+      "journalCounts": {
+        "skills": 0,
+        "goals": 0,
+        "exercises": 0,
+        "sessions": 0,
+        "metric_readings": 0,
+        "media_assets": 0,
+        "reminders": 0,
+        "practice_checkpoints": 0
+      },
+      "settingsHash": "2545081fe8a29ad6198fcfbb58b353a71b3b05e9638051edea0c8d0b5ebe6ee6",
+      "retainedPreferences": {
+        "onboardingVersion": 1,
+        "theme": "dark"
+      }
+    },
+    "after": {
+      "schema": 5,
+      "integrity": "ok",
+      "foreignKeyViolations": 0,
+      "journalCounts": {
+        "skills": 0,
+        "goals": 0,
+        "exercises": 0,
+        "sessions": 0,
+        "metric_readings": 0,
+        "media_assets": 0,
+        "reminders": 0,
+        "practice_checkpoints": 0
+      },
+      "settingsHash": "2545081fe8a29ad6198fcfbb58b353a71b3b05e9638051edea0c8d0b5ebe6ee6",
+      "retainedPreferences": {
+        "onboardingVersion": 1,
+        "theme": "dark"
+      }
+    },
+    "firstPid": 72712,
+    "secondPid": 72768,
+    "normalMainInstalled": true,
+    "settingsRetained": true,
+    "journalCountsRetained": true,
+    "m07MarkerAbsent": true,
+    "target": "F39EEA3D-9939-4689-8958-6CDDBB36EF01",
+    "uiReviewPending": false,
+    "foregroundUiVerified": true,
+    "reviewedCapture": "docs/verification/native/M07/ios-retained-product-launch.png"
+  },
+  "m05FreshIos": {
+    "before": {
+      "schema": 5,
+      "integrity": "ok",
+      "foreignKeyViolations": 0,
+      "journalCounts": {
+        "skills": 0,
+        "goals": 0,
+        "exercises": 0,
+        "sessions": 0,
+        "metric_readings": 0,
+        "media_assets": 0,
+        "reminders": 0,
+        "practice_checkpoints": 0
+      },
+      "settingsHash": "04d281ef3a7db8d4e5741144a0dec55c474a9933d8cf95de7369a703de2a7cd9",
+      "retainedPreferences": {
+        "onboardingVersion": 1,
+        "theme": "dark"
+      }
+    },
+    "after": {
+      "schema": 5,
+      "integrity": "ok",
+      "foreignKeyViolations": 0,
+      "journalCounts": {
+        "skills": 0,
+        "goals": 0,
+        "exercises": 0,
+        "sessions": 0,
+        "metric_readings": 0,
+        "media_assets": 0,
+        "reminders": 0,
+        "practice_checkpoints": 0
+      },
+      "settingsHash": "04d281ef3a7db8d4e5741144a0dec55c474a9933d8cf95de7369a703de2a7cd9",
+      "retainedPreferences": {
+        "onboardingVersion": 1,
+        "theme": "dark"
+      }
+    },
+    "firstPid": 72829,
+    "secondPid": 72886,
+    "normalMainInstalled": true,
+    "settingsRetained": true,
+    "journalCountsRetained": true,
+    "m07MarkerAbsent": true,
+    "target": "97AA9381-B1F4-4EA9-AC54-3FF97CF5B6E1",
+    "uiReviewPending": false,
+    "foregroundUiVerified": true,
+    "reviewedCapture": "docs/verification/native/M07/ios-m05fresh-product-launch.png"
+  },
+  "olderIos": {
+    "before": {
+      "schema": 5,
+      "integrity": "ok",
+      "foreignKeyViolations": 0,
+      "journalCounts": {
+        "skills": 0,
+        "goals": 0,
+        "exercises": 0,
+        "sessions": 0,
+        "metric_readings": 0,
+        "media_assets": 0,
+        "reminders": 0,
+        "practice_checkpoints": 0
+      },
+      "settingsHash": "2c24638f76043defbfa707ce12e0c8c8bc95b8efaab139312e459bc2b6af1f2e",
+      "retainedPreferences": {
+        "onboardingVersion": 1,
+        "theme": "dark"
+      }
+    },
+    "after": {
+      "schema": 5,
+      "integrity": "ok",
+      "foreignKeyViolations": 0,
+      "journalCounts": {
+        "skills": 0,
+        "goals": 0,
+        "exercises": 0,
+        "sessions": 0,
+        "metric_readings": 0,
+        "media_assets": 0,
+        "reminders": 0,
+        "practice_checkpoints": 0
+      },
+      "settingsHash": "2c24638f76043defbfa707ce12e0c8c8bc95b8efaab139312e459bc2b6af1f2e",
+      "retainedPreferences": {
+        "onboardingVersion": 1,
+        "theme": "dark"
+      }
+    },
+    "firstPid": 72961,
+    "secondPid": 73021,
+    "normalMainInstalled": true,
+    "settingsRetained": true,
+    "journalCountsRetained": true,
+    "m07MarkerAbsent": true,
+    "target": "6B9A9F58-46D2-473D-806C-15F8042AF1DA",
+    "uiReviewPending": false,
+    "foregroundUiVerified": true,
+    "reviewedCapture": "docs/verification/native/M07/ios-older-product-launch.png"
+  }
+}

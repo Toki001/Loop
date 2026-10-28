@@ -1,0 +1,259 @@
+{
+  "commands": [
+    {
+      "command": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "exit": 0
+    },
+    {
+      "command": [
+        "adb",
+        "-s",
+        "NBDEXCJNL7JR9DIJ",
+        "shell",
+        "am",
+        "force-stop",
+        "com.jameskierdoliguez.loop"
+      ],
+      "exit": 0
+    },
+    {
+      "command": [
+        "adb",
+        "-s",
+        "NBDEXCJNL7JR9DIJ",
+        "install",
+        "-r",
+        "build/app/outputs/flutter-apk/app-debug.apk"
+      ],
+      "exit": 0
+    },
+    {
+      "command": [
+        "adb",
+        "-s",
+        "NBDEXCJNL7JR9DIJ",
+        "shell",
+        "am",
+        "start",
+        "-n",
+        "com.jameskierdoliguez.loop/.MainActivity"
+      ],
+      "exit": 0
+    },
+    {
+      "command": [
+        "adb",
+        "-s",
+        "NBDEXCJNL7JR9DIJ",
+        "shell",
+        "pidof",
+        "com.jameskierdoliguez.loop"
+      ],
+      "exit": 0
+    },
+    {
+      "command": [
+        "adb",
+        "-s",
+        "NBDEXCJNL7JR9DIJ",
+        "shell",
+        "am",
+        "force-stop",
+        "com.jameskierdoliguez.loop"
+      ],
+      "exit": 0
+    },
+    {
+      "command": [
+        "adb",
+        "-s",
+        "NBDEXCJNL7JR9DIJ",
+        "shell",
+        "am",
+        "start",
+        "-n",
+        "com.jameskierdoliguez.loop/.MainActivity"
+      ],
+      "exit": 0
+    },
+    {
+      "command": [
+        "adb",
+        "-s",
+        "NBDEXCJNL7JR9DIJ",
+        "shell",
+        "pidof",
+        "com.jameskierdoliguez.loop"
+      ],
+      "exit": 0
+    },
+    {
+      "command": [
+        "adb",
+        "-s",
+        "NBDEXCJNL7JR9DIJ",
+        "shell",
+        "run-as",
+        "com.jameskierdoliguez.loop",
+        "test",
+        "-e",
+        "files/.m07-verification.json"
+      ],
+      "exit": 1
+    },
+    {
+      "command": [
+        "xcrun",
+        "simctl",
+        "terminate",
+        "F39EEA3D-9939-4689-8958-6CDDBB36EF01",
+        "com.jameskierdoliguez.loop"
+      ],
+      "exit": 3
+    },
+    {
+      "command": [
+        "xcrun",
+        "simctl",
+        "install",
+        "F39EEA3D-9939-4689-8958-6CDDBB36EF01",
+        "build/ios/iphonesimulator/Runner.app"
+      ],
+      "exit": 0
+    },
+    {
+      "command": [
+        "xcrun",
+        "simctl",
+        "launch",
+        "F39EEA3D-9939-4689-8958-6CDDBB36EF01",
+        "com.jameskierdoliguez.loop"
+      ],
+      "exit": 0
+    },
+    {
+      "command": [
+        "xcrun",
+        "simctl",
+        "terminate",
+        "F39EEA3D-9939-4689-8958-6CDDBB36EF01",
+        "com.jameskierdoliguez.loop"
+      ],
+      "exit": 0
+    },
+    {
+      "command": [
+        "xcrun",
+        "simctl",
+        "launch",
+        "F39EEA3D-9939-4689-8958-6CDDBB36EF01",
+        "com.jameskierdoliguez.loop"
+      ],
+      "exit": 0
+    },
+    {
+      "command": [
+        "xcrun",
+        "simctl",
+        "terminate",
+        "97AA9381-B1F4-4EA9-AC54-3FF97CF5B6E1",
+        "com.jameskierdoliguez.loop"
+      ],
+      "exit": 0
+    },
+    {
+      "command": [
+        "xcrun",
+        "simctl",
+        "install",
+        "97AA9381-B1F4-4EA9-AC54-3FF97CF5B6E1",
+        "build/ios/iphonesimulator/Runner.app"
+      ],
+      "exit": 0
+    },
+    {
+      "command": [
+        "xcrun",
+        "simctl",
+        "launch",
+        "97AA9381-B1F4-4EA9-AC54-3FF97CF5B6E1",
+        "com.jameskierdoliguez.loop"
+      ],
+      "exit": 0
+    },
+    {
+      "command": [
+        "xcrun",
+        "simctl",
+        "terminate",
+        "97AA9381-B1F4-4EA9-AC54-3FF97CF5B6E1",
+        "com.jameskierdoliguez.loop"
+      ],
+      "exit": 0
+    },
+    {
+      "command": [
+        "xcrun",
+        "simctl",
+        "launch",
+        "97AA9381-B1F4-4EA9-AC54-3FF97CF5B6E1",
+        "com.jameskierdoliguez.loop"
+      ],
+      "exit": 0
+    },
+    {
+      "command": [
+        "xcrun",
+        "simctl",
+        "terminate",
+        "6B9A9F58-46D2-473D-806C-15F8042AF1DA",
+        "com.jameskierdoliguez.loop"
+      ],
+      "exit": 0
+    },
+    {
+      "command": [
+        "xcrun",
+        "simctl",
+        "install",
+        "6B9A9F58-46D2-473D-806C-15F8042AF1DA",
+        "build/ios/iphonesimulator/Runner.app"
+      ],
+      "exit": 0
+    },
+    {
+      "command": [
+        "xcrun",
+        "simctl",
+        "launch",
+        "6B9A9F58-46D2-473D-806C-15F8042AF1DA",
+        "com.jameskierdoliguez.loop"
+      ],
+      "exit": 0
+    },
+    {
+      "command": [
+        "xcrun",
+        "simctl",
+        "terminate",
+        "6B9A9F58-46D2-473D-806C-15F8042AF1DA",
+        "com.jameskierdoliguez.loop"
+      ],
+      "exit": 0
+    },
+    {
+      "command": [
+        "xcrun",
+        "simctl",
+        "launch",
+        "6B9A9F58-46D2-473D-806C-15F8042AF1DA",
+        "com.jameskierdoliguez.loop"
+      ],
+      "exit": 0
+    }
+  ]
+}

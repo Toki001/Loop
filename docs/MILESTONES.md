@@ -25,7 +25,7 @@ Each MXX requires (1) preconditions from earlier gates, (2) scoped plan and impl
 | M04 | Durable storage and security | drift schema, migrations, media/file boundary | PASS — local persistence; physical/release limits in M04 report |
 | M05 | Skill, goal and exercise management | complete CRUD flows | PASS — local skill management; commit recorded in M05 checkpoint |
 | M06 | Session state machine and timer | reliable lifecycle and resume logic | PASS — local timer/manual entry; physical Android lifecycle and restart verified |
-| M07 | Reflection and session journal | complete end-to-end offline practice loop | PENDING |
+| M07 | Reflection and session journal | complete end-to-end offline practice loop | PASS — offline journal, durable reflection and owner-directed expressive UI |
 | M08 | Photos and audio evidence | permission-safe private evidence library | PENDING |
 | M09 | Then vs Now | compare compatible image/audio evidence | PENDING |
 | M10 | Progress analytics and search | honest goals, measurements and history | PENDING |

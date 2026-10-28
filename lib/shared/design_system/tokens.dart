@@ -65,8 +65,42 @@ class LoopPalette {
     focus: Color(0xFFB7C8FF),
   );
 
-  static LoopPalette of(BuildContext context) =>
-      Theme.of(context).brightness == Brightness.dark ? dark : light;
+  static const studioLight = LoopPalette(
+    background: Color(0xFFF0F2F7),
+    surface: Color(0xFFFFFFFF),
+    surfaceAlt: Color(0xFFE7ECF6),
+    ink: Color(0xFF111B30),
+    inkMuted: Color(0xFF536078),
+    line: Color(0xFFD6DEEC),
+    brand: Color(0xFF3155DC),
+    brandSoft: Color(0xFFE5ECFF),
+    onBrand: Color(0xFFFFFFFF),
+    success: Color(0xFF08745F),
+    warning: Color(0xFF915600),
+    danger: Color(0xFFB62544),
+    focus: Color(0xFF2044CD),
+  );
+  static const studioDark = LoopPalette(
+    background: Color(0xFF080F1A),
+    surface: Color(0xFF121D2D),
+    surfaceAlt: Color(0xFF1B2B41),
+    ink: Color(0xFFF3F6FC),
+    inkMuted: Color(0xFFAFBED4),
+    line: Color(0xFF31445E),
+    brand: Color(0xFFA4BCFF),
+    brandSoft: Color(0xFF263C68),
+    onBrand: Color(0xFF0B162B),
+    success: Color(0xFF6EE7C2),
+    warning: Color(0xFFFFD48C),
+    danger: Color(0xFFFFA7BA),
+    focus: Color(0xFFB4CAFF),
+  );
+  static LoopPalette of(BuildContext context) {
+    final darkMode = Theme.of(context).brightness == Brightness.dark;
+    return LoopVisuals.enabled(context)
+        ? (darkMode ? studioDark : studioLight)
+        : (darkMode ? dark : light);
+  }
 }
 
 abstract final class LoopSpace {
@@ -100,15 +134,35 @@ abstract final class LoopMotion {
       : normal;
 }
 
+/// The separate M02 gallery explicitly opts into its frozen historical styling.
+@immutable
+class LoopVisuals extends ThemeExtension<LoopVisuals> {
+  const LoopVisuals({required this.expressive});
+  final bool expressive;
+  static bool enabled(BuildContext context) =>
+      Theme.of(context).extension<LoopVisuals>()?.expressive ?? false;
+  @override
+  LoopVisuals copyWith({bool? expressive}) =>
+      LoopVisuals(expressive: expressive ?? this.expressive);
+  @override
+  LoopVisuals lerp(covariant LoopVisuals? other, double t) =>
+      t < 0.5 ? this : (other ?? this);
+}
+
 abstract final class LoopTheme {
   static ThemeData build(
     Brightness brightness, {
+    bool expressive = true,
     String? fontFamily,
     List<String>? fontFamilyFallback,
   }) {
-    final p = brightness == Brightness.dark
-        ? LoopPalette.dark
-        : LoopPalette.light;
+    final p = expressive
+        ? (brightness == Brightness.dark
+              ? LoopPalette.studioDark
+              : LoopPalette.studioLight)
+        : (brightness == Brightness.dark
+              ? LoopPalette.dark
+              : LoopPalette.light);
     final base = ThemeData(
       useMaterial3: true,
       brightness: brightness,
@@ -134,21 +188,43 @@ abstract final class LoopTheme {
     );
     final text = base.textTheme.apply(bodyColor: p.ink, displayColor: p.ink);
     return base.copyWith(
+      extensions: [LoopVisuals(expressive: expressive)],
+      chipTheme: expressive
+          ? base.chipTheme.copyWith(
+              backgroundColor: p.surface,
+              selectedColor: p.brandSoft,
+              side: BorderSide.none,
+              padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(24),
+              ),
+              labelStyle: text.labelLarge?.copyWith(color: p.ink),
+            )
+          : base.chipTheme,
+      iconButtonTheme: expressive
+          ? IconButtonThemeData(
+              style: IconButton.styleFrom(
+                backgroundColor: p.surface,
+                foregroundColor: p.ink,
+                minimumSize: const Size(48, 48),
+              ),
+            )
+          : base.iconButtonTheme,
       textTheme: text.copyWith(
         displaySmall: text.displaySmall?.copyWith(
-          fontSize: 34,
+          fontSize: expressive ? 38 : 34,
           height: 1.12,
           fontWeight: FontWeight.w600,
           letterSpacing: -0.8,
         ),
         headlineMedium: text.headlineMedium?.copyWith(
-          fontSize: 28,
+          fontSize: expressive ? 30 : 28,
           height: 1.18,
           fontWeight: FontWeight.w600,
           letterSpacing: -0.5,
         ),
         titleLarge: text.titleLarge?.copyWith(
-          fontSize: 20,
+          fontSize: expressive ? 21 : 20,
           height: 1.3,
           fontWeight: FontWeight.w600,
           letterSpacing: -0.2,
@@ -180,15 +256,21 @@ abstract final class LoopTheme {
         fillColor: p.surface,
         contentPadding: const EdgeInsets.all(16),
         border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(LoopSpace.controlRadius),
+          borderRadius: BorderRadius.circular(
+            expressive ? 18 : LoopSpace.controlRadius,
+          ),
           borderSide: BorderSide(color: p.inkMuted),
         ),
         enabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(LoopSpace.controlRadius),
+          borderRadius: BorderRadius.circular(
+            expressive ? 18 : LoopSpace.controlRadius,
+          ),
           borderSide: BorderSide(color: p.inkMuted),
         ),
         focusedBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(LoopSpace.controlRadius),
+          borderRadius: BorderRadius.circular(
+            expressive ? 18 : LoopSpace.controlRadius,
+          ),
           borderSide: BorderSide(color: p.focus, width: 2),
         ),
       ),
@@ -199,6 +281,14 @@ abstract final class LoopTheme {
         elevation: 0,
         scrolledUnderElevation: 0,
         centerTitle: false,
+        toolbarHeight: expressive ? 72 : null,
+        titleSpacing: expressive ? 20 : null,
+        titleTextStyle: expressive
+            ? text.titleLarge?.copyWith(
+                fontWeight: FontWeight.w700,
+                letterSpacing: -0.6,
+              )
+            : null,
       ),
       snackBarTheme: SnackBarThemeData(
         backgroundColor: p.ink,

@@ -128,3 +128,13 @@ Reject: every card in a different pastel; accidental Material defaults mixed wit
 ## 10. Fidelity and review artifacts
 
 At M02 prepare a component gallery and reproducible goldens for each major screen/state using baseline device sizes (e.g. small Android, large Android, iPhone, tablet), light/dark and 200% text. Record artifacts under `docs/verification/design/` in the app repo (unless images are large; store link + hashes and maintain retention). After actual device run, compare screenshot differences and fix. Document contrast, accessibility semantics, tap hit areas and scroll behavior. If external design tools or PesoFlow screenshots are unavailable, don't claim they were used.
+
+## 2026-10-28 owner revision — expressive Loop
+
+The owner supplied seven image references and requested a visibly more engaging UI. [ADR-018](adr/ADR-018-expressive-native-design.md) governs the current implementation and supersedes earlier recommendations where visual treatment differs. Preserve the product's practice meaning, honest data and accessibility; make the new direction apparent throughout the installed Flutter app.
+
+Use a rich geometric cobalt/indigo focus card, generous editorial typography, layered white cards on a cool pale canvas, a compact ink-colored navigation dock with a distinct central Practice action, colorful skill badges and a deliberate near-black dark theme. Rounded surfaces can use subtle depth; avoid outlining every content block. Group secondary actions and filters so real content remains prominent. Time/session summaries use actual completed records. Numeric rings/charts require meaningful data; purely decorative open-loop artwork is not a completion indicator.
+
+All seven references were reviewed: Finy (navigation/rows), Screen Time (depth/hierarchy), blue account composition (hero/action), crypto composition (layering/category cards), dark teal composition (dark contrast), monochrome invoice composition (structure/spacing), and blue savings composition (numerical hierarchy/layered sections). Adapt their visual qualities to skill practice. Do not reuse financial terms, accounts, logos, avatars or fabricated values. Reference files remain owner attachments and are not distributed with the app.
+
+Keep48px targets, keyboard-safe actions, 200% text/reflow, both themes and reduced-motion equivalents. The M02 gallery and225 hashes remain a labeled historical foundation; production screenshots and M07 functional goldens must show the revised design. No existing verification is silently relabeled as evidence of the revision.

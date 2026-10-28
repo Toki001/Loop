@@ -65,7 +65,7 @@ void main() {
   }
 
   test(
-    'fresh schema matches generated definitions and frozen v4 SQL',
+    'fresh schema matches generated definitions and frozen v5 SQL',
     () async {
       database = await openDatabase(files);
       await database!.validateDatabaseSchema(
@@ -78,7 +78,7 @@ void main() {
       final fixture = sql.sqlite3.openInMemory();
       try {
         fixture.execute(
-          await File('test/fixtures/database/schema_v4.sql').readAsString(),
+          await File('test/fixtures/database/schema_v5.sql').readAsString(),
         );
         final expected = fixture.select(
           "SELECT name,sql FROM sqlite_master WHERE name NOT LIKE 'sqlite_%' ORDER BY name",
@@ -148,6 +148,7 @@ void main() {
         2,
         3,
         4,
+        5,
       ]);
       expect(await db.select(db.fileCleanupQueue).get(), isEmpty);
       await SkillsRepository(db).deleteConfirmed(skillId);

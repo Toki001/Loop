@@ -13,6 +13,13 @@ import 'package:loop/features/skills/domain/skill_draft.dart';
 import 'package:loop/features/skills/domain/skill_kind.dart';
 
 import 'app_test.dart' show pumpApp;
+
+import 'package:loop/features/journal/data/journal_repository.dart';
+
+import 'helpers/drive_async.dart';
+
+import 'package:loop/features/journal/presentation/journal_providers.dart';
+
 import 'practice_engine_test.dart'
     show TestPracticeClock, ControlledPracticeRepository;
 import 'skill_widgets_test.dart' show field, waitForSkillWidget, tapSkillWidget;
@@ -35,6 +42,7 @@ class PracticeTestContext {
 Future<PracticeTestContext> pumpPractice(
   WidgetTester tester, {
   String route = '/practice/setup',
+  JournalRepository Function(ControlledPracticeRepository)? journalFactory,
   double scale = 1,
   Size size = const Size(390, 844),
   Future<void> Function(
@@ -74,13 +82,18 @@ Future<PracticeTestContext> pumpPractice(
     size: size,
     skillRepository: skills,
     practiceRepository: repository,
+    journalRepository: journalFactory?.call(repository),
     practiceClock: clock,
   );
   await tester.runAsync(() => container.read(practiceEngineProvider).idle);
   await tester.pumpAndSettle();
+  final writer = container.read(journalDraftWriterProvider);
   addTearDown(() async {
     await tester.pumpWidget(const SizedBox.shrink());
+    final engine = container.read(practiceEngineProvider);
     container.dispose();
+    await driveAsync(tester, writer.close());
+    await driveAsync(tester, engine.idle);
     await tester.runAsync(() async {
       await db.close();
       await directory.delete(recursive: true);
@@ -233,21 +246,21 @@ void main() {
       await tapSkillWidget(tester, find.text('Continue to entry'));
       await waitForSkillWidget(tester, field('Practice minutes'));
       await tester.enterText(field('Practice minutes'), '15');
-      await tapSkillWidget(tester, find.text('Save manual practice'));
+      await tapSkillWidget(tester, find.text('Save and finish'));
       expect(
-        find.textContaining('Confirm the date and source'),
+        find.textContaining('Confirm this date and duration'),
         findsOneWidget,
       );
-      await tester.ensureVisible(field('Note · optional'));
+      await tester.ensureVisible(field('Notes · optional'));
       await tester.enterText(
-        field('Note · optional'),
+        field('Notes · optional'),
         'Manual practice, no timer',
       );
       await tapSkillWidget(
         tester,
         find.text('I confirm this duration and date are my own entry.'),
       );
-      await tapSkillWidget(tester, find.text('Save manual practice'));
+      await tapSkillWidget(tester, find.text('Save and finish'));
       await waitForSkillWidget(tester, find.text('Saved on this device'));
       final rows = (await tester.runAsync(
         () => context.db.select(context.db.sessions).get(),
@@ -295,11 +308,11 @@ void main() {
       tester,
       find.text('I confirm this duration and date are my own entry.'),
     );
-    await tapSkillWidget(tester, find.text('Save manual practice'));
+    await tapSkillWidget(tester, find.text('Save and finish'));
     expect(find.textContaining('at least one second'), findsWidgets);
     await tester.ensureVisible(field('Additional seconds'));
     await tester.enterText(field('Additional seconds'), '30');
-    await tapSkillWidget(tester, find.text('Save manual practice'));
+    await tapSkillWidget(tester, find.text('Save and finish'));
     await waitForSkillWidget(tester, find.text('Saved on this device'));
     final rows = (await tester.runAsync(
       () => context.db.select(context.db.sessions).get(),
@@ -347,7 +360,7 @@ void main() {
       tester,
       find.text('I confirm this duration and date are my own entry.'),
     );
-    await tapSkillWidget(tester, find.text('Save manual practice'));
+    await tapSkillWidget(tester, find.text('Save and finish'));
     await waitForSkillWidget(tester, find.text('Saved on this device'));
     await tester.ensureVisible(find.text('10080:00'));
     await tester.pumpAndSettle();
@@ -409,7 +422,7 @@ void main() {
       tester,
       find.text('I intend to save a journal entry with no practice time.'),
     );
-    await tapSkillWidget(tester, find.text('Save journal entry'));
+    await tapSkillWidget(tester, find.text('Save and finish'));
     await waitForSkillWidget(tester, find.text('Saved on this device'));
     expect(find.text('Journal entry · zero practice minutes'), findsOneWidget);
     final rows = (await tester.runAsync(

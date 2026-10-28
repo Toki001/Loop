@@ -101,7 +101,7 @@ class _ExerciseFormState extends ConsumerState<_ExerciseForm> {
             instructions: _instructions.text,
             seconds: int.tryParse(_seconds.text.trim()),
           );
-      if (mounted) context.go('/skills/${widget.skillId}');
+      if (mounted) context.go('/skills/${widget.skillId}?section=exercises');
     } catch (error) {
       if (mounted)
         setState(() {

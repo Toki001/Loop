@@ -91,6 +91,7 @@ CREATE TABLE sessions (
   updated_at_utc DATETIME MAPPED BY `const UtcDateTimeConverter()` NOT NULL,
   revision INTEGER NOT NULL DEFAULT 0 CHECK(revision >= 0),
   note TEXT,
+  what_got_easier TEXT CHECK(length(what_got_easier) <= 100000),
   next_step TEXT,
   effort_rating INTEGER CHECK(effort_rating BETWEEN 1 AND 5),
   local_display_zone TEXT,
@@ -104,6 +105,15 @@ CREATE TABLE sessions (
 );
 CREATE INDEX sessions_skill_end ON sessions(skill_id, ended_at_utc);
 CREATE UNIQUE INDEX one_running_session ON sessions(status) WHERE status = 'running';
+
+CREATE TABLE journal_drafts (
+  session_id TEXT NOT NULL REFERENCES sessions(id) ON DELETE CASCADE,
+  purpose TEXT NOT NULL CHECK(purpose IN ('finish','edit')),
+  base_revision INTEGER NOT NULL CHECK(base_revision >= 0),
+  form_json TEXT NOT NULL CHECK(length(form_json) <= 500000 AND json_valid(form_json)),
+  updated_at_utc DATETIME MAPPED BY `const UtcDateTimeConverter()` NOT NULL,
+  PRIMARY KEY (session_id, purpose)
+);
 
 CREATE TABLE practice_checkpoints (
   session_id TEXT NOT NULL PRIMARY KEY REFERENCES sessions(id) ON DELETE CASCADE,

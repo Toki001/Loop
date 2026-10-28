@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../features/settings/domain/preferences.dart';
@@ -29,6 +30,24 @@ class LoopApp extends ConsumerWidget {
         Appearance.dark => ThemeMode.dark,
       },
       themeAnimationDuration: const Duration(milliseconds: 160),
+      builder: (context, child) {
+        final theme = Theme.of(context);
+        final dark = theme.brightness == Brightness.dark;
+        return AnnotatedRegion<SystemUiOverlayStyle>(
+          value: SystemUiOverlayStyle(
+            statusBarColor: Colors.transparent,
+            statusBarIconBrightness: dark ? Brightness.light : Brightness.dark,
+            statusBarBrightness: dark ? Brightness.dark : Brightness.light,
+            systemNavigationBarColor: theme.scaffoldBackgroundColor,
+            systemNavigationBarDividerColor: theme.scaffoldBackgroundColor,
+            systemNavigationBarIconBrightness: dark
+                ? Brightness.light
+                : Brightness.dark,
+            systemNavigationBarContrastEnforced: false,
+          ),
+          child: child!,
+        );
+      },
       routerConfig: ref.watch(routerProvider),
     );
   }

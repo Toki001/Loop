@@ -55,16 +55,7 @@ class _ActivePracticePageState extends ConsumerState<ActivePracticePage> {
       if (mounted) setState(() => _busy = false);
       return;
     }
-    final confirmed = await confirmSkillAction(
-      context,
-      title: 'Finish this practice?',
-      message:
-          'Save ${engine.seconds} seconds of foreground practice with your note and selected exercises. You can stay paused and continue instead.',
-      action: 'Save and finish',
-    );
-    if (!mounted) return;
-    if (confirmed && await engine.finish() && mounted)
-      context.go('/sessions/${engine.record!.session.id}');
+    if (mounted) context.go('/practice/review/${engine.record!.session.id}');
     if (mounted) setState(() => _busy = false);
   }
 

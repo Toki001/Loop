@@ -1,0 +1,26 @@
+{
+  "status": "PASS",
+  "ciChecks": 16,
+  "applicationTests": 279,
+  "historicalDesignTests": 233,
+  "retainedIosBootstrapTests": 1,
+  "currentProductGoldenComparisons": 92,
+  "frozenM02GoldenComparisons": 225,
+  "allHistoricalGoldenFilesPreserved": 285,
+  "nativeJournalStages": {
+    "androidSetup": "PASS",
+    "androidResume": "PASS",
+    "iosSetup": "PASS",
+    "iosResume": "PASS"
+  },
+  "formatDartFiles": 106,
+  "currentContrastPairs": 40,
+  "sourceLog": "tmp/m07-final-ci-3.log",
+  "sourceLogSha256": "9db21e56c63c3c66e848455a5c3780c318fc46c1b695f8f88801f46aa7e0d86e",
+  "databaseClosedErrors": 0,
+  "debugWarnings": "Native foundation intentionally opens a second database for readback; Drift warning retained, integrity passes. Gradle/JDK native-access deprecation retained. No warning was suppressed.",
+  "earlierFailures": [
+    "ci-before-table-count-fix.json",
+    "ci-before-golden-description-format.json"
+  ]
+}

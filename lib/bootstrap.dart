@@ -12,6 +12,7 @@ import 'core/data/storage.dart';
 import 'core/data/storage_protection.dart';
 import 'features/practice/presentation/practice_providers.dart';
 import 'features/practice/domain/practice_engine.dart';
+import 'features/journal/domain/journal_draft_writer.dart';
 import 'features/settings/data/file_preferences_repository.dart';
 import 'features/settings/domain/preferences.dart';
 import 'features/settings/presentation/preferences_controller.dart';
@@ -47,14 +48,18 @@ class _BootstrapHostState extends State<BootstrapHost> {
   FilePreferencesRepository? _legacyRepository;
   LoopStorage? _storage;
   PracticeEngine? _practiceEngine;
+  JournalDraftWriter? _journalDraftWriter;
 
   Future<void> _closeStorage() async {
     final storage = _storage;
     final engine = _practiceEngine;
+    final drafts = _journalDraftWriter;
     _storage = null;
     _practiceEngine = null;
+    _journalDraftWriter = null;
     // Provider disposal stops new work. Existing transactions must finish before
     // their database is closed, including recovery during the first frame.
+    await drafts?.close();
     await engine?.idle;
     await storage?.close();
   }
@@ -146,6 +151,7 @@ class _BootstrapHostState extends State<BootstrapHost> {
           ],
           child: PracticeLifecycleHost(
             onEngineReady: (engine) => _practiceEngine = engine,
+            onDraftWriterReady: (writer) => _journalDraftWriter = writer,
             child: const LoopApp(),
           ),
         );

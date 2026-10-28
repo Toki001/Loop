@@ -1,0 +1,44 @@
+{
+  "platform": "ios",
+  "device": "F39EEA3D-9939-4689-8958-6CDDBB36EF01",
+  "stage": "resume",
+  "flutterCommand": [
+    "flutter",
+    "--suppress-analytics",
+    "test",
+    "integration_test/journal_test.dart",
+    "-d",
+    "F39EEA3D-9939-4689-8958-6CDDBB36EF01",
+    "--no-pub",
+    "--no-uninstall",
+    "--timeout=15m",
+    "--reporter",
+    "expanded",
+    "--dart-define=M07_STAGE=resume"
+  ],
+  "flutterExit": 0,
+  "completedFlutterTest": true,
+  "elapsedSeconds": 29.434,
+  "events": [
+    {
+      "stage": "resume",
+      "platform": "ios",
+      "pid": 61401,
+      "setupPid": 60426,
+      "schema": 5,
+      "freshStore": false,
+      "sessionCount": 1,
+      "readingCount": 1,
+      "exerciseSnapshotCount": 1,
+      "activeMilliseconds": 3718,
+      "revision": 6,
+      "retainedAppearance": "dark",
+      "retainedOnboarding": true,
+      "hashRetained": true,
+      "foreignKeys": "ok",
+      "integrity": "ok",
+      "productionDataUnchanged": true
+    }
+  ],
+  "harnessGatePassed": true
+}

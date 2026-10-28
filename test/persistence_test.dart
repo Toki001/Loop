@@ -98,7 +98,8 @@ void main() {
         LoopDatabase.currentVersion,
       );
       expect(await db.select(db.dataMigrations).get(), hasLength(1));
-      expect(db.allTables, hasLength(14));
+      expect(db.allTables, hasLength(15));
+      expect(await db.select(db.journalDrafts).get(), isEmpty);
     },
   );
 

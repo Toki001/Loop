@@ -1,0 +1,105 @@
+{
+  "results": [
+    {
+      "command": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "tool/check_foundation.py"
+      ],
+      "cwd": ".",
+      "exit": 0,
+      "seconds": 0.194
+    },
+    {
+      "command": [
+        "flutter",
+        "--suppress-analytics",
+        "pub",
+        "get",
+        "--enforce-lockfile"
+      ],
+      "cwd": ".",
+      "exit": 0,
+      "seconds": 0.813
+    },
+    {
+      "command": [
+        "flutter",
+        "--suppress-analytics",
+        "pub",
+        "get",
+        "--enforce-lockfile"
+      ],
+      "cwd": "design_preview",
+      "exit": 0,
+      "seconds": 0.269
+    },
+    {
+      "command": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "tool/dependency_inventory.py"
+      ],
+      "cwd": ".",
+      "exit": 0,
+      "seconds": 0.28
+    },
+    {
+      "command": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "tool/check_persistence_codegen.py"
+      ],
+      "cwd": ".",
+      "exit": 0,
+      "seconds": 1.637
+    },
+    {
+      "command": [
+        "dart",
+        "--suppress-analytics",
+        "format",
+        "--output=none",
+        "--set-exit-if-changed",
+        "lib",
+        "test",
+        "integration_test",
+        "tool",
+        "design_preview/lib",
+        "design_preview/test"
+      ],
+      "cwd": ".",
+      "exit": 0,
+      "seconds": 0.573
+    },
+    {
+      "command": [
+        "flutter",
+        "--suppress-analytics",
+        "analyze"
+      ],
+      "cwd": ".",
+      "exit": 0,
+      "seconds": 3.45
+    },
+    {
+      "command": [
+        "flutter",
+        "--suppress-analytics",
+        "analyze"
+      ],
+      "cwd": "design_preview",
+      "exit": 0,
+      "seconds": 1.361
+    },
+    {
+      "command": [
+        "flutter",
+        "--suppress-analytics",
+        "test",
+        "--reporter",
+        "expanded"
+      ],
+      "cwd": ".",
+      "exit": 1,
+      "seconds": 25.601
+    }
+  ]
+}

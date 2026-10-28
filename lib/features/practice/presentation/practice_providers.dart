@@ -7,6 +7,8 @@ import '../../../core/data/storage.dart';
 import '../data/practice_repository.dart';
 import '../domain/practice_engine.dart';
 import '../domain/practice_clock.dart';
+import '../../journal/domain/journal_draft_writer.dart';
+import '../../journal/presentation/journal_providers.dart';
 
 final practiceRepositoryProvider = Provider<PracticeRepository>(
   (ref) => PracticeRepository(ref.watch(storageProvider).database),
@@ -19,6 +21,7 @@ final practiceTickingProvider = Provider<bool>((ref) => true);
 final practiceEngineProvider = Provider<PracticeEngine>((ref) {
   final engine = PracticeEngine(
     ref.watch(practiceRepositoryProvider),
+    journal: ref.watch(journalRepositoryProvider),
     clock: ref.watch(practiceClockProvider),
     ticking: ref.watch(practiceTickingProvider),
   );
@@ -44,13 +47,16 @@ class PracticeLifecycleHost extends ConsumerWidget {
     super.key,
     required this.child,
     this.onEngineReady,
+    this.onDraftWriterReady,
   });
   final Widget child;
   final ValueChanged<PracticeEngine>? onEngineReady;
+  final ValueChanged<JournalDraftWriter>? onDraftWriterReady;
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final engine = ref.watch(practiceEngineProvider);
     onEngineReady?.call(engine);
+    onDraftWriterReady?.call(ref.watch(journalDraftWriterProvider));
     return child;
   }
 }

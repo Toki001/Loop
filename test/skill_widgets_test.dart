@@ -209,6 +209,11 @@ void main() {
       );
       await tester.tap(find.text('Create skill'));
       await tester.tap(find.text('Create skill'));
+      await waitForSkillWidget(
+        tester,
+        find.widgetWithText(ChoiceChip, 'Goals'),
+      );
+      await tapSkillWidget(tester, find.widgetWithText(ChoiceChip, 'Goals'));
       await waitForSkillWidget(tester, find.text('Current goals'));
       final cards = (await tester.runAsync(
         () => storage.skillManagement.watchCards().first,

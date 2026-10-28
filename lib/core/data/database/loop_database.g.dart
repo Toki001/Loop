@@ -3322,6 +3322,17 @@ class Sessions extends Table with TableInfo<Sessions, Session> {
     requiredDuringInsert: false,
     $customConstraints: '',
   );
+  static const VerificationMeta _whatGotEasierMeta = const VerificationMeta(
+    'whatGotEasier',
+  );
+  late final GeneratedColumn<String> whatGotEasier = GeneratedColumn<String>(
+    'what_got_easier',
+    aliasedName,
+    true,
+    type: DriftSqlType.string,
+    requiredDuringInsert: false,
+    $customConstraints: 'CHECK (length(what_got_easier) <= 100000)',
+  );
   static const VerificationMeta _nextStepMeta = const VerificationMeta(
     'nextStep',
   );
@@ -3381,6 +3392,7 @@ class Sessions extends Table with TableInfo<Sessions, Session> {
     updatedAtUtc,
     revision,
     note,
+    whatGotEasier,
     nextStep,
     effortRating,
     localDisplayZone,
@@ -3464,6 +3476,15 @@ class Sessions extends Table with TableInfo<Sessions, Session> {
       context.handle(
         _noteMeta,
         note.isAcceptableOrUnknown(data['note']!, _noteMeta),
+      );
+    }
+    if (data.containsKey('what_got_easier')) {
+      context.handle(
+        _whatGotEasierMeta,
+        whatGotEasier.isAcceptableOrUnknown(
+          data['what_got_easier']!,
+          _whatGotEasierMeta,
+        ),
       );
     }
     if (data.containsKey('next_step')) {
@@ -3568,6 +3589,10 @@ class Sessions extends Table with TableInfo<Sessions, Session> {
         DriftSqlType.string,
         data['${effectivePrefix}note'],
       ),
+      whatGotEasier: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}what_got_easier'],
+      ),
       nextStep: attachedDatabase.typeMapping.read(
         DriftSqlType.string,
         data['${effectivePrefix}next_step'],
@@ -3631,6 +3656,7 @@ class Session extends DataClass implements Insertable<Session> {
   final DateTime updatedAtUtc;
   final int revision;
   final String? note;
+  final String? whatGotEasier;
   final String? nextStep;
   final int? effortRating;
   final String? localDisplayZone;
@@ -3649,6 +3675,7 @@ class Session extends DataClass implements Insertable<Session> {
     required this.updatedAtUtc,
     required this.revision,
     this.note,
+    this.whatGotEasier,
     this.nextStep,
     this.effortRating,
     this.localDisplayZone,
@@ -3692,6 +3719,9 @@ class Session extends DataClass implements Insertable<Session> {
     if (!nullToAbsent || note != null) {
       map['note'] = Variable<String>(note);
     }
+    if (!nullToAbsent || whatGotEasier != null) {
+      map['what_got_easier'] = Variable<String>(whatGotEasier);
+    }
     if (!nullToAbsent || nextStep != null) {
       map['next_step'] = Variable<String>(nextStep);
     }
@@ -3730,6 +3760,9 @@ class Session extends DataClass implements Insertable<Session> {
       updatedAtUtc: Value(updatedAtUtc),
       revision: Value(revision),
       note: note == null && nullToAbsent ? const Value.absent() : Value(note),
+      whatGotEasier: whatGotEasier == null && nullToAbsent
+          ? const Value.absent()
+          : Value(whatGotEasier),
       nextStep: nextStep == null && nullToAbsent
           ? const Value.absent()
           : Value(nextStep),
@@ -3766,6 +3799,7 @@ class Session extends DataClass implements Insertable<Session> {
       updatedAtUtc: serializer.fromJson<DateTime>(json['updated_at_utc']),
       revision: serializer.fromJson<int>(json['revision']),
       note: serializer.fromJson<String?>(json['note']),
+      whatGotEasier: serializer.fromJson<String?>(json['what_got_easier']),
       nextStep: serializer.fromJson<String?>(json['next_step']),
       effortRating: serializer.fromJson<int?>(json['effort_rating']),
       localDisplayZone: serializer.fromJson<String?>(
@@ -3791,6 +3825,7 @@ class Session extends DataClass implements Insertable<Session> {
       'updated_at_utc': serializer.toJson<DateTime>(updatedAtUtc),
       'revision': serializer.toJson<int>(revision),
       'note': serializer.toJson<String?>(note),
+      'what_got_easier': serializer.toJson<String?>(whatGotEasier),
       'next_step': serializer.toJson<String?>(nextStep),
       'effort_rating': serializer.toJson<int?>(effortRating),
       'local_display_zone': serializer.toJson<String?>(localDisplayZone),
@@ -3812,6 +3847,7 @@ class Session extends DataClass implements Insertable<Session> {
     DateTime? updatedAtUtc,
     int? revision,
     Value<String?> note = const Value.absent(),
+    Value<String?> whatGotEasier = const Value.absent(),
     Value<String?> nextStep = const Value.absent(),
     Value<int?> effortRating = const Value.absent(),
     Value<String?> localDisplayZone = const Value.absent(),
@@ -3832,6 +3868,9 @@ class Session extends DataClass implements Insertable<Session> {
     updatedAtUtc: updatedAtUtc ?? this.updatedAtUtc,
     revision: revision ?? this.revision,
     note: note.present ? note.value : this.note,
+    whatGotEasier: whatGotEasier.present
+        ? whatGotEasier.value
+        : this.whatGotEasier,
     nextStep: nextStep.present ? nextStep.value : this.nextStep,
     effortRating: effortRating.present ? effortRating.value : this.effortRating,
     localDisplayZone: localDisplayZone.present
@@ -3870,6 +3909,9 @@ class Session extends DataClass implements Insertable<Session> {
           : this.updatedAtUtc,
       revision: data.revision.present ? data.revision.value : this.revision,
       note: data.note.present ? data.note.value : this.note,
+      whatGotEasier: data.whatGotEasier.present
+          ? data.whatGotEasier.value
+          : this.whatGotEasier,
       nextStep: data.nextStep.present ? data.nextStep.value : this.nextStep,
       effortRating: data.effortRating.present
           ? data.effortRating.value
@@ -3899,6 +3941,7 @@ class Session extends DataClass implements Insertable<Session> {
           ..write('updatedAtUtc: $updatedAtUtc, ')
           ..write('revision: $revision, ')
           ..write('note: $note, ')
+          ..write('whatGotEasier: $whatGotEasier, ')
           ..write('nextStep: $nextStep, ')
           ..write('effortRating: $effortRating, ')
           ..write('localDisplayZone: $localDisplayZone, ')
@@ -3922,6 +3965,7 @@ class Session extends DataClass implements Insertable<Session> {
     updatedAtUtc,
     revision,
     note,
+    whatGotEasier,
     nextStep,
     effortRating,
     localDisplayZone,
@@ -3944,6 +3988,7 @@ class Session extends DataClass implements Insertable<Session> {
           other.updatedAtUtc == this.updatedAtUtc &&
           other.revision == this.revision &&
           other.note == this.note &&
+          other.whatGotEasier == this.whatGotEasier &&
           other.nextStep == this.nextStep &&
           other.effortRating == this.effortRating &&
           other.localDisplayZone == this.localDisplayZone &&
@@ -3964,6 +4009,7 @@ class SessionsCompanion extends UpdateCompanion<Session> {
   final Value<DateTime> updatedAtUtc;
   final Value<int> revision;
   final Value<String?> note;
+  final Value<String?> whatGotEasier;
   final Value<String?> nextStep;
   final Value<int?> effortRating;
   final Value<String?> localDisplayZone;
@@ -3983,6 +4029,7 @@ class SessionsCompanion extends UpdateCompanion<Session> {
     this.updatedAtUtc = const Value.absent(),
     this.revision = const Value.absent(),
     this.note = const Value.absent(),
+    this.whatGotEasier = const Value.absent(),
     this.nextStep = const Value.absent(),
     this.effortRating = const Value.absent(),
     this.localDisplayZone = const Value.absent(),
@@ -4003,6 +4050,7 @@ class SessionsCompanion extends UpdateCompanion<Session> {
     required DateTime updatedAtUtc,
     this.revision = const Value.absent(),
     this.note = const Value.absent(),
+    this.whatGotEasier = const Value.absent(),
     this.nextStep = const Value.absent(),
     this.effortRating = const Value.absent(),
     this.localDisplayZone = const Value.absent(),
@@ -4028,6 +4076,7 @@ class SessionsCompanion extends UpdateCompanion<Session> {
     Expression<DateTime>? updatedAtUtc,
     Expression<int>? revision,
     Expression<String>? note,
+    Expression<String>? whatGotEasier,
     Expression<String>? nextStep,
     Expression<int>? effortRating,
     Expression<String>? localDisplayZone,
@@ -4048,6 +4097,7 @@ class SessionsCompanion extends UpdateCompanion<Session> {
       if (updatedAtUtc != null) 'updated_at_utc': updatedAtUtc,
       if (revision != null) 'revision': revision,
       if (note != null) 'note': note,
+      if (whatGotEasier != null) 'what_got_easier': whatGotEasier,
       if (nextStep != null) 'next_step': nextStep,
       if (effortRating != null) 'effort_rating': effortRating,
       if (localDisplayZone != null) 'local_display_zone': localDisplayZone,
@@ -4070,6 +4120,7 @@ class SessionsCompanion extends UpdateCompanion<Session> {
     Value<DateTime>? updatedAtUtc,
     Value<int>? revision,
     Value<String?>? note,
+    Value<String?>? whatGotEasier,
     Value<String?>? nextStep,
     Value<int?>? effortRating,
     Value<String?>? localDisplayZone,
@@ -4090,6 +4141,7 @@ class SessionsCompanion extends UpdateCompanion<Session> {
       updatedAtUtc: updatedAtUtc ?? this.updatedAtUtc,
       revision: revision ?? this.revision,
       note: note ?? this.note,
+      whatGotEasier: whatGotEasier ?? this.whatGotEasier,
       nextStep: nextStep ?? this.nextStep,
       effortRating: effortRating ?? this.effortRating,
       localDisplayZone: localDisplayZone ?? this.localDisplayZone,
@@ -4148,6 +4200,9 @@ class SessionsCompanion extends UpdateCompanion<Session> {
     if (note.present) {
       map['note'] = Variable<String>(note.value);
     }
+    if (whatGotEasier.present) {
+      map['what_got_easier'] = Variable<String>(whatGotEasier.value);
+    }
     if (nextStep.present) {
       map['next_step'] = Variable<String>(nextStep.value);
     }
@@ -4182,10 +4237,392 @@ class SessionsCompanion extends UpdateCompanion<Session> {
           ..write('updatedAtUtc: $updatedAtUtc, ')
           ..write('revision: $revision, ')
           ..write('note: $note, ')
+          ..write('whatGotEasier: $whatGotEasier, ')
           ..write('nextStep: $nextStep, ')
           ..write('effortRating: $effortRating, ')
           ..write('localDisplayZone: $localDisplayZone, ')
           ..write('sourceDeviceId: $sourceDeviceId, ')
+          ..write('rowid: $rowid')
+          ..write(')'))
+        .toString();
+  }
+}
+
+class JournalDrafts extends Table with TableInfo<JournalDrafts, JournalDraft> {
+  @override
+  final GeneratedDatabase attachedDatabase;
+  final String? _alias;
+  JournalDrafts(this.attachedDatabase, [this._alias]);
+  static const VerificationMeta _sessionIdMeta = const VerificationMeta(
+    'sessionId',
+  );
+  late final GeneratedColumn<String> sessionId = GeneratedColumn<String>(
+    'session_id',
+    aliasedName,
+    false,
+    type: DriftSqlType.string,
+    requiredDuringInsert: true,
+    $customConstraints: 'NOT NULL REFERENCES sessions(id)ON DELETE CASCADE',
+  );
+  static const VerificationMeta _purposeMeta = const VerificationMeta(
+    'purpose',
+  );
+  late final GeneratedColumn<String> purpose = GeneratedColumn<String>(
+    'purpose',
+    aliasedName,
+    false,
+    type: DriftSqlType.string,
+    requiredDuringInsert: true,
+    $customConstraints: 'NOT NULL CHECK (purpose IN (\'finish\', \'edit\'))',
+  );
+  static const VerificationMeta _baseRevisionMeta = const VerificationMeta(
+    'baseRevision',
+  );
+  late final GeneratedColumn<int> baseRevision = GeneratedColumn<int>(
+    'base_revision',
+    aliasedName,
+    false,
+    type: DriftSqlType.int,
+    requiredDuringInsert: true,
+    $customConstraints: 'NOT NULL CHECK (base_revision >= 0)',
+  );
+  static const VerificationMeta _formJsonMeta = const VerificationMeta(
+    'formJson',
+  );
+  late final GeneratedColumn<String> formJson = GeneratedColumn<String>(
+    'form_json',
+    aliasedName,
+    false,
+    type: DriftSqlType.string,
+    requiredDuringInsert: true,
+    $customConstraints: 'NOT NULL CHECK (length(form_json) <= 500000 AND json_valid(form_json))',
+  );
+  late final GeneratedColumnWithTypeConverter<DateTime, DateTime> updatedAtUtc =
+      GeneratedColumn<DateTime>(
+        'updated_at_utc',
+        aliasedName,
+        false,
+        type: DriftSqlType.dateTime,
+        requiredDuringInsert: true,
+        $customConstraints: 'NOT NULL',
+      ).withConverter<DateTime>(JournalDrafts.$converterupdatedAtUtc);
+  @override
+  List<GeneratedColumn> get $columns => [
+    sessionId,
+    purpose,
+    baseRevision,
+    formJson,
+    updatedAtUtc,
+  ];
+  @override
+  String get aliasedName => _alias ?? actualTableName;
+  @override
+  String get actualTableName => $name;
+  static const String $name = 'journal_drafts';
+  @override
+  VerificationContext validateIntegrity(
+    Insertable<JournalDraft> instance, {
+    bool isInserting = false,
+  }) {
+    final context = VerificationContext();
+    final data = instance.toColumns(true);
+    if (data.containsKey('session_id')) {
+      context.handle(
+        _sessionIdMeta,
+        sessionId.isAcceptableOrUnknown(data['session_id']!, _sessionIdMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_sessionIdMeta);
+    }
+    if (data.containsKey('purpose')) {
+      context.handle(
+        _purposeMeta,
+        purpose.isAcceptableOrUnknown(data['purpose']!, _purposeMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_purposeMeta);
+    }
+    if (data.containsKey('base_revision')) {
+      context.handle(
+        _baseRevisionMeta,
+        baseRevision.isAcceptableOrUnknown(
+          data['base_revision']!,
+          _baseRevisionMeta,
+        ),
+      );
+    } else if (isInserting) {
+      context.missing(_baseRevisionMeta);
+    }
+    if (data.containsKey('form_json')) {
+      context.handle(
+        _formJsonMeta,
+        formJson.isAcceptableOrUnknown(data['form_json']!, _formJsonMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_formJsonMeta);
+    }
+    return context;
+  }
+
+  @override
+  Set<GeneratedColumn> get $primaryKey => {sessionId, purpose};
+  @override
+  JournalDraft map(Map<String, dynamic> data, {String? tablePrefix}) {
+    final effectivePrefix = tablePrefix != null ? '$tablePrefix.' : '';
+    return JournalDraft(
+      sessionId: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}session_id'],
+      )!,
+      purpose: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}purpose'],
+      )!,
+      baseRevision: attachedDatabase.typeMapping.read(
+        DriftSqlType.int,
+        data['${effectivePrefix}base_revision'],
+      )!,
+      formJson: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}form_json'],
+      )!,
+      updatedAtUtc: JournalDrafts.$converterupdatedAtUtc.fromSql(
+        attachedDatabase.typeMapping.read(
+          DriftSqlType.dateTime,
+          data['${effectivePrefix}updated_at_utc'],
+        )!,
+      ),
+    );
+  }
+
+  @override
+  JournalDrafts createAlias(String alias) {
+    return JournalDrafts(attachedDatabase, alias);
+  }
+
+  static TypeConverter<DateTime, DateTime> $converterupdatedAtUtc =
+      const UtcDateTimeConverter();
+  @override
+  List<String> get customConstraints => const [
+    'PRIMARY KEY(session_id, purpose)',
+  ];
+  @override
+  bool get dontWriteConstraints => true;
+}
+
+class JournalDraft extends DataClass implements Insertable<JournalDraft> {
+  final String sessionId;
+  final String purpose;
+  final int baseRevision;
+  final String formJson;
+  final DateTime updatedAtUtc;
+  const JournalDraft({
+    required this.sessionId,
+    required this.purpose,
+    required this.baseRevision,
+    required this.formJson,
+    required this.updatedAtUtc,
+  });
+  @override
+  Map<String, Expression> toColumns(bool nullToAbsent) {
+    final map = <String, Expression>{};
+    map['session_id'] = Variable<String>(sessionId);
+    map['purpose'] = Variable<String>(purpose);
+    map['base_revision'] = Variable<int>(baseRevision);
+    map['form_json'] = Variable<String>(formJson);
+    {
+      map['updated_at_utc'] = Variable<DateTime>(
+        JournalDrafts.$converterupdatedAtUtc.toSql(updatedAtUtc),
+      );
+    }
+    return map;
+  }
+
+  JournalDraftsCompanion toCompanion(bool nullToAbsent) {
+    return JournalDraftsCompanion(
+      sessionId: Value(sessionId),
+      purpose: Value(purpose),
+      baseRevision: Value(baseRevision),
+      formJson: Value(formJson),
+      updatedAtUtc: Value(updatedAtUtc),
+    );
+  }
+
+  factory JournalDraft.fromJson(
+    Map<String, dynamic> json, {
+    ValueSerializer? serializer,
+  }) {
+    serializer ??= driftRuntimeOptions.defaultSerializer;
+    return JournalDraft(
+      sessionId: serializer.fromJson<String>(json['session_id']),
+      purpose: serializer.fromJson<String>(json['purpose']),
+      baseRevision: serializer.fromJson<int>(json['base_revision']),
+      formJson: serializer.fromJson<String>(json['form_json']),
+      updatedAtUtc: serializer.fromJson<DateTime>(json['updated_at_utc']),
+    );
+  }
+  @override
+  Map<String, dynamic> toJson({ValueSerializer? serializer}) {
+    serializer ??= driftRuntimeOptions.defaultSerializer;
+    return <String, dynamic>{
+      'session_id': serializer.toJson<String>(sessionId),
+      'purpose': serializer.toJson<String>(purpose),
+      'base_revision': serializer.toJson<int>(baseRevision),
+      'form_json': serializer.toJson<String>(formJson),
+      'updated_at_utc': serializer.toJson<DateTime>(updatedAtUtc),
+    };
+  }
+
+  JournalDraft copyWith({
+    String? sessionId,
+    String? purpose,
+    int? baseRevision,
+    String? formJson,
+    DateTime? updatedAtUtc,
+  }) => JournalDraft(
+    sessionId: sessionId ?? this.sessionId,
+    purpose: purpose ?? this.purpose,
+    baseRevision: baseRevision ?? this.baseRevision,
+    formJson: formJson ?? this.formJson,
+    updatedAtUtc: updatedAtUtc ?? this.updatedAtUtc,
+  );
+  JournalDraft copyWithCompanion(JournalDraftsCompanion data) {
+    return JournalDraft(
+      sessionId: data.sessionId.present ? data.sessionId.value : this.sessionId,
+      purpose: data.purpose.present ? data.purpose.value : this.purpose,
+      baseRevision: data.baseRevision.present
+          ? data.baseRevision.value
+          : this.baseRevision,
+      formJson: data.formJson.present ? data.formJson.value : this.formJson,
+      updatedAtUtc: data.updatedAtUtc.present
+          ? data.updatedAtUtc.value
+          : this.updatedAtUtc,
+    );
+  }
+
+  @override
+  String toString() {
+    return (StringBuffer('JournalDraft(')
+          ..write('sessionId: $sessionId, ')
+          ..write('purpose: $purpose, ')
+          ..write('baseRevision: $baseRevision, ')
+          ..write('formJson: $formJson, ')
+          ..write('updatedAtUtc: $updatedAtUtc')
+          ..write(')'))
+        .toString();
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(sessionId, purpose, baseRevision, formJson, updatedAtUtc);
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      (other is JournalDraft &&
+          other.sessionId == this.sessionId &&
+          other.purpose == this.purpose &&
+          other.baseRevision == this.baseRevision &&
+          other.formJson == this.formJson &&
+          other.updatedAtUtc == this.updatedAtUtc);
+}
+
+class JournalDraftsCompanion extends UpdateCompanion<JournalDraft> {
+  final Value<String> sessionId;
+  final Value<String> purpose;
+  final Value<int> baseRevision;
+  final Value<String> formJson;
+  final Value<DateTime> updatedAtUtc;
+  final Value<int> rowid;
+  const JournalDraftsCompanion({
+    this.sessionId = const Value.absent(),
+    this.purpose = const Value.absent(),
+    this.baseRevision = const Value.absent(),
+    this.formJson = const Value.absent(),
+    this.updatedAtUtc = const Value.absent(),
+    this.rowid = const Value.absent(),
+  });
+  JournalDraftsCompanion.insert({
+    required String sessionId,
+    required String purpose,
+    required int baseRevision,
+    required String formJson,
+    required DateTime updatedAtUtc,
+    this.rowid = const Value.absent(),
+  }) : sessionId = Value(sessionId),
+       purpose = Value(purpose),
+       baseRevision = Value(baseRevision),
+       formJson = Value(formJson),
+       updatedAtUtc = Value(updatedAtUtc);
+  static Insertable<JournalDraft> custom({
+    Expression<String>? sessionId,
+    Expression<String>? purpose,
+    Expression<int>? baseRevision,
+    Expression<String>? formJson,
+    Expression<DateTime>? updatedAtUtc,
+    Expression<int>? rowid,
+  }) {
+    return RawValuesInsertable({
+      if (sessionId != null) 'session_id': sessionId,
+      if (purpose != null) 'purpose': purpose,
+      if (baseRevision != null) 'base_revision': baseRevision,
+      if (formJson != null) 'form_json': formJson,
+      if (updatedAtUtc != null) 'updated_at_utc': updatedAtUtc,
+      if (rowid != null) 'rowid': rowid,
+    });
+  }
+
+  JournalDraftsCompanion copyWith({
+    Value<String>? sessionId,
+    Value<String>? purpose,
+    Value<int>? baseRevision,
+    Value<String>? formJson,
+    Value<DateTime>? updatedAtUtc,
+    Value<int>? rowid,
+  }) {
+    return JournalDraftsCompanion(
+      sessionId: sessionId ?? this.sessionId,
+      purpose: purpose ?? this.purpose,
+      baseRevision: baseRevision ?? this.baseRevision,
+      formJson: formJson ?? this.formJson,
+      updatedAtUtc: updatedAtUtc ?? this.updatedAtUtc,
+      rowid: rowid ?? this.rowid,
+    );
+  }
+
+  @override
+  Map<String, Expression> toColumns(bool nullToAbsent) {
+    final map = <String, Expression>{};
+    if (sessionId.present) {
+      map['session_id'] = Variable<String>(sessionId.value);
+    }
+    if (purpose.present) {
+      map['purpose'] = Variable<String>(purpose.value);
+    }
+    if (baseRevision.present) {
+      map['base_revision'] = Variable<int>(baseRevision.value);
+    }
+    if (formJson.present) {
+      map['form_json'] = Variable<String>(formJson.value);
+    }
+    if (updatedAtUtc.present) {
+      map['updated_at_utc'] = Variable<DateTime>(
+        JournalDrafts.$converterupdatedAtUtc.toSql(updatedAtUtc.value),
+      );
+    }
+    if (rowid.present) {
+      map['rowid'] = Variable<int>(rowid.value);
+    }
+    return map;
+  }
+
+  @override
+  String toString() {
+    return (StringBuffer('JournalDraftsCompanion(')
+          ..write('sessionId: $sessionId, ')
+          ..write('purpose: $purpose, ')
+          ..write('baseRevision: $baseRevision, ')
+          ..write('formJson: $formJson, ')
+          ..write('updatedAtUtc: $updatedAtUtc, ')
           ..write('rowid: $rowid')
           ..write(')'))
         .toString();
@@ -8265,6 +8702,7 @@ abstract class _$LoopDatabase extends GeneratedDatabase {
     'one_running_session',
     'CREATE UNIQUE INDEX one_running_session ON sessions (status) WHERE status = \'running\'',
   );
+  late final JournalDrafts journalDrafts = JournalDrafts(this);
   late final PracticeCheckpoints practiceCheckpoints = PracticeCheckpoints(
     this,
   );
@@ -8341,6 +8779,7 @@ abstract class _$LoopDatabase extends GeneratedDatabase {
     sessions,
     sessionsSkillEnd,
     oneRunningSession,
+    journalDrafts,
     practiceCheckpoints,
     sessionExercises,
     metricReadings,
@@ -8392,6 +8831,13 @@ abstract class _$LoopDatabase extends GeneratedDatabase {
         limitUpdateKind: UpdateKind.delete,
       ),
       result: [TableUpdate('sessions', kind: UpdateKind.delete)],
+    ),
+    WritePropagation(
+      on: TableUpdateQuery.onTableName(
+        'sessions',
+        limitUpdateKind: UpdateKind.delete,
+      ),
+      result: [TableUpdate('journal_drafts', kind: UpdateKind.delete)],
     ),
     WritePropagation(
       on: TableUpdateQuery.onTableName(

@@ -49,12 +49,14 @@ def main():
     run([sys.executable, "tool/check_baseline.py"])
     run(["git", "diff", "--check"])
     run(["git", "diff", "--cached", "--check"])
-    if args.android:
-        run(flutter + ["build", "apk", "--debug", "--no-pub"])
-    if args.ios:
-        run(flutter + ["build", "ios", "--simulator", "--debug", "--no-codesign", "--no-pub"])
     if args.device:
         run(flutter + ["test", "integration_test/foundation_test.dart", "-d", args.device, "--no-pub", "--no-uninstall", "--reporter", "expanded"])
+    # Tests compile a different entrypoint into shared native build directories.
+    # Finish with explicit product builds so artifacts cannot retain that target.
+    if args.android:
+        run(flutter + ["build", "apk", "--debug", "--no-pub", "--target=lib/main.dart"])
+    if args.ios:
+        run(flutter + ["build", "ios", "--simulator", "--debug", "--no-codesign", "--no-pub", "--target=lib/main.dart"])
     print(f"PASS: {len(results)} selected checks; results in build/verification/ci.json", flush=True)
 
 

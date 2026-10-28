@@ -217,7 +217,7 @@ class _GoalFormState extends ConsumerState<_GoalForm> {
               )
             : null,
       );
-      if (mounted) context.go('/skills/${widget.data.skill.id}');
+      if (mounted) context.go('/skills/${widget.data.skill.id}?section=goals');
     } catch (error) {
       if (mounted)
         setState(() {

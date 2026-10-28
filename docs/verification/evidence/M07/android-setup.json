@@ -1,0 +1,44 @@
+{
+  "platform": "android",
+  "device": "NBDEXCJNL7JR9DIJ",
+  "stage": "setup",
+  "flutterCommand": [
+    "flutter",
+    "--suppress-analytics",
+    "test",
+    "integration_test/journal_test.dart",
+    "-d",
+    "NBDEXCJNL7JR9DIJ",
+    "--no-pub",
+    "--no-uninstall",
+    "--timeout=15m",
+    "--reporter",
+    "expanded",
+    "--dart-define=M07_STAGE=setup"
+  ],
+  "flutterExit": 0,
+  "completedFlutterTest": true,
+  "elapsedSeconds": 70.724,
+  "events": [
+    {
+      "stage": "setup",
+      "platform": "android",
+      "pid": 20956,
+      "setupPid": 20956,
+      "schema": 5,
+      "freshStore": true,
+      "sessionCount": 1,
+      "readingCount": 1,
+      "exerciseSnapshotCount": 1,
+      "activeMilliseconds": 4384,
+      "revision": 6,
+      "retainedAppearance": "dark",
+      "retainedOnboarding": true,
+      "hashRetained": true,
+      "foreignKeys": "ok",
+      "integrity": "ok",
+      "productionDataUnchanged": true
+    }
+  ],
+  "harnessGatePassed": true
+}
