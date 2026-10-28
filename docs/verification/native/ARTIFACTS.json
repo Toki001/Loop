@@ -1,5 +1,5 @@
 {
-  "reviewContext": "M03/M04 product-main empty shells and M05 isolated synthetic native widget frames. All exact hashes reviewed, including identical-frame groups. No personal/observed practice data; target/entrypoint/capture distinctions are explicit. No release or physical iPhone claim.",
+  "reviewContext": "M03/M04 normal empty shells and isolated M05/M06 synthetic native Flutter widget frames. Exact hashes reviewed; target, entrypoint and capture distinctions explicit. No personal data, release or physical iPhone claim.",
   "artifacts": {
     "docs/verification/native/M03/welcome-first-launch.png": {
       "sha256": "6f228e5929e22616cebbd25edaf6e58c5710d881a21a03470093def654b57fe4",
@@ -95,6 +95,90 @@
       "capture": "native-flutter-repaint-boundary",
       "entrypoint": "integration_test/skill_management_test.dart",
       "scene": "Disposable M05 skill/qualitative goal, no observed sessions/readings; setup/resume process hash retained. Native widget pixels, not OS chrome. Identical hashes grouped in visual review; synthetic store removed after resume."
+    },
+    "docs/verification/native/M06/android-background-before-review.png": {
+      "sha256": "3ff949bad1081705ca6687ec8cdb71b142fbde44cc821d37b4c32c4133af31ca",
+      "bytes": 31437,
+      "provenance": "native-device-synthetic-widget-frame",
+      "target": "physical-android",
+      "reviewedNoPersonalData": true,
+      "syntheticStoreIsolated": true,
+      "capture": "native-flutter-repaint-boundary",
+      "scene": "M06 synthetic saved practice; Android before-review real 2min/10min interval"
+    },
+    "docs/verification/native/M06/ios-recovered-save.png": {
+      "sha256": "ec8cb45b6a19f083b16fea98ece3f005e0790fdf00e0156a9df1b62039b12b63",
+      "bytes": 34757,
+      "provenance": "native-simulator-synthetic-widget-frame",
+      "target": "ios-simulator",
+      "reviewedNoPersonalData": true,
+      "syntheticStoreIsolated": true,
+      "capture": "native-flutter-repaint-boundary",
+      "scene": "M06 native saved practice/recovery before root-shutdown fix; actual repository result; simulator only"
+    },
+    "docs/verification/native/M06/ios-timed-save.png": {
+      "sha256": "cc05000bed504ec24feb760bedb97de65fc3a6cbf82066807778de8535fcee08",
+      "bytes": 34256,
+      "provenance": "native-simulator-synthetic-widget-frame",
+      "target": "ios-simulator",
+      "reviewedNoPersonalData": true,
+      "syntheticStoreIsolated": true,
+      "capture": "native-flutter-repaint-boundary",
+      "scene": "M06 native saved practice/recovery before root-shutdown fix; actual repository result; simulator only"
+    },
+    "docs/verification/native/M06/android-lock-final.png": {
+      "sha256": "ae5be678a8082724366e0c86560ec31c5c174ff07c4d041341f31201e76650ea",
+      "bytes": 32183,
+      "provenance": "native-device-synthetic-widget-frame",
+      "target": "physical-android",
+      "reviewedNoPersonalData": true,
+      "syntheticStoreIsolated": true,
+      "capture": "native-flutter-repaint-boundary",
+      "entrypoint": "integration_test/practice_test.dart",
+      "scene": "M06 current-source lock saved summary; verified real-clock Android16/API36 test, isolated synthetic store; excludes OS chrome"
+    },
+    "docs/verification/native/M06/android-smoke-final.png": {
+      "sha256": "cbf7b485310123518a6c67f41aa703857c7851c0d361bacd43d645a730a895d3",
+      "bytes": 32166,
+      "provenance": "native-device-synthetic-widget-frame",
+      "target": "physical-android",
+      "reviewedNoPersonalData": true,
+      "syntheticStoreIsolated": true,
+      "capture": "native-flutter-repaint-boundary",
+      "entrypoint": "integration_test/practice_test.dart",
+      "scene": "M06 current-source smoke saved summary; verified real-clock Android16/API36 test, isolated synthetic store; excludes OS chrome"
+    },
+    "docs/verification/native/M06/android-recovery-final.png": {
+      "sha256": "6c8550cda239af67140842d536b3a9cbcbc9c690c31690d46f5adfea793e0393",
+      "bytes": 32557,
+      "provenance": "native-device-synthetic-widget-frame",
+      "target": "physical-android",
+      "reviewedNoPersonalData": true,
+      "syntheticStoreIsolated": true,
+      "capture": "native-flutter-repaint-boundary",
+      "entrypoint": "integration_test/practice_test.dart",
+      "scene": "M06 current-source separate-process recovery, exactly5006ms, paused until deliberate completion; isolated synthetic store, excludes OS chrome"
+    },
+    "docs/verification/native/M06/android-background-final.png": {
+      "sha256": "90ee4dd1b65ae9e47c1a105a3ae554231e8dfe9fac3b2e018d312a7c19776656",
+      "bytes": 31344,
+      "provenance": "native-device-synthetic-widget-frame",
+      "target": "physical-android",
+      "reviewedNoPersonalData": true,
+      "scene": "Final-source full 120-second foreground / 600.165-second background probe, exactly120483ms retained and saved once. Isolated synthetic native widget pixels; excludes OS chrome.",
+      "syntheticStoreIsolated": true,
+      "capture": "native-flutter-repaint-boundary",
+      "entrypoint": "integration_test/practice_test.dart"
+    },
+    "docs/verification/native/M06/android-product-launch-final.png": {
+      "sha256": "25ce43d2da3e2f056fd7d4393d4babc528a07b06760c8efdcf97c155238531ee",
+      "bytes": 78096,
+      "provenance": "native-device-empty-shell",
+      "target": "physical-android",
+      "reviewedNoPersonalData": true,
+      "scene": "Normal lib/main.dart debug app after two separate-process launches, empty real journal, Dark preference retained. Actual Android OS screenshot including chrome; reviewed no personal content.",
+      "capture": "adb-screencap",
+      "entrypoint": "lib/main.dart"
     }
   },
   "M05_reviewed_unique_frames": [

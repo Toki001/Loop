@@ -1,0 +1,20 @@
+{
+  "status": "FINISHED",
+  "jobPid": 14669,
+  "harnessPid": 14670,
+  "command": [
+    "python3",
+    "tool/run_practice_native.py",
+    "--platform",
+    "android",
+    "--device",
+    "NBDEXCJNL7JR9DIJ",
+    "--stage",
+    "background",
+    "--verbose"
+  ],
+  "hardDeadlineSeconds": 2700,
+  "startedUtc": "2026-10-28T10:11:34.586407+00:00",
+  "exit": 0,
+  "finishedUtc": "2026-10-28T10:24:15.770159+00:00"
+}

@@ -95,10 +95,10 @@ void main() {
             .data
             .values
             .single,
-        3,
+        LoopDatabase.currentVersion,
       );
       expect(await db.select(db.dataMigrations).get(), hasLength(1));
-      expect(db.allTables, hasLength(13));
+      expect(db.allTables, hasLength(14));
     },
   );
 

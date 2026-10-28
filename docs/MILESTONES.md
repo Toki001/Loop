@@ -23,8 +23,8 @@ Each MXX requires (1) preconditions from earlier gates, (2) scoped plan and impl
 | M02 | Brand, UX and design system | token set, reviewable native mock screens, goldens | [PASS](verification/M02.md) |
 | M03 | Flutter app foundation | working shell, routing, localization, CI | [PASS — local foundation](verification/M03.md) |
 | M04 | Durable storage and security | drift schema, migrations, media/file boundary | PASS — local persistence; physical/release limits in M04 report |
-| M05 | Skill, goal and exercise management | complete CRUD flows | PASS — local feature gate; local commit pending in M05 checkpoint |
-| M06 | Session state machine and timer | reliable lifecycle and resume logic | PENDING |
+| M05 | Skill, goal and exercise management | complete CRUD flows | PASS — local skill management; commit recorded in M05 checkpoint |
+| M06 | Session state machine and timer | reliable lifecycle and resume logic | PASS — local timer/manual entry; physical Android lifecycle and restart verified |
 | M07 | Reflection and session journal | complete end-to-end offline practice loop | PENDING |
 | M08 | Photos and audio evidence | permission-safe private evidence library | PENDING |
 | M09 | Then vs Now | compare compatible image/audio evidence | PENDING |

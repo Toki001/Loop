@@ -1,0 +1,25 @@
+{
+  "observedUtc": "2026-10-28T10:29:30.916094+00:00",
+  "device": "NBDEXCJNL7JR9DIJ",
+  "command": [
+    "adb",
+    "-s",
+    "NBDEXCJNL7JR9DIJ",
+    "shell",
+    "dumpsys",
+    "window",
+    "policy"
+  ],
+  "exit": 0,
+  "keyguard": {
+    "showing": false,
+    "secure": true,
+    "occluded": false
+  },
+  "status": "PASS; normally unlocked by owner; final native gates complete; normal-main UI reviewed",
+  "securitySettingsChanged": false,
+  "unlockAttempted": false,
+  "normalMainRestored": true,
+  "m06MarkerAbsent": true,
+  "uiCapture": "docs/verification/native/M06/android-product-launch-final.png"
+}

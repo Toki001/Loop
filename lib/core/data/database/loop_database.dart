@@ -9,7 +9,7 @@ part 'loop_database.g.dart';
 @DriftDatabase(include: {'schema.drift'})
 class LoopDatabase extends _$LoopDatabase {
   LoopDatabase(super.executor);
-  static const currentVersion = 3;
+  static const currentVersion = 4;
 
   @override
   int get schemaVersion => currentVersion;
@@ -41,11 +41,19 @@ class LoopDatabase extends _$LoopDatabase {
           ),
         );
       }
-      // Goals have no inbound foreign keys. Rebuild transactionally to preserve
-      // completion dates while archived; Drift retains associated unit triggers.
-      await migrator.alterTable(
-        TableMigration(goals, newColumns: [goals.motivation]),
-      );
+      if (from < 3) {
+        // Goals have no inbound foreign keys. Drift retains their unit triggers.
+        await migrator.alterTable(
+          TableMigration(goals, newColumns: [goals.motivation]),
+        );
+        await into(dataMigrations).insert(
+          DataMigrationsCompanion.insert(
+            version: const Value(3),
+            completedAtUtc: DateTime.now().toUtc(),
+          ),
+        );
+      }
+      await migrator.createTable(practiceCheckpoints);
       await into(dataMigrations).insert(
         DataMigrationsCompanion.insert(
           version: const Value(currentVersion),

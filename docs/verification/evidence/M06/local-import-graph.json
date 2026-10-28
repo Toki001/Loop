@@ -1,0 +1,1573 @@
+{
+  "method": "Anchored import/export directive enumeration, resolving all relative URIs including same-directory imports. Documentation examples, generated parts and runtime calls excluded. No remote indexing/Graphify connection.",
+  "edges": [
+    {
+      "from": "lib/app/app.dart",
+      "kind": "import",
+      "to": "package:flutter/material.dart"
+    },
+    {
+      "from": "lib/app/app.dart",
+      "kind": "import",
+      "to": "package:flutter_riverpod/flutter_riverpod.dart"
+    },
+    {
+      "from": "lib/app/app.dart",
+      "kind": "import",
+      "to": "lib/features/settings/domain/preferences.dart"
+    },
+    {
+      "from": "lib/app/app.dart",
+      "kind": "import",
+      "to": "lib/features/settings/presentation/preferences_controller.dart"
+    },
+    {
+      "from": "lib/app/app.dart",
+      "kind": "import",
+      "to": "lib/shared/design_system/tokens.dart"
+    },
+    {
+      "from": "lib/app/app.dart",
+      "kind": "import",
+      "to": "lib/app/l10n/app_localizations.dart"
+    },
+    {
+      "from": "lib/app/app.dart",
+      "kind": "import",
+      "to": "lib/app/routing.dart"
+    },
+    {
+      "from": "lib/app/l10n/app_localizations.dart",
+      "kind": "import",
+      "to": "dart:async"
+    },
+    {
+      "from": "lib/app/l10n/app_localizations.dart",
+      "kind": "import",
+      "to": "package:flutter/foundation.dart"
+    },
+    {
+      "from": "lib/app/l10n/app_localizations.dart",
+      "kind": "import",
+      "to": "package:flutter/widgets.dart"
+    },
+    {
+      "from": "lib/app/l10n/app_localizations.dart",
+      "kind": "import",
+      "to": "package:flutter_localizations/flutter_localizations.dart"
+    },
+    {
+      "from": "lib/app/l10n/app_localizations.dart",
+      "kind": "import",
+      "to": "package:intl/intl.dart"
+    },
+    {
+      "from": "lib/app/l10n/app_localizations.dart",
+      "kind": "import",
+      "to": "lib/app/l10n/app_localizations_en.dart"
+    },
+    {
+      "from": "lib/app/l10n/app_localizations_en.dart",
+      "kind": "import",
+      "to": "package:intl/intl.dart"
+    },
+    {
+      "from": "lib/app/l10n/app_localizations_en.dart",
+      "kind": "import",
+      "to": "lib/app/l10n/app_localizations.dart"
+    },
+    {
+      "from": "lib/app/licenses.dart",
+      "kind": "import",
+      "to": "package:flutter/foundation.dart"
+    },
+    {
+      "from": "lib/app/licenses.dart",
+      "kind": "import",
+      "to": "package:flutter/services.dart"
+    },
+    {
+      "from": "lib/app/routing.dart",
+      "kind": "import",
+      "to": "package:flutter/material.dart"
+    },
+    {
+      "from": "lib/app/routing.dart",
+      "kind": "import",
+      "to": "package:flutter_riverpod/flutter_riverpod.dart"
+    },
+    {
+      "from": "lib/app/routing.dart",
+      "kind": "import",
+      "to": "package:go_router/go_router.dart"
+    },
+    {
+      "from": "lib/app/routing.dart",
+      "kind": "import",
+      "to": "lib/features/onboarding/presentation/welcome_page.dart"
+    },
+    {
+      "from": "lib/app/routing.dart",
+      "kind": "import",
+      "to": "lib/features/practice/presentation/practice_pages.dart"
+    },
+    {
+      "from": "lib/app/routing.dart",
+      "kind": "import",
+      "to": "lib/features/settings/presentation/preferences_controller.dart"
+    },
+    {
+      "from": "lib/app/routing.dart",
+      "kind": "import",
+      "to": "lib/features/settings/presentation/settings_page.dart"
+    },
+    {
+      "from": "lib/app/routing.dart",
+      "kind": "import",
+      "to": "lib/features/skills/domain/skill_kind.dart"
+    },
+    {
+      "from": "lib/app/routing.dart",
+      "kind": "import",
+      "to": "lib/features/skills/presentation/exercise_editor_page.dart"
+    },
+    {
+      "from": "lib/app/routing.dart",
+      "kind": "import",
+      "to": "lib/features/skills/presentation/goal_editor_page.dart"
+    },
+    {
+      "from": "lib/app/routing.dart",
+      "kind": "import",
+      "to": "lib/features/skills/presentation/skill_detail_page.dart"
+    },
+    {
+      "from": "lib/app/routing.dart",
+      "kind": "import",
+      "to": "lib/features/skills/presentation/skill_editor_page.dart"
+    },
+    {
+      "from": "lib/app/routing.dart",
+      "kind": "import",
+      "to": "lib/features/skills/presentation/skills_page.dart"
+    },
+    {
+      "from": "lib/app/routing.dart",
+      "kind": "import",
+      "to": "lib/shared/design_system/components.dart"
+    },
+    {
+      "from": "lib/app/routing.dart",
+      "kind": "import",
+      "to": "lib/app/l10n/app_localizations.dart"
+    },
+    {
+      "from": "lib/app/routing.dart",
+      "kind": "import",
+      "to": "lib/app/screens/foundation_pages.dart"
+    },
+    {
+      "from": "lib/app/screens/foundation_pages.dart",
+      "kind": "import",
+      "to": "package:flutter/material.dart"
+    },
+    {
+      "from": "lib/app/screens/foundation_pages.dart",
+      "kind": "import",
+      "to": "package:go_router/go_router.dart"
+    },
+    {
+      "from": "lib/app/screens/foundation_pages.dart",
+      "kind": "import",
+      "to": "lib/shared/design_system/components.dart"
+    },
+    {
+      "from": "lib/app/screens/foundation_pages.dart",
+      "kind": "import",
+      "to": "lib/shared/design_system/tokens.dart"
+    },
+    {
+      "from": "lib/app/screens/foundation_pages.dart",
+      "kind": "import",
+      "to": "lib/app/l10n/app_localizations.dart"
+    },
+    {
+      "from": "lib/app/screens/foundation_pages.dart",
+      "kind": "import",
+      "to": "lib/app/widgets/development_notice.dart"
+    },
+    {
+      "from": "lib/app/widgets/development_notice.dart",
+      "kind": "import",
+      "to": "package:flutter/foundation.dart"
+    },
+    {
+      "from": "lib/app/widgets/development_notice.dart",
+      "kind": "import",
+      "to": "package:flutter/material.dart"
+    },
+    {
+      "from": "lib/app/widgets/development_notice.dart",
+      "kind": "import",
+      "to": "lib/shared/design_system/components.dart"
+    },
+    {
+      "from": "lib/app/widgets/development_notice.dart",
+      "kind": "import",
+      "to": "lib/app/l10n/app_localizations.dart"
+    },
+    {
+      "from": "lib/bootstrap.dart",
+      "kind": "import",
+      "to": "dart:async"
+    },
+    {
+      "from": "lib/bootstrap.dart",
+      "kind": "import",
+      "to": "dart:io"
+    },
+    {
+      "from": "lib/bootstrap.dart",
+      "kind": "import",
+      "to": "package:flutter/material.dart"
+    },
+    {
+      "from": "lib/bootstrap.dart",
+      "kind": "import",
+      "to": "package:flutter_riverpod/flutter_riverpod.dart"
+    },
+    {
+      "from": "lib/bootstrap.dart",
+      "kind": "import",
+      "to": "package:path_provider/path_provider.dart"
+    },
+    {
+      "from": "lib/bootstrap.dart",
+      "kind": "import",
+      "to": "lib/app/app.dart"
+    },
+    {
+      "from": "lib/bootstrap.dart",
+      "kind": "import",
+      "to": "lib/app/l10n/app_localizations.dart"
+    },
+    {
+      "from": "lib/bootstrap.dart",
+      "kind": "import",
+      "to": "lib/core/data/local_failure.dart"
+    },
+    {
+      "from": "lib/bootstrap.dart",
+      "kind": "import",
+      "to": "lib/core/data/storage.dart"
+    },
+    {
+      "from": "lib/bootstrap.dart",
+      "kind": "import",
+      "to": "lib/core/data/storage_protection.dart"
+    },
+    {
+      "from": "lib/bootstrap.dart",
+      "kind": "import",
+      "to": "lib/features/practice/presentation/practice_providers.dart"
+    },
+    {
+      "from": "lib/bootstrap.dart",
+      "kind": "import",
+      "to": "lib/features/practice/domain/practice_engine.dart"
+    },
+    {
+      "from": "lib/bootstrap.dart",
+      "kind": "import",
+      "to": "lib/features/settings/data/file_preferences_repository.dart"
+    },
+    {
+      "from": "lib/bootstrap.dart",
+      "kind": "import",
+      "to": "lib/features/settings/domain/preferences.dart"
+    },
+    {
+      "from": "lib/bootstrap.dart",
+      "kind": "import",
+      "to": "lib/features/settings/presentation/preferences_controller.dart"
+    },
+    {
+      "from": "lib/bootstrap.dart",
+      "kind": "import",
+      "to": "lib/shared/design_system/components.dart"
+    },
+    {
+      "from": "lib/bootstrap.dart",
+      "kind": "import",
+      "to": "lib/shared/design_system/tokens.dart"
+    },
+    {
+      "from": "lib/core/data/database/loop_database.dart",
+      "kind": "import",
+      "to": "package:drift/drift.dart"
+    },
+    {
+      "from": "lib/core/data/database/loop_database.dart",
+      "kind": "import",
+      "to": "lib/core/data/local_failure.dart"
+    },
+    {
+      "from": "lib/core/data/database/loop_database.dart",
+      "kind": "import",
+      "to": "lib/core/data/database/utc_datetime.dart"
+    },
+    {
+      "from": "lib/core/data/database/open_database.dart",
+      "kind": "import",
+      "to": "package:drift/native.dart"
+    },
+    {
+      "from": "lib/core/data/database/open_database.dart",
+      "kind": "import",
+      "to": "package:sqlite3/sqlite3.dart"
+    },
+    {
+      "from": "lib/core/data/database/open_database.dart",
+      "kind": "import",
+      "to": "lib/core/media/private_files.dart"
+    },
+    {
+      "from": "lib/core/data/database/open_database.dart",
+      "kind": "import",
+      "to": "lib/core/data/local_failure.dart"
+    },
+    {
+      "from": "lib/core/data/database/open_database.dart",
+      "kind": "import",
+      "to": "lib/core/data/database/loop_database.dart"
+    },
+    {
+      "from": "lib/core/data/database/utc_datetime.dart",
+      "kind": "import",
+      "to": "package:drift/drift.dart"
+    },
+    {
+      "from": "lib/core/data/local_failure.dart",
+      "kind": "import",
+      "to": "dart:async"
+    },
+    {
+      "from": "lib/core/data/local_failure.dart",
+      "kind": "import",
+      "to": "dart:io"
+    },
+    {
+      "from": "lib/core/data/local_failure.dart",
+      "kind": "import",
+      "to": "package:drift/drift.dart"
+    },
+    {
+      "from": "lib/core/data/local_failure.dart",
+      "kind": "import",
+      "to": "package:drift/isolate.dart"
+    },
+    {
+      "from": "lib/core/data/local_failure.dart",
+      "kind": "import",
+      "to": "package:sqlite3/common.dart"
+    },
+    {
+      "from": "lib/core/data/settings_repository.dart",
+      "kind": "import",
+      "to": "dart:convert"
+    },
+    {
+      "from": "lib/core/data/settings_repository.dart",
+      "kind": "import",
+      "to": "lib/core/data/database/loop_database.dart"
+    },
+    {
+      "from": "lib/core/data/settings_repository.dart",
+      "kind": "import",
+      "to": "lib/core/data/local_failure.dart"
+    },
+    {
+      "from": "lib/core/data/settings_repository.dart",
+      "kind": "import",
+      "to": "lib/core/data/validation.dart"
+    },
+    {
+      "from": "lib/core/data/storage.dart",
+      "kind": "import",
+      "to": "dart:io"
+    },
+    {
+      "from": "lib/core/data/storage.dart",
+      "kind": "import",
+      "to": "package:flutter_riverpod/flutter_riverpod.dart"
+    },
+    {
+      "from": "lib/core/data/storage.dart",
+      "kind": "import",
+      "to": "lib/features/practice/data/sessions_repository.dart"
+    },
+    {
+      "from": "lib/core/data/storage.dart",
+      "kind": "import",
+      "to": "lib/features/progress/data/metrics_repository.dart"
+    },
+    {
+      "from": "lib/core/data/storage.dart",
+      "kind": "import",
+      "to": "lib/features/reminders/data/reminders_repository.dart"
+    },
+    {
+      "from": "lib/core/data/storage.dart",
+      "kind": "import",
+      "to": "lib/features/settings/data/database_preferences_repository.dart"
+    },
+    {
+      "from": "lib/core/data/storage.dart",
+      "kind": "import",
+      "to": "lib/features/skills/data/skills_repository.dart"
+    },
+    {
+      "from": "lib/core/data/storage.dart",
+      "kind": "import",
+      "to": "lib/features/skills/data/skill_management_repository.dart"
+    },
+    {
+      "from": "lib/core/data/storage.dart",
+      "kind": "import",
+      "to": "lib/core/media/media_repository.dart"
+    },
+    {
+      "from": "lib/core/data/storage.dart",
+      "kind": "import",
+      "to": "lib/core/media/private_files.dart"
+    },
+    {
+      "from": "lib/core/data/storage.dart",
+      "kind": "import",
+      "to": "lib/core/data/database/loop_database.dart"
+    },
+    {
+      "from": "lib/core/data/storage.dart",
+      "kind": "import",
+      "to": "lib/core/data/database/open_database.dart"
+    },
+    {
+      "from": "lib/core/data/storage.dart",
+      "kind": "import",
+      "to": "lib/core/data/settings_repository.dart"
+    },
+    {
+      "from": "lib/core/data/storage_protection.dart",
+      "kind": "import",
+      "to": "dart:io"
+    },
+    {
+      "from": "lib/core/data/storage_protection.dart",
+      "kind": "import",
+      "to": "package:flutter/services.dart"
+    },
+    {
+      "from": "lib/core/data/storage_protection.dart",
+      "kind": "import",
+      "to": "lib/core/data/local_failure.dart"
+    },
+    {
+      "from": "lib/core/data/validation.dart",
+      "kind": "import",
+      "to": "package:characters/characters.dart"
+    },
+    {
+      "from": "lib/core/data/validation.dart",
+      "kind": "import",
+      "to": "package:uuid/uuid.dart"
+    },
+    {
+      "from": "lib/core/data/validation.dart",
+      "kind": "import",
+      "to": "lib/core/data/local_failure.dart"
+    },
+    {
+      "from": "lib/core/media/media_repository.dart",
+      "kind": "import",
+      "to": "package:drift/drift.dart"
+    },
+    {
+      "from": "lib/core/media/media_repository.dart",
+      "kind": "import",
+      "to": "lib/core/data/database/loop_database.dart"
+    },
+    {
+      "from": "lib/core/media/media_repository.dart",
+      "kind": "import",
+      "to": "lib/core/data/local_failure.dart"
+    },
+    {
+      "from": "lib/core/media/media_repository.dart",
+      "kind": "import",
+      "to": "lib/core/data/validation.dart"
+    },
+    {
+      "from": "lib/core/media/media_repository.dart",
+      "kind": "import",
+      "to": "lib/core/media/private_files.dart"
+    },
+    {
+      "from": "lib/core/media/private_files.dart",
+      "kind": "import",
+      "to": "dart:io"
+    },
+    {
+      "from": "lib/core/media/private_files.dart",
+      "kind": "import",
+      "to": "package:crypto/crypto.dart"
+    },
+    {
+      "from": "lib/core/media/private_files.dart",
+      "kind": "import",
+      "to": "package:path/path.dart"
+    },
+    {
+      "from": "lib/core/media/private_files.dart",
+      "kind": "import",
+      "to": "package:uuid/uuid.dart"
+    },
+    {
+      "from": "lib/core/media/private_files.dart",
+      "kind": "import",
+      "to": "lib/core/data/local_failure.dart"
+    },
+    {
+      "from": "lib/features/onboarding/presentation/welcome_page.dart",
+      "kind": "import",
+      "to": "package:flutter/material.dart"
+    },
+    {
+      "from": "lib/features/onboarding/presentation/welcome_page.dart",
+      "kind": "import",
+      "to": "package:flutter_riverpod/flutter_riverpod.dart"
+    },
+    {
+      "from": "lib/features/onboarding/presentation/welcome_page.dart",
+      "kind": "import",
+      "to": "package:go_router/go_router.dart"
+    },
+    {
+      "from": "lib/features/onboarding/presentation/welcome_page.dart",
+      "kind": "import",
+      "to": "lib/app/l10n/app_localizations.dart"
+    },
+    {
+      "from": "lib/features/onboarding/presentation/welcome_page.dart",
+      "kind": "import",
+      "to": "lib/shared/design_system/components.dart"
+    },
+    {
+      "from": "lib/features/onboarding/presentation/welcome_page.dart",
+      "kind": "import",
+      "to": "lib/features/settings/presentation/preferences_controller.dart"
+    },
+    {
+      "from": "lib/features/practice/data/practice_repository.dart",
+      "kind": "import",
+      "to": "package:drift/drift.dart"
+    },
+    {
+      "from": "lib/features/practice/data/practice_repository.dart",
+      "kind": "import",
+      "to": "lib/core/data/database/loop_database.dart"
+    },
+    {
+      "from": "lib/features/practice/data/practice_repository.dart",
+      "kind": "import",
+      "to": "lib/core/data/local_failure.dart"
+    },
+    {
+      "from": "lib/features/practice/data/practice_repository.dart",
+      "kind": "import",
+      "to": "lib/core/data/validation.dart"
+    },
+    {
+      "from": "lib/features/practice/data/practice_repository.dart",
+      "kind": "import",
+      "to": "lib/features/practice/data/sessions_repository.dart"
+    },
+    {
+      "from": "lib/features/practice/data/sessions_repository.dart",
+      "kind": "import",
+      "to": "package:drift/drift.dart"
+    },
+    {
+      "from": "lib/features/practice/data/sessions_repository.dart",
+      "kind": "import",
+      "to": "lib/core/data/database/loop_database.dart"
+    },
+    {
+      "from": "lib/features/practice/data/sessions_repository.dart",
+      "kind": "import",
+      "to": "lib/core/data/local_failure.dart"
+    },
+    {
+      "from": "lib/features/practice/data/sessions_repository.dart",
+      "kind": "import",
+      "to": "lib/core/data/validation.dart"
+    },
+    {
+      "from": "lib/features/practice/domain/practice_engine.dart",
+      "kind": "import",
+      "to": "dart:async"
+    },
+    {
+      "from": "lib/features/practice/domain/practice_engine.dart",
+      "kind": "import",
+      "to": "package:drift/drift.dart"
+    },
+    {
+      "from": "lib/features/practice/domain/practice_engine.dart",
+      "kind": "import",
+      "to": "package:flutter/foundation.dart"
+    },
+    {
+      "from": "lib/features/practice/domain/practice_engine.dart",
+      "kind": "import",
+      "to": "lib/core/data/local_failure.dart"
+    },
+    {
+      "from": "lib/features/practice/domain/practice_engine.dart",
+      "kind": "import",
+      "to": "lib/features/practice/data/practice_repository.dart"
+    },
+    {
+      "from": "lib/features/practice/domain/practice_engine.dart",
+      "kind": "import",
+      "to": "lib/features/practice/data/sessions_repository.dart"
+    },
+    {
+      "from": "lib/features/practice/domain/practice_engine.dart",
+      "kind": "import",
+      "to": "lib/features/practice/domain/practice_clock.dart"
+    },
+    {
+      "from": "lib/features/practice/presentation/active_practice_page.dart",
+      "kind": "import",
+      "to": "package:flutter/material.dart"
+    },
+    {
+      "from": "lib/features/practice/presentation/active_practice_page.dart",
+      "kind": "import",
+      "to": "package:flutter_riverpod/flutter_riverpod.dart"
+    },
+    {
+      "from": "lib/features/practice/presentation/active_practice_page.dart",
+      "kind": "import",
+      "to": "package:go_router/go_router.dart"
+    },
+    {
+      "from": "lib/features/practice/presentation/active_practice_page.dart",
+      "kind": "import",
+      "to": "lib/shared/design_system/components.dart"
+    },
+    {
+      "from": "lib/features/practice/presentation/active_practice_page.dart",
+      "kind": "import",
+      "to": "lib/features/skills/presentation/skill_widgets.dart"
+    },
+    {
+      "from": "lib/features/practice/presentation/active_practice_page.dart",
+      "kind": "import",
+      "to": "lib/features/skills/presentation/skill_providers.dart"
+    },
+    {
+      "from": "lib/features/practice/presentation/active_practice_page.dart",
+      "kind": "import",
+      "to": "lib/features/practice/domain/practice_engine.dart"
+    },
+    {
+      "from": "lib/features/practice/presentation/active_practice_page.dart",
+      "kind": "import",
+      "to": "lib/features/practice/presentation/practice_providers.dart"
+    },
+    {
+      "from": "lib/features/practice/presentation/active_practice_page.dart",
+      "kind": "import",
+      "to": "lib/features/practice/presentation/practice_widgets.dart"
+    },
+    {
+      "from": "lib/features/practice/presentation/active_practice_page.dart",
+      "kind": "import",
+      "to": "lib/features/practice/presentation/manual_practice_page.dart"
+    },
+    {
+      "from": "lib/features/practice/presentation/manual_practice_page.dart",
+      "kind": "import",
+      "to": "package:flutter/material.dart"
+    },
+    {
+      "from": "lib/features/practice/presentation/manual_practice_page.dart",
+      "kind": "import",
+      "to": "package:flutter_riverpod/flutter_riverpod.dart"
+    },
+    {
+      "from": "lib/features/practice/presentation/manual_practice_page.dart",
+      "kind": "import",
+      "to": "package:go_router/go_router.dart"
+    },
+    {
+      "from": "lib/features/practice/presentation/manual_practice_page.dart",
+      "kind": "import",
+      "to": "lib/shared/design_system/components.dart"
+    },
+    {
+      "from": "lib/features/practice/presentation/manual_practice_page.dart",
+      "kind": "import",
+      "to": "lib/features/skills/presentation/skill_widgets.dart"
+    },
+    {
+      "from": "lib/features/practice/presentation/manual_practice_page.dart",
+      "kind": "import",
+      "to": "lib/features/practice/data/practice_repository.dart"
+    },
+    {
+      "from": "lib/features/practice/presentation/manual_practice_page.dart",
+      "kind": "import",
+      "to": "lib/features/practice/domain/practice_engine.dart"
+    },
+    {
+      "from": "lib/features/practice/presentation/manual_practice_page.dart",
+      "kind": "import",
+      "to": "lib/features/practice/presentation/practice_providers.dart"
+    },
+    {
+      "from": "lib/features/practice/presentation/practice_pages.dart",
+      "kind": "export",
+      "to": "lib/features/practice/presentation/active_practice_page.dart"
+    },
+    {
+      "from": "lib/features/practice/presentation/practice_pages.dart",
+      "kind": "export",
+      "to": "lib/features/practice/presentation/manual_practice_page.dart"
+    },
+    {
+      "from": "lib/features/practice/presentation/practice_pages.dart",
+      "kind": "export",
+      "to": "lib/features/practice/presentation/practice_setup_page.dart"
+    },
+    {
+      "from": "lib/features/practice/presentation/practice_pages.dart",
+      "kind": "export",
+      "to": "lib/features/practice/presentation/saved_practice_page.dart"
+    },
+    {
+      "from": "lib/features/practice/presentation/practice_pages.dart",
+      "kind": "export",
+      "to": "lib/features/practice/presentation/practice_widgets.dart"
+    },
+    {
+      "from": "lib/features/practice/presentation/practice_providers.dart",
+      "kind": "import",
+      "to": "dart:async"
+    },
+    {
+      "from": "lib/features/practice/presentation/practice_providers.dart",
+      "kind": "import",
+      "to": "package:flutter/widgets.dart"
+    },
+    {
+      "from": "lib/features/practice/presentation/practice_providers.dart",
+      "kind": "import",
+      "to": "package:flutter_riverpod/flutter_riverpod.dart"
+    },
+    {
+      "from": "lib/features/practice/presentation/practice_providers.dart",
+      "kind": "import",
+      "to": "lib/core/data/storage.dart"
+    },
+    {
+      "from": "lib/features/practice/presentation/practice_providers.dart",
+      "kind": "import",
+      "to": "lib/features/practice/data/practice_repository.dart"
+    },
+    {
+      "from": "lib/features/practice/presentation/practice_providers.dart",
+      "kind": "import",
+      "to": "lib/features/practice/domain/practice_engine.dart"
+    },
+    {
+      "from": "lib/features/practice/presentation/practice_providers.dart",
+      "kind": "import",
+      "to": "lib/features/practice/domain/practice_clock.dart"
+    },
+    {
+      "from": "lib/features/practice/presentation/practice_setup_page.dart",
+      "kind": "import",
+      "to": "package:flutter/material.dart"
+    },
+    {
+      "from": "lib/features/practice/presentation/practice_setup_page.dart",
+      "kind": "import",
+      "to": "package:flutter_riverpod/flutter_riverpod.dart"
+    },
+    {
+      "from": "lib/features/practice/presentation/practice_setup_page.dart",
+      "kind": "import",
+      "to": "package:go_router/go_router.dart"
+    },
+    {
+      "from": "lib/features/practice/presentation/practice_setup_page.dart",
+      "kind": "import",
+      "to": "lib/shared/design_system/components.dart"
+    },
+    {
+      "from": "lib/features/practice/presentation/practice_setup_page.dart",
+      "kind": "import",
+      "to": "lib/features/skills/presentation/skill_widgets.dart"
+    },
+    {
+      "from": "lib/features/practice/presentation/practice_setup_page.dart",
+      "kind": "import",
+      "to": "lib/features/skills/presentation/skill_providers.dart"
+    },
+    {
+      "from": "lib/features/practice/presentation/practice_setup_page.dart",
+      "kind": "import",
+      "to": "lib/features/practice/data/sessions_repository.dart"
+    },
+    {
+      "from": "lib/features/practice/presentation/practice_setup_page.dart",
+      "kind": "import",
+      "to": "lib/features/practice/domain/practice_engine.dart"
+    },
+    {
+      "from": "lib/features/practice/presentation/practice_setup_page.dart",
+      "kind": "import",
+      "to": "lib/features/practice/presentation/practice_providers.dart"
+    },
+    {
+      "from": "lib/features/practice/presentation/practice_setup_page.dart",
+      "kind": "import",
+      "to": "lib/features/practice/presentation/practice_widgets.dart"
+    },
+    {
+      "from": "lib/features/practice/presentation/practice_widgets.dart",
+      "kind": "import",
+      "to": "package:flutter/material.dart"
+    },
+    {
+      "from": "lib/features/practice/presentation/practice_widgets.dart",
+      "kind": "import",
+      "to": "package:flutter_riverpod/flutter_riverpod.dart"
+    },
+    {
+      "from": "lib/features/practice/presentation/practice_widgets.dart",
+      "kind": "import",
+      "to": "package:go_router/go_router.dart"
+    },
+    {
+      "from": "lib/features/practice/presentation/practice_widgets.dart",
+      "kind": "import",
+      "to": "lib/shared/design_system/components.dart"
+    },
+    {
+      "from": "lib/features/practice/presentation/practice_widgets.dart",
+      "kind": "import",
+      "to": "lib/features/skills/presentation/skill_widgets.dart"
+    },
+    {
+      "from": "lib/features/practice/presentation/practice_widgets.dart",
+      "kind": "import",
+      "to": "lib/features/practice/domain/practice_engine.dart"
+    },
+    {
+      "from": "lib/features/practice/presentation/practice_widgets.dart",
+      "kind": "import",
+      "to": "lib/features/practice/presentation/practice_providers.dart"
+    },
+    {
+      "from": "lib/features/practice/presentation/saved_practice_page.dart",
+      "kind": "import",
+      "to": "package:flutter/material.dart"
+    },
+    {
+      "from": "lib/features/practice/presentation/saved_practice_page.dart",
+      "kind": "import",
+      "to": "package:flutter_riverpod/flutter_riverpod.dart"
+    },
+    {
+      "from": "lib/features/practice/presentation/saved_practice_page.dart",
+      "kind": "import",
+      "to": "package:go_router/go_router.dart"
+    },
+    {
+      "from": "lib/features/practice/presentation/saved_practice_page.dart",
+      "kind": "import",
+      "to": "lib/shared/design_system/components.dart"
+    },
+    {
+      "from": "lib/features/practice/presentation/saved_practice_page.dart",
+      "kind": "import",
+      "to": "lib/features/skills/presentation/skill_widgets.dart"
+    },
+    {
+      "from": "lib/features/practice/presentation/saved_practice_page.dart",
+      "kind": "import",
+      "to": "lib/app/screens/foundation_pages.dart"
+    },
+    {
+      "from": "lib/features/practice/presentation/saved_practice_page.dart",
+      "kind": "import",
+      "to": "lib/features/skills/presentation/skill_providers.dart"
+    },
+    {
+      "from": "lib/features/practice/presentation/saved_practice_page.dart",
+      "kind": "import",
+      "to": "lib/features/practice/data/practice_repository.dart"
+    },
+    {
+      "from": "lib/features/practice/presentation/saved_practice_page.dart",
+      "kind": "import",
+      "to": "lib/features/practice/presentation/practice_providers.dart"
+    },
+    {
+      "from": "lib/features/progress/data/metrics_repository.dart",
+      "kind": "import",
+      "to": "package:drift/drift.dart"
+    },
+    {
+      "from": "lib/features/progress/data/metrics_repository.dart",
+      "kind": "import",
+      "to": "lib/core/data/database/loop_database.dart"
+    },
+    {
+      "from": "lib/features/progress/data/metrics_repository.dart",
+      "kind": "import",
+      "to": "lib/core/data/local_failure.dart"
+    },
+    {
+      "from": "lib/features/progress/data/metrics_repository.dart",
+      "kind": "import",
+      "to": "lib/core/data/validation.dart"
+    },
+    {
+      "from": "lib/features/reminders/data/reminders_repository.dart",
+      "kind": "import",
+      "to": "package:drift/drift.dart"
+    },
+    {
+      "from": "lib/features/reminders/data/reminders_repository.dart",
+      "kind": "import",
+      "to": "lib/core/data/database/loop_database.dart"
+    },
+    {
+      "from": "lib/features/reminders/data/reminders_repository.dart",
+      "kind": "import",
+      "to": "lib/core/data/local_failure.dart"
+    },
+    {
+      "from": "lib/features/reminders/data/reminders_repository.dart",
+      "kind": "import",
+      "to": "lib/core/data/validation.dart"
+    },
+    {
+      "from": "lib/features/settings/data/database_preferences_repository.dart",
+      "kind": "import",
+      "to": "dart:io"
+    },
+    {
+      "from": "lib/features/settings/data/database_preferences_repository.dart",
+      "kind": "import",
+      "to": "lib/core/data/database/loop_database.dart"
+    },
+    {
+      "from": "lib/features/settings/data/database_preferences_repository.dart",
+      "kind": "import",
+      "to": "lib/core/data/local_failure.dart"
+    },
+    {
+      "from": "lib/features/settings/data/database_preferences_repository.dart",
+      "kind": "import",
+      "to": "lib/core/data/settings_repository.dart"
+    },
+    {
+      "from": "lib/features/settings/data/database_preferences_repository.dart",
+      "kind": "import",
+      "to": "lib/core/data/validation.dart"
+    },
+    {
+      "from": "lib/features/settings/data/database_preferences_repository.dart",
+      "kind": "import",
+      "to": "lib/features/settings/domain/preferences.dart"
+    },
+    {
+      "from": "lib/features/settings/data/database_preferences_repository.dart",
+      "kind": "import",
+      "to": "lib/features/settings/data/file_preferences_repository.dart"
+    },
+    {
+      "from": "lib/features/settings/data/file_preferences_repository.dart",
+      "kind": "import",
+      "to": "dart:convert"
+    },
+    {
+      "from": "lib/features/settings/data/file_preferences_repository.dart",
+      "kind": "import",
+      "to": "dart:io"
+    },
+    {
+      "from": "lib/features/settings/data/file_preferences_repository.dart",
+      "kind": "import",
+      "to": "lib/features/settings/domain/preferences.dart"
+    },
+    {
+      "from": "lib/features/settings/presentation/preferences_controller.dart",
+      "kind": "import",
+      "to": "package:flutter_riverpod/flutter_riverpod.dart"
+    },
+    {
+      "from": "lib/features/settings/presentation/preferences_controller.dart",
+      "kind": "import",
+      "to": "lib/features/settings/domain/preferences.dart"
+    },
+    {
+      "from": "lib/features/settings/presentation/settings_page.dart",
+      "kind": "import",
+      "to": "package:flutter/material.dart"
+    },
+    {
+      "from": "lib/features/settings/presentation/settings_page.dart",
+      "kind": "import",
+      "to": "package:flutter_riverpod/flutter_riverpod.dart"
+    },
+    {
+      "from": "lib/features/settings/presentation/settings_page.dart",
+      "kind": "import",
+      "to": "package:go_router/go_router.dart"
+    },
+    {
+      "from": "lib/features/settings/presentation/settings_page.dart",
+      "kind": "import",
+      "to": "lib/app/build_info.dart"
+    },
+    {
+      "from": "lib/features/settings/presentation/settings_page.dart",
+      "kind": "import",
+      "to": "lib/app/l10n/app_localizations.dart"
+    },
+    {
+      "from": "lib/features/settings/presentation/settings_page.dart",
+      "kind": "import",
+      "to": "lib/shared/design_system/components.dart"
+    },
+    {
+      "from": "lib/features/settings/presentation/settings_page.dart",
+      "kind": "import",
+      "to": "lib/features/settings/domain/preferences.dart"
+    },
+    {
+      "from": "lib/features/settings/presentation/settings_page.dart",
+      "kind": "import",
+      "to": "lib/features/settings/presentation/preferences_controller.dart"
+    },
+    {
+      "from": "lib/features/skills/data/skill_management_repository.dart",
+      "kind": "import",
+      "to": "package:drift/drift.dart"
+    },
+    {
+      "from": "lib/features/skills/data/skill_management_repository.dart",
+      "kind": "import",
+      "to": "lib/core/data/database/loop_database.dart"
+    },
+    {
+      "from": "lib/features/skills/data/skill_management_repository.dart",
+      "kind": "import",
+      "to": "lib/core/data/local_failure.dart"
+    },
+    {
+      "from": "lib/features/skills/data/skill_management_repository.dart",
+      "kind": "import",
+      "to": "lib/core/data/validation.dart"
+    },
+    {
+      "from": "lib/features/skills/data/skill_management_repository.dart",
+      "kind": "import",
+      "to": "lib/features/progress/data/metrics_repository.dart"
+    },
+    {
+      "from": "lib/features/skills/data/skill_management_repository.dart",
+      "kind": "import",
+      "to": "lib/features/skills/domain/skill_draft.dart"
+    },
+    {
+      "from": "lib/features/skills/data/skill_management_repository.dart",
+      "kind": "import",
+      "to": "lib/features/skills/domain/goal_rules.dart"
+    },
+    {
+      "from": "lib/features/skills/data/skill_management_repository.dart",
+      "kind": "import",
+      "to": "lib/features/skills/domain/goal_measure.dart"
+    },
+    {
+      "from": "lib/features/skills/data/skill_management_repository.dart",
+      "kind": "import",
+      "to": "lib/features/skills/domain/starter_catalog.dart"
+    },
+    {
+      "from": "lib/features/skills/data/skill_management_repository.dart",
+      "kind": "import",
+      "to": "lib/features/skills/data/skills_repository.dart"
+    },
+    {
+      "from": "lib/features/skills/data/skills_repository.dart",
+      "kind": "import",
+      "to": "package:drift/drift.dart"
+    },
+    {
+      "from": "lib/features/skills/data/skills_repository.dart",
+      "kind": "import",
+      "to": "lib/core/data/database/loop_database.dart"
+    },
+    {
+      "from": "lib/features/skills/data/skills_repository.dart",
+      "kind": "import",
+      "to": "lib/core/data/local_failure.dart"
+    },
+    {
+      "from": "lib/features/skills/data/skills_repository.dart",
+      "kind": "import",
+      "to": "lib/core/data/validation.dart"
+    },
+    {
+      "from": "lib/features/skills/data/skills_repository.dart",
+      "kind": "import",
+      "to": "lib/features/skills/domain/skill_kind.dart"
+    },
+    {
+      "from": "lib/features/skills/data/skills_repository.dart",
+      "kind": "export",
+      "to": "lib/features/skills/domain/skill_kind.dart"
+    },
+    {
+      "from": "lib/features/skills/domain/goal_measure.dart",
+      "kind": "import",
+      "to": "lib/core/data/local_failure.dart"
+    },
+    {
+      "from": "lib/features/skills/domain/goal_measure.dart",
+      "kind": "import",
+      "to": "lib/core/data/validation.dart"
+    },
+    {
+      "from": "lib/features/skills/domain/goal_rules.dart",
+      "kind": "import",
+      "to": "lib/core/data/database/loop_database.dart"
+    },
+    {
+      "from": "lib/features/skills/domain/goal_rules.dart",
+      "kind": "import",
+      "to": "lib/core/data/local_failure.dart"
+    },
+    {
+      "from": "lib/features/skills/domain/goal_rules.dart",
+      "kind": "import",
+      "to": "lib/core/data/validation.dart"
+    },
+    {
+      "from": "lib/features/skills/domain/skill_draft.dart",
+      "kind": "import",
+      "to": "lib/core/data/local_failure.dart"
+    },
+    {
+      "from": "lib/features/skills/domain/skill_draft.dart",
+      "kind": "import",
+      "to": "lib/core/data/validation.dart"
+    },
+    {
+      "from": "lib/features/skills/domain/skill_draft.dart",
+      "kind": "import",
+      "to": "lib/features/skills/domain/skill_kind.dart"
+    },
+    {
+      "from": "lib/features/skills/domain/skill_draft.dart",
+      "kind": "import",
+      "to": "lib/features/skills/domain/starter_catalog.dart"
+    },
+    {
+      "from": "lib/features/skills/domain/starter_catalog.dart",
+      "kind": "import",
+      "to": "lib/features/skills/domain/skill_kind.dart"
+    },
+    {
+      "from": "lib/features/skills/presentation/exercise_editor_page.dart",
+      "kind": "import",
+      "to": "package:flutter/material.dart"
+    },
+    {
+      "from": "lib/features/skills/presentation/exercise_editor_page.dart",
+      "kind": "import",
+      "to": "package:flutter_riverpod/flutter_riverpod.dart"
+    },
+    {
+      "from": "lib/features/skills/presentation/exercise_editor_page.dart",
+      "kind": "import",
+      "to": "package:go_router/go_router.dart"
+    },
+    {
+      "from": "lib/features/skills/presentation/exercise_editor_page.dart",
+      "kind": "import",
+      "to": "lib/app/screens/foundation_pages.dart"
+    },
+    {
+      "from": "lib/features/skills/presentation/exercise_editor_page.dart",
+      "kind": "import",
+      "to": "lib/core/data/database/loop_database.dart"
+    },
+    {
+      "from": "lib/features/skills/presentation/exercise_editor_page.dart",
+      "kind": "import",
+      "to": "lib/shared/design_system/components.dart"
+    },
+    {
+      "from": "lib/features/skills/presentation/exercise_editor_page.dart",
+      "kind": "import",
+      "to": "lib/features/skills/presentation/skill_providers.dart"
+    },
+    {
+      "from": "lib/features/skills/presentation/exercise_editor_page.dart",
+      "kind": "import",
+      "to": "lib/features/skills/presentation/skill_widgets.dart"
+    },
+    {
+      "from": "lib/features/skills/presentation/goal_editor_page.dart",
+      "kind": "import",
+      "to": "package:flutter/material.dart"
+    },
+    {
+      "from": "lib/features/skills/presentation/goal_editor_page.dart",
+      "kind": "import",
+      "to": "package:flutter_riverpod/flutter_riverpod.dart"
+    },
+    {
+      "from": "lib/features/skills/presentation/goal_editor_page.dart",
+      "kind": "import",
+      "to": "package:go_router/go_router.dart"
+    },
+    {
+      "from": "lib/features/skills/presentation/goal_editor_page.dart",
+      "kind": "import",
+      "to": "lib/app/screens/foundation_pages.dart"
+    },
+    {
+      "from": "lib/features/skills/presentation/goal_editor_page.dart",
+      "kind": "import",
+      "to": "lib/core/data/database/loop_database.dart"
+    },
+    {
+      "from": "lib/features/skills/presentation/goal_editor_page.dart",
+      "kind": "import",
+      "to": "lib/shared/design_system/components.dart"
+    },
+    {
+      "from": "lib/features/skills/presentation/goal_editor_page.dart",
+      "kind": "import",
+      "to": "lib/features/skills/data/skill_management_repository.dart"
+    },
+    {
+      "from": "lib/features/skills/presentation/goal_editor_page.dart",
+      "kind": "import",
+      "to": "lib/features/skills/domain/goal_measure.dart"
+    },
+    {
+      "from": "lib/features/skills/presentation/goal_editor_page.dart",
+      "kind": "import",
+      "to": "lib/features/skills/domain/goal_rules.dart"
+    },
+    {
+      "from": "lib/features/skills/presentation/goal_editor_page.dart",
+      "kind": "import",
+      "to": "lib/features/skills/presentation/skill_providers.dart"
+    },
+    {
+      "from": "lib/features/skills/presentation/goal_editor_page.dart",
+      "kind": "import",
+      "to": "lib/features/skills/presentation/skill_widgets.dart"
+    },
+    {
+      "from": "lib/features/skills/presentation/skill_detail_page.dart",
+      "kind": "import",
+      "to": "package:flutter/material.dart"
+    },
+    {
+      "from": "lib/features/skills/presentation/skill_detail_page.dart",
+      "kind": "import",
+      "to": "package:flutter_riverpod/flutter_riverpod.dart"
+    },
+    {
+      "from": "lib/features/skills/presentation/skill_detail_page.dart",
+      "kind": "import",
+      "to": "package:go_router/go_router.dart"
+    },
+    {
+      "from": "lib/features/skills/presentation/skill_detail_page.dart",
+      "kind": "import",
+      "to": "lib/app/screens/foundation_pages.dart"
+    },
+    {
+      "from": "lib/features/skills/presentation/skill_detail_page.dart",
+      "kind": "import",
+      "to": "lib/core/data/database/loop_database.dart"
+    },
+    {
+      "from": "lib/features/skills/presentation/skill_detail_page.dart",
+      "kind": "import",
+      "to": "lib/shared/design_system/components.dart"
+    },
+    {
+      "from": "lib/features/skills/presentation/skill_detail_page.dart",
+      "kind": "import",
+      "to": "lib/features/skills/data/skill_management_repository.dart"
+    },
+    {
+      "from": "lib/features/skills/presentation/skill_detail_page.dart",
+      "kind": "import",
+      "to": "lib/features/skills/domain/goal_rules.dart"
+    },
+    {
+      "from": "lib/features/skills/presentation/skill_detail_page.dart",
+      "kind": "import",
+      "to": "lib/features/skills/domain/skill_kind.dart"
+    },
+    {
+      "from": "lib/features/skills/presentation/skill_detail_page.dart",
+      "kind": "import",
+      "to": "lib/features/skills/domain/starter_catalog.dart"
+    },
+    {
+      "from": "lib/features/skills/presentation/skill_detail_page.dart",
+      "kind": "import",
+      "to": "lib/features/skills/presentation/skill_providers.dart"
+    },
+    {
+      "from": "lib/features/skills/presentation/skill_detail_page.dart",
+      "kind": "import",
+      "to": "lib/features/skills/presentation/skill_widgets.dart"
+    },
+    {
+      "from": "lib/features/skills/presentation/skill_editor_page.dart",
+      "kind": "import",
+      "to": "package:flutter/material.dart"
+    },
+    {
+      "from": "lib/features/skills/presentation/skill_editor_page.dart",
+      "kind": "import",
+      "to": "package:flutter_riverpod/flutter_riverpod.dart"
+    },
+    {
+      "from": "lib/features/skills/presentation/skill_editor_page.dart",
+      "kind": "import",
+      "to": "package:go_router/go_router.dart"
+    },
+    {
+      "from": "lib/features/skills/presentation/skill_editor_page.dart",
+      "kind": "import",
+      "to": "lib/app/screens/foundation_pages.dart"
+    },
+    {
+      "from": "lib/features/skills/presentation/skill_editor_page.dart",
+      "kind": "import",
+      "to": "lib/core/data/database/loop_database.dart"
+    },
+    {
+      "from": "lib/features/skills/presentation/skill_editor_page.dart",
+      "kind": "import",
+      "to": "lib/shared/design_system/components.dart"
+    },
+    {
+      "from": "lib/features/skills/presentation/skill_editor_page.dart",
+      "kind": "import",
+      "to": "lib/features/skills/domain/skill_draft.dart"
+    },
+    {
+      "from": "lib/features/skills/presentation/skill_editor_page.dart",
+      "kind": "import",
+      "to": "lib/features/skills/domain/skill_kind.dart"
+    },
+    {
+      "from": "lib/features/skills/presentation/skill_editor_page.dart",
+      "kind": "import",
+      "to": "lib/features/skills/domain/starter_catalog.dart"
+    },
+    {
+      "from": "lib/features/skills/presentation/skill_editor_page.dart",
+      "kind": "import",
+      "to": "lib/features/skills/presentation/skill_providers.dart"
+    },
+    {
+      "from": "lib/features/skills/presentation/skill_editor_page.dart",
+      "kind": "import",
+      "to": "lib/features/skills/presentation/skill_widgets.dart"
+    },
+    {
+      "from": "lib/features/skills/presentation/skill_providers.dart",
+      "kind": "import",
+      "to": "package:flutter_riverpod/flutter_riverpod.dart"
+    },
+    {
+      "from": "lib/features/skills/presentation/skill_providers.dart",
+      "kind": "import",
+      "to": "lib/core/data/storage.dart"
+    },
+    {
+      "from": "lib/features/skills/presentation/skill_providers.dart",
+      "kind": "import",
+      "to": "lib/features/skills/data/skill_management_repository.dart"
+    },
+    {
+      "from": "lib/features/skills/presentation/skill_widgets.dart",
+      "kind": "import",
+      "to": "package:flutter/material.dart"
+    },
+    {
+      "from": "lib/features/skills/presentation/skill_widgets.dart",
+      "kind": "import",
+      "to": "lib/core/data/local_failure.dart"
+    },
+    {
+      "from": "lib/features/skills/presentation/skill_widgets.dart",
+      "kind": "import",
+      "to": "lib/shared/design_system/components.dart"
+    },
+    {
+      "from": "lib/features/skills/presentation/skill_widgets.dart",
+      "kind": "import",
+      "to": "lib/shared/design_system/tokens.dart"
+    },
+    {
+      "from": "lib/features/skills/presentation/skill_widgets.dart",
+      "kind": "import",
+      "to": "lib/features/skills/domain/goal_rules.dart"
+    },
+    {
+      "from": "lib/features/skills/presentation/skills_page.dart",
+      "kind": "import",
+      "to": "package:flutter/material.dart"
+    },
+    {
+      "from": "lib/features/skills/presentation/skills_page.dart",
+      "kind": "import",
+      "to": "package:flutter_riverpod/flutter_riverpod.dart"
+    },
+    {
+      "from": "lib/features/skills/presentation/skills_page.dart",
+      "kind": "import",
+      "to": "package:go_router/go_router.dart"
+    },
+    {
+      "from": "lib/features/skills/presentation/skills_page.dart",
+      "kind": "import",
+      "to": "lib/shared/design_system/components.dart"
+    },
+    {
+      "from": "lib/features/skills/presentation/skills_page.dart",
+      "kind": "import",
+      "to": "lib/features/practice/presentation/practice_pages.dart"
+    },
+    {
+      "from": "lib/features/skills/presentation/skills_page.dart",
+      "kind": "import",
+      "to": "lib/features/skills/data/skill_management_repository.dart"
+    },
+    {
+      "from": "lib/features/skills/presentation/skills_page.dart",
+      "kind": "import",
+      "to": "lib/features/skills/domain/skill_kind.dart"
+    },
+    {
+      "from": "lib/features/skills/presentation/skills_page.dart",
+      "kind": "import",
+      "to": "lib/features/skills/domain/starter_catalog.dart"
+    },
+    {
+      "from": "lib/features/skills/presentation/skills_page.dart",
+      "kind": "import",
+      "to": "lib/features/skills/presentation/skill_providers.dart"
+    },
+    {
+      "from": "lib/features/skills/presentation/skills_page.dart",
+      "kind": "import",
+      "to": "lib/features/skills/presentation/skill_widgets.dart"
+    },
+    {
+      "from": "lib/main.dart",
+      "kind": "import",
+      "to": "package:flutter/material.dart"
+    },
+    {
+      "from": "lib/main.dart",
+      "kind": "import",
+      "to": "lib/bootstrap.dart"
+    },
+    {
+      "from": "lib/main.dart",
+      "kind": "import",
+      "to": "lib/app/licenses.dart"
+    },
+    {
+      "from": "lib/shared/design_system/components.dart",
+      "kind": "import",
+      "to": "dart:math"
+    },
+    {
+      "from": "lib/shared/design_system/components.dart",
+      "kind": "import",
+      "to": "package:flutter/material.dart"
+    },
+    {
+      "from": "lib/shared/design_system/components.dart",
+      "kind": "import",
+      "to": "lib/shared/design_system/tokens.dart"
+    },
+    {
+      "from": "lib/shared/design_system/tokens.dart",
+      "kind": "import",
+      "to": "package:flutter/material.dart"
+    }
+  ],
+  "edgeCount": 306,
+  "localEdgeCount": 205,
+  "packageEdgeCount": 86,
+  "dartEdgeCount": 15,
+  "presentationSqlViolations": [],
+  "transitiveLibConsumersOfDatabaseOrEngine": [
+    "lib/app/app.dart",
+    "lib/app/routing.dart",
+    "lib/bootstrap.dart",
+    "lib/core/data/database/open_database.dart",
+    "lib/core/data/settings_repository.dart",
+    "lib/core/data/storage.dart",
+    "lib/core/media/media_repository.dart",
+    "lib/features/practice/data/practice_repository.dart",
+    "lib/features/practice/data/sessions_repository.dart",
+    "lib/features/practice/domain/practice_engine.dart",
+    "lib/features/practice/presentation/active_practice_page.dart",
+    "lib/features/practice/presentation/manual_practice_page.dart",
+    "lib/features/practice/presentation/practice_pages.dart",
+    "lib/features/practice/presentation/practice_providers.dart",
+    "lib/features/practice/presentation/practice_setup_page.dart",
+    "lib/features/practice/presentation/practice_widgets.dart",
+    "lib/features/practice/presentation/saved_practice_page.dart",
+    "lib/features/progress/data/metrics_repository.dart",
+    "lib/features/reminders/data/reminders_repository.dart",
+    "lib/features/settings/data/database_preferences_repository.dart",
+    "lib/features/skills/data/skill_management_repository.dart",
+    "lib/features/skills/data/skills_repository.dart",
+    "lib/features/skills/domain/goal_rules.dart",
+    "lib/features/skills/presentation/exercise_editor_page.dart",
+    "lib/features/skills/presentation/goal_editor_page.dart",
+    "lib/features/skills/presentation/skill_detail_page.dart",
+    "lib/features/skills/presentation/skill_editor_page.dart",
+    "lib/features/skills/presentation/skill_providers.dart",
+    "lib/features/skills/presentation/skill_widgets.dart",
+    "lib/features/skills/presentation/skills_page.dart",
+    "lib/main.dart"
+  ]
+}

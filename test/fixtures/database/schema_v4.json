@@ -1,0 +1,2316 @@
+{
+  "_meta": {
+    "description": "This file contains a serialized version of schema entities for drift.",
+    "version": "1.3.0"
+  },
+  "options": {
+    "store_date_time_values_as_text": false
+  },
+  "entities": [
+    {
+      "id": 0,
+      "references": [],
+      "type": "table",
+      "data": {
+        "name": "settings",
+        "was_declared_in_moor": true,
+        "columns": [
+          {
+            "name": "key",
+            "getter_name": "key",
+            "moor_type": "string",
+            "nullable": false,
+            "customConstraints": "NOT NULL PRIMARY KEY CHECK (length(\"key\") BETWEEN 1 AND 128)",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": [
+              "primary-key"
+            ]
+          },
+          {
+            "name": "value_json",
+            "getter_name": "valueJson",
+            "moor_type": "string",
+            "nullable": false,
+            "customConstraints": "NOT NULL CHECK (json_valid(value_json))",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "updated_at_utc",
+            "getter_name": "updatedAtUtc",
+            "moor_type": "dateTime",
+            "nullable": false,
+            "customConstraints": "NOT NULL",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": [],
+            "type_converter": {
+              "dart_expr": "const UtcDateTimeConverter()",
+              "dart_type_name": "DateTime"
+            }
+          }
+        ],
+        "is_virtual": false,
+        "without_rowid": false,
+        "constraints": []
+      }
+    },
+    {
+      "id": 1,
+      "references": [],
+      "type": "table",
+      "data": {
+        "name": "skills",
+        "was_declared_in_moor": true,
+        "columns": [
+          {
+            "name": "id",
+            "getter_name": "id",
+            "moor_type": "string",
+            "nullable": false,
+            "customConstraints": "NOT NULL PRIMARY KEY CHECK (length(id) = 36)",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": [
+              "primary-key"
+            ]
+          },
+          {
+            "name": "name",
+            "getter_name": "name",
+            "moor_type": "string",
+            "nullable": false,
+            "customConstraints": "NOT NULL CHECK (length(trim(name)) BETWEEN 1 AND 4096)",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "kind",
+            "getter_name": "kind",
+            "moor_type": "string",
+            "nullable": false,
+            "customConstraints": "NOT NULL CHECK (kind IN ('music', 'drawing', 'language', 'programming', 'voice', 'typing', 'movement', 'custom'))",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "icon_key",
+            "getter_name": "iconKey",
+            "moor_type": "string",
+            "nullable": false,
+            "customConstraints": "NOT NULL",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "accent_key",
+            "getter_name": "accentKey",
+            "moor_type": "string",
+            "nullable": false,
+            "customConstraints": "NOT NULL",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "description",
+            "getter_name": "description",
+            "moor_type": "string",
+            "nullable": true,
+            "customConstraints": "",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "created_at_utc",
+            "getter_name": "createdAtUtc",
+            "moor_type": "dateTime",
+            "nullable": false,
+            "customConstraints": "NOT NULL",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": [],
+            "type_converter": {
+              "dart_expr": "const UtcDateTimeConverter()",
+              "dart_type_name": "DateTime"
+            }
+          },
+          {
+            "name": "updated_at_utc",
+            "getter_name": "updatedAtUtc",
+            "moor_type": "dateTime",
+            "nullable": false,
+            "customConstraints": "NOT NULL",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": [],
+            "type_converter": {
+              "dart_expr": "const UtcDateTimeConverter()",
+              "dart_type_name": "DateTime"
+            }
+          },
+          {
+            "name": "archived_at_utc",
+            "getter_name": "archivedAtUtc",
+            "moor_type": "dateTime",
+            "nullable": true,
+            "customConstraints": "",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": [],
+            "type_converter": {
+              "dart_expr": "const UtcDateTimeConverter()",
+              "dart_type_name": "DateTime"
+            }
+          },
+          {
+            "name": "sort_order",
+            "getter_name": "sortOrder",
+            "moor_type": "int",
+            "nullable": false,
+            "customConstraints": "NOT NULL DEFAULT 0",
+            "default_dart": "const CustomExpression('0')",
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "default_practice_minutes",
+            "getter_name": "defaultPracticeMinutes",
+            "moor_type": "int",
+            "nullable": true,
+            "customConstraints": "CHECK (default_practice_minutes BETWEEN 1 AND 1440)",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          }
+        ],
+        "is_virtual": false,
+        "without_rowid": false,
+        "constraints": []
+      }
+    },
+    {
+      "id": 2,
+      "references": [
+        1
+      ],
+      "type": "table",
+      "data": {
+        "name": "metric_definitions",
+        "was_declared_in_moor": true,
+        "columns": [
+          {
+            "name": "id",
+            "getter_name": "id",
+            "moor_type": "string",
+            "nullable": false,
+            "customConstraints": "NOT NULL CHECK (length(id) = 36)",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "version",
+            "getter_name": "version",
+            "moor_type": "int",
+            "nullable": false,
+            "customConstraints": "NOT NULL CHECK (version >= 1)",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "skill_id",
+            "getter_name": "skillId",
+            "moor_type": "string",
+            "nullable": false,
+            "customConstraints": "NOT NULL REFERENCES skills(id)ON DELETE CASCADE",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": [
+              {
+                "foreign_key": {
+                  "to": {
+                    "table": "skills",
+                    "column": "id"
+                  },
+                  "initially_deferred": false,
+                  "on_update": null,
+                  "on_delete": "cascade"
+                }
+              }
+            ]
+          },
+          {
+            "name": "label",
+            "getter_name": "label",
+            "moor_type": "string",
+            "nullable": false,
+            "customConstraints": "NOT NULL CHECK (length(trim(label)) BETWEEN 1 AND 4096)",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "unit_key",
+            "getter_name": "unitKey",
+            "moor_type": "string",
+            "nullable": false,
+            "customConstraints": "NOT NULL",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "value_type",
+            "getter_name": "valueType",
+            "moor_type": "string",
+            "nullable": false,
+            "customConstraints": "NOT NULL CHECK (value_type IN ('numeric', 'checklist', 'text'))",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "direction",
+            "getter_name": "direction",
+            "moor_type": "string",
+            "nullable": false,
+            "customConstraints": "NOT NULL CHECK (direction IN ('up', 'down', 'toward_target', 'none'))",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "target_value",
+            "getter_name": "targetValue",
+            "moor_type": "double",
+            "nullable": true,
+            "customConstraints": "CHECK (abs(target_value) <= CAST('1.7976931348623157e308' AS REAL))",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "scale_min",
+            "getter_name": "scaleMin",
+            "moor_type": "double",
+            "nullable": true,
+            "customConstraints": "CHECK (abs(scale_min) <= CAST('1.7976931348623157e308' AS REAL))",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "scale_max",
+            "getter_name": "scaleMax",
+            "moor_type": "double",
+            "nullable": true,
+            "customConstraints": "CHECK (abs(scale_max) <= CAST('1.7976931348623157e308' AS REAL))",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "source_hint",
+            "getter_name": "sourceHint",
+            "moor_type": "string",
+            "nullable": false,
+            "customConstraints": "NOT NULL CHECK (source_hint IN ('manual', 'instrument', 'self_rating'))",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "archived_at_utc",
+            "getter_name": "archivedAtUtc",
+            "moor_type": "dateTime",
+            "nullable": true,
+            "customConstraints": "",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": [],
+            "type_converter": {
+              "dart_expr": "const UtcDateTimeConverter()",
+              "dart_type_name": "DateTime"
+            }
+          }
+        ],
+        "is_virtual": false,
+        "without_rowid": false,
+        "constraints": [
+          "PRIMARY KEY(id, version)",
+          "UNIQUE(id, version, skill_id)",
+          "CHECK(scale_min IS NULL OR scale_max IS NULL OR scale_min <= scale_max)",
+          "CHECK(direction != 'toward_target' OR target_value IS NOT NULL)",
+          "CHECK(target_value IS NULL OR((scale_min IS NULL OR target_value >= scale_min)AND(scale_max IS NULL OR target_value <= scale_max)))"
+        ],
+        "explicit_pk": [
+          "id",
+          "version"
+        ],
+        "unique_keys": [
+          [
+            "id",
+            "version",
+            "skill_id"
+          ]
+        ]
+      }
+    },
+    {
+      "id": 3,
+      "references": [
+        1,
+        2
+      ],
+      "type": "table",
+      "data": {
+        "name": "goals",
+        "was_declared_in_moor": true,
+        "columns": [
+          {
+            "name": "id",
+            "getter_name": "id",
+            "moor_type": "string",
+            "nullable": false,
+            "customConstraints": "NOT NULL PRIMARY KEY CHECK (length(id) = 36)",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": [
+              "primary-key"
+            ]
+          },
+          {
+            "name": "skill_id",
+            "getter_name": "skillId",
+            "moor_type": "string",
+            "nullable": false,
+            "customConstraints": "NOT NULL REFERENCES skills(id)ON DELETE CASCADE",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": [
+              {
+                "foreign_key": {
+                  "to": {
+                    "table": "skills",
+                    "column": "id"
+                  },
+                  "initially_deferred": false,
+                  "on_update": null,
+                  "on_delete": "cascade"
+                }
+              }
+            ]
+          },
+          {
+            "name": "title",
+            "getter_name": "title",
+            "moor_type": "string",
+            "nullable": false,
+            "customConstraints": "NOT NULL CHECK (length(trim(title)) BETWEEN 1 AND 4096)",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "type",
+            "getter_name": "type",
+            "moor_type": "string",
+            "nullable": false,
+            "customConstraints": "NOT NULL CHECK (type IN ('cumulative', 'threshold', 'weekly_target', 'deliverable', 'qualitative'))",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "metric_definition_id",
+            "getter_name": "metricDefinitionId",
+            "moor_type": "string",
+            "nullable": true,
+            "customConstraints": "",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "definition_version",
+            "getter_name": "definitionVersion",
+            "moor_type": "int",
+            "nullable": true,
+            "customConstraints": "",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "target_value",
+            "getter_name": "targetValue",
+            "moor_type": "double",
+            "nullable": true,
+            "customConstraints": "CHECK (abs(target_value) <= CAST('1.7976931348623157e308' AS REAL))",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "target_unit",
+            "getter_name": "targetUnit",
+            "moor_type": "string",
+            "nullable": true,
+            "customConstraints": "",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "target_date_local",
+            "getter_name": "targetDateLocal",
+            "moor_type": "string",
+            "nullable": true,
+            "customConstraints": "",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "status",
+            "getter_name": "status",
+            "moor_type": "string",
+            "nullable": false,
+            "customConstraints": "NOT NULL CHECK (status IN ('active', 'completed', 'paused', 'archived'))",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "completed_at_utc",
+            "getter_name": "completedAtUtc",
+            "moor_type": "dateTime",
+            "nullable": true,
+            "customConstraints": "",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": [],
+            "type_converter": {
+              "dart_expr": "const UtcDateTimeConverter()",
+              "dart_type_name": "DateTime"
+            }
+          },
+          {
+            "name": "created_at_utc",
+            "getter_name": "createdAtUtc",
+            "moor_type": "dateTime",
+            "nullable": false,
+            "customConstraints": "NOT NULL",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": [],
+            "type_converter": {
+              "dart_expr": "const UtcDateTimeConverter()",
+              "dart_type_name": "DateTime"
+            }
+          },
+          {
+            "name": "updated_at_utc",
+            "getter_name": "updatedAtUtc",
+            "moor_type": "dateTime",
+            "nullable": false,
+            "customConstraints": "NOT NULL",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": [],
+            "type_converter": {
+              "dart_expr": "const UtcDateTimeConverter()",
+              "dart_type_name": "DateTime"
+            }
+          },
+          {
+            "name": "motivation",
+            "getter_name": "motivation",
+            "moor_type": "string",
+            "nullable": true,
+            "customConstraints": "CHECK (length(motivation) <= 4000)",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          }
+        ],
+        "is_virtual": false,
+        "without_rowid": false,
+        "constraints": [
+          "FOREIGN KEY(metric_definition_id, definition_version, skill_id)REFERENCES metric_definitions(id, version, skill_id)",
+          "CHECK((metric_definition_id IS NULL)=(definition_version IS NULL))",
+          "CHECK((status != 'completed' OR completed_at_utc IS NOT NULL)AND(status IN ('completed', 'archived') OR completed_at_utc IS NULL))",
+          "CHECK(type NOT IN ('cumulative', 'weekly_target') OR(target_value IS NOT NULL AND target_value > 0))",
+          "CHECK(type != 'threshold' OR(target_value IS NOT NULL AND metric_definition_id IS NOT NULL))"
+        ]
+      }
+    },
+    {
+      "id": 4,
+      "references": [
+        1
+      ],
+      "type": "table",
+      "data": {
+        "name": "exercises",
+        "was_declared_in_moor": true,
+        "columns": [
+          {
+            "name": "id",
+            "getter_name": "id",
+            "moor_type": "string",
+            "nullable": false,
+            "customConstraints": "NOT NULL PRIMARY KEY CHECK (length(id) = 36)",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": [
+              "primary-key"
+            ]
+          },
+          {
+            "name": "skill_id",
+            "getter_name": "skillId",
+            "moor_type": "string",
+            "nullable": false,
+            "customConstraints": "NOT NULL REFERENCES skills(id)ON DELETE CASCADE",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": [
+              {
+                "foreign_key": {
+                  "to": {
+                    "table": "skills",
+                    "column": "id"
+                  },
+                  "initially_deferred": false,
+                  "on_update": null,
+                  "on_delete": "cascade"
+                }
+              }
+            ]
+          },
+          {
+            "name": "template_id",
+            "getter_name": "templateId",
+            "moor_type": "string",
+            "nullable": true,
+            "customConstraints": "",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "title",
+            "getter_name": "title",
+            "moor_type": "string",
+            "nullable": false,
+            "customConstraints": "NOT NULL CHECK (length(trim(title)) BETWEEN 1 AND 4096)",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "instructions",
+            "getter_name": "instructions",
+            "moor_type": "string",
+            "nullable": false,
+            "customConstraints": "NOT NULL DEFAULT ''",
+            "default_dart": "const CustomExpression('\\'\\'')",
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "default_seconds",
+            "getter_name": "defaultSeconds",
+            "moor_type": "int",
+            "nullable": true,
+            "customConstraints": "CHECK (default_seconds BETWEEN 0 AND 86400)",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "sort_order",
+            "getter_name": "sortOrder",
+            "moor_type": "int",
+            "nullable": false,
+            "customConstraints": "NOT NULL DEFAULT 0",
+            "default_dart": "const CustomExpression('0')",
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "is_archived",
+            "getter_name": "isArchived",
+            "moor_type": "bool",
+            "nullable": false,
+            "customConstraints": "NOT NULL DEFAULT FALSE CHECK (is_archived IN (0, 1))",
+            "default_dart": "const CustomExpression('FALSE')",
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "created_at_utc",
+            "getter_name": "createdAtUtc",
+            "moor_type": "dateTime",
+            "nullable": false,
+            "customConstraints": "NOT NULL",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": [],
+            "type_converter": {
+              "dart_expr": "const UtcDateTimeConverter()",
+              "dart_type_name": "DateTime"
+            }
+          },
+          {
+            "name": "updated_at_utc",
+            "getter_name": "updatedAtUtc",
+            "moor_type": "dateTime",
+            "nullable": false,
+            "customConstraints": "NOT NULL",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": [],
+            "type_converter": {
+              "dart_expr": "const UtcDateTimeConverter()",
+              "dart_type_name": "DateTime"
+            }
+          }
+        ],
+        "is_virtual": false,
+        "without_rowid": false,
+        "constraints": [
+          "UNIQUE(skill_id, template_id)"
+        ],
+        "unique_keys": [
+          [
+            "skill_id",
+            "template_id"
+          ]
+        ]
+      }
+    },
+    {
+      "id": 5,
+      "references": [
+        4
+      ],
+      "type": "index",
+      "data": {
+        "on": 4,
+        "name": "exercises_skill_sort",
+        "sql": "CREATE INDEX exercises_skill_sort ON exercises(skill_id, sort_order);",
+        "unique": false,
+        "columns": []
+      }
+    },
+    {
+      "id": 6,
+      "references": [
+        1
+      ],
+      "type": "table",
+      "data": {
+        "name": "sessions",
+        "was_declared_in_moor": true,
+        "columns": [
+          {
+            "name": "id",
+            "getter_name": "id",
+            "moor_type": "string",
+            "nullable": false,
+            "customConstraints": "NOT NULL PRIMARY KEY CHECK (length(id) = 36)",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": [
+              "primary-key"
+            ]
+          },
+          {
+            "name": "skill_id",
+            "getter_name": "skillId",
+            "moor_type": "string",
+            "nullable": false,
+            "customConstraints": "NOT NULL REFERENCES skills(id)ON DELETE CASCADE",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": [
+              {
+                "foreign_key": {
+                  "to": {
+                    "table": "skills",
+                    "column": "id"
+                  },
+                  "initially_deferred": false,
+                  "on_update": null,
+                  "on_delete": "cascade"
+                }
+              }
+            ]
+          },
+          {
+            "name": "started_at_utc",
+            "getter_name": "startedAtUtc",
+            "moor_type": "dateTime",
+            "nullable": true,
+            "customConstraints": "",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": [],
+            "type_converter": {
+              "dart_expr": "const UtcDateTimeConverter()",
+              "dart_type_name": "DateTime"
+            }
+          },
+          {
+            "name": "ended_at_utc",
+            "getter_name": "endedAtUtc",
+            "moor_type": "dateTime",
+            "nullable": true,
+            "customConstraints": "",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": [],
+            "type_converter": {
+              "dart_expr": "const UtcDateTimeConverter()",
+              "dart_type_name": "DateTime"
+            }
+          },
+          {
+            "name": "active_seconds",
+            "getter_name": "activeSeconds",
+            "moor_type": "int",
+            "nullable": false,
+            "customConstraints": "NOT NULL DEFAULT 0 CHECK (active_seconds >= 0)",
+            "default_dart": "const CustomExpression('0')",
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "entry_mode",
+            "getter_name": "entryMode",
+            "moor_type": "string",
+            "nullable": false,
+            "customConstraints": "NOT NULL CHECK (entry_mode IN ('timed', 'manual'))",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "manual_intent",
+            "getter_name": "manualIntent",
+            "moor_type": "string",
+            "nullable": true,
+            "customConstraints": "CHECK (manual_intent IN ('duration', 'evidence_only'))",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "status",
+            "getter_name": "status",
+            "moor_type": "string",
+            "nullable": false,
+            "customConstraints": "NOT NULL CHECK (status IN ('draft', 'running', 'paused', 'completed', 'discarded'))",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "interruption_reason",
+            "getter_name": "interruptionReason",
+            "moor_type": "string",
+            "nullable": true,
+            "customConstraints": "",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "created_at_utc",
+            "getter_name": "createdAtUtc",
+            "moor_type": "dateTime",
+            "nullable": false,
+            "customConstraints": "NOT NULL",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": [],
+            "type_converter": {
+              "dart_expr": "const UtcDateTimeConverter()",
+              "dart_type_name": "DateTime"
+            }
+          },
+          {
+            "name": "updated_at_utc",
+            "getter_name": "updatedAtUtc",
+            "moor_type": "dateTime",
+            "nullable": false,
+            "customConstraints": "NOT NULL",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": [],
+            "type_converter": {
+              "dart_expr": "const UtcDateTimeConverter()",
+              "dart_type_name": "DateTime"
+            }
+          },
+          {
+            "name": "revision",
+            "getter_name": "revision",
+            "moor_type": "int",
+            "nullable": false,
+            "customConstraints": "NOT NULL DEFAULT 0 CHECK (revision >= 0)",
+            "default_dart": "const CustomExpression('0')",
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "note",
+            "getter_name": "note",
+            "moor_type": "string",
+            "nullable": true,
+            "customConstraints": "",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "next_step",
+            "getter_name": "nextStep",
+            "moor_type": "string",
+            "nullable": true,
+            "customConstraints": "",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "effort_rating",
+            "getter_name": "effortRating",
+            "moor_type": "int",
+            "nullable": true,
+            "customConstraints": "CHECK (effort_rating BETWEEN 1 AND 5)",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "local_display_zone",
+            "getter_name": "localDisplayZone",
+            "moor_type": "string",
+            "nullable": true,
+            "customConstraints": "",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "source_device_id",
+            "getter_name": "sourceDeviceId",
+            "moor_type": "string",
+            "nullable": true,
+            "customConstraints": "",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          }
+        ],
+        "is_virtual": false,
+        "without_rowid": false,
+        "constraints": [
+          "CHECK((entry_mode = 'manual')=(manual_intent IS NOT NULL))",
+          "CHECK(entry_mode != 'manual' OR status NOT IN ('running', 'paused'))",
+          "CHECK(status != 'running' OR started_at_utc IS NOT NULL)",
+          "CHECK(status != 'completed' OR ended_at_utc IS NOT NULL)",
+          "CHECK(ended_at_utc IS NULL OR started_at_utc IS NULL OR ended_at_utc >= started_at_utc)",
+          "CHECK(entry_mode != 'manual' OR status != 'completed' OR active_seconds > 0 OR manual_intent = 'evidence_only')"
+        ]
+      }
+    },
+    {
+      "id": 7,
+      "references": [
+        6
+      ],
+      "type": "index",
+      "data": {
+        "on": 6,
+        "name": "sessions_skill_end",
+        "sql": "CREATE INDEX sessions_skill_end ON sessions(skill_id, ended_at_utc);",
+        "unique": false,
+        "columns": []
+      }
+    },
+    {
+      "id": 8,
+      "references": [
+        6
+      ],
+      "type": "index",
+      "data": {
+        "on": 6,
+        "name": "one_running_session",
+        "sql": "CREATE UNIQUE INDEX one_running_session ON sessions(status) WHERE status = 'running';",
+        "unique": true,
+        "columns": []
+      }
+    },
+    {
+      "id": 9,
+      "references": [
+        6
+      ],
+      "type": "table",
+      "data": {
+        "name": "practice_checkpoints",
+        "was_declared_in_moor": true,
+        "columns": [
+          {
+            "name": "session_id",
+            "getter_name": "sessionId",
+            "moor_type": "string",
+            "nullable": false,
+            "customConstraints": "NOT NULL PRIMARY KEY REFERENCES sessions(id)ON DELETE CASCADE",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": [
+              "primary-key",
+              {
+                "foreign_key": {
+                  "to": {
+                    "table": "sessions",
+                    "column": "id"
+                  },
+                  "initially_deferred": false,
+                  "on_update": null,
+                  "on_delete": "cascade"
+                }
+              }
+            ]
+          },
+          {
+            "name": "active_milliseconds",
+            "getter_name": "activeMilliseconds",
+            "moor_type": "int",
+            "nullable": false,
+            "customConstraints": "NOT NULL CHECK (active_milliseconds >= 0)",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "planned_seconds",
+            "getter_name": "plannedSeconds",
+            "moor_type": "int",
+            "nullable": true,
+            "customConstraints": "CHECK (planned_seconds BETWEEN 60 AND 10800)",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "manual_seconds",
+            "getter_name": "manualSeconds",
+            "moor_type": "int",
+            "nullable": false,
+            "customConstraints": "NOT NULL DEFAULT 0 CHECK (manual_seconds BETWEEN 0 AND 604800)",
+            "default_dart": "const CustomExpression('0')",
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "manual_date_local",
+            "getter_name": "manualDateLocal",
+            "moor_type": "string",
+            "nullable": true,
+            "customConstraints": "",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "checkpoint_at_utc",
+            "getter_name": "checkpointAtUtc",
+            "moor_type": "dateTime",
+            "nullable": false,
+            "customConstraints": "NOT NULL",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": [],
+            "type_converter": {
+              "dart_expr": "const UtcDateTimeConverter()",
+              "dart_type_name": "DateTime"
+            }
+          }
+        ],
+        "is_virtual": false,
+        "without_rowid": false,
+        "constraints": []
+      }
+    },
+    {
+      "id": 10,
+      "references": [
+        6,
+        4
+      ],
+      "type": "table",
+      "data": {
+        "name": "session_exercises",
+        "was_declared_in_moor": true,
+        "columns": [
+          {
+            "name": "session_id",
+            "getter_name": "sessionId",
+            "moor_type": "string",
+            "nullable": false,
+            "customConstraints": "NOT NULL REFERENCES sessions(id)ON DELETE CASCADE",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": [
+              {
+                "foreign_key": {
+                  "to": {
+                    "table": "sessions",
+                    "column": "id"
+                  },
+                  "initially_deferred": false,
+                  "on_update": null,
+                  "on_delete": "cascade"
+                }
+              }
+            ]
+          },
+          {
+            "name": "exercise_id",
+            "getter_name": "exerciseId",
+            "moor_type": "string",
+            "nullable": true,
+            "customConstraints": "REFERENCES exercises(id)ON DELETE SET NULL",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": [
+              {
+                "foreign_key": {
+                  "to": {
+                    "table": "exercises",
+                    "column": "id"
+                  },
+                  "initially_deferred": false,
+                  "on_update": null,
+                  "on_delete": "setNull"
+                }
+              }
+            ]
+          },
+          {
+            "name": "exercise_title_snapshot",
+            "getter_name": "exerciseTitleSnapshot",
+            "moor_type": "string",
+            "nullable": false,
+            "customConstraints": "NOT NULL",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "ordinal",
+            "getter_name": "ordinal",
+            "moor_type": "int",
+            "nullable": false,
+            "customConstraints": "NOT NULL CHECK (ordinal >= 0)",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "allocated_seconds",
+            "getter_name": "allocatedSeconds",
+            "moor_type": "int",
+            "nullable": true,
+            "customConstraints": "CHECK (allocated_seconds >= 0)",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "result_note",
+            "getter_name": "resultNote",
+            "moor_type": "string",
+            "nullable": true,
+            "customConstraints": "",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          }
+        ],
+        "is_virtual": false,
+        "without_rowid": false,
+        "constraints": [
+          "PRIMARY KEY(session_id, ordinal)"
+        ],
+        "explicit_pk": [
+          "session_id",
+          "ordinal"
+        ]
+      }
+    },
+    {
+      "id": 11,
+      "references": [
+        6,
+        2
+      ],
+      "type": "table",
+      "data": {
+        "name": "metric_readings",
+        "was_declared_in_moor": true,
+        "columns": [
+          {
+            "name": "id",
+            "getter_name": "id",
+            "moor_type": "string",
+            "nullable": false,
+            "customConstraints": "NOT NULL PRIMARY KEY CHECK (length(id) = 36)",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": [
+              "primary-key"
+            ]
+          },
+          {
+            "name": "session_id",
+            "getter_name": "sessionId",
+            "moor_type": "string",
+            "nullable": false,
+            "customConstraints": "NOT NULL REFERENCES sessions(id)ON DELETE CASCADE",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": [
+              {
+                "foreign_key": {
+                  "to": {
+                    "table": "sessions",
+                    "column": "id"
+                  },
+                  "initially_deferred": false,
+                  "on_update": null,
+                  "on_delete": "cascade"
+                }
+              }
+            ]
+          },
+          {
+            "name": "metric_definition_id",
+            "getter_name": "metricDefinitionId",
+            "moor_type": "string",
+            "nullable": false,
+            "customConstraints": "NOT NULL",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "definition_version",
+            "getter_name": "definitionVersion",
+            "moor_type": "int",
+            "nullable": false,
+            "customConstraints": "NOT NULL",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "numeric_value",
+            "getter_name": "numericValue",
+            "moor_type": "double",
+            "nullable": true,
+            "customConstraints": "CHECK (abs(numeric_value) <= CAST('1.7976931348623157e308' AS REAL))",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "text_value",
+            "getter_name": "textValue",
+            "moor_type": "string",
+            "nullable": true,
+            "customConstraints": "",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "bool_value",
+            "getter_name": "boolValue",
+            "moor_type": "bool",
+            "nullable": true,
+            "customConstraints": "CHECK (bool_value IN (0, 1))",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "source_type",
+            "getter_name": "sourceType",
+            "moor_type": "string",
+            "nullable": false,
+            "customConstraints": "NOT NULL CHECK (source_type IN ('self_reported', 'instrument_import', 'derived'))",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "source_note",
+            "getter_name": "sourceNote",
+            "moor_type": "string",
+            "nullable": true,
+            "customConstraints": "",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "measured_at_utc",
+            "getter_name": "measuredAtUtc",
+            "moor_type": "dateTime",
+            "nullable": false,
+            "customConstraints": "NOT NULL",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": [],
+            "type_converter": {
+              "dart_expr": "const UtcDateTimeConverter()",
+              "dart_type_name": "DateTime"
+            }
+          },
+          {
+            "name": "created_at_utc",
+            "getter_name": "createdAtUtc",
+            "moor_type": "dateTime",
+            "nullable": false,
+            "customConstraints": "NOT NULL",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": [],
+            "type_converter": {
+              "dart_expr": "const UtcDateTimeConverter()",
+              "dart_type_name": "DateTime"
+            }
+          }
+        ],
+        "is_virtual": false,
+        "without_rowid": false,
+        "constraints": [
+          "FOREIGN KEY(metric_definition_id, definition_version)REFERENCES metric_definitions(id, version)",
+          "UNIQUE(session_id, metric_definition_id)"
+        ],
+        "unique_keys": [
+          [
+            "session_id",
+            "metric_definition_id"
+          ]
+        ]
+      }
+    },
+    {
+      "id": 12,
+      "references": [
+        11
+      ],
+      "type": "index",
+      "data": {
+        "on": 11,
+        "name": "readings_definition_measured",
+        "sql": "CREATE INDEX readings_definition_measured ON metric_readings(metric_definition_id, measured_at_utc);",
+        "unique": false,
+        "columns": []
+      }
+    },
+    {
+      "id": 13,
+      "references": [
+        6
+      ],
+      "type": "table",
+      "data": {
+        "name": "media_assets",
+        "was_declared_in_moor": true,
+        "columns": [
+          {
+            "name": "id",
+            "getter_name": "id",
+            "moor_type": "string",
+            "nullable": false,
+            "customConstraints": "NOT NULL PRIMARY KEY CHECK (length(id) = 36)",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": [
+              "primary-key"
+            ]
+          },
+          {
+            "name": "session_id",
+            "getter_name": "sessionId",
+            "moor_type": "string",
+            "nullable": false,
+            "customConstraints": "NOT NULL REFERENCES sessions(id)ON DELETE CASCADE",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": [
+              {
+                "foreign_key": {
+                  "to": {
+                    "table": "sessions",
+                    "column": "id"
+                  },
+                  "initially_deferred": false,
+                  "on_update": null,
+                  "on_delete": "cascade"
+                }
+              }
+            ]
+          },
+          {
+            "name": "kind",
+            "getter_name": "kind",
+            "moor_type": "string",
+            "nullable": false,
+            "customConstraints": "NOT NULL CHECK (kind IN ('image', 'audio'))",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "mime",
+            "getter_name": "mime",
+            "moor_type": "string",
+            "nullable": false,
+            "customConstraints": "NOT NULL",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "byte_length",
+            "getter_name": "byteLength",
+            "moor_type": "int",
+            "nullable": false,
+            "customConstraints": "NOT NULL CHECK (byte_length > 0)",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "sha256",
+            "getter_name": "sha256",
+            "moor_type": "string",
+            "nullable": false,
+            "customConstraints": "NOT NULL CHECK (length(sha256) = 64 AND sha256 NOT GLOB '*[^0-9a-f]*')",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "relative_path",
+            "getter_name": "relativePath",
+            "moor_type": "string",
+            "nullable": false,
+            "customConstraints": "NOT NULL UNIQUE",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": [
+              "unique"
+            ]
+          },
+          {
+            "name": "thumbnail_relative_path",
+            "getter_name": "thumbnailRelativePath",
+            "moor_type": "string",
+            "nullable": true,
+            "customConstraints": "UNIQUE",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": [
+              "unique"
+            ]
+          },
+          {
+            "name": "duration_ms",
+            "getter_name": "durationMs",
+            "moor_type": "int",
+            "nullable": true,
+            "customConstraints": "CHECK (duration_ms >= 0)",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "width",
+            "getter_name": "width",
+            "moor_type": "int",
+            "nullable": true,
+            "customConstraints": "CHECK (width > 0)",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "height",
+            "getter_name": "height",
+            "moor_type": "int",
+            "nullable": true,
+            "customConstraints": "CHECK (height > 0)",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "label",
+            "getter_name": "label",
+            "moor_type": "string",
+            "nullable": true,
+            "customConstraints": "",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "is_baseline",
+            "getter_name": "isBaseline",
+            "moor_type": "bool",
+            "nullable": false,
+            "customConstraints": "NOT NULL DEFAULT FALSE CHECK (is_baseline IN (0, 1))",
+            "default_dart": "const CustomExpression('FALSE')",
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "capture_source",
+            "getter_name": "captureSource",
+            "moor_type": "string",
+            "nullable": false,
+            "customConstraints": "NOT NULL CHECK (capture_source IN ('camera', 'microphone', 'file_import'))",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "created_at_utc",
+            "getter_name": "createdAtUtc",
+            "moor_type": "dateTime",
+            "nullable": false,
+            "customConstraints": "NOT NULL",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": [],
+            "type_converter": {
+              "dart_expr": "const UtcDateTimeConverter()",
+              "dart_type_name": "DateTime"
+            }
+          },
+          {
+            "name": "storage_state",
+            "getter_name": "storageState",
+            "moor_type": "string",
+            "nullable": false,
+            "customConstraints": "NOT NULL CHECK (storage_state IN ('pending', 'ready', 'cleanup_pending', 'missing'))",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          }
+        ],
+        "is_virtual": false,
+        "without_rowid": false,
+        "constraints": [
+          "CHECK(relative_path GLOB 'media/*' AND relative_path NOT LIKE '%..%' AND relative_path NOT LIKE '%\\%' AND instr(relative_path, ':') = 0)",
+          "CHECK(thumbnail_relative_path IS NULL OR(thumbnail_relative_path GLOB 'media/*' AND thumbnail_relative_path NOT LIKE '%..%' AND thumbnail_relative_path NOT LIKE '%\\%' AND instr(thumbnail_relative_path, ':') = 0))"
+        ]
+      }
+    },
+    {
+      "id": 14,
+      "references": [
+        13
+      ],
+      "type": "index",
+      "data": {
+        "on": 13,
+        "name": "media_session_kind",
+        "sql": "CREATE INDEX media_session_kind ON media_assets(session_id, kind);",
+        "unique": false,
+        "columns": []
+      }
+    },
+    {
+      "id": 15,
+      "references": [
+        1
+      ],
+      "type": "table",
+      "data": {
+        "name": "reminders",
+        "was_declared_in_moor": true,
+        "columns": [
+          {
+            "name": "id",
+            "getter_name": "id",
+            "moor_type": "string",
+            "nullable": false,
+            "customConstraints": "NOT NULL PRIMARY KEY CHECK (length(id) = 36)",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": [
+              "primary-key"
+            ]
+          },
+          {
+            "name": "skill_id",
+            "getter_name": "skillId",
+            "moor_type": "string",
+            "nullable": true,
+            "customConstraints": "REFERENCES skills(id)ON DELETE CASCADE",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": [
+              {
+                "foreign_key": {
+                  "to": {
+                    "table": "skills",
+                    "column": "id"
+                  },
+                  "initially_deferred": false,
+                  "on_update": null,
+                  "on_delete": "cascade"
+                }
+              }
+            ]
+          },
+          {
+            "name": "enabled",
+            "getter_name": "enabled",
+            "moor_type": "bool",
+            "nullable": false,
+            "customConstraints": "NOT NULL DEFAULT FALSE CHECK (enabled IN (0, 1))",
+            "default_dart": "const CustomExpression('FALSE')",
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "local_time_h_hmm",
+            "getter_name": "localTimeHHmm",
+            "moor_type": "string",
+            "nullable": false,
+            "customConstraints": "NOT NULL CHECK (length(local_time_h_hmm) = 5 AND local_time_h_hmm GLOB '[0-2][0-9]:[0-5][0-9]' AND substr(local_time_h_hmm, 1, 2) <= '23')",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "weekdays_bitset",
+            "getter_name": "weekdaysBitset",
+            "moor_type": "int",
+            "nullable": false,
+            "customConstraints": "NOT NULL CHECK (weekdays_bitset BETWEEN 1 AND 127)",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "iana_zone",
+            "getter_name": "ianaZone",
+            "moor_type": "string",
+            "nullable": false,
+            "customConstraints": "NOT NULL CHECK (length(iana_zone) BETWEEN 1 AND 128)",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "quiet_hours_override",
+            "getter_name": "quietHoursOverride",
+            "moor_type": "bool",
+            "nullable": false,
+            "customConstraints": "NOT NULL DEFAULT FALSE CHECK (quiet_hours_override IN (0, 1))",
+            "default_dart": "const CustomExpression('FALSE')",
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "message_id",
+            "getter_name": "messageId",
+            "moor_type": "string",
+            "nullable": false,
+            "customConstraints": "NOT NULL",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "os_notification_id",
+            "getter_name": "osNotificationId",
+            "moor_type": "int",
+            "nullable": true,
+            "customConstraints": "UNIQUE",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": [
+              "unique"
+            ]
+          },
+          {
+            "name": "last_scheduled_at_utc",
+            "getter_name": "lastScheduledAtUtc",
+            "moor_type": "dateTime",
+            "nullable": true,
+            "customConstraints": "",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": [],
+            "type_converter": {
+              "dart_expr": "const UtcDateTimeConverter()",
+              "dart_type_name": "DateTime"
+            }
+          },
+          {
+            "name": "updated_at_utc",
+            "getter_name": "updatedAtUtc",
+            "moor_type": "dateTime",
+            "nullable": false,
+            "customConstraints": "NOT NULL",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": [],
+            "type_converter": {
+              "dart_expr": "const UtcDateTimeConverter()",
+              "dart_type_name": "DateTime"
+            }
+          }
+        ],
+        "is_virtual": false,
+        "without_rowid": false,
+        "constraints": []
+      }
+    },
+    {
+      "id": 16,
+      "references": [],
+      "type": "table",
+      "data": {
+        "name": "data_migrations",
+        "was_declared_in_moor": true,
+        "columns": [
+          {
+            "name": "version",
+            "getter_name": "version",
+            "moor_type": "int",
+            "nullable": false,
+            "customConstraints": "NOT NULL PRIMARY KEY",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": [
+              "primary-key"
+            ]
+          },
+          {
+            "name": "completed_at_utc",
+            "getter_name": "completedAtUtc",
+            "moor_type": "dateTime",
+            "nullable": false,
+            "customConstraints": "NOT NULL",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": [],
+            "type_converter": {
+              "dart_expr": "const UtcDateTimeConverter()",
+              "dart_type_name": "DateTime"
+            }
+          }
+        ],
+        "is_virtual": false,
+        "without_rowid": false,
+        "constraints": []
+      }
+    },
+    {
+      "id": 17,
+      "references": [],
+      "type": "table",
+      "data": {
+        "name": "export_history",
+        "was_declared_in_moor": true,
+        "columns": [
+          {
+            "name": "id",
+            "getter_name": "id",
+            "moor_type": "string",
+            "nullable": false,
+            "customConstraints": "NOT NULL PRIMARY KEY",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": [
+              "primary-key"
+            ]
+          },
+          {
+            "name": "created_at_utc",
+            "getter_name": "createdAtUtc",
+            "moor_type": "dateTime",
+            "nullable": false,
+            "customConstraints": "NOT NULL",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": [],
+            "type_converter": {
+              "dart_expr": "const UtcDateTimeConverter()",
+              "dart_type_name": "DateTime"
+            }
+          },
+          {
+            "name": "archive_schema",
+            "getter_name": "archiveSchema",
+            "moor_type": "int",
+            "nullable": false,
+            "customConstraints": "NOT NULL CHECK (archive_schema > 0)",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "byte_length",
+            "getter_name": "byteLength",
+            "moor_type": "int",
+            "nullable": true,
+            "customConstraints": "CHECK (byte_length >= 0)",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "outcome",
+            "getter_name": "outcome",
+            "moor_type": "string",
+            "nullable": false,
+            "customConstraints": "NOT NULL CHECK (outcome IN ('success', 'failure'))",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          }
+        ],
+        "is_virtual": false,
+        "without_rowid": false,
+        "constraints": []
+      }
+    },
+    {
+      "id": 18,
+      "references": [],
+      "type": "table",
+      "data": {
+        "name": "file_cleanup_queue",
+        "was_declared_in_moor": true,
+        "columns": [
+          {
+            "name": "relative_path",
+            "getter_name": "relativePath",
+            "moor_type": "string",
+            "nullable": false,
+            "customConstraints": "NOT NULL PRIMARY KEY",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": [
+              "primary-key"
+            ]
+          },
+          {
+            "name": "queued_at_utc",
+            "getter_name": "queuedAtUtc",
+            "moor_type": "dateTime",
+            "nullable": false,
+            "customConstraints": "NOT NULL",
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": [],
+            "type_converter": {
+              "dart_expr": "const UtcDateTimeConverter()",
+              "dart_type_name": "DateTime"
+            }
+          }
+        ],
+        "is_virtual": false,
+        "without_rowid": false,
+        "constraints": []
+      }
+    },
+    {
+      "id": 19,
+      "references": [
+        2
+      ],
+      "type": "trigger",
+      "data": {
+        "on": 2,
+        "references_in_body": [
+          2
+        ],
+        "name": "immutable_metric_semantics",
+        "sql": "CREATE TRIGGER immutable_metric_semantics BEFORE UPDATE ON metric_definitions\nWHEN NEW.id != OLD.id OR NEW.version != OLD.version OR NEW.skill_id != OLD.skill_id\n  OR NEW.label != OLD.label OR NEW.unit_key != OLD.unit_key OR NEW.value_type != OLD.value_type\n  OR NEW.direction != OLD.direction OR NEW.target_value IS NOT OLD.target_value\n  OR NEW.scale_min IS NOT OLD.scale_min OR NEW.scale_max IS NOT OLD.scale_max OR NEW.source_hint != OLD.source_hint\nBEGIN\n  SELECT RAISE(ABORT, 'metric_version_immutable');\nEND;"
+      }
+    },
+    {
+      "id": 20,
+      "references": [
+        3,
+        2
+      ],
+      "type": "trigger",
+      "data": {
+        "on": 3,
+        "references_in_body": [
+          3,
+          2
+        ],
+        "name": "validate_goal_insert",
+        "sql": "CREATE TRIGGER validate_goal_insert BEFORE INSERT ON goals\nWHEN NEW.metric_definition_id IS NOT NULL AND NEW.target_value IS NOT NULL AND NOT EXISTS (\n  SELECT 1 FROM metric_definitions d WHERE d.id = NEW.metric_definition_id AND d.version = NEW.definition_version\n  AND d.skill_id = NEW.skill_id AND d.value_type = 'numeric' AND d.unit_key = NEW.target_unit)\nBEGIN\n  SELECT RAISE(ABORT, 'goal_metric_unit');\nEND;"
+      }
+    },
+    {
+      "id": 21,
+      "references": [
+        3,
+        2
+      ],
+      "type": "trigger",
+      "data": {
+        "on": 3,
+        "references_in_body": [
+          3,
+          2
+        ],
+        "name": "validate_goal_update",
+        "sql": "CREATE TRIGGER validate_goal_update BEFORE UPDATE ON goals\nWHEN NEW.metric_definition_id IS NOT NULL AND NEW.target_value IS NOT NULL AND NOT EXISTS (\n  SELECT 1 FROM metric_definitions d WHERE d.id = NEW.metric_definition_id AND d.version = NEW.definition_version\n  AND d.skill_id = NEW.skill_id AND d.value_type = 'numeric' AND d.unit_key = NEW.target_unit)\nBEGIN\n  SELECT RAISE(ABORT, 'goal_metric_unit');\nEND;"
+      }
+    },
+    {
+      "id": 22,
+      "references": [
+        2
+      ],
+      "type": "trigger",
+      "data": {
+        "on": 2,
+        "references_in_body": [
+          2
+        ],
+        "name": "next_metric_version",
+        "sql": "CREATE TRIGGER next_metric_version BEFORE INSERT ON metric_definitions\nWHEN NEW.version != COALESCE((SELECT MAX(version) + 1 FROM metric_definitions WHERE id = NEW.id), 1)\n  OR EXISTS(SELECT 1 FROM metric_definitions WHERE id = NEW.id AND skill_id != NEW.skill_id)\nBEGIN\n  SELECT RAISE(ABORT, 'metric_version_sequence');\nEND;"
+      }
+    },
+    {
+      "id": 23,
+      "references": [
+        6,
+        10
+      ],
+      "type": "trigger",
+      "data": {
+        "on": 6,
+        "references_in_body": [
+          6,
+          10
+        ],
+        "name": "legal_session_transition",
+        "sql": "CREATE TRIGGER legal_session_transition BEFORE UPDATE ON sessions\nWHEN NEW.skill_id != OLD.skill_id OR NEW.id != OLD.id OR NEW.entry_mode != OLD.entry_mode\n  OR NEW.manual_intent IS NOT OLD.manual_intent\n  OR NEW.revision != OLD.revision + 1\n  OR (NEW.status != OLD.status AND NOT (\n    (OLD.status = 'draft' AND NEW.status IN ('running','completed','discarded')) OR\n    (OLD.status = 'running' AND NEW.status IN ('paused','completed','discarded')) OR\n    (OLD.status = 'paused' AND NEW.status IN ('running','completed','discarded'))))\n  OR NEW.active_seconds < COALESCE((SELECT SUM(allocated_seconds) FROM session_exercises WHERE session_id = OLD.id), 0)\nBEGIN\n  SELECT RAISE(ABORT, 'session_conflict');\nEND;"
+      }
+    },
+    {
+      "id": 24,
+      "references": [
+        10,
+        4,
+        6
+      ],
+      "type": "trigger",
+      "data": {
+        "on": 10,
+        "references_in_body": [
+          10,
+          4,
+          6
+        ],
+        "name": "validate_exercise_insert",
+        "sql": "CREATE TRIGGER validate_exercise_insert BEFORE INSERT ON session_exercises\nWHEN (NEW.exercise_id IS NOT NULL AND NOT EXISTS (\n    SELECT 1 FROM exercises e JOIN sessions s ON s.id = NEW.session_id\n    WHERE e.id = NEW.exercise_id AND e.skill_id = s.skill_id))\n  OR COALESCE(NEW.allocated_seconds, 0) + COALESCE((SELECT SUM(allocated_seconds) FROM session_exercises WHERE session_id = NEW.session_id), 0)\n    > (SELECT active_seconds FROM sessions WHERE id = NEW.session_id)\nBEGIN\n  SELECT RAISE(ABORT, 'exercise_allocation');\nEND;"
+      }
+    },
+    {
+      "id": 25,
+      "references": [
+        10,
+        4,
+        6
+      ],
+      "type": "trigger",
+      "data": {
+        "on": 10,
+        "references_in_body": [
+          10,
+          4,
+          6
+        ],
+        "name": "validate_exercise_update",
+        "sql": "CREATE TRIGGER validate_exercise_update BEFORE UPDATE ON session_exercises\nWHEN (NEW.exercise_id IS NOT NULL AND NOT EXISTS (\n    SELECT 1 FROM exercises e JOIN sessions s ON s.id = NEW.session_id\n    WHERE e.id = NEW.exercise_id AND e.skill_id = s.skill_id))\n  OR COALESCE(NEW.allocated_seconds, 0) + COALESCE((SELECT SUM(allocated_seconds) FROM session_exercises\n    WHERE session_id = NEW.session_id AND NOT (session_id = OLD.session_id AND ordinal = OLD.ordinal)), 0)\n    > (SELECT active_seconds FROM sessions WHERE id = NEW.session_id)\nBEGIN\n  SELECT RAISE(ABORT, 'exercise_allocation');\nEND;"
+      }
+    },
+    {
+      "id": 26,
+      "references": [
+        11,
+        2,
+        6
+      ],
+      "type": "trigger",
+      "data": {
+        "on": 11,
+        "references_in_body": [
+          11,
+          2,
+          6
+        ],
+        "name": "validate_reading_insert",
+        "sql": "CREATE TRIGGER validate_reading_insert BEFORE INSERT ON metric_readings\nWHEN NOT EXISTS (\n  SELECT 1 FROM metric_definitions d JOIN sessions s ON s.id = NEW.session_id\n  WHERE d.id = NEW.metric_definition_id AND d.version = NEW.definition_version AND d.skill_id = s.skill_id\n  AND ((d.value_type = 'numeric' AND NEW.numeric_value IS NOT NULL AND NEW.text_value IS NULL AND NEW.bool_value IS NULL\n    AND (d.scale_min IS NULL OR NEW.numeric_value >= d.scale_min) AND (d.scale_max IS NULL OR NEW.numeric_value <= d.scale_max))\n    OR (d.value_type = 'text' AND NEW.text_value IS NOT NULL AND NEW.numeric_value IS NULL AND NEW.bool_value IS NULL)\n    OR (d.value_type = 'checklist' AND NEW.bool_value IS NOT NULL AND NEW.text_value IS NULL AND NEW.numeric_value IS NULL)))\nBEGIN\n  SELECT RAISE(ABORT, 'reading_type_range_skill');\nEND;"
+      }
+    },
+    {
+      "id": 27,
+      "references": [
+        11,
+        2,
+        6
+      ],
+      "type": "trigger",
+      "data": {
+        "on": 11,
+        "references_in_body": [
+          11,
+          2,
+          6
+        ],
+        "name": "validate_reading_update",
+        "sql": "CREATE TRIGGER validate_reading_update BEFORE UPDATE ON metric_readings\nWHEN NOT EXISTS (\n  SELECT 1 FROM metric_definitions d JOIN sessions s ON s.id = NEW.session_id\n  WHERE d.id = NEW.metric_definition_id AND d.version = NEW.definition_version AND d.skill_id = s.skill_id\n  AND ((d.value_type = 'numeric' AND NEW.numeric_value IS NOT NULL AND NEW.text_value IS NULL AND NEW.bool_value IS NULL\n    AND (d.scale_min IS NULL OR NEW.numeric_value >= d.scale_min) AND (d.scale_max IS NULL OR NEW.numeric_value <= d.scale_max))\n    OR (d.value_type = 'text' AND NEW.text_value IS NOT NULL AND NEW.numeric_value IS NULL AND NEW.bool_value IS NULL)\n    OR (d.value_type = 'checklist' AND NEW.bool_value IS NOT NULL AND NEW.text_value IS NULL AND NEW.numeric_value IS NULL)))\nBEGIN\n  SELECT RAISE(ABORT, 'reading_type_range_skill');\nEND;"
+      }
+    },
+    {
+      "id": 28,
+      "references": [
+        13,
+        18
+      ],
+      "type": "trigger",
+      "data": {
+        "on": 13,
+        "references_in_body": [
+          13,
+          18
+        ],
+        "name": "cleanup_deleted_media",
+        "sql": "CREATE TRIGGER cleanup_deleted_media AFTER DELETE ON media_assets\nBEGIN\n  INSERT OR IGNORE INTO file_cleanup_queue(relative_path, queued_at_utc) VALUES(OLD.relative_path, unixepoch());\n  INSERT OR IGNORE INTO file_cleanup_queue(relative_path, queued_at_utc)\n    SELECT OLD.thumbnail_relative_path, unixepoch() WHERE OLD.thumbnail_relative_path IS NOT NULL;\nEND;"
+      }
+    },
+    {
+      "id": 29,
+      "references": [
+        13
+      ],
+      "type": "trigger",
+      "data": {
+        "on": 13,
+        "references_in_body": [
+          13
+        ],
+        "name": "immutable_media_identity",
+        "sql": "CREATE TRIGGER immutable_media_identity BEFORE UPDATE ON media_assets\nWHEN NEW.id != OLD.id OR NEW.session_id != OLD.session_id OR NEW.relative_path != OLD.relative_path\n  OR NEW.thumbnail_relative_path IS NOT OLD.thumbnail_relative_path OR NEW.sha256 != OLD.sha256 OR NEW.byte_length != OLD.byte_length\nBEGIN\n  SELECT RAISE(ABORT, 'media_identity_immutable');\nEND;"
+      }
+    }
+  ],
+  "fixed_sql": [
+    {
+      "name": "settings",
+      "sql": [
+        {
+          "dialect": "sqlite",
+          "sql": "CREATE TABLE IF NOT EXISTS \"settings\" (\"key\" TEXT NOT NULL PRIMARY KEY CHECK (length(\"key\") BETWEEN 1 AND 128), \"value_json\" TEXT NOT NULL CHECK (json_valid(value_json)), \"updated_at_utc\" INTEGER NOT NULL);"
+        }
+      ]
+    },
+    {
+      "name": "skills",
+      "sql": [
+        {
+          "dialect": "sqlite",
+          "sql": "CREATE TABLE IF NOT EXISTS \"skills\" (\"id\" TEXT NOT NULL PRIMARY KEY CHECK (length(id) = 36), \"name\" TEXT NOT NULL CHECK (length(trim(name)) BETWEEN 1 AND 4096), \"kind\" TEXT NOT NULL CHECK (kind IN ('music', 'drawing', 'language', 'programming', 'voice', 'typing', 'movement', 'custom')), \"icon_key\" TEXT NOT NULL, \"accent_key\" TEXT NOT NULL, \"description\" TEXT, \"created_at_utc\" INTEGER NOT NULL, \"updated_at_utc\" INTEGER NOT NULL, \"archived_at_utc\" INTEGER, \"sort_order\" INTEGER NOT NULL DEFAULT 0, \"default_practice_minutes\" INTEGER CHECK (default_practice_minutes BETWEEN 1 AND 1440));"
+        }
+      ]
+    },
+    {
+      "name": "metric_definitions",
+      "sql": [
+        {
+          "dialect": "sqlite",
+          "sql": "CREATE TABLE IF NOT EXISTS \"metric_definitions\" (\"id\" TEXT NOT NULL CHECK (length(id) = 36), \"version\" INTEGER NOT NULL CHECK (version >= 1), \"skill_id\" TEXT NOT NULL REFERENCES skills(id)ON DELETE CASCADE, \"label\" TEXT NOT NULL CHECK (length(trim(label)) BETWEEN 1 AND 4096), \"unit_key\" TEXT NOT NULL, \"value_type\" TEXT NOT NULL CHECK (value_type IN ('numeric', 'checklist', 'text')), \"direction\" TEXT NOT NULL CHECK (direction IN ('up', 'down', 'toward_target', 'none')), \"target_value\" REAL CHECK (abs(target_value) <= CAST('1.7976931348623157e308' AS REAL)), \"scale_min\" REAL CHECK (abs(scale_min) <= CAST('1.7976931348623157e308' AS REAL)), \"scale_max\" REAL CHECK (abs(scale_max) <= CAST('1.7976931348623157e308' AS REAL)), \"source_hint\" TEXT NOT NULL CHECK (source_hint IN ('manual', 'instrument', 'self_rating')), \"archived_at_utc\" INTEGER, PRIMARY KEY(id, version), UNIQUE(id, version, skill_id), CHECK(scale_min IS NULL OR scale_max IS NULL OR scale_min <= scale_max), CHECK(direction != 'toward_target' OR target_value IS NOT NULL), CHECK(target_value IS NULL OR((scale_min IS NULL OR target_value >= scale_min)AND(scale_max IS NULL OR target_value <= scale_max))));"
+        }
+      ]
+    },
+    {
+      "name": "goals",
+      "sql": [
+        {
+          "dialect": "sqlite",
+          "sql": "CREATE TABLE IF NOT EXISTS \"goals\" (\"id\" TEXT NOT NULL PRIMARY KEY CHECK (length(id) = 36), \"skill_id\" TEXT NOT NULL REFERENCES skills(id)ON DELETE CASCADE, \"title\" TEXT NOT NULL CHECK (length(trim(title)) BETWEEN 1 AND 4096), \"type\" TEXT NOT NULL CHECK (type IN ('cumulative', 'threshold', 'weekly_target', 'deliverable', 'qualitative')), \"metric_definition_id\" TEXT, \"definition_version\" INTEGER, \"target_value\" REAL CHECK (abs(target_value) <= CAST('1.7976931348623157e308' AS REAL)), \"target_unit\" TEXT, \"target_date_local\" TEXT, \"status\" TEXT NOT NULL CHECK (status IN ('active', 'completed', 'paused', 'archived')), \"completed_at_utc\" INTEGER, \"created_at_utc\" INTEGER NOT NULL, \"updated_at_utc\" INTEGER NOT NULL, \"motivation\" TEXT CHECK (length(motivation) <= 4000), FOREIGN KEY(metric_definition_id, definition_version, skill_id)REFERENCES metric_definitions(id, version, skill_id), CHECK((metric_definition_id IS NULL)=(definition_version IS NULL)), CHECK((status != 'completed' OR completed_at_utc IS NOT NULL)AND(status IN ('completed', 'archived') OR completed_at_utc IS NULL)), CHECK(type NOT IN ('cumulative', 'weekly_target') OR(target_value IS NOT NULL AND target_value > 0)), CHECK(type != 'threshold' OR(target_value IS NOT NULL AND metric_definition_id IS NOT NULL)));"
+        }
+      ]
+    },
+    {
+      "name": "exercises",
+      "sql": [
+        {
+          "dialect": "sqlite",
+          "sql": "CREATE TABLE IF NOT EXISTS \"exercises\" (\"id\" TEXT NOT NULL PRIMARY KEY CHECK (length(id) = 36), \"skill_id\" TEXT NOT NULL REFERENCES skills(id)ON DELETE CASCADE, \"template_id\" TEXT, \"title\" TEXT NOT NULL CHECK (length(trim(title)) BETWEEN 1 AND 4096), \"instructions\" TEXT NOT NULL DEFAULT '', \"default_seconds\" INTEGER CHECK (default_seconds BETWEEN 0 AND 86400), \"sort_order\" INTEGER NOT NULL DEFAULT 0, \"is_archived\" INTEGER NOT NULL DEFAULT FALSE CHECK (is_archived IN (0, 1)), \"created_at_utc\" INTEGER NOT NULL, \"updated_at_utc\" INTEGER NOT NULL, UNIQUE(skill_id, template_id));"
+        }
+      ]
+    },
+    {
+      "name": "exercises_skill_sort",
+      "sql": [
+        {
+          "dialect": "sqlite",
+          "sql": "CREATE INDEX exercises_skill_sort ON exercises (skill_id, sort_order)"
+        }
+      ]
+    },
+    {
+      "name": "sessions",
+      "sql": [
+        {
+          "dialect": "sqlite",
+          "sql": "CREATE TABLE IF NOT EXISTS \"sessions\" (\"id\" TEXT NOT NULL PRIMARY KEY CHECK (length(id) = 36), \"skill_id\" TEXT NOT NULL REFERENCES skills(id)ON DELETE CASCADE, \"started_at_utc\" INTEGER, \"ended_at_utc\" INTEGER, \"active_seconds\" INTEGER NOT NULL DEFAULT 0 CHECK (active_seconds >= 0), \"entry_mode\" TEXT NOT NULL CHECK (entry_mode IN ('timed', 'manual')), \"manual_intent\" TEXT CHECK (manual_intent IN ('duration', 'evidence_only')), \"status\" TEXT NOT NULL CHECK (status IN ('draft', 'running', 'paused', 'completed', 'discarded')), \"interruption_reason\" TEXT, \"created_at_utc\" INTEGER NOT NULL, \"updated_at_utc\" INTEGER NOT NULL, \"revision\" INTEGER NOT NULL DEFAULT 0 CHECK (revision >= 0), \"note\" TEXT, \"next_step\" TEXT, \"effort_rating\" INTEGER CHECK (effort_rating BETWEEN 1 AND 5), \"local_display_zone\" TEXT, \"source_device_id\" TEXT, CHECK((entry_mode = 'manual')=(manual_intent IS NOT NULL)), CHECK(entry_mode != 'manual' OR status NOT IN ('running', 'paused')), CHECK(status != 'running' OR started_at_utc IS NOT NULL), CHECK(status != 'completed' OR ended_at_utc IS NOT NULL), CHECK(ended_at_utc IS NULL OR started_at_utc IS NULL OR ended_at_utc >= started_at_utc), CHECK(entry_mode != 'manual' OR status != 'completed' OR active_seconds > 0 OR manual_intent = 'evidence_only'));"
+        }
+      ]
+    },
+    {
+      "name": "sessions_skill_end",
+      "sql": [
+        {
+          "dialect": "sqlite",
+          "sql": "CREATE INDEX sessions_skill_end ON sessions (skill_id, ended_at_utc)"
+        }
+      ]
+    },
+    {
+      "name": "one_running_session",
+      "sql": [
+        {
+          "dialect": "sqlite",
+          "sql": "CREATE UNIQUE INDEX one_running_session ON sessions (status) WHERE status = 'running'"
+        }
+      ]
+    },
+    {
+      "name": "practice_checkpoints",
+      "sql": [
+        {
+          "dialect": "sqlite",
+          "sql": "CREATE TABLE IF NOT EXISTS \"practice_checkpoints\" (\"session_id\" TEXT NOT NULL PRIMARY KEY REFERENCES sessions(id)ON DELETE CASCADE, \"active_milliseconds\" INTEGER NOT NULL CHECK (active_milliseconds >= 0), \"planned_seconds\" INTEGER CHECK (planned_seconds BETWEEN 60 AND 10800), \"manual_seconds\" INTEGER NOT NULL DEFAULT 0 CHECK (manual_seconds BETWEEN 0 AND 604800), \"manual_date_local\" TEXT, \"checkpoint_at_utc\" INTEGER NOT NULL);"
+        }
+      ]
+    },
+    {
+      "name": "session_exercises",
+      "sql": [
+        {
+          "dialect": "sqlite",
+          "sql": "CREATE TABLE IF NOT EXISTS \"session_exercises\" (\"session_id\" TEXT NOT NULL REFERENCES sessions(id)ON DELETE CASCADE, \"exercise_id\" TEXT REFERENCES exercises(id)ON DELETE SET NULL, \"exercise_title_snapshot\" TEXT NOT NULL, \"ordinal\" INTEGER NOT NULL CHECK (ordinal >= 0), \"allocated_seconds\" INTEGER CHECK (allocated_seconds >= 0), \"result_note\" TEXT, PRIMARY KEY(session_id, ordinal));"
+        }
+      ]
+    },
+    {
+      "name": "metric_readings",
+      "sql": [
+        {
+          "dialect": "sqlite",
+          "sql": "CREATE TABLE IF NOT EXISTS \"metric_readings\" (\"id\" TEXT NOT NULL PRIMARY KEY CHECK (length(id) = 36), \"session_id\" TEXT NOT NULL REFERENCES sessions(id)ON DELETE CASCADE, \"metric_definition_id\" TEXT NOT NULL, \"definition_version\" INTEGER NOT NULL, \"numeric_value\" REAL CHECK (abs(numeric_value) <= CAST('1.7976931348623157e308' AS REAL)), \"text_value\" TEXT, \"bool_value\" INTEGER CHECK (bool_value IN (0, 1)), \"source_type\" TEXT NOT NULL CHECK (source_type IN ('self_reported', 'instrument_import', 'derived')), \"source_note\" TEXT, \"measured_at_utc\" INTEGER NOT NULL, \"created_at_utc\" INTEGER NOT NULL, FOREIGN KEY(metric_definition_id, definition_version)REFERENCES metric_definitions(id, version), UNIQUE(session_id, metric_definition_id));"
+        }
+      ]
+    },
+    {
+      "name": "readings_definition_measured",
+      "sql": [
+        {
+          "dialect": "sqlite",
+          "sql": "CREATE INDEX readings_definition_measured ON metric_readings (metric_definition_id, measured_at_utc)"
+        }
+      ]
+    },
+    {
+      "name": "media_assets",
+      "sql": [
+        {
+          "dialect": "sqlite",
+          "sql": "CREATE TABLE IF NOT EXISTS \"media_assets\" (\"id\" TEXT NOT NULL PRIMARY KEY CHECK (length(id) = 36), \"session_id\" TEXT NOT NULL REFERENCES sessions(id)ON DELETE CASCADE, \"kind\" TEXT NOT NULL CHECK (kind IN ('image', 'audio')), \"mime\" TEXT NOT NULL, \"byte_length\" INTEGER NOT NULL CHECK (byte_length > 0), \"sha256\" TEXT NOT NULL CHECK (length(sha256) = 64 AND sha256 NOT GLOB '*[^0-9a-f]*'), \"relative_path\" TEXT NOT NULL UNIQUE, \"thumbnail_relative_path\" TEXT UNIQUE, \"duration_ms\" INTEGER CHECK (duration_ms >= 0), \"width\" INTEGER CHECK (width > 0), \"height\" INTEGER CHECK (height > 0), \"label\" TEXT, \"is_baseline\" INTEGER NOT NULL DEFAULT FALSE CHECK (is_baseline IN (0, 1)), \"capture_source\" TEXT NOT NULL CHECK (capture_source IN ('camera', 'microphone', 'file_import')), \"created_at_utc\" INTEGER NOT NULL, \"storage_state\" TEXT NOT NULL CHECK (storage_state IN ('pending', 'ready', 'cleanup_pending', 'missing')), CHECK(relative_path GLOB 'media/*' AND relative_path NOT LIKE '%..%' AND relative_path NOT LIKE '%\\%' AND instr(relative_path, ':') = 0), CHECK(thumbnail_relative_path IS NULL OR(thumbnail_relative_path GLOB 'media/*' AND thumbnail_relative_path NOT LIKE '%..%' AND thumbnail_relative_path NOT LIKE '%\\%' AND instr(thumbnail_relative_path, ':') = 0)));"
+        }
+      ]
+    },
+    {
+      "name": "media_session_kind",
+      "sql": [
+        {
+          "dialect": "sqlite",
+          "sql": "CREATE INDEX media_session_kind ON media_assets (session_id, kind)"
+        }
+      ]
+    },
+    {
+      "name": "reminders",
+      "sql": [
+        {
+          "dialect": "sqlite",
+          "sql": "CREATE TABLE IF NOT EXISTS \"reminders\" (\"id\" TEXT NOT NULL PRIMARY KEY CHECK (length(id) = 36), \"skill_id\" TEXT REFERENCES skills(id)ON DELETE CASCADE, \"enabled\" INTEGER NOT NULL DEFAULT FALSE CHECK (enabled IN (0, 1)), \"local_time_h_hmm\" TEXT NOT NULL CHECK (length(local_time_h_hmm) = 5 AND local_time_h_hmm GLOB '[0-2][0-9]:[0-5][0-9]' AND substr(local_time_h_hmm, 1, 2) <= '23'), \"weekdays_bitset\" INTEGER NOT NULL CHECK (weekdays_bitset BETWEEN 1 AND 127), \"iana_zone\" TEXT NOT NULL CHECK (length(iana_zone) BETWEEN 1 AND 128), \"quiet_hours_override\" INTEGER NOT NULL DEFAULT FALSE CHECK (quiet_hours_override IN (0, 1)), \"message_id\" TEXT NOT NULL, \"os_notification_id\" INTEGER UNIQUE, \"last_scheduled_at_utc\" INTEGER, \"updated_at_utc\" INTEGER NOT NULL);"
+        }
+      ]
+    },
+    {
+      "name": "data_migrations",
+      "sql": [
+        {
+          "dialect": "sqlite",
+          "sql": "CREATE TABLE IF NOT EXISTS \"data_migrations\" (\"version\" INTEGER NOT NULL PRIMARY KEY, \"completed_at_utc\" INTEGER NOT NULL);"
+        }
+      ]
+    },
+    {
+      "name": "export_history",
+      "sql": [
+        {
+          "dialect": "sqlite",
+          "sql": "CREATE TABLE IF NOT EXISTS \"export_history\" (\"id\" TEXT NOT NULL PRIMARY KEY, \"created_at_utc\" INTEGER NOT NULL, \"archive_schema\" INTEGER NOT NULL CHECK (archive_schema > 0), \"byte_length\" INTEGER CHECK (byte_length >= 0), \"outcome\" TEXT NOT NULL CHECK (outcome IN ('success', 'failure')));"
+        }
+      ]
+    },
+    {
+      "name": "file_cleanup_queue",
+      "sql": [
+        {
+          "dialect": "sqlite",
+          "sql": "CREATE TABLE IF NOT EXISTS \"file_cleanup_queue\" (\"relative_path\" TEXT NOT NULL PRIMARY KEY, \"queued_at_utc\" INTEGER NOT NULL);"
+        }
+      ]
+    },
+    {
+      "name": "immutable_metric_semantics",
+      "sql": [
+        {
+          "dialect": "sqlite",
+          "sql": "CREATE TRIGGER immutable_metric_semantics BEFORE UPDATE ON metric_definitions WHEN NEW.id != OLD.id OR NEW.version != OLD.version OR NEW.skill_id != OLD.skill_id OR NEW.label != OLD.label OR NEW.unit_key != OLD.unit_key OR NEW.value_type != OLD.value_type OR NEW.direction != OLD.direction OR NEW.target_value IS NOT OLD.target_value OR NEW.scale_min IS NOT OLD.scale_min OR NEW.scale_max IS NOT OLD.scale_max OR NEW.source_hint != OLD.source_hint BEGIN SELECT RAISE (ABORT, 'metric_version_immutable');END"
+        }
+      ]
+    },
+    {
+      "name": "validate_goal_insert",
+      "sql": [
+        {
+          "dialect": "sqlite",
+          "sql": "CREATE TRIGGER validate_goal_insert BEFORE INSERT ON goals WHEN NEW.metric_definition_id IS NOT NULL AND NEW.target_value IS NOT NULL AND NOT EXISTS (SELECT 1 FROM metric_definitions AS d WHERE d.id = NEW.metric_definition_id AND d.version = NEW.definition_version AND d.skill_id = NEW.skill_id AND d.value_type = 'numeric' AND d.unit_key = NEW.target_unit) BEGIN SELECT RAISE (ABORT, 'goal_metric_unit');END"
+        }
+      ]
+    },
+    {
+      "name": "validate_goal_update",
+      "sql": [
+        {
+          "dialect": "sqlite",
+          "sql": "CREATE TRIGGER validate_goal_update BEFORE UPDATE ON goals WHEN NEW.metric_definition_id IS NOT NULL AND NEW.target_value IS NOT NULL AND NOT EXISTS (SELECT 1 FROM metric_definitions AS d WHERE d.id = NEW.metric_definition_id AND d.version = NEW.definition_version AND d.skill_id = NEW.skill_id AND d.value_type = 'numeric' AND d.unit_key = NEW.target_unit) BEGIN SELECT RAISE (ABORT, 'goal_metric_unit');END"
+        }
+      ]
+    },
+    {
+      "name": "next_metric_version",
+      "sql": [
+        {
+          "dialect": "sqlite",
+          "sql": "CREATE TRIGGER next_metric_version BEFORE INSERT ON metric_definitions WHEN NEW.version != COALESCE((SELECT MAX(version) + 1 FROM metric_definitions WHERE id = NEW.id), 1) OR EXISTS (SELECT 1 FROM metric_definitions WHERE id = NEW.id AND skill_id != NEW.skill_id) BEGIN SELECT RAISE (ABORT, 'metric_version_sequence');END"
+        }
+      ]
+    },
+    {
+      "name": "legal_session_transition",
+      "sql": [
+        {
+          "dialect": "sqlite",
+          "sql": "CREATE TRIGGER legal_session_transition BEFORE UPDATE ON sessions WHEN NEW.skill_id != OLD.skill_id OR NEW.id != OLD.id OR NEW.entry_mode != OLD.entry_mode OR NEW.manual_intent IS NOT OLD.manual_intent OR NEW.revision != OLD.revision + 1 OR(NEW.status != OLD.status AND NOT((OLD.status = 'draft' AND NEW.status IN ('running', 'completed', 'discarded'))OR(OLD.status = 'running' AND NEW.status IN ('paused', 'completed', 'discarded'))OR(OLD.status = 'paused' AND NEW.status IN ('running', 'completed', 'discarded'))))OR NEW.active_seconds < COALESCE((SELECT SUM(allocated_seconds) FROM session_exercises WHERE session_id = OLD.id), 0) BEGIN SELECT RAISE (ABORT, 'session_conflict');END"
+        }
+      ]
+    },
+    {
+      "name": "validate_exercise_insert",
+      "sql": [
+        {
+          "dialect": "sqlite",
+          "sql": "CREATE TRIGGER validate_exercise_insert BEFORE INSERT ON session_exercises WHEN(NEW.exercise_id IS NOT NULL AND NOT EXISTS (SELECT 1 FROM exercises AS e JOIN sessions AS s ON s.id = NEW.session_id WHERE e.id = NEW.exercise_id AND e.skill_id = s.skill_id))OR COALESCE(NEW.allocated_seconds, 0) + COALESCE((SELECT SUM(allocated_seconds) FROM session_exercises WHERE session_id = NEW.session_id), 0) > (SELECT active_seconds FROM sessions WHERE id = NEW.session_id) BEGIN SELECT RAISE (ABORT, 'exercise_allocation');END"
+        }
+      ]
+    },
+    {
+      "name": "validate_exercise_update",
+      "sql": [
+        {
+          "dialect": "sqlite",
+          "sql": "CREATE TRIGGER validate_exercise_update BEFORE UPDATE ON session_exercises WHEN(NEW.exercise_id IS NOT NULL AND NOT EXISTS (SELECT 1 FROM exercises AS e JOIN sessions AS s ON s.id = NEW.session_id WHERE e.id = NEW.exercise_id AND e.skill_id = s.skill_id))OR COALESCE(NEW.allocated_seconds, 0) + COALESCE((SELECT SUM(allocated_seconds) FROM session_exercises WHERE session_id = NEW.session_id AND NOT(session_id = OLD.session_id AND ordinal = OLD.ordinal)), 0) > (SELECT active_seconds FROM sessions WHERE id = NEW.session_id) BEGIN SELECT RAISE (ABORT, 'exercise_allocation');END"
+        }
+      ]
+    },
+    {
+      "name": "validate_reading_insert",
+      "sql": [
+        {
+          "dialect": "sqlite",
+          "sql": "CREATE TRIGGER validate_reading_insert BEFORE INSERT ON metric_readings WHEN NOT EXISTS (SELECT 1 FROM metric_definitions AS d JOIN sessions AS s ON s.id = NEW.session_id WHERE d.id = NEW.metric_definition_id AND d.version = NEW.definition_version AND d.skill_id = s.skill_id AND((d.value_type = 'numeric' AND NEW.numeric_value IS NOT NULL AND NEW.text_value IS NULL AND NEW.bool_value IS NULL AND(d.scale_min IS NULL OR NEW.numeric_value >= d.scale_min)AND(d.scale_max IS NULL OR NEW.numeric_value <= d.scale_max))OR(d.value_type = 'text' AND NEW.text_value IS NOT NULL AND NEW.numeric_value IS NULL AND NEW.bool_value IS NULL)OR(d.value_type = 'checklist' AND NEW.bool_value IS NOT NULL AND NEW.text_value IS NULL AND NEW.numeric_value IS NULL))) BEGIN SELECT RAISE (ABORT, 'reading_type_range_skill');END"
+        }
+      ]
+    },
+    {
+      "name": "validate_reading_update",
+      "sql": [
+        {
+          "dialect": "sqlite",
+          "sql": "CREATE TRIGGER validate_reading_update BEFORE UPDATE ON metric_readings WHEN NOT EXISTS (SELECT 1 FROM metric_definitions AS d JOIN sessions AS s ON s.id = NEW.session_id WHERE d.id = NEW.metric_definition_id AND d.version = NEW.definition_version AND d.skill_id = s.skill_id AND((d.value_type = 'numeric' AND NEW.numeric_value IS NOT NULL AND NEW.text_value IS NULL AND NEW.bool_value IS NULL AND(d.scale_min IS NULL OR NEW.numeric_value >= d.scale_min)AND(d.scale_max IS NULL OR NEW.numeric_value <= d.scale_max))OR(d.value_type = 'text' AND NEW.text_value IS NOT NULL AND NEW.numeric_value IS NULL AND NEW.bool_value IS NULL)OR(d.value_type = 'checklist' AND NEW.bool_value IS NOT NULL AND NEW.text_value IS NULL AND NEW.numeric_value IS NULL))) BEGIN SELECT RAISE (ABORT, 'reading_type_range_skill');END"
+        }
+      ]
+    },
+    {
+      "name": "cleanup_deleted_media",
+      "sql": [
+        {
+          "dialect": "sqlite",
+          "sql": "CREATE TRIGGER cleanup_deleted_media AFTER DELETE ON media_assets BEGIN INSERT OR IGNORE INTO file_cleanup_queue (relative_path, queued_at_utc) VALUES (OLD.relative_path, unixepoch());INSERT OR IGNORE INTO file_cleanup_queue (relative_path, queued_at_utc) SELECT OLD.thumbnail_relative_path, unixepoch() WHERE OLD.thumbnail_relative_path IS NOT NULL;END"
+        }
+      ]
+    },
+    {
+      "name": "immutable_media_identity",
+      "sql": [
+        {
+          "dialect": "sqlite",
+          "sql": "CREATE TRIGGER immutable_media_identity BEFORE UPDATE ON media_assets WHEN NEW.id != OLD.id OR NEW.session_id != OLD.session_id OR NEW.relative_path != OLD.relative_path OR NEW.thumbnail_relative_path IS NOT OLD.thumbnail_relative_path OR NEW.sha256 != OLD.sha256 OR NEW.byte_length != OLD.byte_length BEGIN SELECT RAISE (ABORT, 'media_identity_immutable');END"
+        }
+      ]
+    }
+  ]
+}

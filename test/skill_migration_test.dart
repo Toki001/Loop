@@ -106,6 +106,7 @@ void main() {
       1,
       2,
       3,
+      4,
     ]);
     // Recreated goal-unit triggers must still reject incompatible updates.
     await expectLater(
@@ -160,7 +161,7 @@ void main() {
             .data
             .values
             .single,
-        3,
+        LoopDatabase.currentVersion,
       );
       expect((await db!.select(db!.goals).get()).single.status, 'completed');
     },

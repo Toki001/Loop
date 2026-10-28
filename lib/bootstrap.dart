@@ -10,6 +10,8 @@ import 'app/l10n/app_localizations.dart';
 import 'core/data/local_failure.dart';
 import 'core/data/storage.dart';
 import 'core/data/storage_protection.dart';
+import 'features/practice/presentation/practice_providers.dart';
+import 'features/practice/domain/practice_engine.dart';
 import 'features/settings/data/file_preferences_repository.dart';
 import 'features/settings/domain/preferences.dart';
 import 'features/settings/presentation/preferences_controller.dart';
@@ -44,14 +46,26 @@ class _BootstrapHostState extends State<BootstrapHost> {
   late Future<_BootstrapResult> _loading = _load();
   FilePreferencesRepository? _legacyRepository;
   LoopStorage? _storage;
+  PracticeEngine? _practiceEngine;
+
+  Future<void> _closeStorage() async {
+    final storage = _storage;
+    final engine = _practiceEngine;
+    _storage = null;
+    _practiceEngine = null;
+    // Provider disposal stops new work. Existing transactions must finish before
+    // their database is closed, including recovery during the first frame.
+    await engine?.idle;
+    await storage?.close();
+  }
+
   bool _resetting = false;
   bool _resetFailed = false;
 
   Future<_BootstrapResult> _load() async {
     _legacyRepository = null;
     try {
-      await _storage?.close();
-      _storage = null;
+      await _closeStorage();
       final directory =
           await (widget.directoryProvider?.call() ??
               getApplicationSupportDirectory());
@@ -110,7 +124,7 @@ class _BootstrapHostState extends State<BootstrapHost> {
 
   @override
   void dispose() {
-    unawaited(_storage?.close());
+    unawaited(_closeStorage());
     super.dispose();
   }
 
@@ -130,7 +144,10 @@ class _BootstrapHostState extends State<BootstrapHost> {
             ),
             initialPreferencesProvider.overrideWithValue(data.preferences),
           ],
-          child: const LoopApp(),
+          child: PracticeLifecycleHost(
+            onEngineReady: (engine) => _practiceEngine = engine,
+            child: const LoopApp(),
+          ),
         );
       }
       return MaterialApp(

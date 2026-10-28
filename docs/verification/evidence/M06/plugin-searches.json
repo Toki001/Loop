@@ -1,0 +1,210 @@
+{
+  "date": "2026-10-28",
+  "discovery": "Runtime ALL_TOOLS and supplied local skill catalog; no actual find_skills function exposed. Existing requested skills read; no installation.",
+  "searches": [
+    {
+      "query": "ponytail",
+      "result": {
+        "plugins": []
+      }
+    },
+    {
+      "query": "headless",
+      "result": {
+        "plugins": [
+          {
+            "id": "plugin_asdk_app_6947eaa4edd081919561e4ee3a2e5dcc",
+            "name": "wix",
+            "display_name": "Wix",
+            "description": "Build your entire site and buy a domain right from the chat. Just ask Wix for the website you want, including all the functionality you need, and get a complete, business-ready site generated for you in minutes. You can also connect the perfect custom domain to your site and manage everything seamlessly in one place. If you like, you can continue editing it inside the Wix Harmony editor using tons more AI tools and smooth drag and drop.\n\nFor developers: build and deploy Wix apps with the Wix CLI, including dashboard extensions, backend APIs, site widgets, service plugins and data collections. Build headless sites with Wix Headless, fully hosted on Wix or self-hosted in any framework, powered by Wix backend services for eCommerce, bookings, CMS, events and members. Manage your store, bookings, contacts and site settings programmatically.",
+            "scope": "GLOBAL",
+            "status": "ENABLED",
+            "installation_policy": "AVAILABLE",
+            "installed": false
+          },
+          {
+            "id": "Plugin_fc9843a6fb34819195d6c7802398a8a7",
+            "name": "data-analytics",
+            "display_name": "Data",
+            "description": "Answer product and business questions with data",
+            "scope": "GLOBAL",
+            "status": "ENABLED",
+            "installation_policy": "AVAILABLE",
+            "installed": false
+          }
+        ]
+      }
+    },
+    {
+      "query": "graphify",
+      "result": {
+        "plugins": []
+      }
+    },
+    {
+      "query": "ui-ux-pro-max",
+      "result": {
+        "plugins": [
+          {
+            "id": "plugin_asdk_app_6a883213fb288191aa91f89a5db31f60",
+            "name": "app-6a883213fb288191aa91f89a5db31f60",
+            "display_name": "MagicPath",
+            "description": "MagicPath is an Al design and prototyping tool for creating interactive websites, app interfaces, dashboards, and visual plans on a shared canvas. With the MagicPath plugin, describe what you want to make and turn your ideas, notes, or existing designs into editable work you can explore and refine.\n\nCreate a landing page, prototype an app, or design a dashboard with working interactions. Compare multiple Ul and UX design directions, refine layouts and content, and apply reusable themes for a consistent look. Turn meeting notes, product requirements, or a process into flowcharts, wireframes, user journeys, and workshop boards that make the next step easier to understand.\n\nMagicPath supports designers, product managers, founders, marketers, developers, educators, and teams planning how something should look or work. Keep related designs together in team projects and share links for review. In a coding environment with file access, adapt existing React Ul code into MagicPath or export React and TypeScript components to continue implementation in your app.",
+            "scope": "GLOBAL",
+            "status": "ENABLED",
+            "installation_policy": "AVAILABLE",
+            "installed": false
+          },
+          {
+            "id": "plugin_connector_68df038e0ba48191908c8434991bbac2",
+            "name": "figma",
+            "display_name": "Figma",
+            "description": "Bring your Figma workflows for creating, reviewing, and implementing designs into your ChatGPT and Codex conversations. Send your product screens to Figma where they become editable layers using your designs system components. Share these designs and collaborate with your team, or send them back to Codex to implement the designs in your codebase. You can also create and edit polished decks in Figma Slides, or generate diagrams in FigJam.",
+            "scope": "GLOBAL",
+            "status": "ENABLED",
+            "installation_policy": "AVAILABLE",
+            "installed": false
+          },
+          {
+            "id": "Plugin_fa77aec24fc08191bc6e57f377126d76",
+            "name": "product-design",
+            "display_name": "Product Design",
+            "description": "The Product Design plugin is built for turning early ideas into prototypes teams can review. It starts design and build work by confirming the brief, then helps teams explore product directions, audit user flows, prototype from a live URL, and make static screenshots interactive.",
+            "scope": "GLOBAL",
+            "status": "ENABLED",
+            "installation_policy": "AVAILABLE",
+            "installed": false
+          }
+        ]
+      }
+    },
+    {
+      "query": "web-design-guidelines",
+      "result": {
+        "plugins": [
+          {
+            "id": "plugin_connector_68df33b1a2d081918778431a9cfca8ba",
+            "name": "canva",
+            "display_name": "Canva",
+            "description": "Bring your Canva design workflow into Codex and create, refine, and review designs through natural conversation.\n\nWhat Canva can do: \nCreate designs: Turn a brief, outline, or draft copy into a presentation, doc, poster, flyer, social post, resume, and more. \nGenerate images: Create photos, illustrations, icons, and graphics from a prompt, or restyle an image you already have. \nRemove backgrounds: Lift the subject out of an image onto a transparent background. Upload files: Bring attachments and files from your chat into Canva to use in your designs. \nResize for social media: Adapt a design for Facebook, Instagram, and LinkedIn in one step. \nBulk create: Generate multiple designs from spreadsheet data using a brand template. \nEdit designs: Update text, media, and formatting, or reposition and resize elements. \nGet design feedback: Receive structured feedback on visual hierarchy, layout, readability, consistency, and accessibility. \nImplement feedback: Review comment threads and apply clear, actionable changes. Brand check: Check colors, fonts, logo usage, and copy against your Brand Kit.\n\nOnce installed, describe what you want in plain language or invoke Canva directly with @Canva.\n\nTry prompts like:\n\n@Canva, create a pitch deck from this outline.\n@Canva, make an Instagram post announcing our Friday sale.\n@Canva, generate an illustration of a lighthouse at dawn.\n@Canva, remove the background from this photo.\n@Canva, upload this PDF and turn it into a presentation.\n@Canva, resize this design for social media.\n@Canva, create designs from this spreadsheet using my brand template.\n@Canva, update the headline in this design.\n@Canva, implement the feedback in the comment threads.\n@Canva, check this design against my Brand Kit.\nRequirements: Connect your Canva account to use the plugin. Bulk Create requires an eligible Canva Enterprise plan. Design and image generation use Canva AI credits.\n\nWant to take a more hands-on approach? Instantly open your design in Canva's powerful editor for the final touches.",
+            "scope": "GLOBAL",
+            "status": "ENABLED",
+            "installation_policy": "AVAILABLE",
+            "installed": false
+          },
+          {
+            "id": "plugin_asdk_app_6a0783a98c4c8191841404d786d4a4b9",
+            "name": "app-6a0783a98c4c8191841404d786d4a4b9",
+            "display_name": "Webflow",
+            "description": "The Webflow app connects your agents directly to your workspace. They can design, build, and manage sites and author, edit, and localize your CMS.  Built-in app skills let them ship custom code integrations, deploy web apps on  Webflow Cloud, and analyze site activity, performance, and AEO. \n\nNew capabilities ship continuously directly to the app, giving your agents superpowers to run your entire digital presence remotely, through Webflow.",
+            "scope": "GLOBAL",
+            "status": "ENABLED",
+            "installation_policy": "AVAILABLE",
+            "installed": false
+          },
+          {
+            "id": "plugin_asdk_app_695325bae7348191b58ae9349a963d22",
+            "name": "app-695325bae7348191b58ae9349a963d22",
+            "display_name": "TinyFish",
+            "description": "TinyFish gives ChatGPT a cloud browser agent for browser automation and web scraping. Log in to account portals and dashboards with saved browser profiles that stay signed in, or with credentials from a connected vault, so passwords never go in chat. Fill out and submit forms, check account status, compare prices, and scrape and extract data from social media and listings. Plus web search and fetch for reading any page.",
+            "scope": "GLOBAL",
+            "status": "ENABLED",
+            "installation_policy": "AVAILABLE",
+            "installed": false
+          },
+          {
+            "id": "plugin_connector_68df038e0ba48191908c8434991bbac2",
+            "name": "figma",
+            "display_name": "Figma",
+            "description": "Bring your Figma workflows for creating, reviewing, and implementing designs into your ChatGPT and Codex conversations. Send your product screens to Figma where they become editable layers using your designs system components. Share these designs and collaborate with your team, or send them back to Codex to implement the designs in your codebase. You can also create and edit polished decks in Figma Slides, or generate diagrams in FigJam.",
+            "scope": "GLOBAL",
+            "status": "ENABLED",
+            "installation_policy": "AVAILABLE",
+            "installed": false
+          },
+          {
+            "id": "plugin_asdk_app_6a314a73f8ac819195b0d55e36b9c609",
+            "name": "app-6a314a73f8ac819195b0d55e36b9c609",
+            "display_name": "Firecrawl",
+            "description": "Firecrawl helps users search the web, extract page and document content, discover structured data providers, and research developer documentation and scientific papers. It also supports browser interactions, multi-page crawls, structured research jobs, website change monitoring, and account credit-usage checks.",
+            "scope": "GLOBAL",
+            "status": "ENABLED",
+            "installation_policy": "AVAILABLE",
+            "installed": false
+          }
+        ]
+      }
+    },
+    {
+      "query": "shadcn",
+      "result": {
+        "plugins": []
+      }
+    },
+    {
+      "query": "hallmark",
+      "result": {
+        "plugins": []
+      }
+    },
+    {
+      "query": "emil-design-eng",
+      "result": {
+        "plugins": [
+          {
+            "id": "plugin_connector_68df038e0ba48191908c8434991bbac2",
+            "name": "figma",
+            "display_name": "Figma",
+            "description": "Bring your Figma workflows for creating, reviewing, and implementing designs into your ChatGPT and Codex conversations. Send your product screens to Figma where they become editable layers using your designs system components. Share these designs and collaborate with your team, or send them back to Codex to implement the designs in your codebase. You can also create and edit polished decks in Figma Slides, or generate diagrams in FigJam.",
+            "scope": "GLOBAL",
+            "status": "ENABLED",
+            "installation_policy": "AVAILABLE",
+            "installed": false
+          },
+          {
+            "id": "plugin_connector_68df33b1a2d081918778431a9cfca8ba",
+            "name": "canva",
+            "display_name": "Canva",
+            "description": "Bring your Canva design workflow into Codex and create, refine, and review designs through natural conversation.\n\nWhat Canva can do: \nCreate designs: Turn a brief, outline, or draft copy into a presentation, doc, poster, flyer, social post, resume, and more. \nGenerate images: Create photos, illustrations, icons, and graphics from a prompt, or restyle an image you already have. \nRemove backgrounds: Lift the subject out of an image onto a transparent background. Upload files: Bring attachments and files from your chat into Canva to use in your designs. \nResize for social media: Adapt a design for Facebook, Instagram, and LinkedIn in one step. \nBulk create: Generate multiple designs from spreadsheet data using a brand template. \nEdit designs: Update text, media, and formatting, or reposition and resize elements. \nGet design feedback: Receive structured feedback on visual hierarchy, layout, readability, consistency, and accessibility. \nImplement feedback: Review comment threads and apply clear, actionable changes. Brand check: Check colors, fonts, logo usage, and copy against your Brand Kit.\n\nOnce installed, describe what you want in plain language or invoke Canva directly with @Canva.\n\nTry prompts like:\n\n@Canva, create a pitch deck from this outline.\n@Canva, make an Instagram post announcing our Friday sale.\n@Canva, generate an illustration of a lighthouse at dawn.\n@Canva, remove the background from this photo.\n@Canva, upload this PDF and turn it into a presentation.\n@Canva, resize this design for social media.\n@Canva, create designs from this spreadsheet using my brand template.\n@Canva, update the headline in this design.\n@Canva, implement the feedback in the comment threads.\n@Canva, check this design against my Brand Kit.\nRequirements: Connect your Canva account to use the plugin. Bulk Create requires an eligible Canva Enterprise plan. Design and image generation use Canva AI credits.\n\nWant to take a more hands-on approach? Instantly open your design in Canva's powerful editor for the final touches.",
+            "scope": "GLOBAL",
+            "status": "ENABLED",
+            "installation_policy": "AVAILABLE",
+            "installed": false
+          },
+          {
+            "id": "plugin_asdk_app_6a883213fb288191aa91f89a5db31f60",
+            "name": "app-6a883213fb288191aa91f89a5db31f60",
+            "display_name": "MagicPath",
+            "description": "MagicPath is an Al design and prototyping tool for creating interactive websites, app interfaces, dashboards, and visual plans on a shared canvas. With the MagicPath plugin, describe what you want to make and turn your ideas, notes, or existing designs into editable work you can explore and refine.\n\nCreate a landing page, prototype an app, or design a dashboard with working interactions. Compare multiple Ul and UX design directions, refine layouts and content, and apply reusable themes for a consistent look. Turn meeting notes, product requirements, or a process into flowcharts, wireframes, user journeys, and workshop boards that make the next step easier to understand.\n\nMagicPath supports designers, product managers, founders, marketers, developers, educators, and teams planning how something should look or work. Keep related designs together in team projects and share links for review. In a coding environment with file access, adapt existing React Ul code into MagicPath or export React and TypeScript components to continue implementation in your app.",
+            "scope": "GLOBAL",
+            "status": "ENABLED",
+            "installation_policy": "AVAILABLE",
+            "installed": false
+          },
+          {
+            "id": "Plugin_fa77aec24fc08191bc6e57f377126d76",
+            "name": "product-design",
+            "display_name": "Product Design",
+            "description": "The Product Design plugin is built for turning early ideas into prototypes teams can review. It starts design and build work by confirming the brief, then helps teams explore product directions, audit user flows, prototype from a live URL, and make static screenshots interactive.",
+            "scope": "GLOBAL",
+            "status": "ENABLED",
+            "installation_policy": "AVAILABLE",
+            "installed": false
+          },
+          {
+            "id": "plugin_asdk_app_6a0783a98c4c8191841404d786d4a4b9",
+            "name": "app-6a0783a98c4c8191841404d786d4a4b9",
+            "display_name": "Webflow",
+            "description": "The Webflow app connects your agents directly to your workspace. They can design, build, and manage sites and author, edit, and localize your CMS.  Built-in app skills let them ship custom code integrations, deploy web apps on  Webflow Cloud, and analyze site activity, performance, and AEO. \n\nNew capabilities ship continuously directly to the app, giving your agents superpowers to run your entire digital presence remotely, through Webflow.",
+            "scope": "GLOBAL",
+            "status": "ENABLED",
+            "installation_policy": "AVAILABLE",
+            "installed": false
+          }
+        ]
+      }
+    }
+  ],
+  "exactRequestedMatches": [],
+  "fallback": "Local Flutter/native checks; no remote graph, connection or install."
+}

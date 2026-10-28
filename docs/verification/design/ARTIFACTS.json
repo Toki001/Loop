@@ -1341,6 +1341,230 @@
       "milestone": "M05",
       "source": "test/skill_goldens_test.dart",
       "review": "28-case layout/scroll/action checks; sampled visual inspection recorded below"
+    },
+    "docs/verification/design/goldens/m06_failure_compact_2x_dark.png": {
+      "sha256": "f2fb35757ba4a161d1088a1ed36f4351a9fb190b13e6a86c0f8d4403acc682c8",
+      "provenance": "synthetic-flutter-golden",
+      "milestone": "M06",
+      "source": "test/practice_goldens_test.dart",
+      "review": "32-case layout/action/scroll checks; sampled visual inspection recorded below"
+    },
+    "docs/verification/design/goldens/m06_failure_compact_2x_light.png": {
+      "sha256": "5892f049a8c1b25451c8a37b8cbf036b61a00df61b521e631fdfe1b74684d53d",
+      "provenance": "synthetic-flutter-golden",
+      "milestone": "M06",
+      "source": "test/practice_goldens_test.dart",
+      "review": "32-case layout/action/scroll checks; sampled visual inspection recorded below"
+    },
+    "docs/verification/design/goldens/m06_failure_phone_1x_dark.png": {
+      "sha256": "fb42510a5013c4d29f0a1d81a624c87a9fd2bbe46f96c1174fe20fcc19489d30",
+      "provenance": "synthetic-flutter-golden",
+      "milestone": "M06",
+      "source": "test/practice_goldens_test.dart",
+      "review": "32-case layout/action/scroll checks; sampled visual inspection recorded below"
+    },
+    "docs/verification/design/goldens/m06_failure_phone_1x_light.png": {
+      "sha256": "33c79797664f40d1d98d731d341195b8d9c39caf7815e0a4c28cf2c8c2f1d1f2",
+      "provenance": "synthetic-flutter-golden",
+      "milestone": "M06",
+      "source": "test/practice_goldens_test.dart",
+      "review": "32-case layout/action/scroll checks; sampled visual inspection recorded below"
+    },
+    "docs/verification/design/goldens/m06_journal_compact_2x_dark.png": {
+      "sha256": "935f11a521e3dd65c0815656a637b97b503bf409b64258c4b64428cb3839e51e",
+      "provenance": "synthetic-flutter-golden",
+      "milestone": "M06",
+      "source": "test/practice_goldens_test.dart",
+      "review": "32-case layout/action/scroll checks; sampled visual inspection recorded below"
+    },
+    "docs/verification/design/goldens/m06_journal_compact_2x_light.png": {
+      "sha256": "fd3a538a020fc6db18ffdb1787d6215e134e0e8bff653fd21cd74857bf67621d",
+      "provenance": "synthetic-flutter-golden",
+      "milestone": "M06",
+      "source": "test/practice_goldens_test.dart",
+      "review": "32-case layout/action/scroll checks; sampled visual inspection recorded below"
+    },
+    "docs/verification/design/goldens/m06_journal_phone_1x_dark.png": {
+      "sha256": "22d98d8d7a57735cba99229e5ebcdac9438cc872a9c8ed794f2dd2b801248223",
+      "provenance": "synthetic-flutter-golden",
+      "milestone": "M06",
+      "source": "test/practice_goldens_test.dart",
+      "review": "32-case layout/action/scroll checks; sampled visual inspection recorded below"
+    },
+    "docs/verification/design/goldens/m06_journal_phone_1x_light.png": {
+      "sha256": "bd8a35cee9041893585f3bce27e766d46c943389745919e4dea3da9f1d8e6515",
+      "provenance": "synthetic-flutter-golden",
+      "milestone": "M06",
+      "source": "test/practice_goldens_test.dart",
+      "review": "32-case layout/action/scroll checks; sampled visual inspection recorded below"
+    },
+    "docs/verification/design/goldens/m06_manual_compact_2x_dark.png": {
+      "sha256": "4018b5648225247bfc7f2040a1d2a26986d06a3e7d7f780026dc25e72be505f9",
+      "provenance": "synthetic-flutter-golden",
+      "milestone": "M06",
+      "source": "test/practice_goldens_test.dart",
+      "review": "32-case layout/action/scroll checks; sampled visual inspection recorded below"
+    },
+    "docs/verification/design/goldens/m06_manual_compact_2x_light.png": {
+      "sha256": "c375828a3a53bfa4018a69b9455be6f3c8ed96f9a04c05f54c68542eba5d3bb6",
+      "provenance": "synthetic-flutter-golden",
+      "milestone": "M06",
+      "source": "test/practice_goldens_test.dart",
+      "review": "32-case layout/action/scroll checks; sampled visual inspection recorded below"
+    },
+    "docs/verification/design/goldens/m06_manual_phone_1x_dark.png": {
+      "sha256": "bdf6671c21b460239d6b1863e440f10c69364c6ec8b28c1b59af6bd673cf3b09",
+      "provenance": "synthetic-flutter-golden",
+      "milestone": "M06",
+      "source": "test/practice_goldens_test.dart",
+      "review": "32-case layout/action/scroll checks; sampled visual inspection recorded below"
+    },
+    "docs/verification/design/goldens/m06_manual_phone_1x_light.png": {
+      "sha256": "b960ad1a1eebddae3b5d0278d0e90f541dd498594fa2832e8b42aecebebf2d28",
+      "provenance": "synthetic-flutter-golden",
+      "milestone": "M06",
+      "source": "test/practice_goldens_test.dart",
+      "review": "32-case layout/action/scroll checks; sampled visual inspection recorded below"
+    },
+    "docs/verification/design/goldens/m06_paused_compact_2x_dark.png": {
+      "sha256": "f2fb35757ba4a161d1088a1ed36f4351a9fb190b13e6a86c0f8d4403acc682c8",
+      "provenance": "synthetic-flutter-golden",
+      "milestone": "M06",
+      "source": "test/practice_goldens_test.dart",
+      "review": "32-case layout/action/scroll checks; sampled visual inspection recorded below"
+    },
+    "docs/verification/design/goldens/m06_paused_compact_2x_light.png": {
+      "sha256": "5892f049a8c1b25451c8a37b8cbf036b61a00df61b521e631fdfe1b74684d53d",
+      "provenance": "synthetic-flutter-golden",
+      "milestone": "M06",
+      "source": "test/practice_goldens_test.dart",
+      "review": "32-case layout/action/scroll checks; sampled visual inspection recorded below"
+    },
+    "docs/verification/design/goldens/m06_paused_phone_1x_dark.png": {
+      "sha256": "a0f874881b9a7fad69b9079b52b0461741b2b75afd7e8058e88a96380037e97d",
+      "provenance": "synthetic-flutter-golden",
+      "milestone": "M06",
+      "source": "test/practice_goldens_test.dart",
+      "review": "32-case layout/action/scroll checks; sampled visual inspection recorded below"
+    },
+    "docs/verification/design/goldens/m06_paused_phone_1x_light.png": {
+      "sha256": "f833117eee2cd5c6e30c4e1209f88bafe939aecc6b8f5b51af998cae06d61756",
+      "provenance": "synthetic-flutter-golden",
+      "milestone": "M06",
+      "source": "test/practice_goldens_test.dart",
+      "review": "32-case layout/action/scroll checks; sampled visual inspection recorded below"
+    },
+    "docs/verification/design/goldens/m06_recovered_compact_2x_dark.png": {
+      "sha256": "f2fb35757ba4a161d1088a1ed36f4351a9fb190b13e6a86c0f8d4403acc682c8",
+      "provenance": "synthetic-flutter-golden",
+      "milestone": "M06",
+      "source": "test/practice_goldens_test.dart",
+      "review": "32-case layout/action/scroll checks; sampled visual inspection recorded below"
+    },
+    "docs/verification/design/goldens/m06_recovered_compact_2x_light.png": {
+      "sha256": "5892f049a8c1b25451c8a37b8cbf036b61a00df61b521e631fdfe1b74684d53d",
+      "provenance": "synthetic-flutter-golden",
+      "milestone": "M06",
+      "source": "test/practice_goldens_test.dart",
+      "review": "32-case layout/action/scroll checks; sampled visual inspection recorded below"
+    },
+    "docs/verification/design/goldens/m06_recovered_phone_1x_dark.png": {
+      "sha256": "bc694995b4b2d3447857e038e182917e6877c741da5c880a6122791e14ba7d60",
+      "provenance": "synthetic-flutter-golden",
+      "milestone": "M06",
+      "source": "test/practice_goldens_test.dart",
+      "review": "32-case layout/action/scroll checks; sampled visual inspection recorded below"
+    },
+    "docs/verification/design/goldens/m06_recovered_phone_1x_light.png": {
+      "sha256": "141f0a996d1aaad19de12da756d68ad2802772696d5120494099b01ec570de01",
+      "provenance": "synthetic-flutter-golden",
+      "milestone": "M06",
+      "source": "test/practice_goldens_test.dart",
+      "review": "32-case layout/action/scroll checks; sampled visual inspection recorded below"
+    },
+    "docs/verification/design/goldens/m06_running_compact_2x_dark.png": {
+      "sha256": "f27545be135f541db9106420b8c5a40880a8a74fda52a54217d3fb4398e665f0",
+      "provenance": "synthetic-flutter-golden",
+      "milestone": "M06",
+      "source": "test/practice_goldens_test.dart",
+      "review": "32-case layout/action/scroll checks; sampled visual inspection recorded below"
+    },
+    "docs/verification/design/goldens/m06_running_compact_2x_light.png": {
+      "sha256": "04848be58b61e0aa3507c9ba82ce312874ad24bebeccc7210ea1521753abc495",
+      "provenance": "synthetic-flutter-golden",
+      "milestone": "M06",
+      "source": "test/practice_goldens_test.dart",
+      "review": "32-case layout/action/scroll checks; sampled visual inspection recorded below"
+    },
+    "docs/verification/design/goldens/m06_running_phone_1x_dark.png": {
+      "sha256": "899f78e2b440fbae057d37d25805c5a9b535f65587f5edff26d5a15014d1585b",
+      "provenance": "synthetic-flutter-golden",
+      "milestone": "M06",
+      "source": "test/practice_goldens_test.dart",
+      "review": "32-case layout/action/scroll checks; sampled visual inspection recorded below"
+    },
+    "docs/verification/design/goldens/m06_running_phone_1x_light.png": {
+      "sha256": "d5335ffcc22c10b9c1ada052b9770cc5133363ce91cfebd5e72a1f5d805eb33d",
+      "provenance": "synthetic-flutter-golden",
+      "milestone": "M06",
+      "source": "test/practice_goldens_test.dart",
+      "review": "32-case layout/action/scroll checks; sampled visual inspection recorded below"
+    },
+    "docs/verification/design/goldens/m06_saved_compact_2x_dark.png": {
+      "sha256": "251221e3a8a4f1e81914bb9ac79db40fca20bdaf469cc461ab6459bd00451ec8",
+      "provenance": "synthetic-flutter-golden",
+      "milestone": "M06",
+      "source": "test/practice_goldens_test.dart",
+      "review": "32-case layout/action/scroll checks; sampled visual inspection recorded below"
+    },
+    "docs/verification/design/goldens/m06_saved_compact_2x_light.png": {
+      "sha256": "0325cfaff243c3a43d766e0672582ad24aa19f90f735b6742a52896bde265baa",
+      "provenance": "synthetic-flutter-golden",
+      "milestone": "M06",
+      "source": "test/practice_goldens_test.dart",
+      "review": "32-case layout/action/scroll checks; sampled visual inspection recorded below"
+    },
+    "docs/verification/design/goldens/m06_saved_phone_1x_dark.png": {
+      "sha256": "bca765d5f18d928c02e58c47663d614ab8a476ea85664d9a0947058e04006d03",
+      "provenance": "synthetic-flutter-golden",
+      "milestone": "M06",
+      "source": "test/practice_goldens_test.dart",
+      "review": "32-case layout/action/scroll checks; sampled visual inspection recorded below"
+    },
+    "docs/verification/design/goldens/m06_saved_phone_1x_light.png": {
+      "sha256": "b0f6aa9c4f15f9e6c717fc9bfba4266716a7fc0ad122d8dd32db22cc2027b37d",
+      "provenance": "synthetic-flutter-golden",
+      "milestone": "M06",
+      "source": "test/practice_goldens_test.dart",
+      "review": "32-case layout/action/scroll checks; sampled visual inspection recorded below"
+    },
+    "docs/verification/design/goldens/m06_setup_compact_2x_dark.png": {
+      "sha256": "5a9bb5b67eb3809c4b9d122d0ad6c30dcb798c0bb08bfbd24127bfaabde01412",
+      "provenance": "synthetic-flutter-golden",
+      "milestone": "M06",
+      "source": "test/practice_goldens_test.dart",
+      "review": "32-case layout/action/scroll checks; sampled visual inspection recorded below"
+    },
+    "docs/verification/design/goldens/m06_setup_compact_2x_light.png": {
+      "sha256": "41578e1b05acc77eb7f104969e1b28d4301a41f8673f29398b76c96eee2425aa",
+      "provenance": "synthetic-flutter-golden",
+      "milestone": "M06",
+      "source": "test/practice_goldens_test.dart",
+      "review": "32-case layout/action/scroll checks; sampled visual inspection recorded below"
+    },
+    "docs/verification/design/goldens/m06_setup_phone_1x_dark.png": {
+      "sha256": "e3a1f08e7fee4965fe0b3ee84475d3a49814e756ed64dbcc3c523d1a912e80f3",
+      "provenance": "synthetic-flutter-golden",
+      "milestone": "M06",
+      "source": "test/practice_goldens_test.dart",
+      "review": "32-case layout/action/scroll checks; sampled visual inspection recorded below"
+    },
+    "docs/verification/design/goldens/m06_setup_phone_1x_light.png": {
+      "sha256": "3b665e5c62e20f4cfb25349e47af24ce60c3277718bbbc3e08da36458032ca89",
+      "provenance": "synthetic-flutter-golden",
+      "milestone": "M06",
+      "source": "test/practice_goldens_test.dart",
+      "review": "32-case layout/action/scroll checks; sampled visual inspection recorded below"
     }
   },
   "font_license_records": [
@@ -1369,5 +1593,17 @@
     "m05_goal_compact_2x_dark.png",
     "m05_exercise_phone_1x_light.png",
     "m05_categories_phone_1x_dark.png"
+  ],
+  "m06_sampled_visual_review": [
+    "m06_failure_phone_1x_light.png",
+    "m06_journal_phone_1x_dark.png",
+    "m06_manual_compact_2x_light.png",
+    "m06_manual_phone_1x_light.png",
+    "m06_paused_phone_1x_dark.png",
+    "m06_recovered_phone_1x_light.png",
+    "m06_running_compact_2x_dark.png",
+    "m06_saved_compact_2x_dark.png",
+    "m06_setup_compact_2x_dark.png",
+    "m06_setup_phone_1x_light.png"
   ]
 }

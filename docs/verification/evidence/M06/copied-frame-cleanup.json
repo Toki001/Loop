@@ -1,0 +1,31 @@
+{
+  "results": [
+    {
+      "platform": "android",
+      "name": "m06-background.png",
+      "copiedArtifact": "docs/verification/native/M06/android-background-before-review.png",
+      "sha256": "3ff949bad1081705ca6687ec8cdb71b142fbde44cc821d37b4c32c4133af31ca",
+      "copyHashMatched": true,
+      "action": "removed only copied test frame after matching hash"
+    },
+    {
+      "platform": "ios",
+      "name": "m06-smoke.png",
+      "copiedArtifact": "docs/verification/native/M06/ios-timed-save.png",
+      "sha256": "cc05000bed504ec24feb760bedb97de65fc3a6cbf82066807778de8535fcee08",
+      "copyHashMatched": true,
+      "action": "removed only copied test frame after matching hash"
+    },
+    {
+      "platform": "ios",
+      "name": "m06-recovery.png",
+      "copiedArtifact": "docs/verification/native/M06/ios-recovered-save.png",
+      "sha256": "ec8cb45b6a19f083b16fea98ece3f005e0790fdf00e0156a9df1b62039b12b63",
+      "copyHashMatched": true,
+      "action": "removed only copied test frame after matching hash"
+    }
+  ],
+  "normalJournalModified": false,
+  "failedLockProbePreserved": true,
+  "onlyExactReservedTestFrameNamesConsidered": true
+}

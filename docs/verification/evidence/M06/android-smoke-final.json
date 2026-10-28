@@ -1,0 +1,52 @@
+{
+  "platform": "android",
+  "device": "NBDEXCJNL7JR9DIJ",
+  "stage": "smoke",
+  "flutterCommand": [
+    "flutter",
+    "--suppress-analytics",
+    "test",
+    "integration_test/practice_test.dart",
+    "-d",
+    "NBDEXCJNL7JR9DIJ",
+    "--no-pub",
+    "--no-uninstall",
+    "--timeout=45m",
+    "--reporter",
+    "expanded",
+    "--dart-define=M06_STAGE=smoke"
+  ],
+  "flutterExit": 0,
+  "expectedOSTermination": false,
+  "completedFlutterTest": true,
+  "nativeCommands": [],
+  "events": [
+    {
+      "marker": "LOOP_M06_EVIDENCE",
+      "elapsedSeconds": 48.463,
+      "data": {
+        "stage": "smoke",
+        "platform": "android",
+        "pid": 27959,
+        "setupPid": 27959,
+        "schema": 4,
+        "productionDataUnchanged": true,
+        "foreignKeys": "ok",
+        "integrity": "ok",
+        "syntheticStoreIsolated": true,
+        "results": {
+          "scope": "loop-m06-native-verification-v1",
+          "setupPid": 27959,
+          "stage": "smoke",
+          "foregroundMilliseconds": 4247,
+          "referenceMilliseconds": 4248,
+          "clockDifferenceMilliseconds": 1,
+          "savedMilliseconds": 4403,
+          "completedCount": 1,
+          "elapsedHarnessMilliseconds": 8701
+        }
+      }
+    }
+  ],
+  "harnessGatePassed": true
+}

@@ -10,6 +10,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:integration_test/integration_test.dart';
 import 'package:loop/app/app.dart';
 import 'package:loop/core/data/storage.dart';
+import 'package:loop/core/data/database/loop_database.dart';
 import 'package:loop/core/data/storage_protection.dart';
 import 'package:loop/core/data/validation.dart';
 import 'package:loop/features/settings/presentation/preferences_controller.dart';
@@ -100,7 +101,7 @@ void main() {
               .single;
       final productSettings = await product.preferences.load();
       await product.close();
-      expect(productVersion, 3);
+      expect(productVersion, LoopDatabase.currentVersion);
 
       Map<String, dynamic> metadata;
       if (_stage == 'setup') {

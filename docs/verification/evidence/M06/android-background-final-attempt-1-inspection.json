@@ -1,0 +1,37 @@
+{
+  "failurePid": 30598,
+  "androidExitReason": "USER REQUESTED / FORCE STOP",
+  "callerPid": 31540,
+  "causeAttribution": "Unknown; read-only Android exit info does not identify the caller binary. No app crash is inferred.",
+  "flutterExit": 79,
+  "completedFlutterTest": false,
+  "measurements": {
+    "normal": {
+      "schema": 4,
+      "integrity": "ok",
+      "foreignKeyViolations": 0,
+      "sessionRows": [],
+      "checkpointMilliseconds": [],
+      "settingsHash": "e47d5de587f3523750720e61c25ffb918454b313242dee6d9f5d093ee054c1b1"
+    },
+    "ownedProbe": {
+      "schema": 4,
+      "integrity": "ok",
+      "foreignKeyViolations": 0,
+      "sessionRows": [
+        [
+          "paused",
+          120,
+          "background"
+        ]
+      ],
+      "checkpointMilliseconds": [
+        120406
+      ],
+      "settingsHash": "95e110a4b66d5bffa838dc909615cf1949ea4947857238184ac805b9bb8367b3"
+    }
+  },
+  "normalSettingsAndSessionCountRetained": true,
+  "ownedProbeStillPreserved": true,
+  "next": "Strict isolated verbose rerun with host-only progress output; no change to timer/background assertions or OS settings."
+}

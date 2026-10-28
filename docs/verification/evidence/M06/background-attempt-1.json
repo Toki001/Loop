@@ -1,0 +1,19 @@
+{
+  "status": "FAIL \u2014 incomplete native interval",
+  "platform": "physical Android16/API36",
+  "pid": 5374,
+  "foregroundMilliseconds": 120152,
+  "pausedMilliseconds": 120420,
+  "testElapsedAtTermination": "05:19",
+  "hostHarnessExit": 1,
+  "normalDataReset": false,
+  "crashBufferForPid": "empty",
+  "exitInfo": {
+    "reason": "USER REQUESTED",
+    "subreason": "FORCE STOP",
+    "requestingProcess": 5969,
+    "deviceTimestamp": "2026-10-28 02:06:14.943"
+  },
+  "cause": "Not established. Exit record proves force-stop; it does not identify whether host runner cancellation or another actor requested it.",
+  "next": "Preserve failed result, clean only marker-owned synthetic store, rerun alone with explicit supported 45m CLI timeout."
+}

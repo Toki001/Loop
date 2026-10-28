@@ -1,0 +1,68 @@
+{
+  "platform": "android",
+  "device": "NBDEXCJNL7JR9DIJ",
+  "stage": "background",
+  "flutterCommand": [
+    "flutter",
+    "--suppress-analytics",
+    "--verbose",
+    "test",
+    "integration_test/practice_test.dart",
+    "-d",
+    "NBDEXCJNL7JR9DIJ",
+    "--no-pub",
+    "--no-uninstall",
+    "--timeout=45m",
+    "--reporter",
+    "expanded",
+    "--dart-define=M06_STAGE=background"
+  ],
+  "flutterExit": 79,
+  "expectedOSTermination": false,
+  "completedFlutterTest": false,
+  "harnessGatePassed": false,
+  "failureKind": "RuntimeError",
+  "elapsedSeconds": 602.04,
+  "nativeCommands": [
+    {
+      "command": [
+        "-s",
+        "NBDEXCJNL7JR9DIJ",
+        "shell",
+        "input",
+        "keyevent",
+        "KEYCODE_HOME"
+      ],
+      "exit": 0,
+      "stdout": "",
+      "stderr": "",
+      "elapsedSeconds": 157.228
+    }
+  ],
+  "events": [
+    {
+      "marker": "LOOP_M06_REQUEST_BACKGROUND",
+      "elapsedSeconds": 156.988,
+      "data": {
+        "platform": "android",
+        "pid": 340,
+        "foregroundMilliseconds": 120162
+      }
+    },
+    {
+      "marker": "LOOP_M06_PAUSED",
+      "elapsedSeconds": 157.47,
+      "data": {
+        "platform": "android",
+        "pid": 340,
+        "milliseconds": 120505,
+        "status": "paused"
+      }
+    },
+    {
+      "marker": "unexpectedProcessExit",
+      "interruptionSeconds": 444.812,
+      "flutterExit": 79
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "exit": 0,
+  "passed": 1,
+  "target": "iPhone SE3/iOS18.2 simulator",
+  "command": "flutter --suppress-analytics test integration_test/skill_management_test.dart -d 6B9A9F58-46D2-473D-806C-15F8042AF1DA --no-pub --no-uninstall --reporter expanded",
+  "evidence": {
+    "stage": "setup",
+    "platform": "ios",
+    "pid": 27730,
+    "setupPid": 27730,
+    "schema": 4,
+    "retainedAppearance": "dark",
+    "retainedOnboarding": true,
+    "freshStore": true,
+    "skillCount": 1,
+    "exerciseCount": 3,
+    "goalCount": 1,
+    "sessionCount": 0,
+    "readingCount": 0,
+    "hashRetained": true,
+    "foreignKeys": "ok",
+    "integrity": "ok",
+    "productionDataUnchanged": true
+  }
+}

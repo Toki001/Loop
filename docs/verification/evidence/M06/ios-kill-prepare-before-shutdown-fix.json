@@ -1,0 +1,49 @@
+{
+  "platform": "ios",
+  "device": "F39EEA3D-9939-4689-8958-6CDDBB36EF01",
+  "stage": "kill_prepare",
+  "flutterCommand": [
+    "flutter",
+    "--suppress-analytics",
+    "test",
+    "integration_test/practice_test.dart",
+    "-d",
+    "F39EEA3D-9939-4689-8958-6CDDBB36EF01",
+    "--no-pub",
+    "--no-uninstall",
+    "--timeout=45m",
+    "--reporter",
+    "expanded",
+    "--dart-define=M06_STAGE=kill_prepare"
+  ],
+  "flutterExit": 79,
+  "expectedOSTermination": true,
+  "completedFlutterTest": false,
+  "nativeCommands": [
+    {
+      "command": [
+        "xcrun",
+        "simctl",
+        "terminate",
+        "F39EEA3D-9939-4689-8958-6CDDBB36EF01",
+        "com.jameskierdoliguez.loop"
+      ],
+      "exit": 0,
+      "stdout": "",
+      "stderr": "",
+      "elapsedSeconds": 34.495
+    }
+  ],
+  "events": [
+    {
+      "marker": "LOOP_M06_KILL_READY",
+      "elapsedSeconds": 34.335,
+      "data": {
+        "platform": "ios",
+        "pid": 11344,
+        "savedMilliseconds": 5004
+      }
+    }
+  ],
+  "harnessGatePassed": true
+}

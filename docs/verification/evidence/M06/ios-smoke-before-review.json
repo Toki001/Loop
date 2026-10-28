@@ -1,0 +1,51 @@
+{
+  "platform": "ios",
+  "device": "F39EEA3D-9939-4689-8958-6CDDBB36EF01",
+  "stage": "smoke",
+  "flutterCommand": [
+    "flutter",
+    "--suppress-analytics",
+    "test",
+    "integration_test/practice_test.dart",
+    "-d",
+    "F39EEA3D-9939-4689-8958-6CDDBB36EF01",
+    "--no-pub",
+    "--no-uninstall",
+    "--reporter",
+    "expanded",
+    "--dart-define=M06_STAGE=smoke"
+  ],
+  "flutterExit": 0,
+  "expectedOSTermination": false,
+  "completedFlutterTest": true,
+  "nativeCommands": [],
+  "events": [
+    {
+      "marker": "LOOP_M06_EVIDENCE",
+      "elapsedSeconds": 43.488,
+      "data": {
+        "stage": "smoke",
+        "platform": "ios",
+        "pid": 95990,
+        "setupPid": 95990,
+        "schema": 4,
+        "productionDataUnchanged": true,
+        "foreignKeys": "ok",
+        "integrity": "ok",
+        "syntheticStoreIsolated": true,
+        "results": {
+          "scope": "loop-m06-native-verification-v1",
+          "setupPid": 95990,
+          "stage": "smoke",
+          "foregroundMilliseconds": 4102,
+          "referenceMilliseconds": 4101,
+          "clockDifferenceMilliseconds": 1,
+          "savedMilliseconds": 4208,
+          "completedCount": 1,
+          "elapsedHarnessMilliseconds": 6086
+        }
+      }
+    }
+  ],
+  "harnessGatePassed": true
+}

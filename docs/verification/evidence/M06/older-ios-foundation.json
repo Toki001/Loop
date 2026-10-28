@@ -1,0 +1,39 @@
+{
+  "command": "flutter --suppress-analytics test integration_test/foundation_test.dart -d 6B9A9F58-46D2-473D-806C-15F8042AF1DA --no-pub --no-uninstall --reporter expanded",
+  "exit": 0,
+  "passed": 1,
+  "freshInstallAfterProvenEmptyTestAppRemoval": true,
+  "strictPolicyReadbackUnchanged": true,
+  "events": {
+    "LOOP_STORAGE_POLICY_EVIDENCE": {
+      "platform": "ios",
+      "samples": [
+        false,
+        true
+      ],
+      "inspectionFailure": null,
+      "privateStorage": true,
+      "backupExcluded": true,
+      "testConfiguredPolicy": false
+    },
+    "LOOP_STORAGE_EVIDENCE": {
+      "platform": "ios",
+      "native": {
+        "backupExcluded": true,
+        "isSimulator": true,
+        "allEntriesProtected": false,
+        "protectionInspectable": false,
+        "protectionPolicy": "NSFileProtectionCompleteUntilFirstUserAuthentication",
+        "privateStorage": true,
+        "protectedEntriesChecked": 5,
+        "protection": "unknown"
+      },
+      "legacyPreferencesRetained": false,
+      "schemaVersion": 4,
+      "integrity": "ok",
+      "appearance": "dark",
+      "onboardingSeen": true,
+      "preferenceImportCommitted": true
+    }
+  }
+}

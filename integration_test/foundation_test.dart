@@ -30,9 +30,33 @@ void main() {
       try {
         app.main();
         await tester.pump();
-        // Assert the actual adapter before waiting for a page. A native storage
-        // failure must identify this gate using safe categories, not SQL/paths.
-        final native = await const StorageProtection().inspect();
+        // A fresh sandbox has no policy until asynchronous product bootstrap
+        // applies it. Poll readback only; never configure protection from tests.
+        var native = <String, Object?>{};
+        LocalFailure? inspectionFailure;
+        final policyDeadline = DateTime.now().add(const Duration(seconds: 20));
+        final policySamples = <bool>[];
+        do {
+          try {
+            native = await const StorageProtection().inspect();
+            policySamples.add(native['backupExcluded'] == true);
+            inspectionFailure = null;
+          } on LocalFailure catch (error) {
+            inspectionFailure = error;
+          }
+          if (native['privateStorage'] == true &&
+              native['backupExcluded'] == true)
+            break;
+          if (find
+              .text('We could not open your practice data')
+              .evaluate()
+              .isNotEmpty)
+            break;
+          await tester.pump(const Duration(milliseconds: 100));
+        } while (DateTime.now().isBefore(policyDeadline));
+        debugPrint(
+          'LOOP_STORAGE_POLICY_EVIDENCE:${jsonEncode({'platform': Platform.operatingSystem, 'samples': policySamples, 'inspectionFailure': inspectionFailure?.kind.name, 'privateStorage': native['privateStorage'], 'backupExcluded': native['backupExcluded'], 'testConfiguredPolicy': false})}',
+        );
         expect(native['privateStorage'], true);
         expect(native['backupExcluded'], true);
         if (Platform.isIOS) {

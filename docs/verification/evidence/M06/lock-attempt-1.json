@@ -1,0 +1,17 @@
+{
+  "status": "BLOCKED \u2014 normal device unlock not observed",
+  "platform": "physical Android16/API36",
+  "pid": 8183,
+  "foregroundMilliseconds": 4185,
+  "pausedMilliseconds": 4527,
+  "nativeScreenLockRequested": true,
+  "normalWakeRequested": true,
+  "normalUnlockRequestedFromOwner": true,
+  "lockSettingsChanged": false,
+  "securityBypassed": false,
+  "wrapperWaitAfterWakeSeconds": 240,
+  "hostHarnessExit": 1,
+  "cause": "The app did not return to resumed before the wrapper timeout; no normal unlock was observed by the test. This does not establish a timer fault.",
+  "testCompleted": false,
+  "next": "Keep strict marker-owned probe intact; clean only that store and rerun after the owner normally unlocks and opens Loop. Remaining normal journal data must stay unchanged."
+}

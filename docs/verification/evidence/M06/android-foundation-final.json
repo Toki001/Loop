@@ -1,0 +1,35 @@
+{
+  "command": "flutter --suppress-analytics test integration_test/foundation_test.dart -d NBDEXCJNL7JR9DIJ --no-pub --no-uninstall --reporter expanded",
+  "passed": 1,
+  "allTestsPassedMarker": true,
+  "logSha256": "b4af8b174282b5e8a4f2f7e7ce55b0717b2a3c577ea2af5b013122077f5f6b36",
+  "log": "tmp/m06-android-foundation-final.log",
+  "exit": null,
+  "exitEvidence": "Final process exit code was not retained across context handoff; completed Flutter test and teardown PASS markers retained.",
+  "events": {
+    "LOOP_STORAGE_POLICY_EVIDENCE": {
+      "platform": "android",
+      "samples": [
+        true
+      ],
+      "inspectionFailure": null,
+      "privateStorage": true,
+      "backupExcluded": true,
+      "testConfiguredPolicy": false
+    },
+    "LOOP_STORAGE_EVIDENCE": {
+      "platform": "android",
+      "native": {
+        "privateStorage": true,
+        "backupExcluded": true
+      },
+      "legacyPreferencesRetained": false,
+      "schemaVersion": 4,
+      "integrity": "ok",
+      "appearance": "dark",
+      "onboardingSeen": true,
+      "preferenceImportCommitted": true
+    }
+  },
+  "debugWarning": "Drift warns about intentional separate connection used for persistence readback; integrity/FK assertions passed."
+}

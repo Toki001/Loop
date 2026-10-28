@@ -1,0 +1,74 @@
+{
+  "date": "2026-10-28",
+  "status": "PASS \u2014 M06 local acceptance and final repository packaging",
+  "branch": "milestone/06-practice-timer",
+  "baseGitCommit": "a95097f35a6b60e4031c28413eaab62375ca3df2",
+  "milestoneCommitted": false,
+  "commands": [
+    {
+      "command": [
+        "python3",
+        "tool/check_baseline.py"
+      ],
+      "exit": 0,
+      "stdout": "PASS: 59 Markdown files; 300 local file links resolved\nPASS: 18 stories, 18 scenarios, 10 decisions, 12 cross-cutting rows\nPASS: 22 ignored + 8 trackable path probes\nPASS: limited secret/home-path scan of 326 UTF-8 files; no findings\nPASS: 285 synthetic native golden PNGs match reviewed provenance hashes\nPASS: 23 original native icon/launch PNGs match provenance hashes\nPASS: 18 reviewed native capture PNGs match provenance hashes\nScope: local file links only (not anchors/remote URLs); no dependency or app tests",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--cached",
+        "--check"
+      ],
+      "exit": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python3",
+        "-m",
+        "py_compile",
+        "tool/run_practice_native.py",
+        "tmp/m06_restore_android_main.py"
+      ],
+      "exit": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "historicalPreservation": {
+    "method": "Compare current bytes against git show at baseGitCommit; no files rewritten",
+    "filesCompared": 237,
+    "unchanged": true,
+    "frozenM02GoldenFiles": 225,
+    "frozenSchemaFixtureFiles": 5,
+    "M00ReportAndEvidencePreserved": true
+  },
+  "productMainSourceHashFiles": 64,
+  "productMainSourceHashesMatch": true,
+  "dependencyAndNativePermissionFilesUnchanged": [
+    "pubspec.yaml",
+    "pubspec.lock",
+    "design_preview/pubspec.yaml",
+    "design_preview/pubspec.lock",
+    "android/app/src/main/AndroidManifest.xml",
+    "ios/Runner/Info.plist",
+    "ios/Runner/AppDelegate.swift"
+  ],
+  "finalAndroidGate": "PASS; final-source lock/background/kill/recovery and normal-main launch/restart/UI. Native foundation completed test PASS; separate exit code not retained.",
+  "worktree": "Verified M06 changes ready for local milestone commit; commit SHA recorded afterward in progress/checkpoint.",
+  "remotePushOrPublication": false,
+  "nativeCaptureFiles": 18
+}

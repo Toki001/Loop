@@ -1,6 +1,6 @@
 # Loop verification ledger
 
-M00–M05 local engineering gates are verified; empirical research remains pending and M02 evidence is design-only. The owner authorized continuous M01–M15 execution on 2026-10-27. Follow [PROGRESS.md](PROGRESS.md) and [CONTINUATION.md](CONTINUATION.md) for actual commit state. Android/iOS owned skill setup, native builds and persistence pass; timer/journal/evidence and complete physical/release gates remain M06–M15.
+M00–M06 local engineering gates are verified; empirical research remains pending and M02 evidence is design-only. The owner authorized continuous M01–M15 execution on 2026-10-27. Follow [PROGRESS.md](PROGRESS.md) and [CONTINUATION.md](CONTINUATION.md) for actual commit state. Android/iOS owned skill setup, native builds and persistence pass; journal/evidence and complete physical/release gates remain M07–M15.
 
 | Milestone | Execution status | Evidence / next gate |
 |---|---|---|
@@ -9,8 +9,8 @@ M00–M05 local engineering gates are verified; empirical research remains pendi
 | M02 | PASS — native design gate | [M02](M02.md); 233 design tests, 225 goldens, 23-screen contract; no app persistence/device claim |
 | M03 | PASS — local native foundation | [M03](M03.md); 42 app + 233 design + 1 iOS integration tests, native debug builds, actual process persistence/screenshots; remote CI/Android runtime unavailable |
 | M04 | PASS — local persistence | [M04](M04.md); 93 app + 233 design tests, Android physical/iOS simulator storage and process persistence, migration/negative recovery, owner-approved cipher experiment; physical iPhone/key/release limits remain |
-| M05 | PASS — local skill management; commit pending | [M05](M05.md); 16 CI checks, 153 app + 233 design tests, six feature/three bootstrap native stages, retained/fresh installs; final normal binaries restored |
-| M06 | PENDING | Timer/state/lifecycle; physical Android test |
+| M05 | PASS — local skill management | [M05](M05.md); 16 CI checks, 153 app + 233 design tests, six feature/three bootstrap native stages, retained/fresh installs; final normal binaries restored |
+| M06 | PASS — local timer/manual entry | [M06](M06.md); 16 CI checks, 218 app +233 design +1 iOS bootstrap; final physical Android lock/background/kill/recovery and normal-main retention pass; actual commit in PROGRESS |
 | M07 | PENDING | Reflection and first complete offline practice loop |
 | M08 | PENDING | Private photo/audio lifecycle and physical capture tests |
 | M09 | PENDING | Honest image/audio/metric comparison |
@@ -23,4 +23,4 @@ M00–M05 local engineering gates are verified; empirical research remains pendi
 
 Read the [traceability matrix](TRACEABILITY.md), [tool audit](TOOLS.md), [environment baseline](ENVIRONMENT.md), [initial diagnostics](evidence/M00/environment-commands.json) and [successful diagnostic retries](evidence/M00/diagnostics-final.json). Requested unavailable plugins retain manual/native fallbacks; none were installed. Android has no configured AVD; a physical Android16 target became available and passed M04 storage/process checks. M03 created/booted an isolated Loop simulator and tested the real app; existing simulators/data were preserved. Physical iPhone and complete feature/device release verification remain open. The incomplete iOS engine cache was refreshed from the official SDK after actual build failure; final native builds passed.
 
-Next task is **M06** after recording/verifying the pending M05 local commit/checkpoint. No interviews or empirical product sign-off occurred. Follow [MILESTONES.md](../MILESTONES.md) and the contribution workflow. M00's report remains historical; its then-current authorization wording is superseded by continuous execution. Design/simulator checks cannot replace later complete practice flows, physical-device evidence, policy review or owner approvals. No remote CI, production signing, publishing or store availability is claimed.
+Next task is **M07**, after committing/checkpointing verified M06 and confirming a clean worktree; actual state is in CONTINUATION. No interviews or empirical product sign-off occurred. Follow [MILESTONES.md](../MILESTONES.md) and the contribution workflow. M00's report remains historical; its then-current authorization wording is superseded by continuous execution. Design/simulator checks cannot replace later complete practice flows, physical-device evidence, policy review or owner approvals. No remote CI, production signing, publishing or store availability is claimed.

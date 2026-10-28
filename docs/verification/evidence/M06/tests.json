@@ -1,0 +1,54 @@
+{
+  "date": "2026-10-28",
+  "status": "PASS \u2014 M06 local acceptance; source-current full CI plus final physical Android verification",
+  "fullCommand": "python3 tool/ci.py --android --ios --device F39EEA3D-9939-4689-8958-6CDDBB36EF01",
+  "exit": 0,
+  "checks": 16,
+  "applicationTests": 218,
+  "designTests": 233,
+  "nativeBootstrapTests": 1,
+  "skippedTests": 0,
+  "formattedFiles": 84,
+  "formatChanges": 0,
+  "log": "tmp/m06-current-final-ci.log",
+  "logSha256": "54e19f22957e8c5e86ec42f3598e31c8a73d6f1f361f82e2be05f3c8ce3ff297",
+  "logAudit": {
+    "closedDatabaseErrors": 0,
+    "unhandledIsolateErrors": 0
+  },
+  "selectedRegressions": [
+    {
+      "log": "tmp/m06-shutdown-fixed.log",
+      "logSha256": "1eb6a8c025af0c2662a56035de845395a5e6d7c5d600904168404fa38da72fb4",
+      "passed": 76,
+      "failed": 0
+    },
+    {
+      "log": "tmp/m06-legacy-draft-tests.log",
+      "logSha256": "af546469c6dc5bcabd279fc2a7f2b286a58745678d5fbab5fedf0ca1d4d0a2cf",
+      "passed": 30,
+      "failed": 0
+    }
+  ],
+  "addedApplicationTestsByFile": {
+    "practice_engine_test.dart": 18,
+    "practice_migration_test.dart": 2,
+    "practice_widgets_test.dart": 12,
+    "practice_goldens_test.dart": 32,
+    "app_test.dart root disposal": 1
+  },
+  "newGoldens": 32,
+  "totalGoldens": 285,
+  "nativeCaptureFiles": 18,
+  "nativeCountsAreSeparateFromHostTests": true,
+  "finalPhysicalGate": "PASS; final-source smoke, lock,600.165sec background, live OS kill + new-process paused recovery, foundation and normal-main launch/restart/UI. Kill preparation intentionally exits79; not an ordinary completed Flutter test.",
+  "finalPhysicalEvidence": {
+    "smoke": "android-smoke-final.json",
+    "lock": "android-lock-final.json",
+    "background": "android-background-final.json",
+    "killPreparation": "android-kill-prepare-final.json",
+    "recovery": "android-recovery-final.json",
+    "foundation": "android-foundation-final.json",
+    "normalMain": "normal-main-install.json"
+  }
+}

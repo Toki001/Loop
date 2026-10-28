@@ -1,0 +1,21 @@
+{
+  "command": "flutter --suppress-analytics test test/app_test.dart test/practice_engine_test.dart test/practice_goldens_test.dart --no-pub --reporter expanded",
+  "exit": 0,
+  "passed": 76,
+  "closedDatabaseErrors": 0,
+  "unhandledIsolateErrors": 0,
+  "cases": [
+    "held real transaction survives root disposal until queued recovery completes",
+    "disposing while Resume awaits its write never restarts the clock"
+  ],
+  "fullRegressionLogAudit": {
+    "command": "python3 tool/ci.py --android --ios --device F39EEA3D-9939-4689-8958-6CDDBB36EF01",
+    "exit": 0,
+    "checks": 16,
+    "applicationTests": 217,
+    "designTests": 233,
+    "nativeBootstrapTests": 1,
+    "closedDatabaseErrors": 0,
+    "unhandledIsolateErrors": 0
+  }
+}

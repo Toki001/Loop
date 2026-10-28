@@ -1,0 +1,8 @@
+{
+  "name": "LoopM06OlderVerification",
+  "udid": "6B9A9F58-46D2-473D-806C-15F8042AF1DA",
+  "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-18-2",
+  "deviceType": "com.apple.CoreSimulator.SimDeviceType.iPhone-SE-3rd-generation",
+  "createdForM06": true,
+  "otherSimulatorsReset": false
+}

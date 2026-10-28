@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../../shared/design_system/components.dart';
+import '../../practice/presentation/practice_pages.dart';
 import '../data/skill_management_repository.dart';
 import '../domain/skill_kind.dart';
 import '../domain/starter_catalog.dart';
@@ -298,6 +299,7 @@ class SkillContextPage extends ConsumerWidget {
             MaterialLocalizations.of(context).formatFullDate(DateTime.now()),
             style: Theme.of(context).textTheme.bodySmall,
           ),
+        if (!practice) const PendingPracticeNotice(),
         ...cards.when(
           data: (items) => items.isEmpty
               ? [
@@ -324,6 +326,14 @@ class SkillContextPage extends ConsumerWidget {
                     SkillSummaryCard(
                       data: card,
                       onOpen: () => context.push('/skills/${card.skill.id}'),
+                    ),
+                  if (!practice)
+                    LoopButton(
+                      label: 'Practice now',
+                      icon: Icons.play_arrow,
+                      onPressed: () => context.go(
+                        '/practice/setup?skill=${items.first.skill.id}',
+                      ),
                     ),
                   LoopButton(
                     label: 'See skills',

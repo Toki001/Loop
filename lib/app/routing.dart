@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 import '../features/onboarding/presentation/welcome_page.dart';
+import '../features/practice/presentation/practice_pages.dart';
 import '../features/settings/presentation/preferences_controller.dart';
 import '../features/settings/presentation/settings_page.dart';
 import '../features/skills/domain/skill_kind.dart';
@@ -26,7 +27,6 @@ final routerProvider = Provider<GoRouter>((ref) {
     redirect: (context, state) {
       final seen = ref.read(preferencesProvider).value.onboardingSeen;
       if (!seen && state.uri.path != '/onboarding') return '/onboarding';
-      if (state.uri.path == '/practice/active') return '/practice/setup';
       return null;
     },
     errorBuilder: (context, state) => const MissingItemPage(),
@@ -55,8 +55,8 @@ final routerProvider = Provider<GoRouter>((ref) {
                     FoundationDestination.today => const SkillContextPage(
                       practice: false,
                     ),
-                    FoundationDestination.practice => const SkillContextPage(
-                      practice: true,
+                    FoundationDestination.practice => PracticeSetupPage(
+                      skillId: state.uri.queryParameters['skill'],
                     ),
                     _ => FoundationPage(destination: destination),
                   },
@@ -152,7 +152,7 @@ final routerProvider = Provider<GoRouter>((ref) {
       ),
       GoRoute(
         path: '/practice/active',
-        redirect: (context, state) => '/practice/setup',
+        builder: (context, state) => const ActivePracticePage(),
       ),
       GoRoute(
         path: '/practice/review/:id',
@@ -160,7 +160,8 @@ final routerProvider = Provider<GoRouter>((ref) {
       ),
       GoRoute(
         path: '/sessions/:id',
-        builder: (context, state) => const MissingItemPage(),
+        builder: (context, state) =>
+            SavedPracticePage(id: state.pathParameters['id']!),
       ),
       GoRoute(
         path: '/progress/:id',

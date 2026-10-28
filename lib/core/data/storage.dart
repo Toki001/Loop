@@ -55,5 +55,6 @@ class LoopStorage {
     }
   }
 
-  Future<void> close() => database.close();
+  Future<void>? _closing;
+  Future<void> close() => _closing ??= database.close();
 }

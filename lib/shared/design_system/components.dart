@@ -368,19 +368,26 @@ class TimerDisplay extends StatelessWidget {
   Widget build(BuildContext context) {
     final minutes = seconds ~/ 60;
     final remainder = seconds % 60;
+    final digits = Text(
+      '${minutes.toString().padLeft(2, '0')}:${remainder.toString().padLeft(2, '0')}',
+      style: Theme.of(context).textTheme.displaySmall?.copyWith(
+        fontSize: 56,
+        fontFeatures: const [FontFeature.tabularFigures()],
+      ),
+    );
     return Semantics(
       label:
           '$minutes minutes $remainder seconds${caption == null ? '' : ', $caption'}',
       child: ExcludeSemantics(
         child: Column(
           children: [
-            Text(
-              '${minutes.toString().padLeft(2, '0')}:${remainder.toString().padLeft(2, '0')}',
-              style: Theme.of(context).textTheme.displaySmall?.copyWith(
-                fontSize: 56,
-                fontFeatures: const [FontFeature.tabularFigures()],
-              ),
-            ),
+            if (minutes >= 100)
+              SizedBox(
+                width: double.infinity,
+                child: FittedBox(fit: BoxFit.scaleDown, child: digits),
+              )
+            else
+              digits,
             if (caption != null) ...[
               const SizedBox(height: 8),
               Text(caption!, style: Theme.of(context).textTheme.bodySmall),

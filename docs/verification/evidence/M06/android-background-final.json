@@ -1,0 +1,108 @@
+{
+  "platform": "android",
+  "device": "NBDEXCJNL7JR9DIJ",
+  "stage": "background",
+  "flutterCommand": [
+    "flutter",
+    "--suppress-analytics",
+    "--verbose",
+    "test",
+    "integration_test/practice_test.dart",
+    "-d",
+    "NBDEXCJNL7JR9DIJ",
+    "--no-pub",
+    "--no-uninstall",
+    "--timeout=45m",
+    "--reporter",
+    "expanded",
+    "--dart-define=M06_STAGE=background"
+  ],
+  "flutterExit": 0,
+  "expectedOSTermination": false,
+  "completedFlutterTest": true,
+  "nativeCommands": [
+    {
+      "command": [
+        "-s",
+        "NBDEXCJNL7JR9DIJ",
+        "shell",
+        "input",
+        "keyevent",
+        "KEYCODE_HOME"
+      ],
+      "exit": 0,
+      "stdout": "",
+      "stderr": "",
+      "elapsedSeconds": 155.264
+    },
+    {
+      "command": [
+        "-s",
+        "NBDEXCJNL7JR9DIJ",
+        "shell",
+        "am",
+        "start",
+        "-n",
+        "com.jameskierdoliguez.loop/.MainActivity"
+      ],
+      "exit": 0,
+      "stdout": "Starting: Intent { cmp=com.jameskierdoliguez.loop/.MainActivity }",
+      "stderr": "Warning: Activity not started, its current task has been brought to the front",
+      "elapsedSeconds": 755.678
+    }
+  ],
+  "events": [
+    {
+      "marker": "LOOP_M06_REQUEST_BACKGROUND",
+      "elapsedSeconds": 155.058,
+      "data": {
+        "platform": "android",
+        "pid": 6143,
+        "foregroundMilliseconds": 120220
+      }
+    },
+    {
+      "marker": "LOOP_M06_PAUSED",
+      "elapsedSeconds": 155.39,
+      "data": {
+        "platform": "android",
+        "pid": 6143,
+        "milliseconds": 120483,
+        "status": "paused"
+      }
+    },
+    {
+      "marker": "externalBackgroundInterval",
+      "realSeconds": 600.165
+    },
+    {
+      "marker": "LOOP_M06_EVIDENCE",
+      "elapsedSeconds": 760.467,
+      "data": {
+        "stage": "background",
+        "platform": "android",
+        "pid": 6143,
+        "setupPid": 6143,
+        "schema": 4,
+        "productionDataUnchanged": true,
+        "foreignKeys": "ok",
+        "integrity": "ok",
+        "syntheticStoreIsolated": true,
+        "results": {
+          "scope": "loop-m06-native-verification-v1",
+          "setupPid": 6143,
+          "stage": "background",
+          "foregroundMilliseconds": 120199,
+          "referenceMilliseconds": 120204,
+          "clockDifferenceMilliseconds": 0,
+          "pausedMilliseconds": 120483,
+          "afterBackgroundMilliseconds": 120483,
+          "savedMilliseconds": 120483,
+          "completedCount": 1,
+          "elapsedHarnessMilliseconds": 726418
+        }
+      }
+    }
+  ],
+  "harnessGatePassed": true
+}

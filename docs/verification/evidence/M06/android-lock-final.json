@@ -1,0 +1,121 @@
+{
+  "platform": "android",
+  "device": "NBDEXCJNL7JR9DIJ",
+  "stage": "lock",
+  "flutterCommand": [
+    "flutter",
+    "--suppress-analytics",
+    "test",
+    "integration_test/practice_test.dart",
+    "-d",
+    "NBDEXCJNL7JR9DIJ",
+    "--no-pub",
+    "--no-uninstall",
+    "--timeout=45m",
+    "--reporter",
+    "expanded",
+    "--dart-define=M06_STAGE=lock"
+  ],
+  "flutterExit": 0,
+  "expectedOSTermination": false,
+  "completedFlutterTest": true,
+  "nativeCommands": [
+    {
+      "command": [
+        "-s",
+        "NBDEXCJNL7JR9DIJ",
+        "shell",
+        "input",
+        "keyevent",
+        "KEYCODE_SLEEP"
+      ],
+      "exit": 0,
+      "stdout": "",
+      "stderr": "",
+      "elapsedSeconds": 40.256
+    },
+    {
+      "command": [
+        "-s",
+        "NBDEXCJNL7JR9DIJ",
+        "shell",
+        "input",
+        "keyevent",
+        "KEYCODE_WAKEUP"
+      ],
+      "exit": 0,
+      "stdout": "",
+      "stderr": "",
+      "elapsedSeconds": 55.437
+    },
+    {
+      "command": [
+        "-s",
+        "NBDEXCJNL7JR9DIJ",
+        "shell",
+        "am",
+        "start",
+        "-n",
+        "com.jameskierdoliguez.loop/.MainActivity"
+      ],
+      "exit": 0,
+      "stdout": "Starting: Intent { cmp=com.jameskierdoliguez.loop/.MainActivity }",
+      "stderr": "Warning: Activity not started, intent has been delivered to currently running top-most instance.",
+      "elapsedSeconds": 55.664
+    }
+  ],
+  "events": [
+    {
+      "marker": "LOOP_M06_REQUEST_BACKGROUND",
+      "elapsedSeconds": 40.11,
+      "data": {
+        "platform": "android",
+        "pid": 26640,
+        "foregroundMilliseconds": 4255
+      }
+    },
+    {
+      "marker": "LOOP_M06_PAUSED",
+      "elapsedSeconds": 40.61,
+      "data": {
+        "platform": "android",
+        "pid": 26640,
+        "milliseconds": 4599,
+        "status": "paused"
+      }
+    },
+    {
+      "marker": "externalBackgroundInterval",
+      "realSeconds": 15.047
+    },
+    {
+      "marker": "LOOP_M06_EVIDENCE",
+      "elapsedSeconds": 68.341,
+      "data": {
+        "stage": "lock",
+        "platform": "android",
+        "pid": 26640,
+        "setupPid": 26640,
+        "schema": 4,
+        "productionDataUnchanged": true,
+        "foreignKeys": "ok",
+        "integrity": "ok",
+        "syntheticStoreIsolated": true,
+        "results": {
+          "scope": "loop-m06-native-verification-v1",
+          "setupPid": 26640,
+          "stage": "lock",
+          "foregroundMilliseconds": 4249,
+          "referenceMilliseconds": 4250,
+          "clockDifferenceMilliseconds": 0,
+          "pausedMilliseconds": 4599,
+          "afterBackgroundMilliseconds": 4599,
+          "savedMilliseconds": 4599,
+          "completedCount": 1,
+          "elapsedHarnessMilliseconds": 33230
+        }
+      }
+    }
+  ],
+  "harnessGatePassed": true
+}

@@ -1,0 +1,104 @@
+{
+  "platform": "ios",
+  "device": "F39EEA3D-9939-4689-8958-6CDDBB36EF01",
+  "stage": "background",
+  "flutterCommand": [
+    "flutter",
+    "--suppress-analytics",
+    "test",
+    "integration_test/practice_test.dart",
+    "-d",
+    "F39EEA3D-9939-4689-8958-6CDDBB36EF01",
+    "--no-pub",
+    "--no-uninstall",
+    "--timeout=45m",
+    "--reporter",
+    "expanded",
+    "--dart-define=M06_STAGE=background"
+  ],
+  "flutterExit": 0,
+  "expectedOSTermination": false,
+  "completedFlutterTest": true,
+  "nativeCommands": [
+    {
+      "command": [
+        "xcrun",
+        "simctl",
+        "launch",
+        "F39EEA3D-9939-4689-8958-6CDDBB36EF01",
+        "com.apple.Preferences"
+      ],
+      "exit": 0,
+      "stdout": "com.apple.Preferences: 14332",
+      "stderr": "",
+      "elapsedSeconds": 149.055
+    },
+    {
+      "command": [
+        "xcrun",
+        "simctl",
+        "launch",
+        "F39EEA3D-9939-4689-8958-6CDDBB36EF01",
+        "com.jameskierdoliguez.loop"
+      ],
+      "exit": 0,
+      "stdout": "com.jameskierdoliguez.loop: 13822",
+      "stderr": "",
+      "elapsedSeconds": 749.487
+    }
+  ],
+  "events": [
+    {
+      "marker": "LOOP_M06_REQUEST_BACKGROUND",
+      "elapsedSeconds": 148.619,
+      "data": {
+        "platform": "ios",
+        "pid": 13822,
+        "foregroundMilliseconds": 120029
+      }
+    },
+    {
+      "marker": "LOOP_M06_PAUSED",
+      "elapsedSeconds": 148.987,
+      "data": {
+        "platform": "ios",
+        "pid": 13822,
+        "milliseconds": 120398,
+        "status": "paused"
+      }
+    },
+    {
+      "marker": "externalBackgroundInterval",
+      "realSeconds": 600.137
+    },
+    {
+      "marker": "LOOP_M06_EVIDENCE",
+      "elapsedSeconds": 751.848,
+      "data": {
+        "stage": "background",
+        "platform": "ios",
+        "pid": 13822,
+        "setupPid": 13822,
+        "schema": 4,
+        "productionDataUnchanged": true,
+        "foreignKeys": "ok",
+        "integrity": "ok",
+        "syntheticStoreIsolated": true,
+        "results": {
+          "scope": "loop-m06-native-verification-v1",
+          "setupPid": 13822,
+          "stage": "background",
+          "foregroundMilliseconds": 120028,
+          "referenceMilliseconds": 120028,
+          "clockDifferenceMilliseconds": 0,
+          "pausedMilliseconds": 120398,
+          "afterBackgroundMilliseconds": 120398,
+          "savedMilliseconds": 120398,
+          "completedCount": 1,
+          "elapsedHarnessMilliseconds": 723352
+        }
+      }
+    }
+  ],
+  "harnessGatePassed": true
+}

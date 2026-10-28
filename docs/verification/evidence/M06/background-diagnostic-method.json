@@ -1,0 +1,33 @@
+{
+  "testAssertionsUnchanged": true,
+  "nativeIntervalSeconds": 600,
+  "foregroundTargetMilliseconds": 120000,
+  "testSourceSha256": "56986510cbeb36399e1041f4098cd7553a260d5cd330b04fecb8cf8d60a96231",
+  "harnessSourceSha256": "87967fd703762c8e9761001ee17248ad432eae1aa63cca67cc6a61004903f401",
+  "diagnosticChanges": [
+    "optional verbose Flutter logs in ignored local file",
+    "host-only progress output every30 real seconds, no device action",
+    "record unexpected termination time"
+  ],
+  "forceStopAttribution": "Unknown; Android records USER REQUESTED/FORCE STOP, caller process no longer exists. Pinned Flutter integration runner also uses device.stopApp during teardown; this record alone cannot attribute a crash, OEM kill or host timeout.",
+  "sourceConsulted": "Pinned Flutter packages/flutter_tools/lib/src/test/integration_test_device.dart kill() and test command/runner timeout forwarding; testWidgets and CLI remain45m.",
+  "officialReferences": [
+    "https://api.flutter.dev/flutter/flutter_test/testWidgets.html",
+    "https://docs.flutter.dev/testing/integration-tests"
+  ],
+  "osSettingsChanged": false,
+  "privateRemoteUpload": false,
+  "finalResult": {
+    "file": "android-background-final.json",
+    "status": "PASS",
+    "externalBackgroundSeconds": 600.165,
+    "pausedAndAfterAndSavedMilliseconds": 120483,
+    "completedCount": 1
+  },
+  "supervision": {
+    "file": "background-supervised-job.json",
+    "hardDeadlineSeconds": 2700,
+    "result": "FINISHED exit0",
+    "method": "Local subprocess group outlived prior terminal-bound cancellations; CLI/test45m limits, full600sec interval and assertions unchanged. Exact cancellation cause remains unproven."
+  }
+}

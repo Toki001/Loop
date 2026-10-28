@@ -1,0 +1,123 @@
+{
+  "scope": "Final Android continuation; earlier iOS commands retained in backup",
+  "commands": [
+    {
+      "command": [
+        "flutter",
+        "--suppress-analytics",
+        "build",
+        "apk",
+        "--debug",
+        "--no-pub",
+        "-t",
+        "lib/main.dart"
+      ],
+      "exit": 0,
+      "log": "tmp/m06-normal-main-android.log"
+    },
+    {
+      "command": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "exit": 0
+    },
+    {
+      "command": [
+        "adb",
+        "-s",
+        "NBDEXCJNL7JR9DIJ",
+        "shell",
+        "am",
+        "force-stop",
+        "com.jameskierdoliguez.loop"
+      ],
+      "exit": 0
+    },
+    {
+      "command": [
+        "adb",
+        "-s",
+        "NBDEXCJNL7JR9DIJ",
+        "install",
+        "-r",
+        "build/app/outputs/flutter-apk/app-debug.apk"
+      ],
+      "exit": 0
+    },
+    {
+      "command": [
+        "adb",
+        "-s",
+        "NBDEXCJNL7JR9DIJ",
+        "shell",
+        "am",
+        "start",
+        "-n",
+        "com.jameskierdoliguez.loop/.MainActivity"
+      ],
+      "exit": 0
+    },
+    {
+      "command": [
+        "adb",
+        "-s",
+        "NBDEXCJNL7JR9DIJ",
+        "shell",
+        "pidof",
+        "com.jameskierdoliguez.loop"
+      ],
+      "exit": 0
+    },
+    {
+      "command": [
+        "adb",
+        "-s",
+        "NBDEXCJNL7JR9DIJ",
+        "shell",
+        "am",
+        "force-stop",
+        "com.jameskierdoliguez.loop"
+      ],
+      "exit": 0
+    },
+    {
+      "command": [
+        "adb",
+        "-s",
+        "NBDEXCJNL7JR9DIJ",
+        "shell",
+        "am",
+        "start",
+        "-n",
+        "com.jameskierdoliguez.loop/.MainActivity"
+      ],
+      "exit": 0
+    },
+    {
+      "command": [
+        "adb",
+        "-s",
+        "NBDEXCJNL7JR9DIJ",
+        "shell",
+        "pidof",
+        "com.jameskierdoliguez.loop"
+      ],
+      "exit": 0
+    },
+    {
+      "command": [
+        "adb",
+        "-s",
+        "NBDEXCJNL7JR9DIJ",
+        "shell",
+        "run-as",
+        "com.jameskierdoliguez.loop",
+        "ls",
+        "files"
+      ],
+      "exit": 0
+    }
+  ]
+}

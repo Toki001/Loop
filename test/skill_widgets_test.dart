@@ -8,6 +8,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:loop/app/routing.dart';
 import 'package:loop/core/data/database/loop_database.dart';
 import 'package:loop/core/data/local_failure.dart';
+import 'package:loop/features/practice/data/practice_repository.dart';
 import 'package:loop/features/skills/data/skill_management_repository.dart';
 import 'package:loop/features/skills/domain/skill_draft.dart';
 import 'package:loop/features/skills/domain/skill_kind.dart';
@@ -33,6 +34,11 @@ Future<void> waitForSkillWidget(WidgetTester tester, Finder finder) async {
 Future<void> tapSkillWidget(WidgetTester tester, Finder finder) async {
   await tester.ensureVisible(finder);
   await tester.pumpAndSettle();
+  expect(
+    finder.hitTestable(),
+    findsOneWidget,
+    reason: 'The intended control must actually receive the tap.',
+  );
   await tester.tap(finder);
   await tester.pump();
   final deadline = DateTime.now().add(const Duration(seconds: 8));
@@ -99,6 +105,7 @@ Future<(SkillTestStorage, ProviderContainer)> pumpSkills(
     route: route,
     scale: scale,
     size: size,
+    practiceRepository: PracticeRepository(storage.database),
     skillRepository:
         presentationRepository?.call(storage) ?? storage.skillManagement,
   );

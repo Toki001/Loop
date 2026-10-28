@@ -4192,6 +4192,460 @@ class SessionsCompanion extends UpdateCompanion<Session> {
   }
 }
 
+class PracticeCheckpoints extends Table
+    with TableInfo<PracticeCheckpoints, PracticeCheckpoint> {
+  @override
+  final GeneratedDatabase attachedDatabase;
+  final String? _alias;
+  PracticeCheckpoints(this.attachedDatabase, [this._alias]);
+  static const VerificationMeta _sessionIdMeta = const VerificationMeta(
+    'sessionId',
+  );
+  late final GeneratedColumn<String> sessionId = GeneratedColumn<String>(
+    'session_id',
+    aliasedName,
+    false,
+    type: DriftSqlType.string,
+    requiredDuringInsert: true,
+    $customConstraints:
+        'NOT NULL PRIMARY KEY REFERENCES sessions(id)ON DELETE CASCADE',
+  );
+  static const VerificationMeta _activeMillisecondsMeta =
+      const VerificationMeta('activeMilliseconds');
+  late final GeneratedColumn<int> activeMilliseconds = GeneratedColumn<int>(
+    'active_milliseconds',
+    aliasedName,
+    false,
+    type: DriftSqlType.int,
+    requiredDuringInsert: true,
+    $customConstraints: 'NOT NULL CHECK (active_milliseconds >= 0)',
+  );
+  static const VerificationMeta _plannedSecondsMeta = const VerificationMeta(
+    'plannedSeconds',
+  );
+  late final GeneratedColumn<int> plannedSeconds = GeneratedColumn<int>(
+    'planned_seconds',
+    aliasedName,
+    true,
+    type: DriftSqlType.int,
+    requiredDuringInsert: false,
+    $customConstraints: 'CHECK (planned_seconds BETWEEN 60 AND 10800)',
+  );
+  static const VerificationMeta _manualSecondsMeta = const VerificationMeta(
+    'manualSeconds',
+  );
+  late final GeneratedColumn<int> manualSeconds = GeneratedColumn<int>(
+    'manual_seconds',
+    aliasedName,
+    false,
+    type: DriftSqlType.int,
+    requiredDuringInsert: false,
+    $customConstraints:
+        'NOT NULL DEFAULT 0 CHECK (manual_seconds BETWEEN 0 AND 604800)',
+    defaultValue: const CustomExpression('0'),
+  );
+  static const VerificationMeta _manualDateLocalMeta = const VerificationMeta(
+    'manualDateLocal',
+  );
+  late final GeneratedColumn<String> manualDateLocal = GeneratedColumn<String>(
+    'manual_date_local',
+    aliasedName,
+    true,
+    type: DriftSqlType.string,
+    requiredDuringInsert: false,
+    $customConstraints: '',
+  );
+  late final GeneratedColumnWithTypeConverter<DateTime, DateTime>
+  checkpointAtUtc = GeneratedColumn<DateTime>(
+    'checkpoint_at_utc',
+    aliasedName,
+    false,
+    type: DriftSqlType.dateTime,
+    requiredDuringInsert: true,
+    $customConstraints: 'NOT NULL',
+  ).withConverter<DateTime>(PracticeCheckpoints.$convertercheckpointAtUtc);
+  @override
+  List<GeneratedColumn> get $columns => [
+    sessionId,
+    activeMilliseconds,
+    plannedSeconds,
+    manualSeconds,
+    manualDateLocal,
+    checkpointAtUtc,
+  ];
+  @override
+  String get aliasedName => _alias ?? actualTableName;
+  @override
+  String get actualTableName => $name;
+  static const String $name = 'practice_checkpoints';
+  @override
+  VerificationContext validateIntegrity(
+    Insertable<PracticeCheckpoint> instance, {
+    bool isInserting = false,
+  }) {
+    final context = VerificationContext();
+    final data = instance.toColumns(true);
+    if (data.containsKey('session_id')) {
+      context.handle(
+        _sessionIdMeta,
+        sessionId.isAcceptableOrUnknown(data['session_id']!, _sessionIdMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_sessionIdMeta);
+    }
+    if (data.containsKey('active_milliseconds')) {
+      context.handle(
+        _activeMillisecondsMeta,
+        activeMilliseconds.isAcceptableOrUnknown(
+          data['active_milliseconds']!,
+          _activeMillisecondsMeta,
+        ),
+      );
+    } else if (isInserting) {
+      context.missing(_activeMillisecondsMeta);
+    }
+    if (data.containsKey('planned_seconds')) {
+      context.handle(
+        _plannedSecondsMeta,
+        plannedSeconds.isAcceptableOrUnknown(
+          data['planned_seconds']!,
+          _plannedSecondsMeta,
+        ),
+      );
+    }
+    if (data.containsKey('manual_seconds')) {
+      context.handle(
+        _manualSecondsMeta,
+        manualSeconds.isAcceptableOrUnknown(
+          data['manual_seconds']!,
+          _manualSecondsMeta,
+        ),
+      );
+    }
+    if (data.containsKey('manual_date_local')) {
+      context.handle(
+        _manualDateLocalMeta,
+        manualDateLocal.isAcceptableOrUnknown(
+          data['manual_date_local']!,
+          _manualDateLocalMeta,
+        ),
+      );
+    }
+    return context;
+  }
+
+  @override
+  Set<GeneratedColumn> get $primaryKey => {sessionId};
+  @override
+  PracticeCheckpoint map(Map<String, dynamic> data, {String? tablePrefix}) {
+    final effectivePrefix = tablePrefix != null ? '$tablePrefix.' : '';
+    return PracticeCheckpoint(
+      sessionId: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}session_id'],
+      )!,
+      activeMilliseconds: attachedDatabase.typeMapping.read(
+        DriftSqlType.int,
+        data['${effectivePrefix}active_milliseconds'],
+      )!,
+      plannedSeconds: attachedDatabase.typeMapping.read(
+        DriftSqlType.int,
+        data['${effectivePrefix}planned_seconds'],
+      ),
+      manualSeconds: attachedDatabase.typeMapping.read(
+        DriftSqlType.int,
+        data['${effectivePrefix}manual_seconds'],
+      )!,
+      manualDateLocal: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}manual_date_local'],
+      ),
+      checkpointAtUtc: PracticeCheckpoints.$convertercheckpointAtUtc.fromSql(
+        attachedDatabase.typeMapping.read(
+          DriftSqlType.dateTime,
+          data['${effectivePrefix}checkpoint_at_utc'],
+        )!,
+      ),
+    );
+  }
+
+  @override
+  PracticeCheckpoints createAlias(String alias) {
+    return PracticeCheckpoints(attachedDatabase, alias);
+  }
+
+  static TypeConverter<DateTime, DateTime> $convertercheckpointAtUtc =
+      const UtcDateTimeConverter();
+  @override
+  bool get dontWriteConstraints => true;
+}
+
+class PracticeCheckpoint extends DataClass
+    implements Insertable<PracticeCheckpoint> {
+  final String sessionId;
+  final int activeMilliseconds;
+  final int? plannedSeconds;
+  final int manualSeconds;
+  final String? manualDateLocal;
+  final DateTime checkpointAtUtc;
+  const PracticeCheckpoint({
+    required this.sessionId,
+    required this.activeMilliseconds,
+    this.plannedSeconds,
+    required this.manualSeconds,
+    this.manualDateLocal,
+    required this.checkpointAtUtc,
+  });
+  @override
+  Map<String, Expression> toColumns(bool nullToAbsent) {
+    final map = <String, Expression>{};
+    map['session_id'] = Variable<String>(sessionId);
+    map['active_milliseconds'] = Variable<int>(activeMilliseconds);
+    if (!nullToAbsent || plannedSeconds != null) {
+      map['planned_seconds'] = Variable<int>(plannedSeconds);
+    }
+    map['manual_seconds'] = Variable<int>(manualSeconds);
+    if (!nullToAbsent || manualDateLocal != null) {
+      map['manual_date_local'] = Variable<String>(manualDateLocal);
+    }
+    {
+      map['checkpoint_at_utc'] = Variable<DateTime>(
+        PracticeCheckpoints.$convertercheckpointAtUtc.toSql(checkpointAtUtc),
+      );
+    }
+    return map;
+  }
+
+  PracticeCheckpointsCompanion toCompanion(bool nullToAbsent) {
+    return PracticeCheckpointsCompanion(
+      sessionId: Value(sessionId),
+      activeMilliseconds: Value(activeMilliseconds),
+      plannedSeconds: plannedSeconds == null && nullToAbsent
+          ? const Value.absent()
+          : Value(plannedSeconds),
+      manualSeconds: Value(manualSeconds),
+      manualDateLocal: manualDateLocal == null && nullToAbsent
+          ? const Value.absent()
+          : Value(manualDateLocal),
+      checkpointAtUtc: Value(checkpointAtUtc),
+    );
+  }
+
+  factory PracticeCheckpoint.fromJson(
+    Map<String, dynamic> json, {
+    ValueSerializer? serializer,
+  }) {
+    serializer ??= driftRuntimeOptions.defaultSerializer;
+    return PracticeCheckpoint(
+      sessionId: serializer.fromJson<String>(json['session_id']),
+      activeMilliseconds: serializer.fromJson<int>(json['active_milliseconds']),
+      plannedSeconds: serializer.fromJson<int?>(json['planned_seconds']),
+      manualSeconds: serializer.fromJson<int>(json['manual_seconds']),
+      manualDateLocal: serializer.fromJson<String?>(json['manual_date_local']),
+      checkpointAtUtc: serializer.fromJson<DateTime>(json['checkpoint_at_utc']),
+    );
+  }
+  @override
+  Map<String, dynamic> toJson({ValueSerializer? serializer}) {
+    serializer ??= driftRuntimeOptions.defaultSerializer;
+    return <String, dynamic>{
+      'session_id': serializer.toJson<String>(sessionId),
+      'active_milliseconds': serializer.toJson<int>(activeMilliseconds),
+      'planned_seconds': serializer.toJson<int?>(plannedSeconds),
+      'manual_seconds': serializer.toJson<int>(manualSeconds),
+      'manual_date_local': serializer.toJson<String?>(manualDateLocal),
+      'checkpoint_at_utc': serializer.toJson<DateTime>(checkpointAtUtc),
+    };
+  }
+
+  PracticeCheckpoint copyWith({
+    String? sessionId,
+    int? activeMilliseconds,
+    Value<int?> plannedSeconds = const Value.absent(),
+    int? manualSeconds,
+    Value<String?> manualDateLocal = const Value.absent(),
+    DateTime? checkpointAtUtc,
+  }) => PracticeCheckpoint(
+    sessionId: sessionId ?? this.sessionId,
+    activeMilliseconds: activeMilliseconds ?? this.activeMilliseconds,
+    plannedSeconds: plannedSeconds.present
+        ? plannedSeconds.value
+        : this.plannedSeconds,
+    manualSeconds: manualSeconds ?? this.manualSeconds,
+    manualDateLocal: manualDateLocal.present
+        ? manualDateLocal.value
+        : this.manualDateLocal,
+    checkpointAtUtc: checkpointAtUtc ?? this.checkpointAtUtc,
+  );
+  PracticeCheckpoint copyWithCompanion(PracticeCheckpointsCompanion data) {
+    return PracticeCheckpoint(
+      sessionId: data.sessionId.present ? data.sessionId.value : this.sessionId,
+      activeMilliseconds: data.activeMilliseconds.present
+          ? data.activeMilliseconds.value
+          : this.activeMilliseconds,
+      plannedSeconds: data.plannedSeconds.present
+          ? data.plannedSeconds.value
+          : this.plannedSeconds,
+      manualSeconds: data.manualSeconds.present
+          ? data.manualSeconds.value
+          : this.manualSeconds,
+      manualDateLocal: data.manualDateLocal.present
+          ? data.manualDateLocal.value
+          : this.manualDateLocal,
+      checkpointAtUtc: data.checkpointAtUtc.present
+          ? data.checkpointAtUtc.value
+          : this.checkpointAtUtc,
+    );
+  }
+
+  @override
+  String toString() {
+    return (StringBuffer('PracticeCheckpoint(')
+          ..write('sessionId: $sessionId, ')
+          ..write('activeMilliseconds: $activeMilliseconds, ')
+          ..write('plannedSeconds: $plannedSeconds, ')
+          ..write('manualSeconds: $manualSeconds, ')
+          ..write('manualDateLocal: $manualDateLocal, ')
+          ..write('checkpointAtUtc: $checkpointAtUtc')
+          ..write(')'))
+        .toString();
+  }
+
+  @override
+  int get hashCode => Object.hash(
+    sessionId,
+    activeMilliseconds,
+    plannedSeconds,
+    manualSeconds,
+    manualDateLocal,
+    checkpointAtUtc,
+  );
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      (other is PracticeCheckpoint &&
+          other.sessionId == this.sessionId &&
+          other.activeMilliseconds == this.activeMilliseconds &&
+          other.plannedSeconds == this.plannedSeconds &&
+          other.manualSeconds == this.manualSeconds &&
+          other.manualDateLocal == this.manualDateLocal &&
+          other.checkpointAtUtc == this.checkpointAtUtc);
+}
+
+class PracticeCheckpointsCompanion extends UpdateCompanion<PracticeCheckpoint> {
+  final Value<String> sessionId;
+  final Value<int> activeMilliseconds;
+  final Value<int?> plannedSeconds;
+  final Value<int> manualSeconds;
+  final Value<String?> manualDateLocal;
+  final Value<DateTime> checkpointAtUtc;
+  final Value<int> rowid;
+  const PracticeCheckpointsCompanion({
+    this.sessionId = const Value.absent(),
+    this.activeMilliseconds = const Value.absent(),
+    this.plannedSeconds = const Value.absent(),
+    this.manualSeconds = const Value.absent(),
+    this.manualDateLocal = const Value.absent(),
+    this.checkpointAtUtc = const Value.absent(),
+    this.rowid = const Value.absent(),
+  });
+  PracticeCheckpointsCompanion.insert({
+    required String sessionId,
+    required int activeMilliseconds,
+    this.plannedSeconds = const Value.absent(),
+    this.manualSeconds = const Value.absent(),
+    this.manualDateLocal = const Value.absent(),
+    required DateTime checkpointAtUtc,
+    this.rowid = const Value.absent(),
+  }) : sessionId = Value(sessionId),
+       activeMilliseconds = Value(activeMilliseconds),
+       checkpointAtUtc = Value(checkpointAtUtc);
+  static Insertable<PracticeCheckpoint> custom({
+    Expression<String>? sessionId,
+    Expression<int>? activeMilliseconds,
+    Expression<int>? plannedSeconds,
+    Expression<int>? manualSeconds,
+    Expression<String>? manualDateLocal,
+    Expression<DateTime>? checkpointAtUtc,
+    Expression<int>? rowid,
+  }) {
+    return RawValuesInsertable({
+      if (sessionId != null) 'session_id': sessionId,
+      if (activeMilliseconds != null) 'active_milliseconds': activeMilliseconds,
+      if (plannedSeconds != null) 'planned_seconds': plannedSeconds,
+      if (manualSeconds != null) 'manual_seconds': manualSeconds,
+      if (manualDateLocal != null) 'manual_date_local': manualDateLocal,
+      if (checkpointAtUtc != null) 'checkpoint_at_utc': checkpointAtUtc,
+      if (rowid != null) 'rowid': rowid,
+    });
+  }
+
+  PracticeCheckpointsCompanion copyWith({
+    Value<String>? sessionId,
+    Value<int>? activeMilliseconds,
+    Value<int?>? plannedSeconds,
+    Value<int>? manualSeconds,
+    Value<String?>? manualDateLocal,
+    Value<DateTime>? checkpointAtUtc,
+    Value<int>? rowid,
+  }) {
+    return PracticeCheckpointsCompanion(
+      sessionId: sessionId ?? this.sessionId,
+      activeMilliseconds: activeMilliseconds ?? this.activeMilliseconds,
+      plannedSeconds: plannedSeconds ?? this.plannedSeconds,
+      manualSeconds: manualSeconds ?? this.manualSeconds,
+      manualDateLocal: manualDateLocal ?? this.manualDateLocal,
+      checkpointAtUtc: checkpointAtUtc ?? this.checkpointAtUtc,
+      rowid: rowid ?? this.rowid,
+    );
+  }
+
+  @override
+  Map<String, Expression> toColumns(bool nullToAbsent) {
+    final map = <String, Expression>{};
+    if (sessionId.present) {
+      map['session_id'] = Variable<String>(sessionId.value);
+    }
+    if (activeMilliseconds.present) {
+      map['active_milliseconds'] = Variable<int>(activeMilliseconds.value);
+    }
+    if (plannedSeconds.present) {
+      map['planned_seconds'] = Variable<int>(plannedSeconds.value);
+    }
+    if (manualSeconds.present) {
+      map['manual_seconds'] = Variable<int>(manualSeconds.value);
+    }
+    if (manualDateLocal.present) {
+      map['manual_date_local'] = Variable<String>(manualDateLocal.value);
+    }
+    if (checkpointAtUtc.present) {
+      map['checkpoint_at_utc'] = Variable<DateTime>(
+        PracticeCheckpoints.$convertercheckpointAtUtc.toSql(
+          checkpointAtUtc.value,
+        ),
+      );
+    }
+    if (rowid.present) {
+      map['rowid'] = Variable<int>(rowid.value);
+    }
+    return map;
+  }
+
+  @override
+  String toString() {
+    return (StringBuffer('PracticeCheckpointsCompanion(')
+          ..write('sessionId: $sessionId, ')
+          ..write('activeMilliseconds: $activeMilliseconds, ')
+          ..write('plannedSeconds: $plannedSeconds, ')
+          ..write('manualSeconds: $manualSeconds, ')
+          ..write('manualDateLocal: $manualDateLocal, ')
+          ..write('checkpointAtUtc: $checkpointAtUtc, ')
+          ..write('rowid: $rowid')
+          ..write(')'))
+        .toString();
+  }
+}
+
 class SessionExercises extends Table
     with TableInfo<SessionExercises, SessionExercise> {
   @override
@@ -7811,6 +8265,9 @@ abstract class _$LoopDatabase extends GeneratedDatabase {
     'one_running_session',
     'CREATE UNIQUE INDEX one_running_session ON sessions (status) WHERE status = \'running\'',
   );
+  late final PracticeCheckpoints practiceCheckpoints = PracticeCheckpoints(
+    this,
+  );
   late final SessionExercises sessionExercises = SessionExercises(this);
   late final MetricReadings metricReadings = MetricReadings(this);
   late final Index readingsDefinitionMeasured = Index(
@@ -7884,6 +8341,7 @@ abstract class _$LoopDatabase extends GeneratedDatabase {
     sessions,
     sessionsSkillEnd,
     oneRunningSession,
+    practiceCheckpoints,
     sessionExercises,
     metricReadings,
     readingsDefinitionMeasured,
@@ -7934,6 +8392,13 @@ abstract class _$LoopDatabase extends GeneratedDatabase {
         limitUpdateKind: UpdateKind.delete,
       ),
       result: [TableUpdate('sessions', kind: UpdateKind.delete)],
+    ),
+    WritePropagation(
+      on: TableUpdateQuery.onTableName(
+        'sessions',
+        limitUpdateKind: UpdateKind.delete,
+      ),
+      result: [TableUpdate('practice_checkpoints', kind: UpdateKind.delete)],
     ),
     WritePropagation(
       on: TableUpdateQuery.onTableName(

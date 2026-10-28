@@ -1,0 +1,24 @@
+{
+  "observedUtc": "2026-10-27T19:53:55.136118+00:00",
+  "device": "NBDEXCJNL7JR9DIJ",
+  "command": [
+    "adb",
+    "-s",
+    "NBDEXCJNL7JR9DIJ",
+    "shell",
+    "dumpsys",
+    "window",
+    "policy"
+  ],
+  "exit": 0,
+  "keyguard": {
+    "showing": true,
+    "secure": true,
+    "occluded": false
+  },
+  "status": "BLOCKED; normal owner unlock required",
+  "securitySettingsChanged": false,
+  "unlockAttempted": false,
+  "normalMainRestored": true,
+  "unfinishedLockStorePreserved": true
+}

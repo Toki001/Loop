@@ -1,5 +1,7 @@
+import 'dart:async';
 import 'dart:io';
 
+import 'package:drift/native.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -9,11 +11,16 @@ import 'package:loop/app/licenses.dart';
 import 'package:loop/app/routing.dart';
 import 'package:loop/bootstrap.dart';
 import 'package:loop/core/data/storage.dart';
+import 'package:loop/core/data/database/loop_database.dart';
+import 'package:loop/features/practice/data/practice_repository.dart';
+import 'package:loop/features/practice/domain/practice_clock.dart';
+import 'package:loop/features/practice/presentation/practice_providers.dart';
 import 'package:loop/features/skills/presentation/skill_providers.dart';
 import 'package:loop/features/skills/data/skill_management_repository.dart';
 import 'package:loop/features/settings/domain/preferences.dart';
 import 'package:loop/features/settings/presentation/preferences_controller.dart';
 
+import 'helpers/drive_async.dart';
 import 'preferences_test.dart' show ControlledPreferencesRepository;
 
 Future<ProviderContainer> pumpApp(
@@ -25,6 +32,8 @@ Future<ProviderContainer> pumpApp(
   ControlledPreferencesRepository? repository,
   LoopStorage? storage,
   SkillManagementRepository? skillRepository,
+  PracticeRepository? practiceRepository,
+  PracticeClock? practiceClock,
 }) async {
   tester.view.physicalSize = size;
   tester.view.devicePixelRatio = 1;
@@ -32,8 +41,19 @@ Future<ProviderContainer> pumpApp(
   addTearDown(tester.view.resetPhysicalSize);
   addTearDown(tester.view.resetDevicePixelRatio);
   addTearDown(tester.platformDispatcher.clearTextScaleFactorTestValue);
+  LoopDatabase? emptyPracticeDatabase;
+  if (storage == null && practiceRepository == null) {
+    emptyPracticeDatabase = LoopDatabase(NativeDatabase.memory());
+    practiceRepository = PracticeRepository(emptyPracticeDatabase);
+    addTearDown(() => tester.runAsync(emptyPracticeDatabase!.close));
+  }
   final container = ProviderContainer(
     overrides: [
+      practiceTickingProvider.overrideWithValue(false),
+      if (practiceClock != null)
+        practiceClockProvider.overrideWithValue(practiceClock),
+      if (practiceRepository != null)
+        practiceRepositoryProvider.overrideWithValue(practiceRepository),
       preferencesRepositoryProvider.overrideWithValue(
         repository ?? ControlledPreferencesRepository(),
       ),
@@ -198,9 +218,13 @@ void main() {
     final container = await pumpApp(tester, route: '/practice/active');
     expect(
       container.read(routerProvider).routeInformationProvider.value.uri.path,
-      '/practice/setup',
+      '/practice/active',
     );
-    expect(find.text('Choose what to practice'), findsOneWidget);
+    await tester.runAsync(() => container.read(practiceEngineProvider).idle);
+    await tester.pumpAndSettle();
+    expect(find.text('No unfinished practice'), findsOneWidget);
+    expect(container.read(practiceEngineProvider).record, isNull);
+    expect(container.read(practiceEngineProvider).running, false);
   });
 
   testWidgets('fresh deep links go through onboarding', (tester) async {
@@ -322,6 +346,83 @@ void main() {
         ),
         '{damaged',
       );
+      expect(tester.takeException(), isNull);
+      final scope = ProviderScope.containerOf(
+        tester.element(find.byType(PracticeLifecycleHost)),
+        listen: false,
+      );
+      final engine = scope.read(practiceEngineProvider);
+      final storage = scope.read(storageProvider);
+      await tester.pumpWidget(const SizedBox.shrink());
+      await driveAsync(tester, engine.idle);
+      await driveAsync(tester, storage.close());
+    },
+  );
+  testWidgets(
+    'root shutdown waits for recovery before closing its real database',
+    (tester) async {
+      final directory = (await tester.runAsync(
+        () => Directory.systemTemp.createTemp('loop-root-shutdown-'),
+      ))!;
+      addTearDown(
+        () => tester.runAsync(() => directory.delete(recursive: true)),
+      );
+      await tester.pumpWidget(
+        BootstrapHost(directoryProvider: () async => directory),
+      );
+      final deadline = DateTime.now().add(const Duration(seconds: 8));
+      while (find.byType(PracticeLifecycleHost).evaluate().isEmpty &&
+          DateTime.now().isBefore(deadline)) {
+        await tester.runAsync(
+          () => Future<void>.delayed(const Duration(milliseconds: 10)),
+        );
+        await tester.pump();
+      }
+      expect(find.byType(PracticeLifecycleHost), findsOneWidget);
+      final scope = ProviderScope.containerOf(
+        tester.element(find.byType(PracticeLifecycleHost)),
+        listen: false,
+      );
+      final engine = scope.read(practiceEngineProvider);
+      final storage = scope.read(storageProvider);
+      await driveAsync(tester, engine.idle);
+      final entered = Completer<void>();
+      final probe = Completer<void>();
+      final result = Completer<bool>();
+      final release = Completer<void>();
+      final held = storage.database.transaction(() async {
+        await storage.database.customSelect('SELECT 1').get();
+        entered.complete();
+        await probe.future;
+        try {
+          await storage.database.customSelect('SELECT 1').get();
+          result.complete(true);
+        } catch (_) {
+          result.complete(false);
+        }
+        await release.future;
+      });
+      await driveAsync(tester, entered.future);
+      final recovery = engine.initialize();
+      await tester.pump();
+      expect(engine.busy, true);
+      try {
+        await tester.pumpWidget(const SizedBox.shrink());
+        probe.complete();
+        expect(
+          await driveAsync(tester, result.future),
+          true,
+          reason:
+              'Root disposal must not close SQLite beneath in-flight recovery.',
+        );
+      } finally {
+        if (!probe.isCompleted) probe.complete();
+        release.complete();
+        await driveAsync(tester, held);
+        await driveAsync(tester, recovery);
+        await driveAsync(tester, engine.idle);
+        await driveAsync(tester, storage.close());
+      }
       expect(tester.takeException(), isNull);
     },
   );

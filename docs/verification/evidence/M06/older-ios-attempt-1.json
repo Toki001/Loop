@@ -1,0 +1,23 @@
+{
+  "status": "FAIL \u2014 initial fresh policy inspection before bootstrap completion",
+  "flutterExit": 1,
+  "assertion": "backupExcluded expected true, observed false at initial inspection",
+  "cause": "Startup ordering under investigation; strict policy assertion retained.",
+  "dedicatedSimulator": "6B9A9F58-46D2-473D-806C-15F8042AF1DA",
+  "createdForM06": true,
+  "beforeFreshRerun": {
+    "schema": 4,
+    "journalCounts": {
+      "skills": 0,
+      "goals": 0,
+      "exercises": 0,
+      "sessions": 0,
+      "metric_readings": 0,
+      "media_assets": 0,
+      "reminders": 0
+    },
+    "otherSimulatorsTouched": false,
+    "normalOwnerPhoneTouched": false
+  },
+  "action": "Remove only the empty test-owned app in this newly created simulator, then rerun a true fresh install with read-only policy polling."
+}
