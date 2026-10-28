@@ -4,13 +4,13 @@
 
 ## Completed and committed
 
-M00 `fa316ff`; policy `af667df`; M01 `9b90ca94372e7e8f7926a63d3de3243ab5da1195` (checkpoint702a305); M02 `7ede417c8358d14bfc4f97686c7b6be53d225125` (checkpointd5b1ac7); M03 `95b8f7cc7cb51d9a4d9781e4b70b5bb21191ff61` (checkpoint9b01ffe); M04 `86e800ed31bc3f7b3fc58142d2160ccd4e1df97e` (checkpoint51571809a775decef904558563b533deffdd9c87). M05 `930fb53ec8e08f291cc3cdb50a31e5e3be027d71`, subject `milestone-05: skill goals and exercise management`, checkpoint `a95097f35a6b60e4031c28413eaab62375ca3df2`. Successful commits/checkpoints were confirmed clean. Do not redo them.
+M00 `fa316ff`; policy `af667df`; M01 `9b90ca94372e7e8f7926a63d3de3243ab5da1195` (checkpoint702a305); M02 `7ede417c8358d14bfc4f97686c7b6be53d225125` (checkpointd5b1ac7); M03 `95b8f7cc7cb51d9a4d9781e4b70b5bb21191ff61` (checkpoint9b01ffe); M04 `86e800ed31bc3f7b3fc58142d2160ccd4e1df97e` (checkpoint51571809a775decef904558563b533deffdd9c87). M05 `930fb53ec8e08f291cc3cdb50a31e5e3be027d71`, subject `milestone-05: skill goals and exercise management`, checkpoint `a95097f35a6b60e4031c28413eaab62375ca3df2`. M06 `6ae862a5adaa15ad055d50afd7803aa934184b83`, subject `milestone-06: interruption-safe practice timer`, verified clean after commit. Successful commits/checkpoints were confirmed clean. Do not redo them.
 
 ## Current state
 
-**Branch:** `milestone/06-practice-timer`. M06 local acceptance now PASS; final evidence packaging/checks and local commit are next. No M06 commit exists yet. All current changes are scoped M06; inspect actual Git state. Do not recreate this branch or repeat completed native measurements without a new failure/source change.
+M06 committed and verified clean. This documentation checkpoint records its actual SHA. Immediately create `milestone/07-practice-journal` and implement M07; inspect actual Git state. Do not repeat completed M06 native measurements without a new failure/source change.
 
-Owner normal unlock was confirmed, including after the lock test. Read-only keyguard showing=false; no security settings changed. All final Android timer gates passed. Normal product entrypoint restored; actual OS screenshot reviewed. Background supervisor is FINISHED/exit0, not running. No native test remains running. M07 implementation has not started and requires the verified M06 commit/clean worktree first.
+Owner normal unlock was confirmed, including after the lock test. Read-only keyguard showing=false; no security settings changed. All final Android timer gates passed. Normal product entrypoint restored; actual OS screenshot reviewed. Background supervisor is FINISHED/exit0, not running. No native test remains running. M07 prerequisites are satisfied; implementation is next.
 
 ## Verified M06 implementation
 
@@ -45,9 +45,9 @@ Older compact iPhoneSE3/iOS18.2 `6B9A9F58-46D2-473D-806C-15F8042AF1DA`: fresh fo
 
 `product-main-artifacts.json` records explicit main APK/kernel and64 source hashes, no test markers, ordinary SQLite. Android final build/install commands are current; `before-final-android-*` preserve earlier all-target evidence. Build-time source was uncommitted/basea95097, correctly labeled. All product sources remain byte-matched to those artifacts. No gratuitous iOS/full-suite rerun after documentation-only packaging. New source failure/fix requires affected and regression checks.
 
-## Finish M06, then continue M07
+## Continue M07
 
-Finalize repository/hash/privacy/whitespace/Python checks and confirm237 historical files plus64 product-source hashes unchanged. Local import enumeration306 edges (205 local+86 package+15 Dart),31 transitive DB/engine consumers, zero presentation SQL findings; this is not Graphify. Commit `milestone-06: interruption-safe practice timer` only after packaging checks pass. Confirm actual SHA and clean worktree; small docs checkpoint records that SHA, confirm clean again, then immediately create `milestone/07-practice-journal` and implement M07. No prompt/approval to continue.
+Final packaging checks passed:59 Markdown/300 local links,326 UTF-8 files scanned,285 golden/23 icon/18 capture hashes, whitespace/Python;237 historical files and64 product-source hashes unchanged. Local import enumeration306 edges (205 local+86 package+15 Dart),31 transitive DB/engine consumers, zero presentation SQL findings; this is not Graphify. M06 commit and clean worktree verified; this small docs checkpoint records the actual SHA. Confirm clean again, then immediately create `milestone/07-practice-journal` and implement M07. No prompt/approval to continue.
 
 ```sh
 git status --short --branch
